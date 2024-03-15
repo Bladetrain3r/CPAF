@@ -1,4 +1,4 @@
-# **Definition:** A null state represents the baseline or equilibrium condition of a system, against which deviations, changes, or interactions are defined and measured.
+# **Definition:** A null state represents the baseline or equilibrium condition of a system, against which deviations, changes, or interactions are defined, measured, and understood.
 
 ## **Logical Construct:** ∀s ∈ S, ∃ns ∈ NullState | (¬∃d ∈ D) ∧ (¬∃int ∈ Int) when s = ns
 
@@ -49,5 +49,8 @@ We can express this proof using concepts already defined in the framework:
 
 **Recursion:**  The null state concept can be applied recursively. Systems can have subsystems, each with its own relative null state.  
 
-## **[Entropy Connection]** 
-At it's most fundamental level, a null state is a representation of maximum entropy - a state from which no meaningful information can be derived.
+## **Entropy Connection** 
+At its most fundamental level, a null state is a representation of maximum entropy.  Systems tend towards a null state, a state from which no meaningful information can be derived. 
+
+### Axiom of a null state: 
+Change is the most fundamental descriptor.
