@@ -1,0 +1,27 @@
+Cognitive Progression Assessment Framework (CPAF)
+│
+├── Foundational Information Processing
+│   ├── Possibility of a Default State
+│   │   ├── Null
+│   │   └── Information
+│   └── Value and Interaction
+│
+├── Existence and Basic Cognitive Processes
+│   ├── Existence
+│   ├── Experience
+│   ├── Awareness
+│   ├── Data
+│   └── Reflection
+│
+├── Advanced Cognitive Processes
+│   ├── Preference
+│   ├── Agency
+│   ├── Vision
+│   └── Understanding
+│
+└── Higher-Order Cognitive Processes
+    ├── Morality
+    ├── Empathy
+    ├── Creativity
+    ├── Legacy
+    └── External Growth
