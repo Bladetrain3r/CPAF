@@ -18,6 +18,7 @@ The Cognitive Progression Analysis Framework (CPAF) is an open-source project ai
 * **Understanding Cognition:**  Provide a framework for analyzing cognitive processes at different levels of complexity.
 * **Modeling Cognitive Systems:**  Enable the modeling and simulation of both natural and artificial cognitive systems. 
 * **Cognitive System Design:** Guide the development of artificial systems that exhibit increasingly complex cognitive abilities.
+* **Learning Tool:** Function as an effective tool for deconstructing and understanding any problem it can model.
 
 **Development Milestones**
 
