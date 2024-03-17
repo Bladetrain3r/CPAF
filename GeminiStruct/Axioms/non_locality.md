@@ -62,8 +62,8 @@ Combining these propositions, we assert that the existence of quantum entangleme
 1.3.1 Entanglement Measure:
 To quantify the degree of entanglement between two quantum systems, we introduce the entanglement measure (E(t, x_1, x_2)), which represents the strength of entanglement between two particles at positions (x_1) and (x_2) at time (t). The entanglement measure satisfies the following properties:
 
-        $$ (0 \leq E(t, x_1, x_2) \leq 1), where (E(t, x_1, x_2) = 0) $$ indicates no entanglement and (E(t, x_1, x_2) = 1) represents maximal entanglement.
-        (E(t, x_1, x_2) = E(t, x_2, x_1)), reflecting the symmetry of entanglement.
+$$ (0 \leq E(t, x_1, x_2) \leq 1), where (E(t, x_1, x_2) = 0) $$ indicates no entanglement and (E(t, x_1, x_2) = 1) represents maximal entanglement.
+$$ (E(t, x_1, x_2) = E(t, x_2, x_1)) $$, reflecting the symmetry of entanglement.
 
 1.3.2 Metastability Function:
 We refine the metastability function (M(t, x_1, x_2)) to capture the resilience of entanglement between two particles at positions (x_1) and (x_2) at time (t). The metastability function depends on various factors, such as the environmental sensitivity, decoherence rates, and the inherent properties of the entangled systems. We express the metastability function as:
