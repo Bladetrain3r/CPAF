@@ -68,7 +68,7 @@ To quantify the degree of entanglement between two quantum systems, we introduce
 1.3.2 Metastability Function:
 We refine the metastability function (M(t, x_1, x_2)) to capture the resilience of entanglement between two particles at positions (x_1) and (x_2) at time (t). The metastability function depends on various factors, such as the environmental sensitivity, decoherence rates, and the inherent properties of the entangled systems. We express the metastability function as:
 
-[ M(t, x_1, x_2) = f(E(t, x_1, x_2), D(t, x_1, x_2), P(x_1, x_2)) ]
+[ $$ M(t, x_1, x_2) = f(E(t, x_1, x_2), D(t, x_1, x_2), P(x_1, x_2)) $$ ]
 
 where:
 
@@ -79,7 +79,7 @@ where:
 1.3.3 Universe Stability Integral:
 We extend the universe stability integral to incorporate the refined entanglement measure and metastability function:
 
-[ S = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} E(t, x_1, x_2) \cdot M(t, x_1, x_2) , dx_1 , dx_2 , dt ]
+$$ S = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} E(t, x_1, x_2) \cdot M(t, x_1, x_2) , dx_1 , dx_2 , dt $$
 
 This extended integral considers the contribution of entanglement between all pairs of particles across space and time to the overall stability of the universe. It captures the idea that the pervasiveness and resilience of quantum entanglement play a crucial role in maintaining the coherence and stability of the universe.
 
