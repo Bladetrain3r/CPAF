@@ -21,11 +21,11 @@ Embarking on an intellectual journey to explore the foundational principles unde
 To test the conceptual soundness of our foundational axiom, let's employ a proof by contradiction:
 
 1. **Assume the Contrary:** Assume that non-locality is not a prerequisite for a stable universe, implying that a universe can achieve stability without any non-local interactions.
-   
+     
 2. **Derive Implication:** Under this assumption, phenomena such as quantum entanglement would be superfluous to the universe's stability. This would suggest that the universe's coherence and continuity of physical processes could be maintained entirely through local interactions.
-   
+     
 3. **Contradiction:** However, empirical evidence of quantum entanglement demonstrates that non-local interactions do occur and have measurable effects, contradicting the notion that the universe's stability relies solely on local interactions. Furthermore, the intrinsic nature of quantum mechanics, with entanglement as a key feature, underpins a wide array of physical processes. Removing non-locality would fundamentally alter the theoretical framework required to explain these processes, leading to inconsistencies with observed phenomena.
-   
+     
 4. **Conclusion:** The assumption that non-locality is not necessary for a stable universe leads to a contradiction with empirical evidence and the theoretical framework of quantum mechanics. Therefore, our foundational axiom that non-locality is a prerequisite for a stable universe holds conceptual soundness.
 
 ### Mathematical Framework and Further Exploration
@@ -45,13 +45,13 @@ The axiom at the heart of our exploration posits that "Non-locality is a prerequ
 The formal logic underpinning our axiom involves a series of propositions and implications that build upon the foundational concept of non-locality:
 
 - **Axiom (A):** Non-locality is essential for the stability of the universe.
-  - \(A \equiv N \rightarrow S\)
+    - \(A \equiv N \rightarrow S\)
 
 - **Proposition (P1):** Quantum entanglement, a manifestation of non-locality, occurs naturally across the universe.
-  - \(P1 \equiv E_{NL} \rightarrow E_{U}\)
+    - \(P1 \equiv E_{NL} \rightarrow E_{U}\)
 
 - **Proposition (P2):** The stability of the universe is contingent upon the presence and functioning of quantum entanglement.
-  - \(P2 \equiv E_{U} \rightarrow S\)
+    - \(P2 \equiv E_{U} \rightarrow S\)
 
 Combining these propositions, we assert that the existence of quantum entanglement (as a specific form of non-locality) throughout the universe is a fundamental contributor to the universe's overall stability.
 
@@ -62,8 +62,8 @@ Combining these propositions, we assert that the existence of quantum entangleme
 1.3.1 Entanglement Measure:
 To quantify the degree of entanglement between two quantum systems, we introduce the entanglement measure (E(t, x_1, x_2)), which represents the strength of entanglement between two particles at positions (x_1) and (x_2) at time (t). The entanglement measure satisfies the following properties:
 
-    (0 \leq E(t, x_1, x_2) \leq 1), where (E(t, x_1, x_2) = 0) indicates no entanglement and (E(t, x_1, x_2) = 1) represents maximal entanglement.
-    (E(t, x_1, x_2) = E(t, x_2, x_1)), reflecting the symmetry of entanglement.
+        (0 \leq E(t, x_1, x_2) \leq 1), where (E(t, x_1, x_2) = 0) indicates no entanglement and (E(t, x_1, x_2) = 1) represents maximal entanglement.
+        (E(t, x_1, x_2) = E(t, x_2, x_1)), reflecting the symmetry of entanglement.
 
 1.3.2 Metastability Function:
 We refine the metastability function (M(t, x_1, x_2)) to capture the resilience of entanglement between two particles at positions (x_1) and (x_2) at time (t). The metastability function depends on various factors, such as the environmental sensitivity, decoherence rates, and the inherent properties of the entangled systems. We express the metastability function as:
@@ -72,9 +72,9 @@ We refine the metastability function (M(t, x_1, x_2)) to capture the resilience 
 
 where:
 
-    (D(t, x_1, x_2)) represents the decoherence factors affecting the entangled state, such as interactions with the environment and background noise.
-    (P(x_1, x_2)) encapsulates the inherent properties of the entangled systems, such as their physical characteristics and coupling strengths.
-    (f) is a function that determines the metastability based on the entanglement measure, decoherence factors, and system properties.
+        (D(t, x_1, x_2)) represents the decoherence factors affecting the entangled state, such as interactions with the environment and background noise.
+        (P(x_1, x_2)) encapsulates the inherent properties of the entangled systems, such as their physical characteristics and coupling strengths.
+        (f) is a function that determines the metastability based on the entanglement measure, decoherence factors, and system properties.
 
 1.3.3 Universe Stability Integral:
 We extend the universe stability integral to incorporate the refined entanglement measure and metastability function:
