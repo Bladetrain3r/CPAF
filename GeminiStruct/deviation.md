@@ -1,5 +1,3 @@
-## Deviations.md
-
 **Definition:**
 
 A deviation is a **distinguishable** change from a system's baseline state, prompted by internal or external information processing.
@@ -14,7 +12,7 @@ For all deviations (d), there exists a system (s) and information (i) such that 
 
 **Proof by Contradiction:**
 
-(Include your existing proof here)
+Assume there exists a deviation that is not observed when any system processes any information. This contradicts the definition of deviation as an observable change from a system's baseline state, prompted by internal or external information processing.
 
 **Test Cases:**
 
@@ -42,7 +40,3 @@ For all deviations (d), there exists a system (s) and information (i) such that 
 **Additional Notes:**
 
 The concept of "distinguishable" allows for the possibility of latent deviations that might not be actively observed but have the potential to be detected through appropriate means. This aligns with CPAF's focus on potential changes within a system.
-
-**Next Steps?**
-
-Let me know if this draft addresses your feedback for the "deviation.md" file.  We can then brainstorm more test cases or move on to defining the next foundational concept, such as "information." 
