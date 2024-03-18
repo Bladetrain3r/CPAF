@@ -54,3 +54,32 @@ At its most fundamental level, a null state is a representation of maximum entro
 
 ### Axiom of a null state: 
 Change is the most fundamental descriptor.
+
+### Mathematical Representation
+
+To formalize the concept of the null state and deviations within a system mathematically, we can define a function that represents how a system's state deviates from its null state. This function will quantify the deviation in terms of how far the current state is from the null state, with the null state itself defined to produce a deviation of exactly (or arbitrarily close to) 0. This approach allows for a precise, mathematical representation of the concepts discussed in the Cognitive Progression Analysis Framework (CPAF).
+
+1. **Definition of Null State Function**:
+   Let \( f: S \rightarrow [0,1] \) be a function where \( S \) is the set of all possible states of a system. This function \( f \) measures the deviation of any state \( s \in S \) from the system's null state \( s_0 \).
+
+2. **Null State Deviation**:
+   For the null state \( s_0 \), \( f(s_0) = 0 \). This equation defines that the deviation of the null state from itself is 0, representing equilibrium or the baseline state of the system.
+
+3. **Deviation Measurement**:
+   For any state \( s \neq s_0 \), \( f(s) \) returns a value in the interval \( (0,1] \), indicating the relative strength of the deviation from the null state. The closer \( f(s) \) is to 0, the minor the deviation; values approaching 1 indicate stronger, more significant deviations.
+
+4. **Properties**:
+    - **Continuity**: Ideally, \( f \) is a continuous function, ensuring that small changes in the state \( s \) result in small changes in the deviation value, allowing for smooth transitions and accurate reflection of the system's dynamics.
+    - **Boundedness**: The function is bounded between 0 and 1, ensuring that the deviation can be easily interpreted and compared across different states or systems.
+
+### Example Representation
+
+To visualize this concept, consider a simple cognitive system where the deviation depends linearly on a single variable change from the null state:
+
+Let \( x \) represent a measurable aspect of the system's state, with \( x = 0 \) in the null state. The deviation function \( f(x) \) could be defined as:
+
+\[ f(x) = \min\left(\left|\frac{x}{x_{\text{max}}}\right|, 1\right) \]
+
+where:
+- \( x_{\text{max}} \) represents a scale factor indicating the maximum observed or expected value of \( x \) for which the deviation is considered maximal (and \( f(x) = 1 \)).
+- \( |\cdot| \) denotes the absolute value, ensuring \( f(x) \) measures the magnitude of deviation without regard to direction.

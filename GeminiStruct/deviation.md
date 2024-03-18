@@ -40,3 +40,30 @@ Assume there exists a deviation that is not observed when any system processes a
 **Additional Notes:**
 
 The concept of "distinguishable" allows for the possibility of latent deviations that might not be actively observed but have the potential to be detected through appropriate means. This aligns with CPAF's focus on potential changes within a system.
+
+Given the conceptual framework for deviations as outlined in the "deviation.md" document and the mathematical formulation of the null state, we indeed can extend and mirror this approach to formally define deviations within a system mathematically. The key is to establish a generalized function that quantifies deviations not just from the null state but as a general property of system state changes.
+
+### Deviations in CPAF Context
+
+Deviations represent changes or departures from a system's null state, which are critical for understanding cognitive processes, learning, and adaptation. These deviations can be due to internal dynamics or responses to external stimuli.
+
+### Mathematical Formulation of Deviations
+
+To mathematically formalize deviations within a system, we consider the function \( f(s) \) introduced previously, which measures the deviation of a state \( s \) from the null state \( s_0 \). To expand this into a more general framework for deviations, we can introduce the concept of a deviation function \( d(s, s') \) that measures the deviation between any two states of the system, not just between a given state and the null state.
+
+1. **General Deviation Function**:
+   Let \( d: S \times S \rightarrow [0,1] \) be a function where \( S \) is the set of all possible states of a system, and \( d(s, s') \) measures the deviation between two states \( s \) and \( s' \) in the system.
+
+2. **Properties of Deviation Function**:
+    - **Null State Deviation**: For the null state \( s_0 \), and any state \( s \), \( d(s_0, s) = f(s) \), ensuring consistency with the null state deviation function.
+    - **Symmetry**: Ideally, \( d(s, s') = d(s', s) \), meaning the deviation measure is the same regardless of the order of the states.
+    - **Non-negativity and Boundedness**: \( d(s, s') \geq 0 \) for all \( s, s' \in S \), and is bounded by 1, consistent with the range of \( f(s) \).
+
+3. **Example Deviation Function**:
+   An example formulation could extend the linear model used for \( f(s) \) to account for deviations between any two states based on their measurable properties:
+
+\[ d(s, s') = \min\left(\frac{\|s - s'\|}{\max_{s, s' \in S} \|s - s'\|}, 1\right) \]
+
+where \( \|s - s'\| \) measures some form of distance or difference between the states \( s \) and \( s' \), normalized by the maximum observed or theoretical distance between any two states in the system to ensure the deviation remains within the interval \([0,1]\).
+
+This formulation captures the essence of deviations as changes between states within a system, providing a quantitative measure that can be applied universally across the system's states. It aligns with the CPAF's focus on understanding cognitive systems' dynamics, allowing for the modeling and analysis of cognitive processes and their evolution over time.
