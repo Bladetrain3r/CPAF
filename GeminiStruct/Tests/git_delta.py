@@ -7,7 +7,6 @@ def get_changed_files():
     files = result.stdout.decode('utf-8').strip().split('\n')
     return [file for file in files if file]  # Filter out empty filenames
 
-# Function to calculate and print the delta for each changed file
 def calculate_delta(files):
     for file in files:
         print(f"\nCalculating delta for: {file}")
