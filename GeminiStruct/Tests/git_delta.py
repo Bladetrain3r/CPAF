@@ -16,5 +16,6 @@ def calculate_delta(files):
             print(result.stdout.decode('utf-8'))
 
 # Main Execution
+# Buh Bluh
 changed_files = get_changed_files()
-print(calculate_delta(changed_files))
+calculate_delta(changed_files)
