@@ -49,3 +49,31 @@
 **Relationships:** The entity concept's interactions with other foundational concepts, such as 'system', 'information', and 'deviation', are primarily expressed through its definition and associated logical construct. Refer to the definitions of these related concepts for a deeper understanding of these interdependencies.
 
 **Recursion:**  The CPAF framework emphasizes the recursive nature of cognitive processes. Entities can be composed of sub-entities, forming nested systems with complex information processing hierarchies. This allows CPAF to model cognitive systems across various scales and levels of complexity.
+
+### Mathematical Formalization of Entity
+
+1. **Entity Definition**:
+   - An entity \( E \) within a system \( \Sigma \) can be represented by its state \( s \) in the set of all possible states \( S \). Each state \( s \) encompasses the properties or attributes of the entity at a given point in time.
+
+2. **State Space (\( S \))**:
+   - The set of all possible states \( S \) an entity can assume. The state space is defined by the range of all possible values for the entity's properties.
+
+3. **State Transition Function**:
+   - Let \( T: S \times D \rightarrow S \) be a transition function, where \( D \) is the domain of all possible inputs or stimuli that can affect the entity, and \( T(s, d) \) represents the new state of the entity \( E \) after processing input \( d \) from state \( s \).
+
+4. **Entity's Role in Interactions**:
+   - Entities are the primary actors within interactions (\( I_n \)). An interaction between entities \( E_1 \) and \( E_2 \) can be represented by the interaction function \( I_n(s_1, s_2, d) \rightarrow (s_1', s_2') \), where \( s_1 \) and \( s_2 \) are the initial states of \( E_1 \) and \( E_2 \), respectively, and \( s_1' \) and \( s_2' \) are their states post-interaction.
+
+### Integration into CPAF
+
+The formalization of entities as functions of their states and their interactions provides a foundational framework for analyzing system dynamics within CPAF. This formalization allows for:
+
+- **Modeling Entity Dynamics**: By defining entities and their state transitions, we can model how individual entities evolve over time in response to interactions and inputs.
+- **Understanding System Evolution**: Entities are the building blocks of systems. Their interactions and state transitions drive the overall behavior and evolution of the system.
+- **Analyzing Complex Interactions**: The impact of complex interactions on entities and their subsequent state changes can be quantified and analyzed, shedding light on the mechanisms of cognition, adaptation, and collective behavior within cognitive systems.
+
+### Example Application
+
+In a practical application, consider a system of autonomous agents (entities) in a simulation environment. Each agent has a state representing its position, energy level, and goals. The transition function \( T \) could model how agents move and interact with their environment or other agents, leading to state changes driven by goals, obstacles, or collaboration.
+
+This mathematical formalization of entities within CPAF offers a rigorous approach to dissecting and understanding the complex interplay of elements that constitute cognitive systems, facilitating a deeper exploration of the principles that govern system behavior and evolution.
