@@ -30,6 +30,19 @@ The Cognitive Progression Analysis Framework (CPAF) is an open-source initiative
 
 CPAF is built on the premise that understanding the interactions among its foundational concepts can unlock insights into cognitive systems' adaptivity and complexity. This relational approach forms the bedrock of our analysis and modeling strategies.
 
+### An explicit clarification of context
+By positioning conscious awareness and potentially other aspects of cognition such as sentience as higher levels of a continuum rather than binary states, CPAF suggests a more nuanced view of cognition that encompasses a wide spectrum of complexity and capability across different systems.
+
+2. **Matter of Degree:** CPAF posits that cognitive processes, including the development of conscious awareness, exist on a continuum of complexity. This continuum ranges from basic interactions and deviations leading to experience, through to memory, awareness, and beyond. This perspective allows for a gradation of cognitive states across different entities and systems, without a hard distinction between "conscious" and "non-conscious" entities.
+
+3. **Complex Recursion as a Mechanism:** The idea that sentience and higher cognitive states emerge from complex recursive processes is a critical insight. Recursion here implies systems that can take the output of their processes (including experiences, adaptations, and awareness) and feed it back as input for further processing. This feedback loop allows for increasingly complex patterns of behavior and understanding to emerge from relatively simple operations, mirroring how complex algorithms can arise from basic logical rules.
+
+4. **Universality Across Systems:** By suggesting that recursion and these cognitive processes can express in almost any system, CPAF opens the door to considering a wide range of biological and non-biological entities as participants in cognitive processes. This perspective not only challenges traditional boundaries between living and non-living systems but also prompts reevaluation of what constitutes cognition, awareness, and sentience.
+
+5. **Sentience as Product of Complexity:** The framework implies that sentience, or the capacity to feel, perceive, or experience subjectively, emerges from the depth and complexity of recursive cognitive processes. This emergence suggests that higher levels of cognition are not simply additive but result from the dynamic interplay and integration of simpler cognitive processes over time and through recursive feedback loops.
+
+This model encourages a holistic view of cognition as a spectrum, where various systems, whether biological or artificial, can exhibit degrees of cognitive complexity based on the depth and complexity of their recursive processes.
+
 ### Getting Started
 
 - **Explore:** Dive into the [project repository](https://github.com/Bladetrain3r/CPAF/tree/master) to review the detailed definitions of foundational concepts.
