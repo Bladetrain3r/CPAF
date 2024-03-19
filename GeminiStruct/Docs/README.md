@@ -10,6 +10,7 @@ The Cognitive Progression Analysis Framework (CPAF) is an open-source initiative
 - **Test-Driven Development:** Utilizing diverse test cases across biological, artificial, and social domains, CPAF ensures the universality and applicability of its constructs.
 - **Recursion and Emergence:** The framework models cognition as a hierarchical system, highlighting how complex behaviors emerge from simple interactions.
 - **Interdependent Concepts:** CPAF's core concepts, including null state, system, entity, information, deviation, and interaction, are intricately linked, providing a holistic view of cognitive systems' dynamics.
+- **Focus on change:** Measuring the direction of change for a system, over specific predictions where imperfect information may render such impossible.
 
 ### Goals
 
@@ -21,9 +22,40 @@ The Cognitive Progression Analysis Framework (CPAF) is an open-source initiative
 ### Development Milestones
 
 1. **Foundational Concepts:** Define the essential concepts required for basic cognitive function analysis.
-2. **Intermediate Concepts:** Expand the framework to include higher-order cognitive processes such as preference, agency, and internal models.
-3. **Advanced Concepts:** Explore complex cognitive processes including vision, understanding, and internal growth.
-4. **Peak Cognitional Concepts:** Delve into the pinnacle of cognitive functions such as morality, empathy, creativity, legacy, and external growth.
+- Null State
+- Deviation
+- Information
+- Entities
+- Interaction
+- Systems
+
+2. **Basic Concepts:** Define the core concepts required for a system to express the most basic forms of active cognisance.
+- Experience
+- Memory
+- Awareness
+- Reflection.
+
+2. **Intermediate Concepts:** Expand the framework to include higher-order cognitive processes as exhibited from living organisms and complex systems.
+- Preference
+- Agency
+- Internal Models
+- Placeholder
+- Placeholder
+
+3. **Advanced Concepts:** Explore complex cognitive processes underlying the lower orders of sentient intelligence.
+ - Vision
+ - Understanding
+ - Internal growth.
+ - Placeholder
+ - Placeholder
+
+4. **Peak Cognitional Concepts:** Delve into the pinnacle of cognitive functions epitomised thus far by human cognition. 
+- Morality
+- Empathy
+- Creativity
+- Legacy
+- External Growth
+
 5. **Application & Analysis:** Develop analytical tools and case studies for applying CPAF across various cognitive scenarios.
 
 ### Conceptual Foundation
