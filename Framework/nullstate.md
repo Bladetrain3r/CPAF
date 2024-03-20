@@ -92,6 +92,8 @@ To construct a formal logic framework for the concept of "meta-null" states as d
 **Working Definition:** 
 A **meta-null state** within a system is "any state from which deviations are measured post-interaction", serving as a dynamic reference point that underscores the non-linear and cyclical evolution of the system due to interactions.
 
+Informally: A meta-null state is a subset of null states depicting transient equilibriums.
+
 ### Formal Logic Construct for "Meta-Null" States
 
 Let's define a system \( \Sigma \) with a set of states \( S \), where each state \( s \in S \) can be a result of one or more interactions \( I \) applied to the system. The null state \( s_0 \) is a special state in \( S \) representing the system's baseline or equilibrium state.
