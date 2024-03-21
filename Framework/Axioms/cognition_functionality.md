@@ -1,13 +1,31 @@
-**Axiom: Functional Cognition** 
+## Axiom: Functional Cognition
 
-Cognition is fundamentally defined by the processes and functions it embodies, rather than by the specific physical substrate on which those functions operate. 
+### Logical Constructs
 
-**Notes for Future Refinement**
+**Definition 1 (Cognition)**: *Cognition* is the capacity for the processing of information, decision-making, and the execution of complex tasks, resulting from dynamic processes and functional interactions within a system.
 
-* **Defining Function:** Within CPAF, should we establish a more precise definition of "function" as it relates to systems, subsystems, and their interactions? 
+**Definition 2 (Process and Function)**: A *process* is a sequence of operations or activities that occur in a system, leading to a change or development. A *function* is the specific operation or role served by a component or subsystem within the larger system, contributing to the system's overall cognitive capabilities.
 
-* **Purpose/Goals:** Does this axiom need to address whether a system's inherent purpose or goals influence the definition of cognitive functions?
+**Definition 3 (Physical Substrate)**: The *physical substrate* refers to the material or physical basis upon which cognitive processes and functions are realized.
 
-* **Emergent Complexity:** How does CPAF account for cognition arising from complex interactions, even if the emergent functionality was not explicitly designed into the system? 
+**Proposition 1**: All observed instances of cognition arise as a result of processes and functions within a system, independent of the specific nature of the physical substrate.
 
-Let me know when you'd like to revisit this axiom for further incorporation into the  CPAF framework.  We can delve into these points and refine it as needed. 
+### Proof by Contradiction
+
+**Assumption for Contradiction**: Assume there exists an observed instance of cognition (*C*) that does not arise from any process or ongoing set of functions within a system.
+
+1. **Step 1**: If *C* exists without arising from processes or functions, then *C* must be independent of any dynamic interactions or operational roles within a system.
+   
+2. **Step 2**: Given Definitions 1 and 2, cognition is fundamentally characterized by information processing, decision-making, and the execution of complex tasks, all of which necessitate dynamic processes and functional interactions.
+   
+3. **Step 3**: The assumption implies that *C* could exist in the absence of any dynamic processes or functional interactions, contradicting the essential characteristics of cognition as defined.
+   
+4. **Step 4**: Furthermore, all known instances of cognition (in biological entities, artificial intelligence systems, etc.) involve complex interactions and functions, supporting Proposition 1 and contradicting the assumption.
+   
+5. **Step 5**: Therefore, the initial assumption leads to a contradiction with the fundamental definitions of cognition and the empirical observation that all known instances of cognition arise from processes and functions.
+
+**Conclusion**: Based on the contradiction, we reject the assumption. This reinforces the axiom of Functional Cognition, affirming that cognition is fundamentally defined by processes and functions, rather than by the specific physical substrate.
+
+### Implications
+
+This logical examination underscores the significance of dynamic processes and functional interactions in the manifestation of cognitive capabilities. It abstracts cognition from the constraints of the physical substrate, allowing for a broader understanding that can encompass both biological and artificial systems. Future explorations within the CPAF framework can delve deeper into categorizing and understanding the specific processes and functions critical for various forms of cognition, regardless of the physical medium in which they occur.
