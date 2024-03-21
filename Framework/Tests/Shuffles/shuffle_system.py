@@ -28,7 +28,7 @@ def custom_shuffle_deck(deck):
 
 # Initialize variables for demonstration
 null_state = tuple(range(1, 53))  # A tuple representing a deck of cards numbered 1 to 52
-n_shuffles = random.randint(1, 6)  # Number of shuffles to perform, randomly chosen between 1 and 6
+n_shuffles = random.randint(1, 24)  # Number of shuffles to perform, randomly chosen between 1 and 6
 deck = null_state
 deviations = []
 
