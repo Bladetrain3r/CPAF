@@ -121,6 +121,7 @@ The quantum-like decision model is particularly valuable for illustrating how co
 
 4. **Conclusion**: The assumption that cognitional functionality does not exhibit quantum-like superpositions leads to a contradiction with observed and theoretical understandings of human decision-making and life trajectories. Therefore, the axiom of Cognitional Functionality holds conceptual soundness, affirming that cognitive systems (including human lives) can be modeled on principles akin to those observed in quantum mechanics.
 
+
 ### A simple example
 
 Consider a cognitive system navigating through a decision tree, where each branch represents a binary decision point. A "deviation" occurs when a particular decision significantly alters the expected trajectory of the system. For instance, choosing to move to a new city (decision point) might represent a significant deviation that alters the individual's life trajectory, shifting the superposition of potential life paths.

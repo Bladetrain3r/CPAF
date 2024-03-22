@@ -134,6 +134,34 @@ To address this within a deductive framework, we apply the concept of probabilit
 
 3. **Application to Deductive Determinability**: Even though \(T\) is probabilistic and governed by \(P(T)\), the principles determining \(P(T)\)'s form are themselves deterministic, rooted in the Schrödinger equation and the interactions described by QED. Thus, the framework of quantum mechanics provides a deterministic basis (the mathematical laws governing wavefunctions and their evolution) for understanding the probabilistic timing of quantum events.
 
+### Formal Logical Construct for Double-Slit Experiment
+
+1. **Definition 1 (Quantum Phenomenon, \(QP\))**: A quantum phenomenon is an event or observation that cannot be fully explained by classical physics but requires quantum mechanics to describe its probabilistic nature. The double-slit experiment (\(DSE\)) is a prime example of \(QP\), showcasing wave-particle duality.
+
+2. **Definition 2 (Wave-Particle Duality, \(WPD\))**: Wave-Particle Duality is the concept that quantum entities (like electrons or photons) exhibit both wave-like and particle-like properties, depending on the experimental setup.
+
+3. **Proposition (DSE Outcomes, \(DSEO\))**: The double-slit experiment demonstrates \(WPD\) by producing an interference pattern that implies wave-like behavior when not observed but shows particle-like detections (discrete impacts) when observed.
+
+4. **Logical Implication**: \(QP\) such as \(DSEO\) can be understood within a deductive framework provided by quantum mechanics, which predicts the probabilistic distribution of particles' positions using wave functions.
+
+### Mathematical Breakdown of Double-Slit Experiment
+
+The outcomes of the double-slit experiment can be mathematically described using the wave function (\(\Psi\)) and the principles of quantum mechanics:
+
+1. **Wave Function (\(\Psi\))**: Represents the quantum state of a particle, encoding all probabilistic information about its properties, including position and momentum. The probability density (\(|\Psi|^2\)) gives the likelihood of finding a particle in a specific location.
+
+2. **Interference Pattern**: When quantum entities pass through the double slits, their wave functions (\(\Psi\)) overlap, creating areas of constructive and destructive interference, which correspond to the high-probability and low-probability regions of detecting particles on a screen.
+
+3. **Mathematical Expression**: The intensity (\(I\)) of the interference pattern on a detection screen at a position \(x\) can be modeled as:
+   \[ I(x) \propto |\Psi_1 + \Psi_2|^2 \]
+   where \(\Psi_1\) and \(\Psi_2\) are the wave functions associated with each slit. This equation captures the essence of the interference pattern resulting from the superposition of wave functions.
+
+### Formal Logical and Mathematical Integration
+
+- **Deductive Determinability of \(DSEO\)**: Even though the specific path of an individual quantum entity through the slits is indeterminate (reflecting \(WPD\)), the overall interference pattern can be precisely predicted using the mathematical framework of quantum mechanics. This exemplifies Deductive Determinability in quantum phenomena, where the seemingly indeterminate behaviors are governed by deterministic laws at a probabilistic level.
+
+- **Conclusion**: The double-slit experiment, by manifesting \(WPD\) and yielding interference patterns predictable by quantum mechanics, reinforces the axiom of Deductive Determinability. It illustrates that the universe's fundamental nature, despite its probabilistic aspects, can be deduced and understood within a logical and mathematical framework.
+
 ### Conclusion with Uncertain Timing
 
 This refined approach demonstrates that Deductive Determinability encompasses not just the outcomes of quantum events but also the probabilistic nature of when these events occur. It underscores that while individual quantum events exhibit uncertainty in timing, the underlying laws governing these events and their probability distributions are deterministic and logically determinable. 
