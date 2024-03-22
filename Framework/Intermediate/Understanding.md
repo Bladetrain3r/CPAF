@@ -75,7 +75,7 @@ Understanding(s, t) = Argmax_{actions} Utility(Action | Synthesis(Knowledge(s, t
 
 #### Definitions and Constructs from CPAF
 
-- **Memory (M)**: A system's capacity to store, retain, and recall information derived from accumulated experiences, serving as a repository for past deviations and associated information【129†source】.
+- **Memory (M)**: A system's capacity to store, retain, and recall information derived from accumulated experiences, serving as a repository for past deviations and associated information.
 - **Awareness (A)**: The capacity to directly recognize and identify the sources of deviations in the system's internal state or its interactions with the environment.
 - **Experience (E)**: The cumulative record of deviations an entity encounters through interactions with its environment, contributing to its evolving state.
 - **Reflection (R)**: The capacity to internally analyze and process information stored in memory, leading to the generation of new experiences and insights in the absence of direct external stimuli.

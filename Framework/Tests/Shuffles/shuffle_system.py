@@ -28,13 +28,13 @@ def custom_shuffle_deck(deck):
 
 # Initialize variables for demonstration
 null_state = tuple(range(1, 53))  # A tuple representing a deck of cards numbered 1 to 52
-n_shuffles = random.randint(1, 24)  # Number of shuffles to perform, randomly chosen between 1 and 6
+n_shuffles = random.randint(1, 200)  # Number of shuffles to perform, randomly chosen between 1 and 24
 deck = null_state
 deviations = []
 
 # Perform the custom shuffle n times and calculate deviation after each shuffle
 for i in range(n_shuffles):
-    deck = custom_shuffle_deck(deck)
+    deck = shuffle_deck(deck)
     deviation = calculate_deviation(deck, null_state)
     deviations.append(deviation)
     print(f"Shuffle {i+1}: Deck order: {deck}")
@@ -42,4 +42,4 @@ for i in range(n_shuffles):
 
 # Calculate and print the average deviation
 average_deviation = sum(deviations) / len(deviations)
-print(f"Average deviation after {n_shuffles} shuffles: {average_deviation:.4f}")
+print(f"{n_shuffles},{deviations[-1]:.4f},{average_deviation:.4f}")
