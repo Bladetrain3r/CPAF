@@ -1,0 +1,71 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+#debug-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    background-color: black;
+    padding: 5px;
+}
+
+
+/* Styling for the container of the unaltered red squares */
+#red-squares-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Styling for each unaltered red square */
+.red-square {
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* Styling for the container of the single square to identify */
+#selected-square-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Styling for the interactive color choice area */
+#color-choices {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Styling for interactive elements within color-choices */
+.color-choice-button {
+    border: none;
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #ddd;
+    transition: background-color 0.3s;
+}
+
+.color-choice-button:hover {
+    background-color: #ccc;
+}
+
+/* Add responsive design as necessary */
+@media (max-width: 600px) {
+    .red-square {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Add additional responsive styling as needed */
+}
