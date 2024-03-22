@@ -1,7 +1,3 @@
-Incorporating the refined insights from our discussions on **Knowledge**, **Internal Modeling**, **Vision**, and their interrelations with foundational cognitive functions like **Memory**, **Awareness**, and **Reflection**, we can enhance the document on **Understanding** within the Cognitive Progression Analysis Framework (CPAF). This refined draft aims to provide a comprehensive view of how Understanding acts as a capstone cognitive process, integrating and applying the outcomes of lower and intermediate cognitive processes to facilitate complex cognitive capabilities.
-
----
-
 # Understanding in the Cognitive Progression Analysis Framework (CPAF): Refined Draft
 
 ## **1. Introduction**
@@ -80,9 +76,9 @@ Understanding(s, t) = Argmax_{actions} Utility(Action | Synthesis(Knowledge(s, t
 #### Definitions and Constructs from CPAF
 
 - **Memory (M)**: A system's capacity to store, retain, and recall information derived from accumulated experiences, serving as a repository for past deviations and associated information【129†source】.
-- **Awareness (A)**: The capacity to directly recognize and identify the sources of deviations in the system's internal state or its interactions with the environment【128†source】.
-- **Experience (E)**: The cumulative record of deviations an entity encounters through interactions with its environment, contributing to its evolving state【127†source】.
-- **Reflection (R)**: The capacity to internally analyze and process information stored in memory, leading to the generation of new experiences and insights in the absence of direct external stimuli【126†source】.
+- **Awareness (A)**: The capacity to directly recognize and identify the sources of deviations in the system's internal state or its interactions with the environment.
+- **Experience (E)**: The cumulative record of deviations an entity encounters through interactions with its environment, contributing to its evolving state.
+- **Reflection (R)**: The capacity to internally analyze and process information stored in memory, leading to the generation of new experiences and insights in the absence of direct external stimuli.
 - **Deviation (D)**: A distinguishable change from the system's baseline state, prompted by internal or external information processing, serving as the foundational unit of experience .
 
 #### Synthesis as an Integral Function
