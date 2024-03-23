@@ -155,6 +155,33 @@ Establishing a null state for the VM without the Docker entity involves defining
    ```
    The scaling threshold `ST` dictates that if there is a deviation in the VM's baseline resource usage (`VM₀`), it may trigger scaling actions for containers (`scale(C)`), and if there's a deviation in load balance (`LB`), it may trigger a redistribution of traffic.
 
+## Container System
+
 ### Quantitative Baseline Value
 With this null state and baseline quantification, we can now start to build a model that uses these values to detect when the VM begins to deviate from its baseline due to Docker containers being spun up or down in response to user load. This baseline also serves as a reference for measuring the efficiency of the load balancing and scaling mechanisms in maintaining system stability in accordance with the CPAF's principles.
+
+To establish a baseline for an idle system running containers, let's detail the specific parameters of this state within the CPAF structure, taking into account the VM as a system (Subsystem `VM₀`) and Docker containers as entities (`C`) within this system. Here's how we could define it:
+
+### Idle Virtual Machine with Docker Containers (Subsystem `VM₁`)
+- **Null State**: The VM's state when hosting a predetermined number of idle Docker containers.
+   - CPU allocation: Each container is assigned one core, with the expectation that the idle containers do not actively use the allocated CPU (or use a negligible amount).
+   - RAM allocation: Each container has access to up to 1024MB of RAM, but the idle state assumes minimal active memory usage.
+   - Traffic: Minimal to none, as the containers are idle.
+   - Container count: A specific number that represents the baseline for the VM, which could be set according to the minimum number of containers needed for the application to be considered operational.
+- **Deviation**: Any CPU or RAM usage that exceeds the minimal expected usage for idle containers would be considered a deviation. Additionally, a deviation in the container count, such as more or fewer containers running than the baseline, would also be a deviation from this null state.
+
+### CPAF Logical Constructs for VM with Idle Containers
+- **Baseline State for Idle Containers (`B₁`)**: 
+   ```
+   B₁(VM₁) ↔ (CPU Allocation = 1 Core/Container) ∧ (RAM Allocation ≤ 1024MB/Container)
+   ```
+   This logical construct defines the baseline state `B₁` for the idle VM `VM₁` with Docker containers `C` as having CPU and RAM allocations that do not exceed the defined limits for an idle state.
+
+- **System Adaptability to Deviations (`AD`)**:
+   ```
+   AD(VM₁, C) | (∃Deviation(CPU or RAM Usage) → ∃Adjust(Resources))
+   ```
+   This construct signifies that the system `VM₁` adapts to deviations in CPU or RAM usage by adjusting the allocated resources.
+
+By setting these parameters, we can begin to quantify the system's baseline state when running containers in an idle state. This baseline is essential for measuring the system's performance and stability as it scales out or in response to varying loads. It serves as a starting point for identifying the thresholds at which the system begins to deviate from its optimal operating parameters, necessitating actions like scaling to maintain service quality.
 
