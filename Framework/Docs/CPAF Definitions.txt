@@ -1,0 +1,17 @@
+#separator:tab
+#html:false
+A ___ is a **distinguishable** change from a system's baseline state, prompted by internal or external information processing.	deviation
+An ___ within a system is a locus of information processing, capable of initiating or responding to deviations through internal dynamics or environmental interactions.	entity
+Anything processable by an entity that, when processed, has the potential to induce a deviation from the system's null state.	Information
+A subset of information comprising unrealized deviations processable by the system's entities, defining the system's potential to deviate in response to external interactions.	Embedded Information
+A structured sequence or pattern of information representing the potential for continuous or transformative deviations.	process
+An event within a system where information is generated or transmitted, leading to a deviation in one or more entities.	Interaction
+A specialized form of interaction occurring between entities of different systems, facilitating the exchange or transmission of information that results in deviations within one or both systems.	External Interaction
+The baseline or equilibrium condition of a system, against which deviations, changes, or interactions are defined, measured, and understood.	Null State
+Any state from which deviations are measured post-interaction	Meta-Null State
+A cohesive assembly of entities that interact internally. Embedded within the same is information crucial for defining its capability to engage in potential interactions with external systems	System
+The phenomenon where a system exhibits new properties or behaviors at a higher level of complexity that are not discernible from the individual components or their simpler interactions	Emergence
+A system's capacity to directly recognize and identify the sources of deviations in its internal state or its interactions with the environment. This awareness leads to specific responses or actions adapted to the detected deviations.	Awareness
+The cumulative record of deviations an entity encounters through interactions with its environment or other entities.	Experience
+A system's capacity to store, retain, and recall information derived from its accumulated experiences.	Memory
+A system's capacity to internally analyze and process information stored in memory, leading to the generation of new experiences even in the absence of direct external stimuli.	Reflection
