@@ -48,7 +48,7 @@ This CPAF model frames the beat detection system as a cognitive process that tak
 
 To integrate a "noise generator" into our beat detection system, we first conceptualize it within the CPAF framework as a process that introduces deviations (in this case, noise or erroneous data) into the system. This addition acts as a negative contributor to reflection by introducing inaccuracies that could potentially lead to incorrect predictions or identifications of beats. Here’s how it fits into our logical constructs:
 
-### Enhanced CPAF Model with Noise Generator
+### Enhanced Demonstrative Model with Noise Generator
 
 - **Noise Generator as an Entity (`NG`)**:
   - **Null State**: A state of no additional noise, where the system only contains beats detected from the original analysis.

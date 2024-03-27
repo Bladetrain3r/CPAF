@@ -6,6 +6,8 @@ Absolutely! Let's expand and refine the Memory draft using the Experience docume
 
 **Memory** is a system's capacity to store, retain, and recall information derived from its accumulated experiences. It serves as a repository for past deviations and the associated information, enabling the system to utilize past experiences to shape future interactions and adaptations.
 
+A key difference: Experience can overflow to disrupt the system, memory discards information.
+
 ## Logical Construct
 
 1. **Foundational Concepts:**
