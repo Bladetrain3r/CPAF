@@ -10,6 +10,7 @@ the architecture's own stated properties. Run any of them directly with
 | `verify_fixes.py` | Confirms the v1.1 corrected update: coupling adapts, stays bounded, synchrony varies, entropy well-defined | passing |
 | `iter1_kuramoto_transition.py` | **Foundation.** Base (fixed-coupling) dynamics reproduce the Kuramoto synchronization transition; empirical Kc matches mean-field theory Kc = 2σ√(2/π) ≈ 1.596σ | passing (Kc_emp ≈ 1.60) |
 | `iter2_hebbian_fixed_point.py` | **Hebbian rule in isolation** (phases frozen). Each pair relaxes exponentially to its own fixed point K* = ηSR/λ, matching the closed-form trajectory to ~1e-6; clamps at K_max; negative reward floors synced pairs while S=0 pairs decay passively | passing |
+| `iter3_closed_loop.py` | **Closed loop** (phases + coupling + live reward R = r − r_baseline). Bistability predicted by the positive-feedback structure and confirmed: supercritical start → runaway to 100% K_max saturation (r 0.88→0.97 vs fixed control); subcritical start → coupling stripped to 0 and sync lost (r 0.14→0.10). Plasticity P spikes during the transition and → 0 at either steady state | passing |
 
 ## Findings log
 
@@ -23,6 +24,18 @@ the architecture's own stated properties. Run any of them directly with
 - **Pure-Hebbian asymmetry (iter2, by design):** negative reward only punishes
   pairs that are *synchronized*; zero-synchrony pairs feel no reward signal at
   all and just decay on timescale τ = 1/λ. Forgetting is decay, not repulsion.
+- **Global reward is bistable, not regulating (iter3):** R = r − r_baseline
+  closes a positive feedback loop (coupling → sync → reward → coupling).
+  Start above the separatrix and the system runs away until *every* pair sits
+  at K_max (a fully saturated, uninformative coupling matrix — the iter2
+  saturation bound realized in closed loop); start below it and coupling is
+  stripped to zero and synchrony collapses. The doc's v1.1 caveat
+  ("winner-take-all or collapse, not modularity") is now demonstrated, not
+  just argued. Consequences: (a) the steady state of K under pure global
+  reward carries ~no pairwise information — memory claims need heterogeneous
+  input or local reward; (b) anything homeostatic needs a restoring term,
+  e.g. reward shaped as a band/target (R rises when r is *near* a setpoint,
+  falls when past it) rather than an unbounded "more sync is always better".
 
 ## Iteration plan
 
