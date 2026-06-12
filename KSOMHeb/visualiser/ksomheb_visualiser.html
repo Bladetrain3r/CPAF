@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>K-SOM-Heb visualiser — global reward (verified iter 1–3)</title>
+<style>
+  :root { --bg:#0e1116; --panel:#171b22; --ink:#e6edf3; --mut:#8b97a6; --acc:#4aa3ff;
+          --hot:#d62728; --cold:#1f77b4; --grid:#2a313c; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:14px/1.5 system-ui,Segoe UI,Roboto,sans-serif; }
+  header { padding:14px 18px; border-bottom:1px solid var(--grid); }
+  header h1 { margin:0; font-size:17px; }
+  header p { margin:4px 0 0; color:var(--mut); font-size:12.5px; }
+  .wrap { display:grid; grid-template-columns:300px 1fr; gap:0; }
+  .controls { padding:16px 18px; border-right:1px solid var(--grid); }
+  .controls h2 { font-size:12px; text-transform:uppercase; letter-spacing:.08em;
+                 color:var(--mut); margin:18px 0 8px; }
+  .controls h2:first-child { margin-top:0; }
+  .row { margin:10px 0; }
+  .row label { display:flex; justify-content:space-between; font-size:12.5px; }
+  .row label b { color:var(--acc); font-variant-numeric:tabular-nums; }
+  input[type=range] { width:100%; accent-color:var(--acc); }
+  .btns { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+  button { background:var(--panel); color:var(--ink); border:1px solid var(--grid);
+           border-radius:6px; padding:8px 12px; cursor:pointer; font-size:13px; }
+  button:hover { border-color:var(--acc); }
+  button.primary { background:var(--acc); color:#06121f; border-color:var(--acc); font-weight:600; }
+  .stage { padding:16px 18px; }
+  .panels { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .card { background:var(--panel); border:1px solid var(--grid); border-radius:8px; padding:12px; }
+  .card h3 { margin:0 0 8px; font-size:12px; color:var(--mut); text-transform:uppercase; letter-spacing:.06em; }
+  canvas { display:block; width:100%; image-rendering:pixelated; }
+  .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:14px; }
+  .stat { background:var(--panel); border:1px solid var(--grid); border-radius:8px; padding:10px 12px; }
+  .stat .k { color:var(--mut); font-size:11px; text-transform:uppercase; letter-spacing:.05em; }
+  .stat .v { font-size:20px; font-variant-numeric:tabular-nums; margin-top:2px; }
+  .note { color:var(--mut); font-size:12px; margin-top:12px; max-width:680px; }
+  .regime { font-weight:600; }
+</style>
+</head>
+<body>
+<header>
+  <h1>K-SOM-Heb — closed-loop visualiser <span style="color:var(--mut);font-weight:400">(global reward)</span></h1>
+  <p>Same math as <code>ksomheb.py</code> (parity-checked). Global reward
+     R = r − r_baseline makes a positive feedback loop — watch it run away or
+     collapse depending on where the initial coupling starts. (iter 1–3)</p>
+</header>
+
+<div class="wrap">
+  <div class="controls">
+    <h2>Learning</h2>
+    <div class="row"><label>η learning rate <b id="l_eta"></b></label>
+      <input id="eta" type="range" min="0.001" max="0.05" step="0.001" value="0.01"></div>
+    <div class="row"><label>λ decay rate <b id="l_lam"></b></label>
+      <input id="lam" type="range" min="0.0002" max="0.01" step="0.0002" value="0.001"></div>
+    <div class="row"><label>K_max coupling cap <b id="l_kmax"></b></label>
+      <input id="kmax" type="range" min="0.5" max="4" step="0.1" value="2"></div>
+    <div class="row"><label>r_baseline (reward zero) <b id="l_base"></b></label>
+      <input id="base" type="range" min="0" max="0.9" step="0.02" value="0.3"></div>
+
+    <h2>Population</h2>
+    <div class="row"><label>N oscillators <b id="l_N"></b></label>
+      <input id="N" type="range" min="10" max="120" step="2" value="80"></div>
+    <div class="row"><label>σ frequency spread <b id="l_sig"></b></label>
+      <input id="sig" type="range" min="0.05" max="1.5" step="0.05" value="0.5"></div>
+    <div class="row"><label>initial coupling K₀ <b id="l_k0"></b></label>
+      <input id="k0" type="range" min="0" max="3" step="0.05" value="1.2"></div>
+    <div class="row"><label>dt step <b id="l_dt"></b></label>
+      <input id="dt" type="range" min="0.01" max="0.1" step="0.01" value="0.05"></div>
+    <div class="row"><label>steps / frame <b id="l_spf"></b></label>
+      <input id="spf" type="range" min="1" max="40" step="1" value="10"></div>
+
+    <div class="btns">
+      <button id="play" class="primary">▶ Play</button>
+      <button id="reset">⟲ Reset</button>
+      <button id="superBtn">↑ Supercritical</button>
+      <button id="subBtn">↓ Subcritical</button>
+    </div>
+    <div class="note">Kc(theory) ≈ 1.596·σ = <b id="kc"></b>. R_sat = K_max·λ/η =
+      <b id="rsat"></b> — sustained reward above this saturates coupling.</div>
+  </div>
+
+  <div class="stage">
+    <div class="stats">
+      <div class="stat"><div class="k">order r</div><div class="v" id="s_r">—</div></div>
+      <div class="stat"><div class="k">reward R</div><div class="v" id="s_R">—</div></div>
+      <div class="stat"><div class="k">mean K</div><div class="v" id="s_K">—</div></div>
+      <div class="stat"><div class="k">% at K_max</div><div class="v" id="s_sat">—</div></div>
+    </div>
+    <div class="panels">
+      <div class="card"><h3>Phasors — the order parameter</h3>
+        <canvas id="cv_phase" width="360" height="360"></canvas></div>
+      <div class="card"><h3>Coupling matrix K (heatmap)</h3>
+        <canvas id="cv_K" width="360" height="360"></canvas></div>
+      <div class="card" style="grid-column:1 / -1"><h3>r(t) and mean K(t)</h3>
+        <canvas id="cv_ts" width="740" height="190"></canvas></div>
+    </div>
+    <div class="note">Regime: <span id="regime" class="regime">—</span></div>
+  </div>
+</div>
+
+<script src="ksomheb.js"></script>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const TAU = Math.PI * 2;
+
+// ---- model state ----
+let N, theta, omega, K, scratch, params, baseline, sigma, history, running=false;
+
+function gaussian() { // Box-Muller
+  let u=0,v=0; while(!u)u=Math.random(); while(!v)v=Math.random();
+  return Math.sqrt(-2*Math.log(u))*Math.cos(TAU*v);
+}
+
+function rebuild() {
+  N = +$("N").value;
+  sigma = +$("sig").value;
+  const k0 = +$("k0").value;
+  params = { dt:+$("dt").value, eta:+$("eta").value, lam:+$("lam").value, K_max:+$("kmax").value };
+  baseline = +$("base").value;
+
+  theta = new Float64Array(N);
+  omega = new Float64Array(N);
+  K = new Float64Array(N*N);
+  scratch = { theta:new Float64Array(N), S:new Float64Array(N*N) };
+
+  let mean=0;
+  for (let i=0;i<N;i++){ theta[i]=Math.random()*TAU; omega[i]=gaussian()*sigma; mean+=omega[i]; }
+  mean/=N; for (let i=0;i<N;i++) omega[i]-=mean;          // zero-mean frame
+  for (let i=0;i<N;i++) for (let j=0;j<N;j++) K[i*N+j] = (i===j)?0:k0;
+
+  history = { r:[], K:[] };
+  syncLabels();
+  step(false); draw();
+}
+
+function syncLabels() {
+  $("l_eta").textContent=(+$("eta").value).toFixed(3);
+  $("l_lam").textContent=(+$("lam").value).toFixed(4);
+  $("l_kmax").textContent=(+$("kmax").value).toFixed(1);
+  $("l_base").textContent=(+$("base").value).toFixed(2);
+  $("l_N").textContent=$("N").value;
+  $("l_sig").textContent=(+$("sig").value).toFixed(2);
+  $("l_k0").textContent=(+$("k0").value).toFixed(2);
+  $("l_dt").textContent=(+$("dt").value).toFixed(2);
+  $("l_spf").textContent=$("spf").value;
+  $("kc").textContent=(1.596*(+$("sig").value)).toFixed(2);
+  $("rsat").textContent=((+$("kmax").value)*(+$("lam").value)/(+$("eta").value)).toFixed(2);
+}
+
+let lastR=0;
+function step(advance=true) {
+  const spf = advance ? +$("spf").value : 0;
+  for (let s=0;s<spf;s++){
+    const op = KSOMHeb.orderParameter(theta);
+    lastR = op.r - baseline;
+    theta = KSOMHeb.updateStep(theta, omega, K, lastR, params, scratch);
+  }
+  const op = KSOMHeb.orderParameter(theta);
+  // stats
+  let sum=0, sat=0, cnt=0, cap=params.K_max;
+  for (let i=0;i<N;i++) for (let j=0;j<N;j++){ if(i===j)continue;
+    const v=K[i*N+j]; sum+=v; cnt++; if (v>=cap-1e-6) sat++; }
+  const meanK=sum/cnt, fsat=sat/cnt;
+  $("s_r").textContent=op.r.toFixed(3);
+  $("s_R").textContent=(op.r-baseline).toFixed(3);
+  $("s_K").textContent=meanK.toFixed(3);
+  $("s_sat").textContent=(fsat*100).toFixed(0)+"%";
+  history.r.push(op.r); history.K.push(meanK/cap);
+  if (history.r.length>740){ history.r.shift(); history.K.shift(); }
+  // regime label
+  const reg=$("regime");
+  if (fsat>0.6){ reg.textContent="RUNAWAY — coupling saturated at K_max, sync locked in"; reg.style.color="var(--cold)"; }
+  else if (meanK<0.05){ reg.textContent="COLLAPSE — coupling stripped, oscillators scattering"; reg.style.color="var(--hot)"; }
+  else { reg.textContent="in transition…"; reg.style.color="var(--mut)"; }
+  return op;
+}
+
+// ---- drawing ----
+function drawPhasors(op){
+  const c=$("cv_phase"), x=c.getContext("2d"), W=c.width, H=c.height, cx=W/2, cy=H/2, R=W*0.4;
+  x.clearRect(0,0,W,H);
+  x.strokeStyle="#2a313c"; x.beginPath(); x.arc(cx,cy,R,0,TAU); x.stroke();
+  for (let i=0;i<N;i++){
+    const a=theta[i], px=cx+R*Math.cos(a), py=cy-R*Math.sin(a);
+    x.fillStyle="rgba(74,163,255,0.8)"; x.beginPath(); x.arc(px,py,3,0,TAU); x.fill();
+  }
+  // resultant vector (order parameter)
+  const ax=cx+R*op.r*Math.cos(op.psi), ay=cy-R*op.r*Math.sin(op.psi);
+  x.strokeStyle="#ffce54"; x.lineWidth=3; x.beginPath(); x.moveTo(cx,cy); x.lineTo(ax,ay); x.stroke();
+  x.lineWidth=1; x.fillStyle="#ffce54"; x.beginPath(); x.arc(ax,ay,4,0,TAU); x.fill();
+  x.fillStyle="#8b97a6"; x.font="12px system-ui"; x.fillText("r = "+op.r.toFixed(3), 10, 18);
+}
+
+function drawK(){
+  const c=$("cv_K"), x=c.getContext("2d"), W=c.width, H=c.height;
+  const img=x.createImageData(N,N), cap=params.K_max;
+  for (let i=0;i<N;i++) for (let j=0;j<N;j++){
+    const v=Math.min(1, K[i*N+j]/cap), o=(i*N+j)*4;
+    // viridis-ish: dark -> blue -> green -> yellow
+    img.data[o]  =Math.round(40+215*Math.pow(v,1.4));
+    img.data[o+1]=Math.round(20+200*v);
+    img.data[o+2]=Math.round(80+120*(1-v));
+    img.data[o+3]=255;
+  }
+  // nearest-neighbour upscale
+  const tmp=document.createElement("canvas"); tmp.width=N; tmp.height=N;
+  tmp.getContext("2d").putImageData(img,0,0);
+  x.imageSmoothingEnabled=false; x.clearRect(0,0,W,H); x.drawImage(tmp,0,0,W,H);
+}
+
+function drawTS(){
+  const c=$("cv_ts"), x=c.getContext("2d"), W=c.width, H=c.height;
+  x.clearRect(0,0,W,H);
+  // gridlines + baseline
+  x.strokeStyle="#222a34"; x.beginPath();
+  for (let g=0;g<=4;g++){ const y=H-g/4*H; x.moveTo(0,y); x.lineTo(W,y); } x.stroke();
+  const by=H-baseline*H; x.strokeStyle="#555"; x.setLineDash([4,4]);
+  x.beginPath(); x.moveTo(0,by); x.lineTo(W,by); x.stroke(); x.setLineDash([]);
+  x.fillStyle="#8b97a6"; x.font="11px system-ui"; x.fillText("r_baseline", 4, by-4);
+  const plot=(arr,col)=>{ x.strokeStyle=col; x.beginPath();
+    for (let i=0;i<arr.length;i++){ const px=i/740*W, py=H-arr[i]*H;
+      i?x.lineTo(px,py):x.moveTo(px,py);} x.stroke(); };
+  plot(history.K,"#2a9d5c");   // mean K / K_max
+  plot(history.r,"#4aa3ff");   // r
+  x.fillStyle="#4aa3ff"; x.fillText("r", W-16, 14);
+  x.fillStyle="#2a9d5c"; x.fillText("meanK/K_max", W-90, 28);
+}
+
+function draw(){ const op=KSOMHeb.orderParameter(theta); drawPhasors(op); drawK(); drawTS(); }
+
+function frame(){ if(!running)return; const op=step(true); drawPhasors(op); drawK(); drawTS();
+  requestAnimationFrame(frame); }
+
+// ---- wiring ----
+["eta","lam","kmax","base","dt","spf"].forEach(id=>$(id).addEventListener("input",()=>{
+  // live params that don't need a full rebuild
+  params={ dt:+$("dt").value, eta:+$("eta").value, lam:+$("lam").value, K_max:+$("kmax").value };
+  baseline=+$("base").value; syncLabels();
+}));
+["N","sig","k0"].forEach(id=>$(id).addEventListener("input",()=>{ syncLabels(); }));
+["N","sig","k0"].forEach(id=>$(id).addEventListener("change",rebuild));
+
+$("play").addEventListener("click",()=>{ running=!running;
+  $("play").textContent=running?"⏸ Pause":"▶ Play";
+  $("play").classList.toggle("primary",!running);
+  if(running) frame(); });
+$("reset").addEventListener("click",()=>{ running=false; $("play").textContent="▶ Play";
+  $("play").classList.add("primary"); rebuild(); });
+$("superBtn").addEventListener("click",()=>{ $("k0").value=1.2; rebuild(); });
+$("subBtn").addEventListener("click",()=>{ $("k0").value=0.4; rebuild(); });
+
+rebuild();
+</script>
+</body>
+</html>
