@@ -2,3 +2,5 @@
 Framework/Mashed/*
 *.zip
 Foundations/Tests/NotActuallyCPAF/*
+__pycache__/
+*.pyc
