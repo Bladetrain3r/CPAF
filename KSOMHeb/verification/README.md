@@ -12,6 +12,7 @@ the architecture's own stated properties. Run any of them directly with
 | `iter2_hebbian_fixed_point.py` | **Hebbian rule in isolation** (phases frozen). Each pair relaxes exponentially to its own fixed point K* = ηSR/λ, matching the closed-form trajectory to ~1e-6; clamps at K_max; negative reward floors synced pairs while S=0 pairs decay passively | passing |
 | `iter3_closed_loop.py` | **Closed loop** (phases + coupling + live reward R = r − r_baseline). Bistability predicted by the positive-feedback structure and confirmed: supercritical start → runaway to 100% K_max saturation (r 0.88→0.97 vs fixed control); subcritical start → coupling stripped to 0 and sync lost (r 0.14→0.10). Plasticity P spikes during the transition and → 0 at either steady state | passing |
 | `iter4_reward_modes.py` | **Modular "memory" claim.** Two hidden frequency clusters; do global / local / hybrid reward recover them in K? Reward mode is ~irrelevant (contrast spread 0.016 — it cancels from the within/cross ratio); S==1 ablation flattens contrast to 1.0; and the dynamics **fail to recover the modules** — self-entrainment inflates cross-synchrony (isolated 0.16 → coupled 0.34–0.85) until the clusters merge into one module (learned Q ≤ 0.05 vs Q = 0.50 for the true partition) | passing (claim refuted) |
+| `iter5_competition_rescue.py` | **The rescue.** Per-PAIR synchrony-gated reward (R_ij = S_ij − thr) recovers the modules where per-node reward could not (contrast 1.24 → 2.16, Q 0.045 → 0.156) — per-pair credit does not cancel. Coupling competition (synaptic normalization) is inert alone (1.24) but amplifies the per-pair signal to the best result (contrast 3.32, Q 0.262). Modularity IS achievable, with ingredients the doc omits | passing (claim rescued) |
 
 ## Findings log
 
@@ -42,7 +43,16 @@ the architecture's own stated properties. Run any of them directly with
   Recovering pre-existing modules needs an ingredient the doc omits — coupling
   competition/normalization, a distance or anti-Hebbian term, or genuinely
   per-pair reward. (Architecture doc modularity caveat should be upgraded from
-  "open question" to "refuted as specified"; pending sign-off.)
+  "open question" to "refuted as specified, rescuable"; pending sign-off.)
+- **Modularity IS recoverable with per-pair credit (iter5):** replacing the
+  per-node reward with a per-PAIR synchrony-gated reward R_ij = S_ij − thr
+  breaks the cancellation (low-synchrony cross links fall below threshold and
+  decay), lifting contrast 1.24 → 2.16 and Q 0.045 → 0.156. Coupling
+  competition (synaptic normalization) does nothing on its own (it needs a
+  per-pair signal to sharpen) but amplifies the per-pair reward to the best
+  result (contrast 3.32, Q 0.262). So the doc's modular-memory ambition is
+  reachable — but only with per-pair credit assignment and, ideally,
+  competition; neither is in the v1.0 spec.
 - **Global reward is bistable, not regulating (iter3):** R = r − r_baseline
   closes a positive feedback loop (coupling → sync → reward → coupling).
   Start above the separatrix and the system runs away until *every* pair sits

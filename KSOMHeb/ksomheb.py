@@ -119,6 +119,30 @@ def local_field_coherence(theta, K, eps=1e-12):
     return np.where(deg > eps, np.abs(field) / (deg + eps), 0.0)
 
 
+def synaptic_normalize(K, budget, symmetric=True, eps=1e-12):
+    """Multiplicative synaptic normalization: make each node's incoming coupling
+    sum to ``budget``, so its links COMPETE for a fixed resource.
+
+        K_ij <- budget * K_ij / sum_j K_ij
+
+    This is the biological limiting mechanism (finite synaptic resource) that
+    pure Hebbian growth lacks. Row-normalization alone breaks symmetry; with
+    ``symmetric`` we average with the transpose to restore K_ij = K_ji (the
+    per-node budget then holds only approximately, which is fine).
+
+    Competition needs a per-pair signal to act on -- applied to uniformly
+    rewarded links it merely rescales and does nothing (see iteration 5).
+    """
+    K = np.asarray(K, dtype=float)
+    s = K.sum(axis=1, keepdims=True)
+    s = np.where(s < eps, 1.0, s)
+    Kn = budget * K / s
+    if symmetric:
+        Kn = 0.5 * (Kn + Kn.T)
+    np.fill_diagonal(Kn, 0.0)
+    return Kn
+
+
 def modularity(K, groups):
     """Weighted Newman modularity Q of coupling matrix K for a given partition.
 
