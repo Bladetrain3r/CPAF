@@ -68,15 +68,73 @@ def update_ksom_heb(theta, omega, K, reward, dt=0.01,
     """One step of phases AND Hebbian coupling.
 
     Coupling update is an Euler step of
-        dK_ij/dt = eta * S_ij * R - lam * K_ij
+        dK_ij/dt = eta * S_ij * R_ij - lam * K_ij
     bounded into [0, K_max]. Spatial structure (if any) belongs in the
     initial K, not re-applied here.
+
+    ``reward`` may be:
+      * a scalar  -> global reward R, shared by every pair (iterations 1-3);
+      * a vector R_i of shape (N,) -> per-node reward, mapped to pairs
+        symmetrically as R_ij = (R_i + R_j) / 2 (local/hybrid, iteration 4);
+      * a full (N, N) matrix, used as-is.
+    The scalar path is identical to the original rule, so the JS parity
+    check is unaffected.
     """
     theta_new = kuramoto_step(theta, omega, K, dt)
     S = local_synchrony(theta_new)
-    dK = eta * (S * reward) - lam * K
+    R = reward_matrix(reward)
+    dK = eta * (S * R) - lam * K
     K_new = np.clip(K + dK * dt, 0.0, K_max)
     return theta_new, K_new
+
+
+def reward_matrix(reward):
+    """Broadcast a reward into a pairwise form for the coupling update.
+
+    scalar -> scalar (broadcasts); (N,) vector -> (N,N) with (R_i+R_j)/2;
+    (N,N) -> returned unchanged.
+    """
+    R = np.asarray(reward, dtype=float)
+    if R.ndim == 0:
+        return R
+    if R.ndim == 1:
+        return 0.5 * (R[:, None] + R[None, :])
+    return R
+
+
+def local_field_coherence(theta, K, eps=1e-12):
+    """Per-node local order parameter r_local[i] in [0, 1] (endogenous).
+
+    r_local[i] = |sum_j K_ij exp(i theta_j)| / sum_j K_ij
+
+    The magnitude of the coupling-weighted mean field that node i actually
+    feels: high when the neighbours i is coupled to point the same way, low
+    when they disagree. Uses only theta and K -- no ground-truth labels -- so
+    it is a legitimate local reward signal. Nodes with no coupling get 0.
+    """
+    theta = np.asarray(theta)
+    K = np.asarray(K, dtype=float)
+    deg = K.sum(axis=1)
+    field = (K * np.exp(1j * theta)[None, :]).sum(axis=1)
+    return np.where(deg > eps, np.abs(field) / (deg + eps), 0.0)
+
+
+def modularity(K, groups):
+    """Weighted Newman modularity Q of coupling matrix K for a given partition.
+
+    Q = (1/2m) sum_ij [A_ij - k_i k_j / 2m] * delta(g_i, g_j),
+    with A = K (diagonal zeroed), k_i = sum_j A_ij, 2m = sum_ij A_ij.
+    Q > 0 means more within-group weight than expected by chance.
+    """
+    A = np.array(K, dtype=float)
+    np.fill_diagonal(A, 0.0)
+    m2 = A.sum()
+    if m2 == 0:
+        return 0.0
+    k = A.sum(axis=1)
+    groups = np.asarray(groups)
+    same = groups[:, None] == groups[None, :]
+    return float(((A - np.outer(k, k) / m2) * same).sum() / m2)
 
 
 def connectivity_entropy(K):
