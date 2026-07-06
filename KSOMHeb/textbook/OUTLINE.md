@@ -24,8 +24,8 @@ verified, so the textbook never runs ahead of the evidence.
 
 | Ch | Title | Concept taught | Anchored by | Written? |
 |----|-------|----------------|-------------|----------|
-| 0 | Why measure cognition with oscillators | CPAF context; consciousness-as-continuum; why a *dynamical* metric (r) instead of a checklist | README, architecture doc | ☐ |
-| 1 | Phase oscillators and the order parameter | What θ, ω, and r are; the Kuramoto model; synchronization as a phase transition with a critical coupling Kc | `iter1` (Kc≈1.60 vs theory 1.596) | ☐ |
+| 0 | Orientation: why oscillators, and how this fits CPAF | CPAF context; consciousness-as-continuum; why a *dynamical* metric (r); orientation map + "returning after a break" re-entry guide | README, architecture doc | ✅ `00_orientation.md` |
+| 1 | Phase oscillators and the order parameter | What θ, ω, and r are; the Kuramoto model; synchronization as a phase transition with a critical coupling Kc | `iter1` (Kc≈1.60 vs theory 1.596) | ✅ `01_phase_oscillators.md` |
 | 2 | Making connections learn | Hebbian coupling as leaky integration; fixed points K*=ηSR/λ; the saturation bound R_sat | `iter2` | ☐ |
 | 3 | Closing the loop | Reward from the system's own synchrony; positive feedback; bistability (runaway vs collapse); "stores one bit" | `iter3` | ☐ |
 | 4 | Is connectivity really memory? | Modularity Q; why per-node reward cancels; self-entrainment; the homogenization failure | `iter4` | ☐ |
