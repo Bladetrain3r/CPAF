@@ -26,12 +26,15 @@ verified, so the textbook never runs ahead of the evidence.
 |----|-------|----------------|-------------|----------|
 | 0 | Orientation: why oscillators, and how this fits CPAF | CPAF context; consciousness-as-continuum; why a *dynamical* metric (r); orientation map + "returning after a break" re-entry guide | README, architecture doc | ✅ `00_orientation.md` |
 | 1 | Phase oscillators and the order parameter | What θ, ω, and r are; the Kuramoto model; synchronization as a phase transition with a critical coupling Kc | `iter1` (Kc≈1.60 vs theory 1.596) | ✅ `01_phase_oscillators.md` |
-| 2 | Making connections learn | Hebbian coupling as leaky integration; fixed points K*=ηSR/λ; the saturation bound R_sat | `iter2` | ☐ |
-| 3 | Closing the loop | Reward from the system's own synchrony; positive feedback; bistability (runaway vs collapse); "stores one bit" | `iter3` | ☐ |
-| 4 | Is connectivity really memory? | Modularity Q; why per-node reward cancels; self-entrainment; the homogenization failure | `iter4` | ☐ |
-| 5 | What actually makes modules | Coupling competition / synaptic normalization; the biological limiting mechanisms; does modularity recover? | `iter5` (in progress) | ☐ |
-| 6 | Using K-SOM-Heb as a CPAF metric | Which metrics are sound (r, plasticity P), which need care (H(K)), which are refuted as-specified (Q); operating envelope (R_sat, bistability) | synthesis | ☐ |
-| A | Appendix: bugs we caught | The v1.0 errors (S≡1, per-step blend, invalid entropy) as cautionary tales in reading math against code | `verify_bugs.py`, doc v1.1 changelog | ☐ |
+| 2 | Making connections learn | Hebbian coupling as leaky integration; fixed points K*=ηSR/λ; the saturation bound R_sat | `iter2` | ✅ `02_the_learning_rule.md` |
+| 3 | Closing the loop | Reward from the system's own synchrony; positive feedback; bistability (runaway vs collapse); "stores one bit" | `iter3` | ✅ `03_closing_the_loop.md` |
+| 4 | Is connectivity really memory? | Modularity Q; why per-node reward cancels; self-entrainment; the homogenization failure | `iter4` | ✅ `04_is_connectivity_memory.md` |
+| 5 | What actually makes modules | Coupling competition / synaptic normalization; the biological limiting mechanisms; does modularity recover? | `iter5` | ✅ `05_what_makes_modules.md` |
+| 6 | Using K-SOM-Heb as a CPAF metric | Which metrics are sound (r, plasticity P), which need care (H(K)), which are refuted as-specified (Q); operating envelope (R_sat, bistability); the quant/qual seams | synthesis | ✅ `06_using_it_as_a_cpaf_metric.md` |
+| A | Appendix: bugs we caught | The v1.0 errors (S≡1, per-step blend, invalid entropy, STDP gaps) as cautionary tales in reading math against code | `verify_bugs.py`, doc v1.1 changelog | ✅ `A_bugs_we_caught.md` |
+
+**Full draft complete (all chapters).** Next phase: revision passes hunting the
+quant/qual seams catalogued in Chapter 6 §6.3.
 
 ## Cross-cutting threads to keep visible
 
