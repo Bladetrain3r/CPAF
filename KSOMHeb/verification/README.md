@@ -15,9 +15,21 @@ the architecture's own stated properties. Run any of them directly with
 | `iter5_competition_rescue.py` | **The rescue.** Per-PAIR synchrony-gated reward (R_ij = S_ij − thr) recovers the modules where per-node reward could not (contrast 1.24 → 2.16, Q 0.045 → 0.156) — per-pair credit does not cancel. Coupling competition (synaptic normalization) is inert alone (1.24) but amplifies the per-pair signal to the best result (contrast 3.32, Q 0.262). Modularity IS achievable, with ingredients the doc omits | passing (claim rescued) |
 | `iter6_locking_threshold.py` | **A derived coherence threshold.** Two oscillators reduce exactly to `dψ/dt = Δω − 2K sin ψ`, a saddle-node bifurcation at `Kc = \|Δω\|/2` (confirmed across detunings). Order parameter at onset is exactly `1/√2 ≈ 0.707`, so a pair locks only if `S_ij > 1/√2` — a *derived* per-pair threshold matching the hand-picked `r ≥ 0.7`. Noise smears the bifurcation. (`twoosc_entangle_demo.py` is the original seed script) | passing |
 | `iter7_information_transition.py` | **Deviation creates information; coherence ≠ information.** Mutual information between two noisy phases climbs from ~0.05 bits (deep drift) to ~2.7 bits (locked) across `Kc` — a deviation *creates* shared information (an operational measure for CPAF's "information"). Meanwhile `r` is already 66% of its max deep in the drift regime while MI is 2% — `r` overreads relationship where none persists, so **coherence is not information** (Ch 6 seam #1, demonstrated) | passing |
+| `iter8_transfer_entropy.py` | **Interaction vs common cause.** Three causal graphs (coupled 1↔2, common-driven Z→1,Z→2 with zero coupling, one-way 1→2) carry the same MI (1.89/1.51/1.90 bits) — MI is graph-blind. Transfer entropy `TE(X→Y)=I(Y_{t+τ};X_t\|Y_t)` resolves direction (one-way: TE(1→2)=0.16, TE(2→1)=−0.001 — a true null) but is *also* fooled by the hidden common drive (0.036 vs coupled 0.047 — genuine predictive transfer over a nonexistent edge; prediction ≠ causation). Conditional TE\|Z gives a double dissociation: kills the spurious transfer (−0.004), leaves the real edge untouched (0.049). Ladder: related (MI) < directed (TE) < connected (TE\|confounders) | passing |
 
 ## Findings log
 
+- **Pairwise TE is prediction, not causation (iter8):** a hidden common driver
+  produces *genuine* transfer entropy between two uncoupled oscillators (each
+  is a second noisy sensor of the source, so one really does help predict the
+  other) — pairwise TE cannot certify an edge, only conditional TE (given the
+  confounder) can, and it does so cleanly (double dissociation: spurious
+  transfer dies, real edge unaffected). Directionality, by contrast, comes
+  free: the no-influence direction of a one-way coupling reads statistically
+  zero. Estimator caveat caught during tuning: the **conditioning variable
+  must be binned finely** — coarse `Y_t` bins let the correlated source
+  re-supply the discarded sub-bin information and read as 0.11 bits of phantom
+  transfer (fine bins: 0.000).
 - **Saturation bound (iter2):** the doc's heuristic parameters give gain
   η/λ = 10, so K* = 10·S·R. Any *sustained* reward above
   `R_sat = K_max·λ/η = 0.2` drives well-synced pairs into the K_max clamp,

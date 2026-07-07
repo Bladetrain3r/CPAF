@@ -70,8 +70,9 @@ KSOMHeb/
 ├── KSOMHeb_Architecture.md   the original design doc (v1.2, corrected + annotated)
 ├── CHEATSHEET.md             every symbol, equation, and key relationship on one page
 ├── DECISIONS.md              the decision log — what we chose and why
+├── CPAF_MAPPING_NOTES.md     the CPAF ↔ oscillator correspondence and its tensions
 ├── ksomheb.py                the reference implementation (the canonical math)
-├── verification/             one runnable script + plot per claim (iter1…iter5)
+├── verification/             one runnable script + plot per claim (iter1…iter8)
 │   └── README.md             the suite index and findings log
 ├── visualiser/               interactive browser demo (drag the sliders)
 └── textbook/                 you are here
@@ -80,7 +81,7 @@ KSOMHeb/
 If you read nothing else, read `CHEATSHEET.md` (for the math) and
 `verification/README.md` (for what's been proven).
 
-## 0.5 The story so far, in five experiments
+## 0.5 The story so far, in eight experiments
 
 The model was built and stress-tested bottom-up. Each iteration is a script you
 can re-run; here's the arc and the verdict:
@@ -100,9 +101,23 @@ can re-run; here's the arc and the verdict:
 5. **The rescue** — a per-*pair* synchrony-gated reward (plus optional coupling
    competition) recovers the modules the baseline destroyed. ✅ *the claim is
    reachable, with ingredients the original spec omitted.*
+6. **Grounding the threshold** — two oscillators lock at exactly
+   `Kc = |Δω|/2`, with onset coherence exactly `1/√2 ≈ 0.707`: the hand-picked
+   `r ≥ 0.7` has a *derived* home, per-pair. ✅ *derived (pairwise only).*
+7. **Information at the deviation** — mutual information climbs from ~0 to
+   ~2.7 bits as a pair crosses its locking threshold, while the coherence `r`
+   overreads in the drift regime: a deviation *creates* information, and
+   coherence is not information. ✅ *confirmed.*
+8. **Interaction vs common cause** — MI can't tell a real edge from a hidden
+   shared drive (or from a one-way coupling); transfer entropy adds direction
+   for free but is *also* fooled by a common cause; conditional TE certifies
+   the edge — if you can observe the confounder. ✅⚠️ *the ladder: related <
+   directed < connected.*
 
 That refute-then-rescue in 4→5 is the heart of the project: it's what verifying
-math against code actually buys you.
+math against code actually buys you. Experiments 6–8 are the second arc — the
+**bridge to CPAF** (Chapters 7–9), where the model's primitives start grounding
+CPAF's foundational vocabulary.
 
 ## 0.6 If you've been away — start here
 
@@ -115,10 +130,12 @@ Welcome back. Fastest path to being useful again:
 4. Check `verification/README.md`'s findings log and the architecture doc's
    revision history for anything marked open or untested — that's the work queue.
 
-Current frontier (as of the last session): the textbook chapters, and two
-unverified claims still on the board — **damage recovery / graceful
-degradation**, and whether the **`r ≥ 0.7` consciousness threshold** is
-anything more than a free parameter.
+Current frontier (as of the last session): the CPAF bridge (Ch 8–9) has three
+grounded spans — deviation (iter 6), information (iter 7), and the
+related/directed/connected information ladder (iter 8). The next span is
+**entity-as-cluster** (does a locked module behave as one effective
+oscillator? — CPAF's recursion, still untested), with **damage recovery /
+graceful degradation** and the **global-`r` threshold** also open.
 
 ## 0.7 A note on origins
 

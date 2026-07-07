@@ -132,6 +132,16 @@ Q = (1/2m) Σᵢⱼ [Kᵢⱼ − kᵢkⱼ/2m] · δ(gᵢ, gⱼ)      kᵢ = Σ�
 Kᵢⱼ ← budget · Kᵢⱼ / Σⱼ Kᵢⱼ           (then symmetrize; inert without a per-pair signal)
 ```
 
+**Information ladder** (what a claim about an edge certifies, iter 7–8):
+```
+I(θᵢ; θⱼ)                       mutual information — RELATED (symmetric; graph-blind)
+TE(i→j) = I(θⱼ,t+τ ; θᵢ,t | θⱼ,t)   transfer entropy — DIRECTED (prediction, not causation)
+TE(i→j | Z)                     conditional TE — CONNECTED (needs the confounder observed)
+```
+Estimator note: bin the *conditioning* variable finely, or correlated sources
+leak sub-bin position and read as phantom transfer; bias-correct against
+time-shifted surrogates of the source.
+
 ---
 
 ## Verdicts at a glance
@@ -147,6 +157,10 @@ Kᵢⱼ ← budget · Kᵢⱼ / Σⱼ Kᵢⱼ           (then symmetrize; inert 
 | Two-oscillator locking at `Kc=\|Δω\|/2`, onset `R=1/√2` | ✅ confirmed (reduction, threshold, onset) | 6 |
 | Coherence `r` ≠ information | ✅ demonstrated: deep-drift r≈0.64 but MI≈0; MI is the discriminating variable | 7 |
 | Mutual information `I(θᵢ;θⱼ)` as the "information" measure | ✅ climbs ~0 → ~2.7 bits across `Kc` (a deviation creates information) | 7 |
+| MI certifies the *edge* carrying the information | ❌ graph-blind: coupled, common-driven, one-way all read ~same MI | 8 |
+| Transfer entropy resolves direction (asymmetric `Kᵢⱼ` readout) | ✅ one-way coupling: TE(2→1) statistically 0, TE(1→2) ≫ 0 | 8 |
+| Pairwise TE certifies the edge | ❌ fooled by hidden common drive (genuine predictive transfer, no edge) | 8 |
+| Conditional TE (confounder observed) certifies the edge | ✅ double dissociation: spurious TE dies, real edge untouched | 8 |
 | Damage recovery / self-healing | ❔ not yet tested | — |
 
 ## Default parameters

@@ -22,7 +22,7 @@ may be a concrete substrate for CPAF's basic layer.
 | **Deviation** (most fundamental change) | A pair crossing its locking threshold `Kc = \|Δω\|/2`: drift → locked, noise → structure. The saddle-node bifurcation. | **operationalized** (iter 6) |
 | **Interaction** | The coupling `Kᵢⱼ` itself — the channel of influence between two entities (the edge). | clean; the "vertex pair" |
 | **Entity** | An oscillator (vertex); *recursively*, a locked cluster/module acting as one coherent unit (iter 5) — an emergent higher-order entity. | partial; recursion untested |
-| **Information** | Mutual information `I(θᵢ; θⱼ)` between two phases. iter 7: it climbs from ~0 to ~2.7 bits across the locking threshold — a *deviation creates information* — and, crucially, tracks differently from `r` (moderate `r` with ~0 MI in deep drift). | **operationalized** (iter 7); resolves seam #1 |
+| **Information** | Mutual information `I(θᵢ; θⱼ)` between two phases. iter 7: it climbs from ~0 to ~2.7 bits across the locking threshold — a *deviation creates information* — and, crucially, tracks differently from `r` (moderate `r` with ~0 MI in deep drift). iter 8 grades the claim into a ladder: MI = *related* (graph-blind), transfer entropy = *directed* (but prediction ≠ causation — a hidden common drive fakes it), conditional TE = *connected* (needs the confounder observed). "Information on an interaction" is a system-level certificate, not a pairwise property. | **operationalized & graded** (iter 7–8) |
 | **System** | The whole graph of entities + interactions; collective `r`, modularity `Q`. | plausible; iter 3–5 |
 
 ## Tensions to resolve (the honest list)
@@ -31,27 +31,37 @@ may be a concrete substrate for CPAF's basic layer.
    its own object? Working split: interaction = the channel exists (a coupling);
    deviation = that channel produces a *sustained state change* (locking). The
    edge is the noun; the locking event is the verb.
-2. ~~**Information is unmeasured.**~~ **Closed (iter 7):** mutual information
-   `I(θᵢ; θⱼ)` is the measure — it appears at the deviation point and diverges
-   from `r`. Remaining nuance: MI cannot tell a genuine *interaction* from a
-   *common drive* (both raise MI); distinguishing them needs a *directed*
-   measure (transfer entropy). That is the next refinement, and it connects to
-   tension #4 (directionality).
+2. ~~**Information is unmeasured.**~~ **Closed (iter 7), nuance closed
+   (iter 8):** mutual information `I(θᵢ; θⱼ)` is the measure — it appears at
+   the deviation point and diverges from `r`. The MI-vs-common-drive nuance is
+   now graded: pairwise TE adds direction but is *also* fooled by a hidden
+   common cause (genuine predictive transfer, no edge); only conditional TE —
+   confounder observed — certifies the edge (double dissociation, iter 8).
+   Residual honest gap: on a real network the right conditioning set is a
+   causal-inference problem, not a histogram; we proved the mechanism on the
+   minimal 3-vertex case.
 3. **Null = K→0 or K below Kc?** These differ: a system rich in sub-threshold
    couplings is "quiet" but not structureless. Suggests null state is about the
    absence of *deviations*, not the absence of *interactions*.
 4. **Directionality.** CPAF interactions may be directed; our `K` is symmetric
    (Hebbian). The doc's asymmetric-coupling extension (`Kᵢⱼ ≠ Kⱼᵢ`) would map to
-   directed interactions / causal influence.
+   directed interactions / causal influence. **Readout grounded (iter 8):** an
+   imposed one-way coupling gives `TE(2→1)` statistically zero and `TE(1→2)`
+   large — directed interactions are *measurable*. Still open: a learning rule
+   that *produces* asymmetric `K` (readout ≠ origin).
 
 ## Candidate iterations to ground it
 
 - **Deviation (mostly done):** formalize "a deviation = a pair crossing `Kc`";
   iter 6 already gives the threshold and the `1/√2` onset.
 - ~~**Information:**~~ **done (iter 7)** — MI rises at `Kc`; coherence ≠
-  information confirmed. *Follow-up:* transfer entropy to separate genuine
-  interaction from common drive (directed information).
-- **Emergent entity (new):** coarse-grain a locked cluster and test whether it
+  information confirmed.
+- ~~**Transfer entropy:**~~ **done (iter 8)** — the ladder *related < directed
+  < connected*: TE resolves direction (grounding asymmetric `Kᵢⱼ` as a
+  readout) but only conditional TE separates a genuine interaction from a
+  common cause. *Follow-ups:* partial observability of the confounder (does
+  the certificate degrade smoothly?); a rule that learns asymmetric `K`.
+- **Emergent entity (next):** coarse-grain a locked cluster and test whether it
   behaves as a single effective oscillator (effective phase/frequency) — the
   recursion CPAF leans on.
 
