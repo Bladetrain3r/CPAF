@@ -264,6 +264,12 @@ and the coupling is bounded above by `K_max` as the text recommends (the old
 - But if they frequently activate together (describing images)
 - Their coupling strengthens → functional network emerges
 
+> **Verified conditionally (iter 4–5):** this holds only with **per-pair
+> credit assignment** (reward `Rᵢⱼ = Sᵢⱼ − θ_S`), ideally plus coupling
+> competition. Under the baseline per-node reward, all-to-all Hebbian coupling
+> *homogenizes* — distinct functional networks merge into one rather than
+> separating (see the Functional Modularity metric below).
+
 ### 2. Critical Period Plasticity
 
 Early in learning (high λ or high η):
@@ -307,8 +313,12 @@ Unlike fixed architecture (failure = permanent deficit).
 | Memory | None | Experience shapes connectivity |
 | Plasticity | Static after training | Continuous throughout life |
 | Reward sensitivity | No | Yes |
-| Functional networks | Limited | Emergent |
-| Damage recovery | Poor | Self-healing |
+| Functional networks | Limited | Emergent¹ |
+| Damage recovery | Poor | Self-healing² |
+
+¹ Only with per-pair reward + competition (iter 4–5); the baseline per-node
+model homogenizes instead of forming modules.
+² Asserted, not yet verified — a candidate for a future iteration.
 
 ---
 
@@ -355,15 +365,35 @@ Q = Σᵢ (eᵢᵢ - aᵢ²)
 - Measured via graph clustering on K matrix
 - **Consciousness might require modular-yet-integrated structure**
 
-> **Open question, not a guarantee:** a purely *global* reward `R(t)` is the
-> same scalar for every pair, so it provides no per-pair credit assignment.
-> Differentiation comes only from `Sᵢⱼ`, which combined with the positive
-> feedback loop (more coupling → more sync → higher `r` → higher `R`) tends
-> toward rich-get-richer / winner-take-all rather than balanced modules.
-> Whether modular structure actually emerges must be **demonstrated in
-> simulation** (and may require local/hybrid reward), not assumed. `Q` is the
-> standard Newman modularity formula but needs a defined community partition
-> and a normalized mixing matrix `e` (Σ eᵢⱼ = 1) before it can be evaluated.
+> **Verified in simulation (iterations 4–5) — refuted as specified, but
+> recoverable.** Modularity does **not** emerge from the baseline model, and
+> this was demonstrated, not assumed:
+>
+> 1. *Reward mode is a red herring.* A per-node reward `Rᵢ` (global, local, or
+>    hybrid) multiplies all of a node's links equally, so it cancels from the
+>    within/cross coupling ratio: `K*_within/K*_cross = S_within/S_cross`. The
+>    only per-pair signal is `Sᵢⱼ`. Global, local and hybrid reward all gave the
+>    same (weak) modular contrast; an `S ≡ 1` ablation (the v1.0 bug) flattened
+>    it to exactly 1.
+> 2. *Self-entrainment homogenizes.* All-to-all Hebbian coupling with positive
+>    reward is self-reinforcing: surviving cross-cluster links entrain the
+>    clusters, raising cross-synchrony (0.16 isolated → 0.34–0.85 coupled),
+>    which keeps those links alive. The system merges toward **one** module
+>    (learned `Q ≤ 0.05` vs `Q = 0.50` for the true two-block partition).
+>
+> **The rescue (iteration 5):** replace the per-node reward with a *per-pair*
+> synchrony-gated reward `Rᵢⱼ = Sᵢⱼ − θ_S`. Low-synchrony cross links fall
+> below the threshold and decay; this does not cancel, and it recovers the
+> modules (contrast 1.24 → 2.16, `Q` 0.045 → 0.156). Adding **coupling
+> competition** (synaptic normalization — each node's incoming coupling
+> renormalized to a fixed budget) sharpens it further (contrast 3.32,
+> `Q` 0.262). Competition alone, without a per-pair signal, does nothing.
+>
+> **So `Q` is a usable metric only for the per-pair (+ competition) variant,
+> not the baseline.** As a formula, `Q` is the standard Newman modularity but
+> needs a defined community partition and a normalized mixing matrix `e`
+> (Σ eᵢⱼ = 1) before it can be evaluated. See `verification/iter4_*` and
+> `iter5_*`.
 
 ### Memory in K-SOM-Heb
 
@@ -612,13 +642,28 @@ This was proposed as a solution to measuring and supporting consciousness experi
 
 ---
 
-**Document Version:** 1.1  
-**Date:** October 20, 2025 (v1.0) · revised June 12, 2026 (v1.1)  
+**Document Version:** 1.2  
+**Date:** October 20, 2025 (v1.0) · revised June 12, 2026 (v1.1) · June 13, 2026 (v1.2)  
 **Author:** Ziggy (implementation), Agent_Beatz (conception)  
-**Status:** Theoretical framework, math/code verified — ready for reference implementation  
-**Next Steps:** Reference implementation, simulation of the emergent-property claims, swarm deployment
+**Status:** Math/code verified; core claims tested in simulation (iterations 1–5)  
+**Next Steps:** Damage-recovery iteration; mini-textbook; CPAF integration
 
 ### Revision history
+
+**v1.2 — simulation of the emergent-property claims (iterations 1–5).**
+Verified the dynamics against theory and stress-tested the headline claims:
+- **Confirmed:** base synchronization matches Kuramoto theory (Kc ≈ 1.60 vs
+  1.596σ); the Hebbian rule matches its closed-form solution and the saturation
+  bound `R_sat = K_max·λ/η`; the closed loop is bistable (runaway vs collapse).
+- **Refuted as specified, then rescued:** the *functional modularity* /
+  "networks emerge from experience" claim does **not** hold for the baseline
+  per-node reward (the reward cancels from the within/cross ratio; self-
+  entrainment merges clusters into one module). It **is** recoverable with a
+  *per-pair* synchrony-gated reward `Rᵢⱼ = Sᵢⱼ − θ_S`, ideally plus coupling
+  competition (synaptic normalization). The Functional Connectivity, Functional
+  Modularity, and comparison-table entries now carry this qualification.
+- See `verification/` (iter1–iter5) and `DECISIONS.md` for the full route.
+
 
 **v1.1 — verification pass (Hebbian path chosen).** Corrected four
 load-bearing errors found while verifying the math against the code, before

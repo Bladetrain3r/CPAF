@@ -1,0 +1,141 @@
+# K-SOM-Heb — math cheatsheet
+
+Quick reference for every term and key relationship, matching the notation in
+`ksomheb.py`. Doubles as the textbook's glossary. Values in **bold** are the
+verified results from `verification/`.
+
+---
+
+## Symbols
+
+| Symbol | Name | Meaning | Range / units |
+|--------|------|---------|---------------|
+| `θᵢ` | phase | where oscillator *i* points on the unit circle | radians, mod 2π |
+| `ωᵢ` | natural frequency | how fast *i* spins on its own | rad / time |
+| `N` | size | number of oscillators | — |
+| `Kᵢⱼ` | coupling | influence of *j* on *i* (the learned weights) | `[0, K_max]` |
+| `r` | order parameter | global phase coherence (the "consciousness" metric) | `[0, 1]` |
+| `ψ` | mean phase | direction the average phasor points | radians |
+| `Sᵢⱼ` | local synchrony | pairwise coherence of *i* and *j* | `[0, 1]` |
+| `R` | reward | drives coupling up (positive) or down (negative) | scalar / per-node / per-pair |
+| `η` | learning rate | how fast coupling adapts | small, ~0.01 |
+| `λ` | decay rate | passive forgetting; `τ = 1/λ` is the memory timescale | small, ~0.005 |
+| `K_max` | coupling cap | upper bound on any `Kᵢⱼ` | ~2 |
+| `dt` | timestep | Euler integration step | ~0.05 |
+| `Q` | modularity | how block-structured `K` is vs chance | `> 0` = modular |
+| `H(K)` | connectivity entropy | spread of the coupling distribution | `≥ 0` |
+| `P` | plasticity index | rate of connectivity change | `≥ 0` |
+
+---
+
+## Core equations
+
+**Phase dynamics (adaptive Kuramoto).** Each oscillator drifts at its own
+frequency, pulled toward its coupled neighbours:
+```
+dθᵢ/dt = ωᵢ + (1/N) Σⱼ Kᵢⱼ · sin(θⱼ − θᵢ)
+```
+
+**Order parameter.** Average the phasors; `r` is the length of the average:
+```
+r · e^{iψ} = (1/N) Σⱼ e^{iθⱼ}          r = 1 → perfect sync, r ≈ 0 → scattered
+```
+
+**Local synchrony** (magnitude of the two-oscillator order parameter):
+```
+Sᵢⱼ = |½(e^{iθᵢ} + e^{iθⱼ})| = |cos((θⱼ − θᵢ)/2)|
+```
+1 in phase, 0 anti-phase, smooth between. (The v1.0 bug used `|e^{iΔθ}| ≡ 1`.)
+
+**Hebbian coupling update** (leaky integration — drive up by synchrony×reward,
+leak down by decay):
+```
+dKᵢⱼ/dt = η · Sᵢⱼ · R − λ · Kᵢⱼ                (then clipped to [0, K_max])
+```
+
+---
+
+## Key relationships (the ones that matter)
+
+**Fixed point of the coupling.** Where drive balances decay:
+```
+K*ᵢⱼ = η · Sᵢⱼ · R / λ            (approach is exponential, timescale τ = 1/λ)
+```
+→ coupling is **linear in both synchrony and reward**; higher-synchrony pairs
+earn proportionally stronger connections.
+
+**Saturation bound.** Sustained reward above this pins coupling at the ceiling
+and erases the synchrony gradient (**iter 2**):
+```
+R_sat = K_max · λ / η
+```
+
+**Critical coupling** (base Kuramoto synchronization onset, mean-field):
+```
+Kc = 2 / (π · g(0))
+Gaussian frequencies N(0, σ²):  Kc = 2σ·√(2/π) ≈ 1.596 σ      (iter 1: measured 1.60)
+```
+
+**Modular contrast under per-node reward.** The reward *cancels* — only
+synchrony sets the ratio (**iter 4**):
+```
+K*_within / K*_cross = (S_within · R) / (S_cross · R) = S_within / S_cross
+```
+→ global / local / hybrid reward give the *same* modular contrast; per-node
+reward cannot create modules. Per-**pair** reward breaks the cancellation
+(**iter 5**).
+
+---
+
+## Reward options
+
+| Mode | Form | Effect |
+|------|------|--------|
+| Global | `R = r − r_baseline` | one scalar for all pairs; **bistable** (runaway/collapse, iter 3); stores ~1 bit |
+| Local (per-node) | `Rᵢ = r_local(i) − baseline`, mapped to pairs `Rᵢⱼ = (Rᵢ+Rⱼ)/2` | cancels from within/cross ratio → **no modules** (iter 4) |
+| Per-pair (gated) | `Rᵢⱼ = Sᵢⱼ − θ_S` | genuine per-link credit → **recovers modules** (iter 5) |
+
+`r_local(i) = |Σⱼ Kᵢⱼ e^{iθⱼ}| / Σⱼ Kᵢⱼ` — coupling-weighted local field coherence (endogenous).
+
+---
+
+## Derived metrics (CPAF-facing)
+
+**Connectivity entropy** (normalize first — `K` is not a probability):
+```
+pᵢⱼ = Kᵢⱼ / Σ Kᵢⱼ            H(K) = −Σ pᵢⱼ log pᵢⱼ
+```
+
+**Plasticity index** (non-zero = still learning):
+```
+P(t) = ‖K(t+Δt) − K(t)‖ / Δt
+```
+
+**Modularity** (weighted Newman, needs a partition `g`):
+```
+Q = (1/2m) Σᵢⱼ [Kᵢⱼ − kᵢkⱼ/2m] · δ(gᵢ, gⱼ)      kᵢ = Σⱼ Kᵢⱼ,  2m = Σᵢⱼ Kᵢⱼ
+```
+
+**Synaptic normalization** (coupling competition — the modularity amplifier):
+```
+Kᵢⱼ ← budget · Kᵢⱼ / Σⱼ Kᵢⱼ           (then symmetrize; inert without a per-pair signal)
+```
+
+---
+
+## Verdicts at a glance
+
+| Claim | Status | Iter |
+|-------|--------|------|
+| `r` measures synchronization; transition at `Kc` | ✅ confirmed vs theory | 1 |
+| Hebbian rule → `K* = ηSR/λ`, bounded | ✅ matches closed form | 2 |
+| Closed loop with global reward | ⚠️ bistable, stores ~1 bit | 3 |
+| "Functional networks emerge" (baseline) | ❌ refuted (homogenizes) | 4 |
+| Modules recoverable with per-pair reward + competition | ✅ rescued | 5 |
+| `r ≥ 0.7 = conscious` threshold | ⚠️ free parameter, not derived | — |
+| Damage recovery / self-healing | ❔ not yet tested | — |
+
+## Default parameters
+
+`η = 0.01`, `λ = 0.005` (τ = 200), `K_max = 2`, `dt = 0.05`. Keep sustained
+reward `< R_sat = K_max·λ/η`. Per-pair threshold `θ_S ≈ 0.6`.
