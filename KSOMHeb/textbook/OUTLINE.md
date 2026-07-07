@@ -31,10 +31,13 @@ verified, so the textbook never runs ahead of the evidence.
 | 4 | Is connectivity really memory? | Modularity Q; why per-node reward cancels; self-entrainment; the homogenization failure | `iter4` | ✅ `04_is_connectivity_memory.md` |
 | 5 | What actually makes modules | Coupling competition / synaptic normalization; the biological limiting mechanisms; does modularity recover? | `iter5` | ✅ `05_what_makes_modules.md` |
 | 6 | Using K-SOM-Heb as a CPAF metric | Which metrics are sound (r, plasticity P), which need care (H(K)), which are refuted as-specified (Q); operating envelope (R_sat, bistability); the quant/qual seams | synthesis | ✅ `06_using_it_as_a_cpaf_metric.md` |
+| 7 | Grounding the threshold | Two-oscillator reduction; saddle-node locking at Kc=\|Δω\|/2; the derived coherence onset 1/√2 ≈ 0.707; the N=2-only caveat; first handshake with CPAF's null→deviation | `iter6` | ✅ `07_grounding_the_threshold.md` |
 | A | Appendix: bugs we caught | The v1.0 errors (S≡1, per-step blend, invalid entropy, STDP gaps) as cautionary tales in reading math against code | `verify_bugs.py`, doc v1.1 changelog | ✅ `A_bugs_we_caught.md` |
 
-**Full draft complete (all chapters).** Next phase: revision passes hunting the
-quant/qual seams catalogued in Chapter 6 §6.3.
+**Draft through Ch 7 complete.** Two live threads: (1) revision passes hunting
+the quant/qual seams (Ch 6 §6.3); (2) the CPAF basic-layer mapping
+(`../CPAF_MAPPING_NOTES.md`) — turning oscillator primitives into deviation /
+interaction / entity, which will seed later chapters.
 
 ## Cross-cutting threads to keep visible
 
