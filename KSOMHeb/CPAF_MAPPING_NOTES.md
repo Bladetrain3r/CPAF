@@ -22,7 +22,7 @@ may be a concrete substrate for CPAF's basic layer.
 | **Deviation** (most fundamental change) | A pair crossing its locking threshold `Kc = \|Δω\|/2`: drift → locked, noise → structure. The saddle-node bifurcation. | **operationalized** (iter 6) |
 | **Interaction** | The coupling `Kᵢⱼ` itself — the channel of influence between two entities (the edge). | clean; the "vertex pair" |
 | **Entity** | An oscillator (vertex); *recursively*, a locked cluster/module acting as one coherent unit (iter 5) — an emergent higher-order entity. | partial; recursion untested |
-| **Information** | ? Mutual predictability of a locked pair (knowing one constrains the other). Hardest one — links to Ch 6 seam #1 (coherence ≠ information). | **open — needs a measure** |
+| **Information** | Mutual information `I(θᵢ; θⱼ)` between two phases. iter 7: it climbs from ~0 to ~2.7 bits across the locking threshold — a *deviation creates information* — and, crucially, tracks differently from `r` (moderate `r` with ~0 MI in deep drift). | **operationalized** (iter 7); resolves seam #1 |
 | **System** | The whole graph of entities + interactions; collective `r`, modularity `Q`. | plausible; iter 3–5 |
 
 ## Tensions to resolve (the honest list)
@@ -31,10 +31,12 @@ may be a concrete substrate for CPAF's basic layer.
    its own object? Working split: interaction = the channel exists (a coupling);
    deviation = that channel produces a *sustained state change* (locking). The
    edge is the noun; the locking event is the verb.
-2. **Information is unmeasured.** A trivially locked pair (identical phases)
-   carries little information; a *structured* relationship carries more. We have
-   no information quantity yet — coherence `r` is not it (seam #1). This is the
-   gap most worth closing.
+2. ~~**Information is unmeasured.**~~ **Closed (iter 7):** mutual information
+   `I(θᵢ; θⱼ)` is the measure — it appears at the deviation point and diverges
+   from `r`. Remaining nuance: MI cannot tell a genuine *interaction* from a
+   *common drive* (both raise MI); distinguishing them needs a *directed*
+   measure (transfer entropy). That is the next refinement, and it connects to
+   tension #4 (directionality).
 3. **Null = K→0 or K below Kc?** These differ: a system rich in sub-threshold
    couplings is "quiet" but not structureless. Suggests null state is about the
    absence of *deviations*, not the absence of *interactions*.
@@ -46,10 +48,9 @@ may be a concrete substrate for CPAF's basic layer.
 
 - **Deviation (mostly done):** formalize "a deviation = a pair crossing `Kc`";
   iter 6 already gives the threshold and the `1/√2` onset.
-- **Information (new):** measure mutual information (or transfer entropy) between
-  two oscillators' states as `K` sweeps through `Kc`. Does information rise at the
-  deviation point? Does a *structured* input carry more than a uniform one at the
-  same `r`? This simultaneously tests the Information mapping and attacks seam #1.
+- ~~**Information:**~~ **done (iter 7)** — MI rises at `Kc`; coherence ≠
+  information confirmed. *Follow-up:* transfer entropy to separate genuine
+  interaction from common drive (directed information).
 - **Emergent entity (new):** coarse-grain a locked cluster and test whether it
   behaves as a single effective oscillator (effective phase/frequency) — the
   recursion CPAF leans on.

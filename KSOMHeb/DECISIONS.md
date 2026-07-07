@@ -19,6 +19,7 @@ legible. Newest decisions at the bottom. Statuses: **locked** (settled),
 | D10 | Iteration 5 tests **coupling competition (synaptic normalization)** as the missing ingredient for modularity, alongside a genuinely per-pair reward | iter 4 proved per-node reward cancels from the within/cross ratio; competition is the candidate fix | locked |
 | D11 | The recommended modular variant is **per-pair synchrony-gated reward** `R_ij = S_ij − thr`, optionally with **synaptic normalization** | iter 5: per-pair reward recovers modules (competition alone is inert; together they are best). This is the constructive fix for the iter-4 refutation | locked |
 | D12 | The per-pair coherence threshold has a **derived** value `1/√2 ≈ 0.707` (two-oscillator locking onset), not a hand-picked one | iter 6: `Kc(pair)=\|Δω\|/2`, `R_onset=1/√2`. Grounds the `θ_S` gate and partially the `r≥0.7` line (per-pair only; global-`r` transition is continuous) | locked |
+| D13 | **Mutual information** `I(θᵢ;θⱼ)` is the "information" measure; it is distinct from coherence `r` | iter 7: MI appears at the deviation point (`Kc`) and diverges from `r` (moderate `r`, ~0 MI in deep drift). Resolves seam #1. Follow-up: transfer entropy for directed interaction vs common drive | locked |
 
 ## Findings that drove decisions
 
@@ -40,3 +41,7 @@ legible. Newest decisions at the bottom. Statuses: **locked** (settled),
   saddle-node bifurcation) with order parameter exactly `1/√2 ≈ 0.707` at onset.
   Gives a principled per-pair coherence threshold matching the hand-picked 0.7;
   candidate grounding for CPAF's noise→deviation boundary (per-pair only so far).
+- **iter 7 — information at the deviation.** Mutual information between two
+  noisy phases climbs ~0 → ~2.7 bits across `Kc`: a deviation *creates* shared
+  information. And `r` overreads (66% of max in deep drift while MI is 2%), so
+  coherence ≠ information — seam #1 resolved. MI is the "information" primitive.

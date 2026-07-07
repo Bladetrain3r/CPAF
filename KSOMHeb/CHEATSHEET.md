@@ -145,6 +145,8 @@ Kᵢⱼ ← budget · Kᵢⱼ / Σⱼ Kᵢⱼ           (then symmetrize; inert 
 | Modules recoverable with per-pair reward + competition | ✅ rescued | 5 |
 | `r ≥ 0.7 = conscious` threshold | ⚠️ free parameter globally, but `1/√2` is derived per-pair | 6 |
 | Two-oscillator locking at `Kc=\|Δω\|/2`, onset `R=1/√2` | ✅ confirmed (reduction, threshold, onset) | 6 |
+| Coherence `r` ≠ information | ✅ demonstrated: deep-drift r≈0.64 but MI≈0; MI is the discriminating variable | 7 |
+| Mutual information `I(θᵢ;θⱼ)` as the "information" measure | ✅ climbs ~0 → ~2.7 bits across `Kc` (a deviation creates information) | 7 |
 | Damage recovery / self-healing | ❔ not yet tested | — |
 
 ## Default parameters

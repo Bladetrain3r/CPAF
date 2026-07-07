@@ -41,8 +41,10 @@ KSOMHeb/
 ## Open work queue
 
 ### A. Quant/qual seams (from textbook Ch 6 §6.3) — the revision agenda
-1. **Synchrony ≠ integration** — `r=1` can be coherent but information-empty.
-2. **The `r ≥ 0.7` threshold is borrowed, not derived.** ← see the hot lead below.
+1. ~~**Synchrony ≠ integration**~~ **addressed (iter 7):** mutual information
+   diverges from `r`; `r` overreads. (Full "integration" still richer than MI.)
+2. ~~**The `r ≥ 0.7` threshold is borrowed**~~ **grounded per-pair (iter 6):**
+   `1/√2` locking floor. Global-`r` threshold still open.
 3. **One-bit memory vs "connectivity is memory"** — qual claim vs the elaborate machinery.
 4. **Plasticity `P` is double-edged** — low `P` = "dead" or "settled"; ambiguous alone.
 5. **Substrate-neutrality assumed, not shown** — only abstract oscillators run so far.
