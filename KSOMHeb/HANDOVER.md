@@ -50,36 +50,25 @@ KSOMHeb/
 ### B. Untested claims
 - **Damage recovery / graceful degradation** — asserted in the doc, never simulated.
 
-### C. HOT LEAD — a principled threshold from the phase transition (confirmed math)
+### C. Derived threshold from the phase transition — DONE (iteration 6, passing)
 Origin: the two-oscillator "entangle/disentangle" script (Opus3/GPT3-era,
-re-derived here). For **two** oscillators with detuning `Δω = ω₁ − ω₂`, the pair
-phase difference obeys `ψ' = Δω − 2K·sin ψ`, which has a stable locked solution
-**iff**
+preserved as `verification/twoosc_entangle_demo.py`). The pair reduces exactly to
+`ψ' = Δω − 2K·sin ψ`, a **saddle-node bifurcation** at `Kc = |Δω|/2`, with the
+order parameter at onset exactly `1/√2 ≈ 0.7071`. All verified in
+`verification/iter6_locking_threshold.py` (reduction vs full sim; `Kc = |Δω|/2`
+across detunings; the `1/√2` onset; drift-below/lock-above; noise smearing).
 
-```
-K ≥ Kc = |Δω| / 2          (a saddle-node bifurcation — the "phase transition")
-```
+**Result:** a *derived* per-pair coherence threshold — a pair phase-locks only if
+`Sᵢⱼ > 1/√2 ≈ 0.707` — matching the architecture's hand-picked `r ≥ 0.7`.
+**Caveat:** exact for N=2 only; the global N-oscillator transition is continuous
+(`Kc = 2/(π g(0))`, no special 0.7). So `1/√2` grounds a **per-pair** threshold
+(e.g. the `θ_S` gate in iter 5), not automatically a global-`r` one.
 
-Numerically confirmed (`/tmp/twoosc.py`, to be promoted to `iter6`): for the
-script's detuning `|Δω| = 0.1885`, locking switches on exactly at
-`Kc = 0.0942`. **And the order parameter at the onset of locking is exactly**
-
-```
-R_onset = |cos(ψ*/2)| = 1/√2 ≈ 0.7071      (ψ* = π/2 at the bifurcation)
-```
-
-The locked branch always has `R ∈ (1/√2, 1]`; below `1/√2` a pair **cannot**
-stay locked. Since our per-pair synchrony `Sᵢⱼ` **is** this `R`, this gives a
-*derived* (not hand-picked) threshold: **`Sᵢⱼ > 1/√2 ≈ 0.707` is the condition
-for a pair to phase-lock.** It coincides with the architecture's `r ≥ 0.7` line
-— strong evidence that 0.7 is not arbitrary at the pairwise level.
-
-**Caveats (keep honest):** this is exact for N=2. The *global* N-oscillator
-transition is continuous (2nd-order) with `Kc = 2/(π g(0))` and no special 0.7 —
-so `1/√2` justifies a **per-pair** threshold, not automatically a global-`r` one.
-Noise smears the sharp bifurcation. Next step: make this `iter6`, then decide
-whether the pairwise `1/√2` can/should ground CPAF's noise→deviation boundary and
-the consciousness threshold (seam #2).
+**Still open (the conceptual follow-up):** whether the pairwise `1/√2` should
+anchor CPAF's **noise→deviation** boundary (seam #2), and whether a global-`r`
+threshold can be derived at all. Candidate next steps: (i) textbook **Chapter 7**
+on grounding the threshold; (ii) an iteration mapping the noise→deviation
+transition explicitly (coupling vs frequency-spread-plus-noise).
 
 ## How to pick up
 

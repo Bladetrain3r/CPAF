@@ -18,6 +18,7 @@ legible. Newest decisions at the bottom. Statuses: **locked** (settled),
 | D9 | Architecture doc's **modularity claim** updated (v1.2): "refuted as specified, rescuable with per-pair reward + competition" (iter 4–5) | Simulation showed pure Hebbian coupling homogenizes; per-pair credit recovers modules. Signed off; doc edited | locked |
 | D10 | Iteration 5 tests **coupling competition (synaptic normalization)** as the missing ingredient for modularity, alongside a genuinely per-pair reward | iter 4 proved per-node reward cancels from the within/cross ratio; competition is the candidate fix | locked |
 | D11 | The recommended modular variant is **per-pair synchrony-gated reward** `R_ij = S_ij − thr`, optionally with **synaptic normalization** | iter 5: per-pair reward recovers modules (competition alone is inert; together they are best). This is the constructive fix for the iter-4 refutation | locked |
+| D12 | The per-pair coherence threshold has a **derived** value `1/√2 ≈ 0.707` (two-oscillator locking onset), not a hand-picked one | iter 6: `Kc(pair)=\|Δω\|/2`, `R_onset=1/√2`. Grounds the `θ_S` gate and partially the `r≥0.7` line (per-pair only; global-`r` transition is continuous) | locked |
 
 ## Findings that drove decisions
 
@@ -35,3 +36,7 @@ legible. Newest decisions at the bottom. Statuses: **locked** (settled),
   recovers the modules (contrast 1.24→2.16, Q 0.045→0.156); competition alone
   is inert but amplifies per-pair to contrast 3.32 / Q 0.262. The doc's ambition
   is reachable with ingredients it omits.
+- **iter 6 — a derived threshold.** Two oscillators lock at `Kc=|Δω|/2` (a
+  saddle-node bifurcation) with order parameter exactly `1/√2 ≈ 0.707` at onset.
+  Gives a principled per-pair coherence threshold matching the hand-picked 0.7;
+  candidate grounding for CPAF's noise→deviation boundary (per-pair only so far).

@@ -76,6 +76,17 @@ Kc = 2 / (π · g(0))
 Gaussian frequencies N(0, σ²):  Kc = 2σ·√(2/π) ≈ 1.596 σ      (iter 1: measured 1.60)
 ```
 
+**Two-oscillator locking** (exact; the phase-difference `ψ = θ₁−θ₂` reduces to
+`dψ/dt = Δω − 2K·sin ψ`, a saddle-node bifurcation). **iter 6**:
+```
+Kc(pair) = |Δω| / 2                              locked iff K ≥ Kc
+locked ψ*: sin ψ* = Δω/(2K),  ψ* ∈ (−π/2, π/2)   R = |cos(ψ*/2)| ∈ (1/√2, 1]
+R at onset (K = Kc): 1/√2 ≈ 0.7071               ⟹ a pair locks only if S_ij > 1/√2
+```
+A **derived** coherence threshold: `1/√2` matches the architecture's hand-picked
+`r ≥ 0.7` — but exact only per-pair (N=2); the global-`r` transition is
+continuous with no special 0.7. Noise smears the bifurcation.
+
 **Modular contrast under per-node reward.** The reward *cancels* — only
 synchrony sets the ratio (**iter 4**):
 ```
@@ -132,7 +143,8 @@ Kᵢⱼ ← budget · Kᵢⱼ / Σⱼ Kᵢⱼ           (then symmetrize; inert 
 | Closed loop with global reward | ⚠️ bistable, stores ~1 bit | 3 |
 | "Functional networks emerge" (baseline) | ❌ refuted (homogenizes) | 4 |
 | Modules recoverable with per-pair reward + competition | ✅ rescued | 5 |
-| `r ≥ 0.7 = conscious` threshold | ⚠️ free parameter, not derived | — |
+| `r ≥ 0.7 = conscious` threshold | ⚠️ free parameter globally, but `1/√2` is derived per-pair | 6 |
+| Two-oscillator locking at `Kc=\|Δω\|/2`, onset `R=1/√2` | ✅ confirmed (reduction, threshold, onset) | 6 |
 | Damage recovery / self-healing | ❔ not yet tested | — |
 
 ## Default parameters
