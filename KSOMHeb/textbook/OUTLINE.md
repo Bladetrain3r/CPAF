@@ -35,18 +35,22 @@ verified, so the textbook never runs ahead of the evidence.
 | 8 | The first bridge: oscillators as CPAF primitives | The graph reframing (entity=vertex, interaction=edge); deviation=locking event (grounded, iter6); information=MI born at the crossing (grounded, iter7); null=absence of deviations not interactions; the still-conjectural spans | `iter6`, `iter7` | ✅ `08_bridge_to_cpaf.md` |
 | 9 | Interaction vs common cause | Transfer entropy TE(X→Y)=I(Y_{t+τ};X_t\|Y_t): MI blind to the causal graph (confirmed); TE directional (one-way coupling → TE(2→1)=0, grounding asymmetric Kᵢⱼ) but *also* fooled by a hidden common drive (prediction ≠ causation); conditional TE\|Z resolves it as a double dissociation. The ladder: related < directed < connected, priced in observability | `iter8` | ✅ `09_interaction_vs_common_cause.md` |
 | 10 | Entity as cluster | The recursion, cashed: coarse-grain a locked cluster to (Θ, ρ); macro dynamics reduce to iter 6's pair equation with ω_eff=ω̄ and **K_eff=κρ** (coupling discounted by internal coherence, confirmed to 2.5%); the 1/√2 locked branch recurs one level up; **macro closure** TE(member→Θ\|Θ)≈0 for locked vs leaky for unlocked. Entity-hood is *created* by the locking transition | `iter9` | ✅ `10_entity_as_cluster.md` |
+| I | Intermission — the view from mid-bridge | Mid-course synthesis (no new results): the ingredient ledger (each concept = previous system + one thing); the CPAF dictionary as it stands, graded; the recurring motifs (one bifurcation three gifts; certificates cost context / entities make observability cheap; derive thresholds, and read checks against the math); the honest ledger of what's still owed. Base camp before the book-wide revision pass | synthesis of iter 1–9 | ✅ `I_intermission.md` |
 | A | Appendix: bugs we caught | The v1.0 errors (S≡1, per-step blend, invalid entropy, STDP gaps) as cautionary tales in reading math against code | `verify_bugs.py`, doc v1.1 changelog | ✅ `A_bugs_we_caught.md` |
 
-**Draft through Ch 10 complete.** Live threads: (1) remaining quant/qual seams
-(Ch 6 §6.3: one-bit memory, plasticity's double edge, substrate-neutrality);
-(2) the CPAF basic-layer mapping (`../CPAF_MAPPING_NOTES.md`) — deviation,
-information (graded MI/TE/conditional-TE), and now entity-as-cluster are
-grounded. Next candidates: re-run the iter-9 entity checks on a *grown*
-iter-5 module (splicing the two threads); the entity-hood operating envelope
-(absorption vs fragmentation under strong drive — Ch 10's exercise); a
-learning rule that *produces* asymmetric `Kᵢⱼ` (Ch 9 gives directed
-interactions a readout but not an origin); interaction-vs-deviation as the
-last unbuilt Ch 8 span.
+**Draft through Ch 10 + Intermission complete.** Committed next step: **the
+splice** (likely iter 10 / Ch 11) — grow modules with iter-5's machinery
+(per-pair reward + competition), then run iter-9's four entity criteria on
+them unadjusted, predicting each grown module's `κc` from its *measured* ρ.
+Caveat to carry: iter-5 modules recover structure seeded in the frequency
+clusters, so the claim under test is "experience-carved modules are
+entities," not "entities from nothing." Other live threads: entity operating
+envelope (absorption vs fragmentation — Ch 10's exercise); a learning rule
+that *produces* asymmetric `Kᵢⱼ`; interaction-vs-deviation (last unbuilt
+Ch 8 span); the Ch 6 §6.3 seams (one-bit memory, plasticity's double edge,
+substrate-neutrality); the book-wide revision pass once each chapter has a
+sound draft (synchronize earlier/later chapters; the Intermission is its
+staging note).
 
 ## Cross-cutting threads to keep visible
 

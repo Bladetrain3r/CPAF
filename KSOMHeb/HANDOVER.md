@@ -9,7 +9,10 @@ new collaborator, or you after a break. For the deep re-entry, pair this with
 - **Merged to `master`** at commit `c929c10` (the verification arc through
   iter 5 + textbook Ch 0–6). Everything after is follow-up work on branches.
 - The model is **verified through iteration 9**; the textbook runs **Ch 0–10 +
-  Appendix A**; the interactive visualiser is parity-checked and working.
+  Intermission + Appendix A**; the interactive visualiser is parity-checked
+  and working. The Intermission (`textbook/I_intermission.md`) is the
+  mid-course synthesis — read it for the fastest conceptual re-entry into the
+  bridge arc.
 - The current arc is the **CPAF basic-layer bridge** (Ch 8–10): deviation,
   information (graded: related < directed < connected), and the
   entity-as-cluster recursion are all grounded. The bridge's remaining
@@ -90,8 +93,10 @@ asymmetric `K`; the global-`r` threshold.
 1. `python3 verification/iter9_entity_as_cluster.py` — confirm the env runs
    (needs numpy + matplotlib; ~1 min, should print ALL PASS).
 2. Skim this file + `CHEATSHEET.md` + `CPAF_MAPPING_NOTES.md` + `DECISIONS.md`.
-3. Choose from the work queue. Likely next: entity checks on a grown iter-5
-   module, or the interaction-vs-deviation span.
+3. Choose from the work queue. Committed next: **the splice** — grow modules
+   with iter-5's machinery, run iter-9's entity criteria on them unadjusted
+   (predict each grown module's `κc` from its measured ρ). See the
+   Intermission §I.5 for the framing.
 
 ## Conversation context (how we got here)
 
