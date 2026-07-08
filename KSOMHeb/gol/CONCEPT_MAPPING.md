@@ -90,31 +90,62 @@ collar. Two consequences oscillators could not produce:
   *entity* persists. Testing whether the closure machinery tracks a moving
   boundary is a genuinely new question (README, iteration C).
 
-### Deviation — **strained** (the interesting tension)
-This is where the substrates genuinely differ, and naming it honestly matters.
-In oscillators a deviation was crossing a *tunable* threshold `Kc` — a
-bifurcation you reach by turning a knob. **Conway is deterministic and
-parameter-free: there is no `K` to turn.** So the "threshold-crossing" picture
-does not transfer directly. Three candidate readings, to be chosen between by
-experiment:
-1. **Birth as the atomic deviation.** The literal B3 birth of a cell — null
-   (dead) → structure (alive). Clean but perhaps *too* atomic.
-2. **Settling as a temporal deviation.** A random "soup" boils (active, no
-   persistent structure = a dynamic null) and eventually *settles* into ash
-   (still lifes + oscillators + escaping gliders). The transition from
-   chaotic-active to settled-structured is a deviation in *time* rather than in
-   a control parameter — arguably the closest analog to drift→lock.
-3. **Recover a tunable threshold** by leaving pure Conway: initial density `ρ`,
-   a stochastic flip-rate, or the rule-space of "Larger than Life" / Domany–
-   Kinzel CA all have genuine density/activity **phase transitions** (directed-
-   percolation class). This buys back the bifurcation picture at the cost of
-   "it's not Conway any more."
+### Deviation — **reframed: a connection-threshold crossing** (was "strained")
+This looked like the weakest row — in oscillators a deviation was crossing a
+*tunable* threshold `Kc`, and Conway is deterministic and parameter-free, with
+no `K` to turn. But that framing missed the point (Ziggy, working it through):
+**the GoL rule is itself a function of connection count.** B3/S23 says a cell is
+born iff its live-neighbour count (its *connections*) = 3, and survives iff
+connections ∈ {2, 3}. So:
 
-The plan (README) leans on (1)+(2) for pure Conway and flags (3) as the
-principled way to recover the oscillator-style bifurcation if we want a true
-threshold. **The tension itself is a finding**: it suggests CPAF's "deviation"
-has (at least) two faces — a parameter-driven bifurcation and a
-self-organized settling — that the oscillator substrate conflated.
+> A **deviation** is a cell's **connection count crossing a rule threshold** —
+> the birth threshold (→3) or out of the survival band ({2,3}). The threshold
+> isn't gone; it's *on connectivity*, baked into the rule. This is the direct
+> structural analog of an oscillator pair locking when coupling crosses `Kc`:
+> both are **connectivity-threshold events**.
+
+This is a graph-shaped reading, which keeps faith with the whole oscillator
+bridge (couplings = edges). Treat live cells as nodes and Moore-adjacencies as
+edges: a cell's "connections" is its degree; the rule fires on degree; a
+deviation is a degree-threshold crossing.
+
+**The trajectory view (deviation is about change, not state).** The aggregate
+measure is *activity* = cells that flip state per step (equivalently, the count
+of connection-threshold crossings). This separates the concepts cleanly and is
+verified (`experiments/`, and the quick counts below):
+
+| state | connections (internal edges) | activity (deviation) |
+|-------|------------------------------|----------------------|
+| empty (**null**) | 0 | 0 — no connections, no deviations |
+| **still life** (block: 6 edges) | > 0, constant | **0 — connected but NOT deviating** |
+| **oscillator / spaceship** (blinker: 2,2 · glider: 5,6,5,6) | periodic | periodic, **net-zero over one period** |
+| **methuselah / chaos** | churning | sustained, non-cancelling — until it *settles* |
+
+Measured note: constant connection count is **blinker-specific** (edges `[2,2]`),
+not a general entity property — the toad is `[10,4]`, the glider `[5,6,5,6]`.
+The robust invariant is **periodicity**: every entity's connection trajectory
+returns, so *net connection-change over one period = 0*. "Settling" (a
+methuselah's chaos decaying to a periodic floor) is the temporal deviation made
+measurable — the drift→lock analog, in time.
+
+**Why this is a gift, not a strain.** It *unifies deviation with interaction*
+(the Ch 12 noun/verb split, native here): the **edges are the interactions**
+(connectivity that exists), the **changes in edges are the deviations** (the
+events). A still life is maximally connected with zero activity — *connected but
+not deviating* — exactly the iter-11 dissociation (influence-structure without a
+deviation), sitting in a static block.
+
+**Honest caveats.** (a) *Not globally conserved* — GoL is irreversible, so
+net-zero-per-period is an entity-level, **closure-dependent** property, not a
+grid-wide law (which ties deviation back to closure). (b) *Deviations become
+atomic and ubiquitous*, not rare macro-events — a genuine shift from the
+oscillator bifurcation. Reconciling reading (to test, not assert): the
+oscillator bifurcation is a *coordinated cascade* of atomic connection-
+deviations; GoL exposes the atom. (c) *If a sweepable bifurcation is wanted*,
+**density `ρ` is the connectivity knob** — it sets the grid-wide distribution of
+connection counts, which the rule then thresholds; so the "stochastic-CA detour"
+and this connection reading are one thing from two sides. You don't need to tune
+to *define* deviation (it's per-event), only to *sweep* it.
 
 ### Interaction — **gift** (richer than oscillators could be)
 Two coupled oscillators interact symmetrically and non-destructively — influence

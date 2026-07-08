@@ -71,14 +71,18 @@ Sequenced bottom-up, like the verification suite. Status ☐ = planned.
 | G1 | **Engine + entity zoo** ✅ (`gol.py`) | B3/S23 correct; the pattern zoo classifies to the right periods & velocities (verified: block p1, blinker/toad/beacon p2, pulsar p3, pentadecathlon p15, glider & LWSS p4 spaceships) | entity (the objects) |
 | G2 | **Entity detector** ✅ (`gol.entities`) | connected components + isolated-evolution classification = an operational entity finder (kind / period / displacement) | entity, closure (isolation) |
 | G3 | **Closure = isolation, incl. moving boundaries** ☐ | an isolated pattern's future is self-determined (predict from its own cells alone); test that closure *tracks a glider's translating boundary*; measure closure breaking down as two entities approach a collision | closure (the gift: spatial + moving) |
-| G4 | **Deviation: birth vs settling** ☐ | resolve the tension (`CONCEPT_MAPPING.md`): is a deviation an atomic birth, or the soup→ash *settling* transition? Measure a methuselah (R-pentomino/acorn) settling; characterize the temporal "deviation" | deviation (the strained span) |
+| G4 | **Deviation = a connection-threshold crossing** ☐ | test the reframed reading (`CONCEPT_MAPPING.md`): deviation = a cell's connection count crossing the B3/S23 rule threshold; *activity* (flips/step) as the aggregate. Predictions to break: null & still-life activity = 0 (still life is *connected but not deviating*); oscillator/spaceship activity is periodic with **net-zero connection-change per period**; a methuselah's activity **decays to a periodic floor** as it settles (the drift→lock analog in time). Optional: sweep density ρ (the connectivity knob) for a real bifurcation | deviation (now a gift, not strained) |
 | G5 | **Collision taxonomy: asymmetric interactions** ☐ | catalogue glider+X outcomes (survive / annihilate / construct); the **eater** as the maximally asymmetric interaction; do different-period entities collide differently? | interaction (the gift: destructive/creative) |
 | G6 | **Local transfer entropy: gliders as channels** ☐ | reproduce Lizier's result (gliders carry TE) with *our* estimator; test the *related < directed < connected* ladder, using a cell's 8 neighbours as the finite, complete confounder set (conditional TE) | information (the ladder, in CA) |
 | G7 | **Cross-substrate synthesis** ☐ | the writeup: which dictionary rows reproduced, which strained, which GoL extended beyond oscillators. Grade substrate-neutrality on the evidence | the whole bet |
 
-Optional tunable-threshold detour (if G4 wants a real bifurcation): a
-stochastic/density-parameterized CA (Domany–Kinzel / "Larger than Life") to
-recover the oscillator-style phase transition — flagged in `CONCEPT_MAPPING.md`.
+Key reframing (Ziggy): **deviation = a connection-threshold crossing**, since
+the B3/S23 rule is itself a function of each cell's connection count. This
+resolves what looked like the weakest row — the threshold isn't absent, it's on
+*connectivity*, baked into the rule — and unifies deviation with interaction
+(edges = interactions, edge-changes = deviations; a still life is "connected but
+not deviating"). Density ρ is the connectivity knob if a sweepable bifurcation
+is wanted. See `CONCEPT_MAPPING.md` §Deviation.
 
 ## The discipline (inherited from the textbook)
 
