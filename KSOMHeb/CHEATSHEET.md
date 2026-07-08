@@ -172,7 +172,10 @@ macro closure:  TE(θᵢ → Θ | Θ) ≈ 0   (members add nothing beyond Θ; fa
 | Conditional TE (confounder observed) certifies the edge | ✅ double dissociation: spurious TE dies, real edge untouched | 8 |
 | Locked cluster behaves as ONE oscillator (`ω̄`, `K_eff=κρ`, 1/√2 branch) | ✅ thresholds match `\|Δω\|/(2ρ)` to 2.5%; ρ-discount resolved | 9 |
 | Macro closure: members add nothing beyond Θ (entity's interface) | ✅ TE(member→Θ\|Θ)=0.002 locked vs 0.027 unlocked (0.106 control) | 9 |
-| Entity-hood of *grown* (iter-5) modules; fragmentation envelope | ❔ not yet tested (cluster was imposed; single weak probe only) | — |
+| *Grown* (iter-5) modules are entities | ✅ all four criteria pass unadjusted; thresholds to 2.5% from measured ρ | 10 |
+| Closure locates entity boundaries (not just grades them) | ✅ true boundary 0.005 bits vs arbitrary boundary 0.284 on same trajectory | 10 |
+| Entity-to-entity macro information channel | ⚠️ observed (TE(Θ_B→Θ_A\|Θ_A)=0.013 bits), not yet dissected | 10 |
+| Blind boundary *search*; entities from unseeded structure; fragmentation envelope | ❔ not yet tested | — |
 | Damage recovery / self-healing | ❔ not yet tested | — |
 
 ## Default parameters

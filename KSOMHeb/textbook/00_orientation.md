@@ -81,7 +81,7 @@ KSOMHeb/
 If you read nothing else, read `CHEATSHEET.md` (for the math) and
 `verification/README.md` (for what's been proven).
 
-## 0.5 The story so far, in nine experiments
+## 0.5 The story so far, in ten experiments
 
 The model was built and stress-tested bottom-up. Each iteration is a script you
 can re-run; here's the arc and the verdict:
@@ -118,12 +118,17 @@ can re-run; here's the arc and the verdict:
    branch one level up, and macro closure (members add nothing beyond the
    macro-phase); an unlocked collection fails every criterion. ✅ *the
    recursion, grounded.*
+10. **The splice** — modules *grown* by experiment 5's learning machinery pass
+    every entity criterion unadjusted, and closure *locates* the boundary: an
+    arbitrary circle through the same system leaks 50–60× more. ✅ *learning
+    sculpts the boundaries; locking brings them to life.*
 
 That refute-then-rescue in 4→5 is the heart of the project: it's what verifying
-math against code actually buys you. Experiments 6–9 are the second arc — the
-**bridge to CPAF** (Chapters 7–10), where the model's primitives ground CPAF's
-foundational vocabulary: deviation, information, and entity are all now born at
-the same locking transition.
+math against code actually buys you. Experiments 6–10 are the second arc — the
+**bridge to CPAF** (Chapters 7–11), where the model's primitives ground CPAF's
+foundational vocabulary: deviation, information, and entity are all born at the
+same locking transition, and the entities the system grows itself obey the same
+laws as the ones we built by hand.
 
 ## 0.6 If you've been away — start here
 
@@ -136,13 +141,14 @@ Welcome back. Fastest path to being useful again:
 4. Check `verification/README.md`'s findings log and the architecture doc's
    revision history for anything marked open or untested — that's the work queue.
 
-Current frontier (as of the last session): the CPAF bridge (Ch 8–10) has four
+Current frontier (as of the last session): the CPAF bridge (Ch 8–11) has five
 grounded spans — deviation (iter 6), information (iter 7), the
-related/directed/connected information ladder (iter 8), and entity-as-cluster
-(iter 9). Open: the entity checks on a *grown* iter-5 module, the
-entity-hood operating envelope (fragmentation under strong drive),
-interaction-vs-deviation (the last Ch 8 span), **damage recovery / graceful
-degradation**, and the **global-`r` threshold**.
+related/directed/connected information ladder (iter 8), entity-as-cluster
+(iter 9), and grown entities + closure-as-boundary-detector (iter 10). Open:
+interaction-vs-deviation (the last Ch 8 span — committed next), blind
+boundary search, the entity operating envelope (fragmentation under strong
+drive), **damage recovery / graceful degradation**, and the **global-`r`
+threshold**.
 
 ## 0.7 A note on origins
 

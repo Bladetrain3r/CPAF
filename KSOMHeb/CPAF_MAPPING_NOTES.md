@@ -21,7 +21,7 @@ may be a concrete substrate for CPAF's basic layer.
 | **Null state** (maximal entropy) | Incoherent population: random phases, `r ≈ 0`, all pairs below their locking threshold. Note: null ≠ "no couplings" — it's "no *deviations*" (couplings may exist but sit below `Kc`). | plausible; ties to iter 1/6 |
 | **Deviation** (most fundamental change) | A pair crossing its locking threshold `Kc = \|Δω\|/2`: drift → locked, noise → structure. The saddle-node bifurcation. | **operationalized** (iter 6) |
 | **Interaction** | The coupling `Kᵢⱼ` itself — the channel of influence between two entities (the edge). | clean; the "vertex pair" |
-| **Entity** | An oscillator (vertex); *recursively*, a locked cluster coarse-grained to its mean phasor (Θ, ρ). iter 9: a locked cluster passes every entity criterion — one effective frequency ω̄, entrainment per the iter-6 law with `K_eff = κρ` (coupling discounted by internal coherence), the 1/√2 branch one level up, and **macro closure** (TE(member→Θ\|Θ) ≈ 0). An unlocked collection fails all of them: entity-hood is *created* by the locking transition. | **operationalized** (iter 9); grown-module + fragmentation-envelope follow-ups open |
+| **Entity** | An oscillator (vertex); *recursively*, a locked cluster coarse-grained to its mean phasor (Θ, ρ). iter 9: a locked cluster passes every entity criterion — one effective frequency ω̄, entrainment per the iter-6 law with `K_eff = κρ` (coupling discounted by internal coherence), the 1/√2 branch one level up, and **macro closure** (TE(member→Θ\|Θ) ≈ 0). An unlocked collection fails all of them: entity-hood is *created* by the locking transition. iter 10: modules **grown** by iter-5's machinery pass all criteria unadjusted, and closure *locates* the boundary (arbitrary boundary through the same trajectory leaks 50–60× louder) — entities are discoverable from dynamics alone. | **operationalized, incl. grown structure** (iter 9–10); blind boundary search + fragmentation envelope open |
 | **Information** | Mutual information `I(θᵢ; θⱼ)` between two phases. iter 7: it climbs from ~0 to ~2.7 bits across the locking threshold — a *deviation creates information* — and, crucially, tracks differently from `r` (moderate `r` with ~0 MI in deep drift). iter 8 grades the claim into a ladder: MI = *related* (graph-blind), transfer entropy = *directed* (but prediction ≠ causation — a hidden common drive fakes it), conditional TE = *connected* (needs the confounder observed). "Information on an interaction" is a system-level certificate, not a pairwise property. | **operationalized & graded** (iter 7–8) |
 | **System** | The whole graph of entities + interactions; collective `r`, modularity `Q`. | plausible; iter 3–5 |
 
@@ -63,10 +63,15 @@ may be a concrete substrate for CPAF's basic layer.
   the certificate degrade smoothly?); a rule that learns asymmetric `K`.
 - ~~**Emergent entity:**~~ **done (iter 9)** — a locked cluster IS a single
   effective oscillator (ω̄, `K_eff = κρ`, 1/√2 branch, macro closure); an
-  unlocked collection is not. *Follow-ups:* re-run the entity checks on a
-  *grown* iter-5 module; map the absorption-vs-fragmentation envelope under
-  strong drive; what does a cluster with *asymmetric* internal coupling
-  coarse-grain to (the reduction's cancellation needs symmetry)?
+  unlocked collection is not.
+- ~~**Grown entity (the splice):**~~ **done (iter 10)** — iter-5's learned
+  modules pass all entity criteria unadjusted; closure doubles as a boundary
+  *detector* (true vs arbitrary boundary: 50–60×); first entity-to-entity
+  macro TE observed. *Follow-ups:* blind boundary search (closure as an
+  objective); entity-hood along the growth trajectory; entities from
+  unseeded structure; absorption-vs-fragmentation envelope; what does a
+  cluster with *asymmetric* internal coupling coarse-grain to (the
+  reduction's cancellation needs symmetry)?
 
 ## Where this is heading
 
