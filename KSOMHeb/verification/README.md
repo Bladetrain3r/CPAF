@@ -16,9 +16,22 @@ the architecture's own stated properties. Run any of them directly with
 | `iter6_locking_threshold.py` | **A derived coherence threshold.** Two oscillators reduce exactly to `dψ/dt = Δω − 2K sin ψ`, a saddle-node bifurcation at `Kc = \|Δω\|/2` (confirmed across detunings). Order parameter at onset is exactly `1/√2 ≈ 0.707`, so a pair locks only if `S_ij > 1/√2` — a *derived* per-pair threshold matching the hand-picked `r ≥ 0.7`. Noise smears the bifurcation. (`twoosc_entangle_demo.py` is the original seed script) | passing |
 | `iter7_information_transition.py` | **Deviation creates information; coherence ≠ information.** Mutual information between two noisy phases climbs from ~0.05 bits (deep drift) to ~2.7 bits (locked) across `Kc` — a deviation *creates* shared information (an operational measure for CPAF's "information"). Meanwhile `r` is already 66% of its max deep in the drift regime while MI is 2% — `r` overreads relationship where none persists, so **coherence is not information** (Ch 6 seam #1, demonstrated) | passing |
 | `iter8_transfer_entropy.py` | **Interaction vs common cause.** Three causal graphs (coupled 1↔2, common-driven Z→1,Z→2 with zero coupling, one-way 1→2) carry the same MI (1.89/1.51/1.90 bits) — MI is graph-blind. Transfer entropy `TE(X→Y)=I(Y_{t+τ};X_t\|Y_t)` resolves direction (one-way: TE(1→2)=0.16, TE(2→1)=−0.001 — a true null) but is *also* fooled by the hidden common drive (0.036 vs coupled 0.047 — genuine predictive transfer over a nonexistent edge; prediction ≠ causation). Conditional TE\|Z gives a double dissociation: kills the spurious transfer (−0.004), leaves the real edge untouched (0.049). Ladder: related (MI) < directed (TE) < connected (TE\|confounders) | passing |
+| `iter9_entity_as_cluster.py` | **Entity-as-cluster (the CPAF recursion).** Coarse-grain a 5-member cluster to its mean phasor (Θ, ρ). A *locked* cluster passes every entity criterion: one shared frequency (member velocity spread 0.0% of natural); entrains to an external probe exactly per iter 6 with effective coupling **K_eff = κρ** — empirical thresholds within 2.5% of `κc=\|Δω\|/(2ρ)`, and a mid-coherence cluster (ρ=0.92) sides with the ρ-corrected prediction over naive `\|Δω\|/2`; the measured locked branch matches `R=cos(½ arcsin(Δω/2ρκ))` (floor 1/√2) to 0.016; and **macro closure** holds — TE(member→Θ\|Θ)=0.002 bits vs 0.027 for an unlocked collection and 0.106 for a genuine external influence (control). An unlocked collection fails all criteria: entity-hood is *created* by the locking transition | passing |
 
 ## Findings log
 
+- **A cluster's coupling to the world is discounted by its internal coherence
+  (iter9):** for a locked cluster, the macro-phase obeys the two-oscillator
+  equation with `K_eff = κρ` (derived by averaging: internal terms cancel by
+  antisymmetry; the offset spread collapses to the factor ρ), so the
+  entrainment threshold is `κc = |Δω|/(2ρ)` — confirmed to 2.5%, with the ρ
+  discount itself resolved against the naive law. Macro noise shrinks by √M.
+  Macro closure (TE(member→Θ|Θ) ≈ 0) appears at the same locking transition
+  that creates the shared frequency — entities, like deviations and
+  information, are born at the bifurcation. Methods note: don't point-sample
+  a steep branch — "R at onset = 1/√2" fails at any finite grid point (theory
+  itself predicts ~0.80 at the first locked sample); check the whole branch
+  curve instead.
 - **Pairwise TE is prediction, not causation (iter8):** a hidden common driver
   produces *genuine* transfer entropy between two uncoupled oscillators (each
   is a second noisy sensor of the source, so one really does help predict the

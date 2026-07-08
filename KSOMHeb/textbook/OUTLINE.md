@@ -34,16 +34,19 @@ verified, so the textbook never runs ahead of the evidence.
 | 7 | Grounding the threshold | Two-oscillator reduction; saddle-node locking at Kc=\|Δω\|/2; the derived coherence onset 1/√2 ≈ 0.707; the N=2-only caveat; first handshake with CPAF's null→deviation | `iter6` | ✅ `07_grounding_the_threshold.md` |
 | 8 | The first bridge: oscillators as CPAF primitives | The graph reframing (entity=vertex, interaction=edge); deviation=locking event (grounded, iter6); information=MI born at the crossing (grounded, iter7); null=absence of deviations not interactions; the still-conjectural spans | `iter6`, `iter7` | ✅ `08_bridge_to_cpaf.md` |
 | 9 | Interaction vs common cause | Transfer entropy TE(X→Y)=I(Y_{t+τ};X_t\|Y_t): MI blind to the causal graph (confirmed); TE directional (one-way coupling → TE(2→1)=0, grounding asymmetric Kᵢⱼ) but *also* fooled by a hidden common drive (prediction ≠ causation); conditional TE\|Z resolves it as a double dissociation. The ladder: related < directed < connected, priced in observability | `iter8` | ✅ `09_interaction_vs_common_cause.md` |
+| 10 | Entity as cluster | The recursion, cashed: coarse-grain a locked cluster to (Θ, ρ); macro dynamics reduce to iter 6's pair equation with ω_eff=ω̄ and **K_eff=κρ** (coupling discounted by internal coherence, confirmed to 2.5%); the 1/√2 locked branch recurs one level up; **macro closure** TE(member→Θ\|Θ)≈0 for locked vs leaky for unlocked. Entity-hood is *created* by the locking transition | `iter9` | ✅ `10_entity_as_cluster.md` |
 | A | Appendix: bugs we caught | The v1.0 errors (S≡1, per-step blend, invalid entropy, STDP gaps) as cautionary tales in reading math against code | `verify_bugs.py`, doc v1.1 changelog | ✅ `A_bugs_we_caught.md` |
 
-**Draft through Ch 9 complete.** Live threads: (1) remaining quant/qual seams
+**Draft through Ch 10 complete.** Live threads: (1) remaining quant/qual seams
 (Ch 6 §6.3: one-bit memory, plasticity's double edge, substrate-neutrality);
-(2) the CPAF basic-layer mapping (`../CPAF_MAPPING_NOTES.md`) — with
-information now graded (MI/TE/conditional TE, iter 7–8), the next grounded
-span is the **entity-as-cluster recursion probe** (coarse-grain a locked
-module, test whether it entrains as a single effective oscillator → Ch 10
-candidate); a learning rule that *produces* asymmetric `Kᵢⱼ` is a further
-candidate (Ch 9 gives directed interactions a readout but not an origin).
+(2) the CPAF basic-layer mapping (`../CPAF_MAPPING_NOTES.md`) — deviation,
+information (graded MI/TE/conditional-TE), and now entity-as-cluster are
+grounded. Next candidates: re-run the iter-9 entity checks on a *grown*
+iter-5 module (splicing the two threads); the entity-hood operating envelope
+(absorption vs fragmentation under strong drive — Ch 10's exercise); a
+learning rule that *produces* asymmetric `Kᵢⱼ` (Ch 9 gives directed
+interactions a readout but not an origin); interaction-vs-deviation as the
+last unbuilt Ch 8 span.
 
 ## Cross-cutting threads to keep visible
 

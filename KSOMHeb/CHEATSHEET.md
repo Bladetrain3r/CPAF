@@ -142,6 +142,15 @@ Estimator note: bin the *conditioning* variable finely, or correlated sources
 leak sub-bin position and read as phantom transfer; bias-correct against
 time-shifted surrogates of the source.
 
+**Cluster coarse-graining** (entity-as-cluster, iter 9):
+```
+ρ·e^{iΘ} = (1/M) Σᵢ e^{iθᵢ}         Θ = macro-phase,  ρ = internal coherence
+locked cluster ⇒ macro obeys the pair equation with:
+  ω_eff = ω̄ (mean member frequency)   K_eff = κ·ρ   noise_eff = noise/√M
+  entrainment threshold  κc = |ω_z − ω̄| / (2ρ)      (iter 6 law, one level up)
+macro closure:  TE(θᵢ → Θ | Θ) ≈ 0   (members add nothing beyond Θ; fails unlocked)
+```
+
 ---
 
 ## Verdicts at a glance
@@ -161,6 +170,9 @@ time-shifted surrogates of the source.
 | Transfer entropy resolves direction (asymmetric `Kᵢⱼ` readout) | ✅ one-way coupling: TE(2→1) statistically 0, TE(1→2) ≫ 0 | 8 |
 | Pairwise TE certifies the edge | ❌ fooled by hidden common drive (genuine predictive transfer, no edge) | 8 |
 | Conditional TE (confounder observed) certifies the edge | ✅ double dissociation: spurious TE dies, real edge untouched | 8 |
+| Locked cluster behaves as ONE oscillator (`ω̄`, `K_eff=κρ`, 1/√2 branch) | ✅ thresholds match `\|Δω\|/(2ρ)` to 2.5%; ρ-discount resolved | 9 |
+| Macro closure: members add nothing beyond Θ (entity's interface) | ✅ TE(member→Θ\|Θ)=0.002 locked vs 0.027 unlocked (0.106 control) | 9 |
+| Entity-hood of *grown* (iter-5) modules; fragmentation envelope | ❔ not yet tested (cluster was imposed; single weak probe only) | — |
 | Damage recovery / self-healing | ❔ not yet tested | — |
 
 ## Default parameters

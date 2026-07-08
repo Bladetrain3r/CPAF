@@ -8,11 +8,13 @@ new collaborator, or you after a break. For the deep re-entry, pair this with
 
 - **Merged to `master`** at commit `c929c10` (the verification arc through
   iter 5 + textbook Ch 0–6). Everything after is follow-up work on branches.
-- The model is **verified through iteration 8**; the textbook runs **Ch 0–9 +
+- The model is **verified through iteration 9**; the textbook runs **Ch 0–10 +
   Appendix A**; the interactive visualiser is parity-checked and working.
-- The current arc is the **CPAF basic-layer bridge** (Ch 8–9): deviation,
-  information, and now the information *ladder* (related < directed <
-  connected) are grounded; entity-as-cluster recursion is the next span.
+- The current arc is the **CPAF basic-layer bridge** (Ch 8–10): deviation,
+  information (graded: related < directed < connected), and the
+  entity-as-cluster recursion are all grounded. The bridge's remaining
+  conjecture is interaction-vs-deviation (noun/verb); the entity result has
+  grown-module and fragmentation-envelope follow-ups.
 
 ## What exists (the map)
 
@@ -24,15 +26,15 @@ KSOMHeb/
 ├── CPAF_MAPPING_NOTES.md     CPAF ↔ oscillator correspondence, tensions, next probes
 ├── HANDOVER.md               this file
 ├── ksomheb.py                canonical reference implementation
-├── verification/             iter1–iter8, each a runnable script + plot + README
+├── verification/             iter1–iter9, each a runnable script + plot + README
 ├── visualiser/               browser demo (ksomheb.js parity-checked vs the .py)
-└── textbook/                 00–09 + Appendix A, OUTLINE.md
+└── textbook/                 00–10 + Appendix A, OUTLINE.md
 ```
 
 **Fastest orientation:** `CHEATSHEET.md` (math) + `verification/README.md`
 (what's proven) + this file (what's open).
 
-## The story in eight experiments (verdicts)
+## The story in nine experiments (verdicts)
 
 1. **Base synchronization** — reproduces Kuramoto transition (Kc 1.60 vs 1.596). ✅
 2. **Hebbian rule** — matches closed form; found saturation bound `R_sat=K_max·λ/η`. ✅
@@ -45,6 +47,10 @@ KSOMHeb/
    common drive (prediction ≠ causation); conditional TE certifies the edge (double
    dissociation). Ladder: related < directed < connected. ✅⚠️ (the ⚠️ is the honest
    pairwise-TE limitation, itself a finding)
+9. **Entity-as-cluster** — a locked cluster IS one oscillator: shared frequency,
+   iter-6 law with `K_eff = κρ` (2.5%), the 1/√2 branch one level up, and macro
+   closure (members add ~nothing beyond Θ); an unlocked collection fails everything.
+   Entity-hood is created by the locking transition. ✅
 
 ## Open work queue
 
@@ -60,31 +66,32 @@ KSOMHeb/
 ### B. Untested claims
 - **Damage recovery / graceful degradation** — asserted in the doc, never simulated.
 
-### C. The CPAF bridge (Ch 8–9) — grounded spans and the next one
-Grounded so far: **deviation** = an edge crossing `Kc = |Δω|/2` (iter 6, onset
-coherence `1/√2`); **information** = MI born at that crossing (iter 7);
-**information graded** = the ladder *related (MI) < directed (TE) < connected
-(conditional TE)* with the honest finding that pairwise TE is fooled by a
-hidden common cause — prediction ≠ causation — and only conditioning on the
-observed confounder certifies an edge (iter 8, double dissociation). Direction
-itself comes free: a one-way coupling reads `TE(2→1) ≈ 0` exactly, giving the
-asymmetric-`Kᵢⱼ` extension an operational readout.
+### C. The CPAF bridge (Ch 8–10) — grounded spans and what's left
+Grounded: **deviation** = an edge crossing `Kc = |Δω|/2` (iter 6, onset
+coherence `1/√2`); **information** = MI born at that crossing (iter 7),
+graded by iter 8 into the ladder *related (MI) < directed (TE) < connected
+(conditional TE)* — pairwise TE is fooled by a hidden common cause
+(prediction ≠ causation); only conditioning on the observed confounder
+certifies an edge, while direction comes free (`TE(2→1) ≈ 0` for a one-way
+coupling — the asymmetric-`Kᵢⱼ` readout); and **entity** = a locked cluster
+coarse-grained to (Θ, ρ), which obeys the pair law with `K_eff = κρ` and is
+informationally closed at the macro level (iter 9) — entity-hood is created
+by the locking transition.
 
-**Next span (likely iter 9 / Ch 10): entity-as-cluster.** Coarse-grain a locked
-module (iter 5's) into one effective phase/frequency and test whether it
-entrains like a single oscillator — the recursion CPAF leans on, still a
-promissory note (Ch 8 §8.4). Smaller follow-ups: partial observability of the
-confounder (noisy `Z̃` — does the edge-certificate degrade smoothly?); a
-learning rule that *produces* asymmetric `K`; the global-`r` threshold.
+**Remaining spans / follow-ups:** interaction-vs-deviation (noun/verb — the
+last unbuilt Ch 8 span); re-run the iter-9 entity checks on a *grown* iter-5
+module (splices the two threads); the entity operating envelope (absorption
+vs fragmentation under strong drive — Ch 10's exercise); partial
+observability of the confounder (noisy `Z̃`); a learning rule that *produces*
+asymmetric `K`; the global-`r` threshold.
 
 ## How to pick up
 
-1. `python3 verification/iter8_transfer_entropy.py` — confirm the env runs
-   (needs numpy + matplotlib; ~20 s, should print ALL PASS).
+1. `python3 verification/iter9_entity_as_cluster.py` — confirm the env runs
+   (needs numpy + matplotlib; ~1 min, should print ALL PASS).
 2. Skim this file + `CHEATSHEET.md` + `CPAF_MAPPING_NOTES.md` + `DECISIONS.md`.
-3. Choose from the work queue. Likely next: the entity-as-cluster probe
-   (iter 9), which would turn Ch 8's central conjecture into evidence and give
-   the textbook a Chapter 10.
+3. Choose from the work queue. Likely next: entity checks on a grown iter-5
+   module, or the interaction-vs-deviation span.
 
 ## Conversation context (how we got here)
 

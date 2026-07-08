@@ -81,7 +81,7 @@ KSOMHeb/
 If you read nothing else, read `CHEATSHEET.md` (for the math) and
 `verification/README.md` (for what's been proven).
 
-## 0.5 The story so far, in eight experiments
+## 0.5 The story so far, in nine experiments
 
 The model was built and stress-tested bottom-up. Each iteration is a script you
 can re-run; here's the arc and the verdict:
@@ -113,11 +113,17 @@ can re-run; here's the arc and the verdict:
    for free but is *also* fooled by a common cause; conditional TE certifies
    the edge — if you can observe the confounder. ✅⚠️ *the ladder: related <
    directed < connected.*
+9. **Entity-as-cluster** — a locked cluster coarse-grains to ONE oscillator:
+   shared frequency, the pair law with effective coupling `κρ`, the `1/√2`
+   branch one level up, and macro closure (members add nothing beyond the
+   macro-phase); an unlocked collection fails every criterion. ✅ *the
+   recursion, grounded.*
 
 That refute-then-rescue in 4→5 is the heart of the project: it's what verifying
-math against code actually buys you. Experiments 6–8 are the second arc — the
-**bridge to CPAF** (Chapters 7–9), where the model's primitives start grounding
-CPAF's foundational vocabulary.
+math against code actually buys you. Experiments 6–9 are the second arc — the
+**bridge to CPAF** (Chapters 7–10), where the model's primitives ground CPAF's
+foundational vocabulary: deviation, information, and entity are all now born at
+the same locking transition.
 
 ## 0.6 If you've been away — start here
 
@@ -130,12 +136,13 @@ Welcome back. Fastest path to being useful again:
 4. Check `verification/README.md`'s findings log and the architecture doc's
    revision history for anything marked open or untested — that's the work queue.
 
-Current frontier (as of the last session): the CPAF bridge (Ch 8–9) has three
-grounded spans — deviation (iter 6), information (iter 7), and the
-related/directed/connected information ladder (iter 8). The next span is
-**entity-as-cluster** (does a locked module behave as one effective
-oscillator? — CPAF's recursion, still untested), with **damage recovery /
-graceful degradation** and the **global-`r` threshold** also open.
+Current frontier (as of the last session): the CPAF bridge (Ch 8–10) has four
+grounded spans — deviation (iter 6), information (iter 7), the
+related/directed/connected information ladder (iter 8), and entity-as-cluster
+(iter 9). Open: the entity checks on a *grown* iter-5 module, the
+entity-hood operating envelope (fragmentation under strong drive),
+interaction-vs-deviation (the last Ch 8 span), **damage recovery / graceful
+degradation**, and the **global-`r` threshold**.
 
 ## 0.7 A note on origins
 
