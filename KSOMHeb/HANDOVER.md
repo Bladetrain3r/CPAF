@@ -18,8 +18,12 @@ new collaborator, or you after a break. For the deep re-entry, pair this with
   information (graded: related < directed < connected), entity-as-cluster,
   *grown* entities (splice, iter 10, closure as boundary detector), and
   interaction-vs-deviation (iter 11 — the noun/verb split, the last unbuilt
-  Ch 8 span). **The next big move is substrate #2** (CA / Game of Life) — the
-  substrate-neutrality bet, targeted at a structured paper.
+  Ch 8 span). **The next big move — now started — is substrate #2** (CA / Game
+  of Life) in the new **`gol/`** subfolder: the substrate-neutrality bet,
+  targeted at a structured paper. Engine + entity detector built and tested
+  (`gol/gol.py`), concept mapping and roadmap drafted (`gol/CONCEPT_MAPPING.md`,
+  `gol/README.md`), interactive visualiser seeded (`gol/visualiser/`). This is a
+  distinct workstream from the textbook — its own folder, plan, and writeup.
 
 ## What exists (the map)
 
