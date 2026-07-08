@@ -27,10 +27,18 @@ may be a concrete substrate for CPAF's basic layer.
 
 ## Tensions to resolve (the honest list)
 
-1. **Interaction vs deviation.** Is a deviation a *property of* an interaction or
-   its own object? Working split: interaction = the channel exists (a coupling);
-   deviation = that channel produces a *sustained state change* (locking). The
-   edge is the noun; the locking event is the verb.
+1. ~~**Interaction vs deviation.**~~ **Grounded (iter 11).** Interaction =
+   directed influence on the channel (`TE(i→j)`, nonzero as soon as `K>0`);
+   deviation = the locking event (winding number `Ω→0`, MI jumps, at `Kc`).
+   They *dissociate*: below `Kc`, in a provably-drifting band (Ω large, MI at
+   floor), `TE(1→2)` is significant at z in the hundreds — influence without a
+   deviation. Asymmetry established: every deviation rides on an interaction,
+   not vice versa (the edge is the noun, the locking the verb — now evidenced).
+   Two corrections the experiment forced: TE is *non-monotonic* (peaks at
+   locking onset, declines when locked — self-predictable target); and the
+   locked-regime null direction carries the iter-8 bias via lag structure
+   (~60× below signal — effect size, not z, is the honest null lens at large
+   N).
 2. ~~**Information is unmeasured.**~~ **Closed (iter 7), nuance closed
    (iter 8):** mutual information `I(θᵢ; θⱼ)` is the measure — it appears at
    the deviation point and diverges from `r`. The MI-vs-common-drive nuance is

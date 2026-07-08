@@ -140,7 +140,17 @@ TE(i→j | Z)                     conditional TE — CONNECTED (needs the confou
 ```
 Estimator note: bin the *conditioning* variable finely, or correlated sources
 leak sub-bin position and read as phantom transfer; bias-correct against
-time-shifted surrogates of the source.
+time-shifted surrogates of the source. The bias resurfaces under *tight
+correlation* too (iter 11: a locked θⱼ is a delayed copy of θᵢ) — at large N,
+z-scores over-report it; read a null by **effect size**, not significance.
+
+**Interaction vs deviation** (iter 11): interaction = directed influence
+`TE(i→j)` on the channel (nonzero as soon as `K>0`); deviation = the locking
+event (winding number `Ω→0`, MI jumps, at `Kc`). They dissociate — TE is
+significant below `Kc` where the pair still drifts. Asymmetry: every deviation
+rides on an interaction, not vice versa. `TE` is **non-monotonic** across the
+transition: peaks at the locking onset, declines when locked (self-predictable
+target).
 
 **Cluster coarse-graining** (entity-as-cluster, iter 9):
 ```
@@ -175,7 +185,9 @@ macro closure:  TE(θᵢ → Θ | Θ) ≈ 0   (members add nothing beyond Θ; fa
 | *Grown* (iter-5) modules are entities | ✅ all four criteria pass unadjusted; thresholds to 2.5% from measured ρ | 10 |
 | Closure locates entity boundaries (not just grades them) | ✅ true boundary 0.005 bits vs arbitrary boundary 0.284 on same trajectory | 10 |
 | Entity-to-entity macro information channel | ⚠️ observed (TE(Θ_B→Θ_A\|Θ_A)=0.013 bits), not yet dissected | 10 |
-| Blind boundary *search*; entities from unseeded structure; fragmentation envelope | ❔ not yet tested | — |
+| Interaction (TE) vs deviation (locking) are distinct/dissociable | ✅ TE significant below Kc where pair drifts & MI≈floor (z in hundreds) | 11 |
+| TE monotonic across the locking transition | ❌ peaks at onset, declines when locked (target self-predictable) | 11 |
+| Blind boundary *search*; entities from unseeded structure; fragmentation envelope; substrate #2 (CA/GoL) | ❔ not yet tested | — |
 | Damage recovery / self-healing | ❔ not yet tested | — |
 
 ## Default parameters

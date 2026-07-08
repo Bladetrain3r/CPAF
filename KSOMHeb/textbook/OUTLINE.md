@@ -37,20 +37,25 @@ verified, so the textbook never runs ahead of the evidence.
 | 10 | Entity as cluster | The recursion, cashed: coarse-grain a locked cluster to (Θ, ρ); macro dynamics reduce to iter 6's pair equation with ω_eff=ω̄ and **K_eff=κρ** (coupling discounted by internal coherence, confirmed to 2.5%); the 1/√2 locked branch recurs one level up; **macro closure** TE(member→Θ\|Θ)≈0 for locked vs leaky for unlocked. Entity-hood is *created* by the locking transition | `iter9` | ✅ `10_entity_as_cluster.md` |
 | I | Intermission — the view from mid-bridge | Mid-course synthesis (no new results): the ingredient ledger (each concept = previous system + one thing); the CPAF dictionary as it stands, graded; the recurring motifs (one bifurcation three gifts; certificates cost context / entities make observability cheap; derive thresholds, and read checks against the math); the honest ledger of what's still owed. Base camp before the book-wide revision pass | synthesis of iter 1–9 | ✅ `I_intermission.md` |
 | 11 | The splice: grown modules are entities | Grow modules with iter-5 machinery verbatim, run iter-9's criteria unadjusted (predictions from measured ω̄, ρ only): thresholds to 2.5%, the 1/√2 branch to 0.004, closure ~0.005 bits. **Closure is a boundary detector**: an arbitrary boundary through the same trajectory leaks 0.284 bits (50–60×). First entity-to-entity macro TE observed (0.013 bits). The fusion: learning sculpts the boundaries, locking brings them to life, the result obeys the same laws as its parts | `iter10` | ✅ `11_the_splice.md` |
+| 12 | Interaction vs deviation | The noun/verb split made falsifiable (one-way coupling, self-controlled): below Kc, in a provably-drifting band, TE(1→2) is significant at z in the hundreds while MI is at floor — **influence without a deviation**. Two corrections: TE is *not* a monotonic ramp (peaks at locking onset, declines when locked — self-predictable target); and the locked-regime null direction shows the Ch9 conditioning bias via lag structure (~60× below signal — use effect size not z at large N). Asymmetry: every deviation rides on an interaction, not vice versa | `iter11` | ✅ `12_interaction_vs_deviation.md` |
 | A | Appendix: bugs we caught | The v1.0 errors (S≡1, per-step blend, invalid entropy, STDP gaps) as cautionary tales in reading math against code | `verify_bugs.py`, doc v1.1 changelog | ✅ `A_bugs_we_caught.md` |
+| S | Appendix: sources and inheritances | Credit ledger — Kuramoto/Adler/Strogatz (dynamics), Hebb/Seliger-Young-Tsimring (adaptive coupling), Shannon/Schreiber/Sun-Bollt (information & conditional TE), Bertschinger-Olbrich-Ay-Jost (informational closure) / Hoel (causal emergence) / Friston (boundaries) as the closure lineage. Grades our own claims: reproductions vs applications vs assembly-level observations | all iterations | ✅ `S_sources_and_inheritances.md` |
 
-**Draft through Ch 11 complete.** Committed next step: **poke at Chapter 8's
-remaining seams** — foremost interaction-vs-deviation (the noun/verb split,
-the last unbuilt Ch 8 span: give "an interaction is a channel that *may*
-produce a deviation" its own falsifiable test). Other live threads: blind
-boundary search (Ch 11's exercise — make the closure detector an
-entity-discovery algorithm); entity-hood along the growth trajectory (when
-does it switch on?); entity operating envelope (absorption vs fragmentation —
-Ch 10's exercise); entities from *unseeded* structure; a learning rule that
-*produces* asymmetric `Kᵢⱼ`; dissect the entity-to-entity channel; the Ch 6
-§6.3 seams (one-bit memory, plasticity's double edge, substrate-neutrality);
-the book-wide revision pass once each chapter has a sound draft (the
-Intermission is its staging note).
+**Draft through Ch 12 complete; all three Ch 8 unbuilt spans now built.**
+Horizon item (with paper ambition): **substrate #2** — reproduce the basic-
+layer dictionary (deviation, information, entity, closure) in a genuinely
+different substrate, most likely **cellular automata / Conway's Game of Life**
+("an experimental analysis of CA as low-level cognitive systems"); this is the
+program's real falsification test of the substrate-neutrality bet, targeted at
+a structured writeup (abstract + conclusion). Other live threads: blind
+boundary search (Ch 11's exercise); mutual (two-way) interaction vs deviation
+(Ch 12's exercise); entity-hood along the growth trajectory; entity operating
+envelope (Ch 10's exercise); entities from *unseeded* structure; a learning
+rule that *produces* asymmetric `Kᵢⱼ`; dissect the entity-to-entity channel;
+the Ch 6 §6.3 seams (one-bit memory, plasticity's double edge,
+substrate-neutrality — the last folds into substrate #2); the book-wide
+revision pass once each chapter has a sound draft (the Intermission is its
+staging note).
 
 ## Cross-cutting threads to keep visible
 

@@ -72,7 +72,7 @@ KSOMHeb/
 ├── DECISIONS.md              the decision log — what we chose and why
 ├── CPAF_MAPPING_NOTES.md     the CPAF ↔ oscillator correspondence and its tensions
 ├── ksomheb.py                the reference implementation (the canonical math)
-├── verification/             one runnable script + plot per claim (iter1…iter8)
+├── verification/             one runnable script + plot per claim (iter1…iter11)
 │   └── README.md             the suite index and findings log
 ├── visualiser/               interactive browser demo (drag the sliders)
 └── textbook/                 you are here
@@ -81,7 +81,7 @@ KSOMHeb/
 If you read nothing else, read `CHEATSHEET.md` (for the math) and
 `verification/README.md` (for what's been proven).
 
-## 0.5 The story so far, in ten experiments
+## 0.5 The story so far, in eleven experiments
 
 The model was built and stress-tested bottom-up. Each iteration is a script you
 can re-run; here's the arc and the verdict:
@@ -122,13 +122,18 @@ can re-run; here's the arc and the verdict:
     every entity criterion unadjusted, and closure *locates* the boundary: an
     arbitrary circle through the same system leaks 50–60× more. ✅ *learning
     sculpts the boundaries; locking brings them to life.*
+11. **Interaction vs deviation** — directed influence flows on a channel *below*
+    the locking threshold, where the pair is provably still drifting: influence
+    without a deviation, so the channel (noun) and the locking event (verb) are
+    genuinely distinct. ✅ *the last span of the bridge.*
 
 That refute-then-rescue in 4→5 is the heart of the project: it's what verifying
-math against code actually buys you. Experiments 6–10 are the second arc — the
-**bridge to CPAF** (Chapters 7–11), where the model's primitives ground CPAF's
-foundational vocabulary: deviation, information, and entity are all born at the
-same locking transition, and the entities the system grows itself obey the same
-laws as the ones we built by hand.
+math against code actually buys you. Experiments 6–11 are the second arc — the
+**bridge to CPAF** (Chapters 7–12), where the model's primitives ground CPAF's
+foundational vocabulary: deviation, information, interaction, and entity all
+find operational definitions, most of them born at the same locking transition,
+and the entities the system grows itself obey the same laws as the ones we
+built by hand.
 
 ## 0.6 If you've been away — start here
 
@@ -141,14 +146,15 @@ Welcome back. Fastest path to being useful again:
 4. Check `verification/README.md`'s findings log and the architecture doc's
    revision history for anything marked open or untested — that's the work queue.
 
-Current frontier (as of the last session): the CPAF bridge (Ch 8–11) has five
-grounded spans — deviation (iter 6), information (iter 7), the
-related/directed/connected information ladder (iter 8), entity-as-cluster
-(iter 9), and grown entities + closure-as-boundary-detector (iter 10). Open:
-interaction-vs-deviation (the last Ch 8 span — committed next), blind
-boundary search, the entity operating envelope (fragmentation under strong
-drive), **damage recovery / graceful degradation**, and the **global-`r`
-threshold**.
+Current frontier (as of the last session): the CPAF bridge (Ch 8–12) has all
+its spans grounded — deviation (iter 6), information (iter 7), the
+related/directed/connected ladder (iter 8), entity-as-cluster (iter 9), grown
+entities + closure-as-boundary-detector (iter 10), and interaction-vs-deviation
+(iter 11). The next big move is **substrate #2** — reproducing the dictionary
+in cellular automata / Game of Life to test CPAF's substrate-neutrality bet
+(aimed at a structured paper). Also open: blind boundary search, the entity
+operating envelope, **damage recovery / graceful degradation**, and the
+**global-`r` threshold**.
 
 ## 0.7 A note on origins
 
