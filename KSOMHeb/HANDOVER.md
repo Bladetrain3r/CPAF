@@ -8,7 +8,7 @@ new collaborator, or you after a break. For the deep re-entry, pair this with
 
 - **Merged to `master`** at commit `c929c10` (the verification arc through
   iter 5 + textbook Ch 0–6). Everything after is follow-up work on branches.
-- The model is **verified through iteration 13**; the textbook runs **Ch 0–12
+- The model is **verified through iteration 14**; the textbook runs **Ch 0–12
   + Intermission + Appendix A**; the interactive visualiser is parity-checked
   and working. The Intermission (`textbook/I_intermission.md`) is the
   mid-course synthesis — read it for the fastest conceptual re-entry into the
@@ -45,7 +45,7 @@ KSOMHeb/
 ├── HANDOVER.md               this file
 ├── ksomheb.py                canonical reference implementation
 ├── requirements.txt          numpy + matplotlib (the container is ephemeral — see below)
-├── verification/             iter1–iter13, each a runnable script + plot + README
+├── verification/             iter1–iter14, each a runnable script + plot + README
 ├── visualiser/               browser demo (ksomheb.js parity-checked vs the .py)
 └── textbook/                 00–12 + Intermission + Appendix A, OUTLINE.md
 ```
@@ -57,7 +57,7 @@ KSOMHeb/requirements.txt` (or `pip3 install numpy matplotlib`).
 **Fastest orientation:** `CHEATSHEET.md` (math) + `verification/README.md`
 (what's proven) + this file (what's open).
 
-## The story in thirteen experiments (verdicts)
+## The story in fourteen experiments (verdicts)
 
 1. **Base synchronization** — reproduces Kuramoto transition (Kc 1.60 vs 1.596). ✅
 2. **Hebbian rule** — matches closed form; found saturation bound `R_sat=K_max·λ/η`. ✅
@@ -93,6 +93,11 @@ KSOMHeb/requirements.txt` (or `pip3 install numpy matplotlib`).
     unprotected memory (plastic) has a resilience threshold then rewrites →
     identity lost while coherence partly persists (ship of Theseus). First
     active-layer probe (memory + graceful degradation). ✅
+14. **Associative recovery** — an oscillatory Hopfield net (M stored memories):
+    damage recovery can restore *full* coherence into a *different stored*
+    identity (→different memory 0→65% as damage grows; retrieval coherence stays
+    ~0.85). The genuine ship of Theseus; M=1 can't do it. Identity resilience =
+    basin/capacity. ✅
 
 ## Open work queue
 
@@ -106,7 +111,7 @@ KSOMHeb/requirements.txt` (or `pip3 install numpy matplotlib`).
 5. **Substrate-neutrality assumed, not shown** — only abstract oscillators run so far.
 
 ### B. Untested claims
-- **Damage recovery / graceful degradation** — first result (iter 13): recovery = pattern recovery, needs a protected memory. Open: multistable recovery into a different *stored* pattern (iter 14); structural K-lesions.
+- **Damage recovery / graceful degradation** — results (iter 13–14): recovery = pattern recovery, needs a protected memory (13); with multiple stored memories, recovery can land on a *different stored* identity at full coherence (14). Open: capacity study; structural K-lesions; combine into textbook Ch 13.
 
 ### C. The CPAF bridge (Ch 8–11) — grounded spans and what's left
 Grounded: **deviation** = an edge crossing `Kc = |Δω|/2` (iter 6, onset

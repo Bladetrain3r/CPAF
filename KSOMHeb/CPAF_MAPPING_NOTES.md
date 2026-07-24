@@ -91,9 +91,12 @@ may be a concrete substrate for CPAF's basic layer.
   **graceful degradation** (`system.md` adaptability): resilience = recovery of the
   pattern, with a threshold past which an unprotected memory is rewritten (identity
   lost). **Resilience-to-information-loss is itself a candidate cognitive metric.**
-  *Follow-ups:* multistable/associative-memory recovery (coherence back into a
-  genuinely *different stored* pattern); structural lesions of `K` vs phase kicks;
-  where the collapse edge sits relative to the iter-3 separatrix.
+  iter 14 adds the multistable case (oscillatory Hopfield, M stored patterns):
+  damage recovery can restore *full* coherence into a genuinely *different
+  stored* memory (→65% at severe damage) — the true ship of Theseus; identity
+  resilience is a basin/capacity question. *Follow-ups:* capacity study;
+  structural lesions of `K` vs phase kicks; the collapse edge vs the iter-3
+  separatrix; combine 13+14 into textbook Ch 13.
 
 ## Where this is heading
 

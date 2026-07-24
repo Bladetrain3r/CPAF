@@ -24,6 +24,8 @@ testable **single-case proofs**. The two halves meet in
 CPAF/
 ├── README.md                 project front door
 ├── HANDOVER.md               this file (repo-wide pickup)
+├── Claude_Code.md            per-agent focus & team coordination conventions
+├── Working_List.md           pickup-able task board (with difficulty hints)
 ├── Framework/                the foundational concepts, formalized
 │   ├── nullstate / deviation / interaction / information / entity / system .md
 │   ├── Overview.md           the concepts + math constructs, unified
@@ -69,12 +71,13 @@ CPAF/
    emergence conditional on the right learning ingredients). *Sign-off needed.*
 2. **Per-concept "Computational proof →" footers** on the remaining `Framework/`
    concept docs (nullstate & interaction already link theirs).
-3. **Damage recovery / graceful degradation** — **first result done (iter 13):**
-   recovery is recovery of the stored *pattern*, and it needs a protected memory
-   (unprotected memory has a resilience threshold then loses the identity —
-   "ship of Theseus"). *Open follow-ups:* multistable/associative-memory recovery
-   into a genuinely *different stored* pattern (iter 14 candidate); structural
-   lesions of `K`; the collapse edge vs the iter-3 separatrix.
+3. **Damage recovery / graceful degradation** — **results (iters 13–14):**
+   recovery is recovery of the stored *pattern* and needs a protected memory
+   (iter 13; unprotected memory loses the identity past a threshold); with
+   multiple stored memories (oscillatory Hopfield, iter 14) recovery can restore
+   *full coherence into a different stored identity* — the genuine ship of
+   Theseus. *Open:* combine 13+14 into **textbook Ch 13**; a capacity study;
+   structural lesions of `K`; the collapse edge vs the iter-3 separatrix.
 4. **Climb a layer** — the *active* concepts. *Memory* now has both a substrate
    (`K`) and an operational test (iter 13 recovery); *awareness/reflection/
    experience* are the frontier. Deliberately deferred until foundations are firm.
