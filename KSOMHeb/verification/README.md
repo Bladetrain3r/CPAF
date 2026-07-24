@@ -20,9 +20,28 @@ the architecture's own stated properties. Run any of them directly with
 | `iter9_entity_as_cluster.py` | **Entity-as-cluster (the CPAF recursion).** Coarse-grain a 5-member cluster to its mean phasor (Θ, ρ). A *locked* cluster passes every entity criterion: one shared frequency (member velocity spread 0.0% of natural); entrains to an external probe exactly per iter 6 with effective coupling **K_eff = κρ** — empirical thresholds within 2.5% of `κc=\|Δω\|/(2ρ)`, and a mid-coherence cluster (ρ=0.92) sides with the ρ-corrected prediction over naive `\|Δω\|/2`; the measured locked branch matches `R=cos(½ arcsin(Δω/2ρκ))` (floor 1/√2) to 0.016; and **macro closure** holds — TE(member→Θ\|Θ)=0.002 bits vs 0.027 for an unlocked collection and 0.106 for a genuine external influence (control). An unlocked collection fails all criteria: entity-hood is *created* by the locking transition | passing |
 | `iter11_interaction_vs_deviation.py` | **The latent channel (interaction vs deviation).** Sweep one pair's coupling through Kc. MI (deviation detector, iter 7) stays ~0 until locking; TE (interaction detector, iter 8) is nonzero for *any* K>0. They dissociate: at K/Kc=0.34, TE=0.015 bits (interaction present) while MI=0.04 (no deviation) — a **latent channel**, a real but silent edge. TE turns on (K/Kc≈0.34) before MI (≈0.53): interaction is graded, deviation is an onset. K=0 is a true null (both at floor). Bonus: TE peaks near Kc then declines (redundancy — a locked pair is its own best predictor). Grounds Ch 8's last span; hardens null=poised-not-empty | passing |
 | `iter12_interaction_sign.py` | **The sign of an interaction (latent vs active).** Latent vs active interaction is a *sign problem*: the sign of the locking discriminant `Disc=1−(Δω/2K)²`. Active (Disc>0): locked offset `ψ*` is **real** — realized, a deviation, and the simulated pair settles to `Re ψ*`. Latent (Disc<0): `ψ*=π/2−i·arccosh(Δω/2K)` is **complex** — unrealized, a channel only, and the pair never settles (drifts). Threshold `Kc`=discriminant zero: `ψ*=π/2`, `R=1/√2` (ties to iter 6). `\|Im ψ*\|` quantifies latency. Sign of the *discriminant*, not the coupling. All 4 checks pass | passing |
+| `iter13_damage_recovery.py` | **Damage recovery = recovery of the PATTERN.** Scramble a locked module's phases; measure recovery against the *stored pattern* (gauge-invariant phase differences), not coherence. Protected memory (frozen K): pattern recovers to ~1.0 from any scramble (K=0 control recovers nothing → the coupling IS what restores identity); coherence returns before the pattern (stricter, later). Unprotected memory (plastic): resilience **threshold** at σ≈1 — small hits self-heal, big hits erode the coupling and rewrite the memory (partial coherence r≈0.5 into a *shifted* pattern, F≈0.4). Ship of Theseus. All 5 checks pass | passing |
 
 ## Findings log
 
+- **Damage recovery = recovery of the PATTERN, and it needs a protected memory
+  (iter13):** disrupt a locked module by scrambling its phases and measure
+  recovery against the *stored pattern* (gauge-invariant pairwise phase
+  differences), not mere coherence. With the memory (coupling K) **protected**
+  (frozen), the pattern recovers to ~1.0 even from a total scramble — the
+  coupling is a strong attractor, and it is *what* restores the identity (K=0
+  recovers nothing). Coherence is the weaker bar: it returns almost immediately
+  while the exact pattern takes ~1 time unit (pattern is the stricter, later
+  quantity). With the memory **unprotected** (plastic, learning during the
+  disruption) there is a **resilience threshold**: small hits self-heal
+  (F≈1.0), but past σ≈1 the coupling erodes and the memory is rewritten —
+  partial coherence persists (r≈0.5) into a *shifted, weaker pattern* while
+  fidelity collapses (F≈0.4). Ship of Theseus: coherence continuation, identity
+  lost. Lesson: **resilience is recovery of the pattern, and it requires
+  protecting the memory during the insult.** Honest scope: monostable module, so
+  the "different pattern" is a shifted/weakened version (erosion), not a distinct
+  *stored* attractor — recovering coherence into a genuinely different *stored*
+  pattern needs a multistable (associative-memory) system, the natural iter 14.
 - **Latent vs active interaction is a sign problem (iter12):** the sign of the
   locking discriminant `Disc = 1 − (Δω/2K)²`. An *active* interaction has a real
   locked phase-offset `ψ*` (realized on the circle — a deviation; the pair

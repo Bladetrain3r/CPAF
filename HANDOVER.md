@@ -53,11 +53,14 @@ CPAF/
   the locking discriminant `Disc=1−(Δω/2K)²` (`interaction.md`, grounded by
   iter 12). **7.3** (information certificate levels) and **7.4** (conditional
   emergence) are proposed, pending sign-off.
+- **Damage recovery has a first result (iter 13).** Recovery is recovery of the
+  stored *pattern* (not mere coherence), and it requires a *protected* memory —
+  the first step into the active layer (memory + graceful degradation).
 - **What's NOT yet grounded** (honest ledger, `ComputationalProofs.md` §8): the
-  entire *active/higher* layer (awareness, reflection, experience, knowledge,
-  vision, understanding) — *memory* is only partial (the learned coupling `K`);
-  *damage recovery* (untested); *universality* (one substrate only); a
-  *system-level* deviation threshold.
+  *active/higher* layer beyond memory (awareness, reflection, experience,
+  knowledge, vision, understanding); *universality* (one substrate only); a
+  *system-level* deviation threshold; multistable "recover into a different
+  stored pattern".
 
 ## Open work queue (project level)
 
@@ -66,11 +69,15 @@ CPAF/
    emergence conditional on the right learning ingredients). *Sign-off needed.*
 2. **Per-concept "Computational proof →" footers** on the remaining `Framework/`
    concept docs (nullstate & interaction already link theirs).
-3. **Damage recovery** — the one untested claim from the K-SOM-Heb source doc;
-   a self-contained iteration.
-4. **Climb a layer** — begin single-case proofs for the *active* concepts
-   (memory is partly there via `K`; awareness/reflection are the frontier).
-   Deliberately deferred until foundations are fully firm.
+3. **Damage recovery / graceful degradation** — **first result done (iter 13):**
+   recovery is recovery of the stored *pattern*, and it needs a protected memory
+   (unprotected memory has a resilience threshold then loses the identity —
+   "ship of Theseus"). *Open follow-ups:* multistable/associative-memory recovery
+   into a genuinely *different stored* pattern (iter 14 candidate); structural
+   lesions of `K`; the collapse edge vs the iter-3 separatrix.
+4. **Climb a layer** — the *active* concepts. *Memory* now has both a substrate
+   (`K`) and an operational test (iter 13 recovery); *awareness/reflection/
+   experience* are the frontier. Deliberately deferred until foundations are firm.
 5. **Book-wide revision pass** — 12 chapters + Intermission across many sessions;
    a consistency sweep would consolidate.
 6. **Standing K-SOM-Heb follow-ups** — see `KSOMHeb/HANDOVER.md` §C (blind

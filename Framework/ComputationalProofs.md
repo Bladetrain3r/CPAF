@@ -263,13 +263,20 @@ real (iters 9–10) but conditional on the right learning ingredients, not a giv
 
 ## 8. What is NOT yet proven (the honest ledger)
 
-- **The active/basic layer.** *Memory* is partially realized (the learned
-  coupling `K`, iters 2–5), but *awareness*, *reflection*, *experience*,
-  *knowledge*, *vision*, *understanding* (Overview §Math Constructs) have **no
-  single-case proof yet**. This is the natural next frontier, deliberately not
-  yet attempted — foundations first.
-- **Damage recovery / graceful degradation** — asserted in the K-SOM-Heb source
-  doc, **never simulated**. A self-contained candidate iteration.
+- **The active/basic layer.** *Memory* is realized (the learned coupling `K`,
+  iters 2–5) and now has an **operational test** — iter 13 shows a locked
+  module recovers its stored *pattern* after a disruption *if the memory is
+  protected* (resilience = pattern recovery, with a threshold past which an
+  unprotected memory is rewritten and the identity is lost). But *awareness*,
+  *reflection*, *experience*, *knowledge*, *vision*, *understanding* (Overview
+  §Math Constructs) still have **no single-case proof**. The active layer is the
+  next frontier.
+- **Damage recovery / graceful degradation** — **first result (iter 13):** a
+  protected memory restores the pattern from even a total phase scramble; an
+  unprotected one has a resilience threshold then loses the identity.
+  *Open:* multistable (associative-memory) recovery into a genuinely different
+  *stored* pattern; structural lesions of `K`; the collapse edge vs the iter-3
+  separatrix.
 - **Universality.** Every proof here is in *one* substrate (coupled oscillators).
   CPAF's cross-substrate universality is argued, not computationally proven; a
   second substrate would raise confidence.
