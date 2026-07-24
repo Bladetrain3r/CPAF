@@ -126,13 +126,14 @@ sub-threshold channels compose like locked ones? — Ch 12's exercise narrows
 the band via detuning).
 
 ### C2. Framework integration (in progress — the current thread)
-- **Apply the §7 refinements** to the concept docs (relax null's `¬∃int`; add
-  latent-interaction to `interaction.md`; certificate levels to `information.md`;
-  conditional emergence to `system.md`). *Needs sign-off — these change formal
-  logical constructs.*
-- **Add per-concept "Computational proof" footers** to each of the six
-  `Framework/*.md` docs, linking to the relevant `ComputationalProofs.md`
-  section (low-risk, additive; the deeper threading of the integration).
+- **APPLIED (7.1, 7.2):** `nullstate.md` `¬∃int`→`¬∃int_act`; `interaction.md`
+  Latent-vs-Active section, grounded by **iter 12** (latent/active = sign of the
+  locking discriminant `Disc=1−(Δω/2K)²`; complex vs real `ψ*`). Ziggy's "sign
+  problem" conjecture, verified.
+- **Still to apply (proposed):** 7.3 certificate levels to `information.md`;
+  7.4 conditional emergence to `system.md`. *Sign-off pending — formal constructs.*
+- **Add per-concept "Computational proof" footers** to the remaining
+  `Framework/*.md` docs (nullstate & interaction already link their proofs).
 - **Then** the active layer becomes the next grounding target (see below).
 
 ### D. The bigger forks (choose by appetite)

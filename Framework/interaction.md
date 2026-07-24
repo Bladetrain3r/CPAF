@@ -18,6 +18,50 @@ For all interactions (int) within a system, there exists information (i) and a d
   
 - **Contradiction:** This assumption contradicts the foundational definition of an interaction within CPAF, which inherently links interactions to the generation of deviations via information processing. Therefore, by definition, an interaction must induce a deviation.
 
+> **Note (refined below):** this proof holds for an *active* interaction — one that has produced a deviation. The refinement immediately following distinguishes a *latent* interaction (a transmitting channel that has not yet produced a deviation), which the base construct `int → d` does not capture. A latent interaction is not a counterexample to the proof; it is the interaction *before* the proof's premise (deviation) is realized.
+
+## Refinement: Latent vs Active Interactions (the sign of an interaction)
+
+The base construct binds an interaction to a deviation (`int → d`). But a channel of influence can *exist and transmit* before it produces any distinguishable change. This motivates splitting the concept into two, distinguished by whether the interaction's effect is **realized**:
+
+- **Latent interaction** — a channel/*capacity*: it transmits influence (measurably) but has **not** produced a deviation. It is the interaction as a *potential*.
+- **Active interaction** — the channel *realized as an event*: it produces a deviation. This is the base definition above.
+
+The **realization** of a latent interaction into an active one is itself a **deviation** — the crossing of a threshold. This tightens the null→deviation story: a deviation is the *actualization of a latent interaction*.
+
+### The sign of an interaction
+
+Latent vs active is, precisely, a **sign problem** — the sign of a discriminant. In the verified oscillator substrate (K-SOM-Heb), two entities with coupling `K` and detuning `Δω` have a locked (deviation-producing) relationship solving `sin ψ* = Δω/(2K)`, which is real iff the **locking discriminant** is non-negative:
+
+```
+Disc(K) = 1 − (Δω / 2K)²
+  Disc > 0  →  ψ* real     →  ACTIVE  (the relationship is realized; a deviation)
+  Disc = 0  →  ψ* = π/2    →  the threshold (onset)
+  Disc < 0  →  ψ* complex  →  LATENT  (the relationship is unrealized; a channel only)
+```
+
+Below threshold the locked offset `ψ* = π/2 − i·arccosh(Δω/2K)` is **complex** — the relationship exists in analytic continuation but is not realized on the real circle. Its imaginary part `arccosh(Δω/2K)` measures *how latent* the interaction is (0 at threshold, growing as the channel weakens). The **sign of the discriminant — equivalently, the realness of `ψ*` — is the latent/active discriminator.**
+
+**Important:** this is the sign of the **discriminant** (channel strength relative to threshold), **not** the sign of the coupling itself. The attractive/repulsive sign of a coupling is a *separate* axis; here couplings are non-negative and the *discriminant* carries the sign.
+
+### Logical Constructs
+
+```plaintext
+Latent:  ∀int_lat ∈ Int_lat, ∃i ∈ I | int_lat transmits i  ∧  ¬∃d ∈ D    (Disc < 0)
+Active:  ∀int_act ∈ Int_act, ∃i ∈ I, ∃d ∈ D, ∃e ∈ E | int_act causes i → d in e   (Disc ≥ 0)
+Realization:  int_lat → int_act  is a deviation d ∈ D  (the discriminant crosses 0)
+```
+
+### Relationships to other concepts
+
+- **Embedded information:** a latent interaction is a concrete form of the framework's *embedded information* (`information.md`) — "unrealized deviations… the system's potential to deviate." The two notions unify.
+- **Null state:** because latent interactions transmit without producing deviations, a **null state may contain latent interactions** — it is *poised, not empty* (see `nullstate.md`, refined). The null state's `¬∃int` clause refers to *active* interactions.
+- **Deviation:** the latent→active realization *is* a deviation.
+
+### Computational proof
+
+Verified in `../KSOMHeb/verification/iter11_interaction_vs_deviation.py` (the latent-channel band: transfer entropy > 0 while mutual information ≈ 0) and `../KSOMHeb/verification/iter12_interaction_sign.py` (the discriminant sign; the complex locked offset below threshold; realization at `Disc = 0`, onset coherence `1/√2`). See `ComputationalProofs.md` §4 and §7.2.
+
 ### Test Cases
 
 - **Predator-Prey Dynamics:** Demonstrates interactions within ecological systems, where the predator's attempt to catch prey and the prey's evasion tactics lead to deviations in each entity's state.

@@ -120,6 +120,36 @@ Three things, in ascending order of consequence:
 - The **null state is poised**: it can hold dense latent interactions with no
   deviations — latency below threshold, not emptiness. *The foundational bridge
   (Chapters 7–12) is now complete.*
+- **Latent vs active is a *sign*** (§12.7): the sign of the locking discriminant
+  — a latent interaction's locked relationship is *complex* (unrealized), an
+  active one's is *real*.
+
+## 12.7 Postscript — the sign of an interaction
+
+There's a sharper way to say "latent vs active," and it falls out of the same
+two-oscillator algebra. A locked pair solves `sin ψ* = Δω/(2K)`, which has a real
+solution only when the **locking discriminant** is non-negative:
+
+```
+Disc(K) = 1 − (Δω/2K)²
+  Disc > 0  → ψ* real     → active   (the relationship is realized: a deviation)
+  Disc = 0  → ψ* = π/2    → threshold Kc (onset coherence 1/√2)
+  Disc < 0  → ψ* complex  → latent   (the relationship is unrealized: a channel)
+```
+
+Below threshold the locked offset is literally **complex**,
+`ψ* = π/2 − i·arccosh(Δω/2K)`: the phase relationship exists in analytic
+continuation but is *not realized on the real circle*, and the size of the
+imaginary part says how far below threshold — how latent — the interaction is.
+So the latent/active distinction is a **sign problem**: the sign of the
+discriminant, equivalently the *realness* of `ψ*`. One caution worth holding: this
+is the sign of the *discriminant* (coupling versus threshold), **not** the sign of
+the coupling itself — a coupling being attractive vs repulsive is a different axis
+we set aside long ago (Appendix A / the Hebbian choice). `iter12_interaction_sign.py`
+confirms all of it: the simulated pair settles onto `Re ψ*` above threshold and
+never settles below it, and the discriminant's zero lands exactly at `Kc` with
+`ψ* = π/2`, `R = 1/√2`. This is the form your framework's *latent interaction*
+takes once it's grounded in dynamics.
 
 ---
 

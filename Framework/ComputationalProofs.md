@@ -40,10 +40,10 @@ The substrate in one line: **coupled phase oscillators `θᵢ` with detunings
 
 | CPAF concept | Construct (from the concept doc) | Single-case realization | Proof | Verdict |
 |---|---|---|---|---|
-| **Null state** | maximum entropy; `f(s₀)=0`; `(¬∃d)∧(¬∃int)` at `s=ns` | incoherent population, `r≈0`, all pairs below their locking threshold | iter 1, **iter 11** | ✅ realized; **refines** the `¬∃int` clause |
+| **Null state** | maximum entropy; `f(s₀)=0`; `(¬∃d)∧(¬∃int)` at `s=ns` | incoherent population, `r≈0`, all pairs below their locking threshold | iter 1, **iter 11** | ✅ realized; `¬∃int`→`¬∃int_act` (applied) |
 | **Deviation** | distinguishable change from `s₀`; `f:S→[0,1]` | a pair crossing its locking threshold `Kc=\|Δω\|/2` | **iter 6**, iter 7 | ✅ realized with a *derived* onset |
 | **Information** | processable thing that induces a deviation; `Impact=d(s,I(d,s))` | mutual information born at the locking transition | **iter 7**, iter 8 | ✅ realized & graded |
-| **Interaction** | event where info is transmitted → deviation; `int → d` | the coupling `Kᵢⱼ` (channel) vs the locking (event) | iter 8, **iter 11** | ✅ realized; **refines** `int→d` |
+| **Interaction** | event where info is transmitted → deviation; `int → d` | the coupling `Kᵢⱼ` (channel) vs the locking (event); latent/active = sign of `Disc=1−(Δω/2K)²` | iter 8, iter 11, **iter 12** | ✅ realized; latent/active split (applied) |
 | **Entity** | locus of information processing; recursive | a locked cluster coarse-grained to one macro-oscillator `(Θ,ρ)` | **iter 9**, iter 10 | ✅ realized, incl. *grown* & recursive |
 | **System** | assembly of interacting entities; emergence `Em:S×I→S'` | the coupled graph; entity-hood emerges at locking | iter 3–5, **iter 9–10** | ✅ realized; emergence concrete |
 
@@ -148,7 +148,9 @@ between two oscillators. Two facts from the sims:
   MI ≈ 0 (no deviation). Interaction is graded (a matter of degree); deviation is
   an onset (an event).
 
-**Proof.** iter 8 (directionality; interaction vs common cause); iter 11 (the
+**Proof.** iter 8 (directionality; interaction vs common cause); iter 12 (latent
+vs active = the sign of the locking discriminant; a latent interaction's locked
+offset is complex/unrealized); iter 11 (the
 latent channel — interaction ≠ deviation).
 
 **What it refines (see §7.2).** CPAF's construct binds interaction to deviation
@@ -223,21 +225,26 @@ fully lawful once formed.
 These are the contributions — places where running the mechanism sharpened or
 corrected the abstract construct. Each is a candidate edit to the concept docs.
 
-**7.1 The null state permits latent interactions.** `nullstate.md`'s logical
-construct `(¬∃d)∧(¬∃int)` should relax to `(¬∃d)` alone. iter 11 shows a null
-state can hold latent (sub-threshold) interactions — the null state is **poised,
-not empty**. This is *already* foreshadowed by the framework's *embedded
-information* and *meta-null* notions; the proof unifies them: a latent channel is
-embedded interaction-potential.
+**7.1 The null state permits latent interactions. [APPLIED]** `nullstate.md`'s
+logical construct `(¬∃d)∧(¬∃int)` is refined to `(¬∃d)∧(¬∃int_act)` — no
+*active* interactions, but latent ones permitted. iter 11 shows a null state can
+hold latent (sub-threshold) interactions — the null state is **poised, not
+empty**. This unifies the framework's *embedded information* and *meta-null*
+notions: a latent channel is embedded interaction-potential. *(Applied to
+`nullstate.md` as an additive refinement note.)*
 
-**7.2 Distinguish interaction *capacity* from interaction *event*.**
-`interaction.md`'s `int → d` conflates the channel with the event. The proof
-(iter 11) cleanly separates them: a channel (measurable by `TE > 0`) may exist
-without producing a deviation (`MI ≈ 0`). Suggested refinement: define a *latent
-interaction* (capacity) whose realization into an *interaction event* is the
-crossing of a threshold — which is itself a **deviation**. This makes the
-deviation the *actualization* of a latent interaction, tightening the
-null→deviation story.
+**7.2 Distinguish interaction *capacity* from interaction *event* — the sign of
+an interaction. [APPLIED]** `interaction.md`'s `int → d` conflated the channel
+with the event. The proof separates them: a channel (measurable by `TE > 0`,
+iter 11) may exist without producing a deviation (`MI ≈ 0`). A **latent
+interaction** (capacity) realizes into an **active interaction** (event) by
+crossing a threshold — which is itself a **deviation**. iter 12 makes this a
+**sign problem**: the latent/active distinction is the sign of the *locking
+discriminant* `Disc = 1 − (Δω/2K)²` — active interactions have a **real** locked
+phase-offset (realized: a deviation), latent interactions have a **complex** one
+(unrealized: a channel only), with `|Im ψ*| = arccosh(Δω/2K)` measuring how
+latent. (Sign of the *discriminant*, not of the coupling — a separate axis.)
+*(Applied to `interaction.md` as a "Latent vs Active" refinement section.)*
 
 **7.3 "Information on an interaction" is a graded certificate, not a local fact.**
 `information.md` treats transmitted information as primitive. iter 8's ladder
@@ -282,6 +289,7 @@ python3 ../KSOMHeb/verification/iter8_transfer_entropy.py        # interaction (
 python3 ../KSOMHeb/verification/iter9_entity_as_cluster.py       # entity
 python3 ../KSOMHeb/verification/iter10_grown_entities.py         # system / emergence
 python3 ../KSOMHeb/verification/iter11_interaction_vs_deviation.py  # interaction vs deviation
+python3 ../KSOMHeb/verification/iter12_interaction_sign.py          # latent vs active (the sign)
 ```
 
 Each prints `ALL PASS` and writes its figure. Full index:

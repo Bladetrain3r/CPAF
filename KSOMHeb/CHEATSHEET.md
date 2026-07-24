@@ -176,6 +176,7 @@ macro closure:  TE(θᵢ → Θ | Θ) ≈ 0   (members add nothing beyond Θ; fa
 | Closure locates entity boundaries (not just grades them) | ✅ true boundary 0.005 bits vs arbitrary boundary 0.284 on same trajectory | 10 |
 | Entity-to-entity macro information channel | ⚠️ observed (TE(Θ_B→Θ_A\|Θ_A)=0.013 bits), not yet dissected | 10 |
 | Interaction (TE) ≠ deviation (MI): the latent channel | ✅ band `0<K<Kc` has TE>0 (edge) but MI≈0 (no lock); interaction graded, deviation an onset; null is poised not empty | 11 |
+| Latent vs active interaction = sign of discriminant `Disc=1−(Δω/2K)²` | ✅ active: `ψ*` real (realized); latent: `ψ*=π/2−i·arccosh(Δω/2K)` complex (unrealized); `Kc`=zero, `ψ*=π/2`, R=1/√2. Sign of *discriminant*, not coupling | 12 |
 | Blind boundary *search*; entities from unseeded structure; fragmentation envelope | ❔ not yet tested | — |
 | Damage recovery / self-healing | ❔ not yet tested | — |
 
