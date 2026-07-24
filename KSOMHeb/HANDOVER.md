@@ -19,8 +19,20 @@ new collaborator, or you after a break. For the deep re-entry, pair this with
   — via the splice (iter 10) — *grown* entities with closure as a boundary
   detector. iter 11 built the last span: interaction vs deviation (noun/verb)
   is a *measured dissociation* (TE detects the channel for any `K>0`; MI waits
-  for `Kc`; a latent-channel band between). No single next step is committed —
-  see "Open work queue" for the fork.
+  for `Kc`; a latent-channel band between).
+- **Integration into the main framework has begun.**
+  `../Framework/ComputationalProofs.md` is the new spine document: for each of
+  CPAF's six foundational concepts it maps the abstract construct → the concrete
+  single-case proof (the iteration) → verdict, and proposes **four refinements**
+  to the framework (§7): (7.1) the null state permits *latent* interactions —
+  relax `nullstate.md`'s `(¬∃d)∧(¬∃int)` to `(¬∃d)`; (7.2) split interaction
+  *capacity* (latent channel) from interaction *event* in `interaction.md`;
+  (7.3) tag informational claims with a certificate level (related<directed<
+  connected) in `information.md`; (7.4) `system.md` emergence is conditional on
+  the right learning ingredients (iters 4–5), not automatic. Pointers added from
+  `Framework/Overview.md` and the root `README.md`. **These §7 refinements edit
+  the core formal concept docs' logical constructs — proposed, pending author
+  sign-off (cf. D9).**
 
 ## What exists (the map)
 
@@ -112,6 +124,16 @@ observability of the confounder (noisy `Z̃`); a learning rule that *produces*
 asymmetric `K`; the global-`r` threshold; latent-channel *composition* (do
 sub-threshold channels compose like locked ones? — Ch 12's exercise narrows
 the band via detuning).
+
+### C2. Framework integration (in progress — the current thread)
+- **Apply the §7 refinements** to the concept docs (relax null's `¬∃int`; add
+  latent-interaction to `interaction.md`; certificate levels to `information.md`;
+  conditional emergence to `system.md`). *Needs sign-off — these change formal
+  logical constructs.*
+- **Add per-concept "Computational proof" footers** to each of the six
+  `Framework/*.md` docs, linking to the relevant `ComputationalProofs.md`
+  section (low-risk, additive; the deeper threading of the integration).
+- **Then** the active layer becomes the next grounding target (see below).
 
 ### D. The bigger forks (choose by appetite)
 - **Climb a layer.** The foundational bridge is done; CPAF's *basic/active*
