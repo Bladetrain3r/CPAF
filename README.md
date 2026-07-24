@@ -50,7 +50,8 @@ The CPAF at this point is prototypical and incomplete. Application in practice m
 ## Key Contributors
 Ziggy Fuchs
 ChatGPT-4
-Claude3-Opus
+Claude Opus 3
+Claude Opus 4.8
 Gemini 1.0 Advanced
 
 ## Contributing
