@@ -20,17 +20,20 @@ may be a concrete substrate for CPAF's basic layer.
 |---------------------------|----------------------------|-----------------|
 | **Null state** (maximal entropy) | Incoherent population: random phases, `r ≈ 0`, all pairs below their locking threshold. Note: null ≠ "no couplings" — it's "no *deviations*" (couplings may exist but sit below `Kc`). | plausible; ties to iter 1/6 |
 | **Deviation** (most fundamental change) | A pair crossing its locking threshold `Kc = \|Δω\|/2`: drift → locked, noise → structure. The saddle-node bifurcation. | **operationalized** (iter 6) |
-| **Interaction** | The coupling `Kᵢⱼ` itself — the channel of influence between two entities (the edge). | clean; the "vertex pair" |
+| **Interaction** | The coupling `Kᵢⱼ` itself — the channel of influence between two entities (the edge). iter 11: an interaction is **separately observable from a deviation** — transfer entropy detects the channel for *any* `K>0` (a coupling transmits directed influence whether or not it has locked), while MI (the deviation detector) waits for `Kc`. Interaction is *graded*; deviation is an *onset*. | **operationalized & distinguished from deviation** (iter 11) |
 | **Entity** | An oscillator (vertex); *recursively*, a locked cluster coarse-grained to its mean phasor (Θ, ρ). iter 9: a locked cluster passes every entity criterion — one effective frequency ω̄, entrainment per the iter-6 law with `K_eff = κρ` (coupling discounted by internal coherence), the 1/√2 branch one level up, and **macro closure** (TE(member→Θ\|Θ) ≈ 0). An unlocked collection fails all of them: entity-hood is *created* by the locking transition. iter 10: modules **grown** by iter-5's machinery pass all criteria unadjusted, and closure *locates* the boundary (arbitrary boundary through the same trajectory leaks 50–60× louder) — entities are discoverable from dynamics alone. | **operationalized, incl. grown structure** (iter 9–10); blind boundary search + fragmentation envelope open |
 | **Information** | Mutual information `I(θᵢ; θⱼ)` between two phases. iter 7: it climbs from ~0 to ~2.7 bits across the locking threshold — a *deviation creates information* — and, crucially, tracks differently from `r` (moderate `r` with ~0 MI in deep drift). iter 8 grades the claim into a ladder: MI = *related* (graph-blind), transfer entropy = *directed* (but prediction ≠ causation — a hidden common drive fakes it), conditional TE = *connected* (needs the confounder observed). "Information on an interaction" is a system-level certificate, not a pairwise property. | **operationalized & graded** (iter 7–8) |
 | **System** | The whole graph of entities + interactions; collective `r`, modularity `Q`. | plausible; iter 3–5 |
 
 ## Tensions to resolve (the honest list)
 
-1. **Interaction vs deviation.** Is a deviation a *property of* an interaction or
-   its own object? Working split: interaction = the channel exists (a coupling);
-   deviation = that channel produces a *sustained state change* (locking). The
-   edge is the noun; the locking event is the verb.
+1. ~~**Interaction vs deviation.**~~ **Resolved (iter 11).** The working split
+   — interaction = the channel exists (noun); deviation = the channel locks
+   (verb) — is now a *measured dissociation*, not just a definition. TE (channel
+   detector) is nonzero for any `K>0`; MI (locking detector) waits for `Kc`; the
+   band `0<K<Kc` is a **latent channel** (TE>0, MI≈0 — a real but silent edge).
+   Interaction is graded, deviation is an onset. The edge really is the noun and
+   the locking really is the verb.
 2. ~~**Information is unmeasured.**~~ **Closed (iter 7), nuance closed
    (iter 8):** mutual information `I(θᵢ; θⱼ)` is the measure — it appears at
    the deviation point and diverges from `r`. The MI-vs-common-drive nuance is
@@ -40,9 +43,11 @@ may be a concrete substrate for CPAF's basic layer.
    Residual honest gap: on a real network the right conditioning set is a
    causal-inference problem, not a histogram; we proved the mechanism on the
    minimal 3-vertex case.
-3. **Null = K→0 or K below Kc?** These differ: a system rich in sub-threshold
-   couplings is "quiet" but not structureless. Suggests null state is about the
-   absence of *deviations*, not the absence of *interactions*.
+3. ~~**Null = K→0 or K below Kc?**~~ **Resolved (iter 11).** They genuinely
+   differ, and the difference is *measurable*: a sub-threshold coupling still
+   carries transfer entropy (a latent channel), so a null state (`r≈0`, no
+   deviations) can be dense with interactions. **Null is poised, not empty** —
+   latency below threshold. `K→0` is true emptiness; `0<K<Kc` is a loaded null.
 4. **Directionality.** CPAF interactions may be directed; our `K` is symmetric
    (Hebbian). The doc's asymmetric-coupling extension (`Kᵢⱼ ≠ Kⱼᵢ`) would map to
    directed interactions / causal influence. **Readout grounded (iter 8):** an
@@ -54,6 +59,9 @@ may be a concrete substrate for CPAF's basic layer.
 
 - **Deviation (mostly done):** formalize "a deviation = a pair crossing `Kc`";
   iter 6 already gives the threshold and the `1/√2` onset.
+- ~~**Interaction vs deviation:**~~ **done (iter 11)** — the noun/verb split is a
+  measured dissociation (TE detects the channel for any `K>0`; MI waits for `Kc`;
+  latent-channel band between). Null state is poised, not empty.
 - ~~**Information:**~~ **done (iter 7)** — MI rises at `Kc`; coherence ≠
   information confirmed.
 - ~~**Transfer entropy:**~~ **done (iter 8)** — the ladder *related < directed

@@ -1,0 +1,4 @@
+# K-SOM-Heb verification suite dependencies.
+# Ephemeral container: run `pip3 install -r requirements.txt` on a fresh session.
+numpy
+matplotlib

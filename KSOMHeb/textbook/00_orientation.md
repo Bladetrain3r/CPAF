@@ -72,7 +72,8 @@ KSOMHeb/
 ├── DECISIONS.md              the decision log — what we chose and why
 ├── CPAF_MAPPING_NOTES.md     the CPAF ↔ oscillator correspondence and its tensions
 ├── ksomheb.py                the reference implementation (the canonical math)
-├── verification/             one runnable script + plot per claim (iter1…iter8)
+├── requirements.txt          numpy + matplotlib (install on a fresh container)
+├── verification/             one runnable script + plot per claim (iter1…iter11)
 │   └── README.md             the suite index and findings log
 ├── visualiser/               interactive browser demo (drag the sliders)
 └── textbook/                 you are here
@@ -81,7 +82,7 @@ KSOMHeb/
 If you read nothing else, read `CHEATSHEET.md` (for the math) and
 `verification/README.md` (for what's been proven).
 
-## 0.5 The story so far, in ten experiments
+## 0.5 The story so far, in eleven experiments
 
 The model was built and stress-tested bottom-up. Each iteration is a script you
 can re-run; here's the arc and the verdict:
@@ -122,13 +123,20 @@ can re-run; here's the arc and the verdict:
     every entity criterion unadjusted, and closure *locates* the boundary: an
     arbitrary circle through the same system leaks 50–60× more. ✅ *learning
     sculpts the boundaries; locking brings them to life.*
+11. **The latent channel** — an *interaction* (transfer entropy: a coupling
+    channel) and a *deviation* (mutual information: the locking event) are
+    separate observables. Below the locking threshold sits a band where the edge
+    is real but silent — TE > 0, MI ≈ 0. ✅ *interaction is graded, deviation is
+    an onset; a null state is poised, not empty.*
 
 That refute-then-rescue in 4→5 is the heart of the project: it's what verifying
-math against code actually buys you. Experiments 6–10 are the second arc — the
-**bridge to CPAF** (Chapters 7–11), where the model's primitives ground CPAF's
-foundational vocabulary: deviation, information, and entity are all born at the
-same locking transition, and the entities the system grows itself obey the same
-laws as the ones we built by hand.
+math against code actually buys you. Experiments 6–11 are the second arc — the
+**bridge to CPAF** (Chapters 7–12), now *complete*: every foundational concept
+(null, deviation, interaction, information, entity, system) has a grounded
+oscillator definition. Deviation, information, and entity are all born at the
+same locking transition; the entities the system grows itself obey the same laws
+as the ones we built by hand; and even the "empty" null state turns out to be a
+field of latent interactions waiting below threshold.
 
 ## 0.6 If you've been away — start here
 

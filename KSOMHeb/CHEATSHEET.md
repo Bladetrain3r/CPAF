@@ -175,6 +175,7 @@ macro closure:  TE(θᵢ → Θ | Θ) ≈ 0   (members add nothing beyond Θ; fa
 | *Grown* (iter-5) modules are entities | ✅ all four criteria pass unadjusted; thresholds to 2.5% from measured ρ | 10 |
 | Closure locates entity boundaries (not just grades them) | ✅ true boundary 0.005 bits vs arbitrary boundary 0.284 on same trajectory | 10 |
 | Entity-to-entity macro information channel | ⚠️ observed (TE(Θ_B→Θ_A\|Θ_A)=0.013 bits), not yet dissected | 10 |
+| Interaction (TE) ≠ deviation (MI): the latent channel | ✅ band `0<K<Kc` has TE>0 (edge) but MI≈0 (no lock); interaction graded, deviation an onset; null is poised not empty | 11 |
 | Blind boundary *search*; entities from unseeded structure; fragmentation envelope | ❔ not yet tested | — |
 | Damage recovery / self-healing | ❔ not yet tested | — |
 
