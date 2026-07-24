@@ -22,6 +22,8 @@ legible. Newest decisions at the bottom. Statuses: **locked** (settled),
 | D13 | **Mutual information** `I(θᵢ;θⱼ)` is the "information" measure; it is distinct from coherence `r` | iter 7: MI appears at the deviation point (`Kc`) and diverges from `r` (moderate `r`, ~0 MI in deep drift). Resolves seam #1. Follow-up: transfer entropy for directed interaction vs common drive | locked |
 | D14 | **Interaction and deviation are distinct primitives**, detected by distinct measures: TE (interaction/edge) vs MI (deviation/locking). The **null state** = absence of *deviations* (latent sub-threshold interactions permitted), not absence of interactions | iter 11: they dissociate in the band `0<K<Kc` — TE>0 (channel) while MI≈0 (no lock) — a latent channel. Completes Ch 8's bridge; null is poised, not empty. (iters 8–10 are recorded in `verification/README.md` + `CPAF_MAPPING_NOTES.md` rather than as decision rows) | locked |
 | D15 | **Latent vs active interaction is the sign of the locking discriminant** `Disc=1−(Δω/2K)²` (active=real `ψ*`, latent=complex `ψ*`); the base CPAF `int→d` construct describes *active* interactions. Framework refinements 7.1/7.2 (`nullstate.md`, `interaction.md`) **applied** with author direction | iter 12 verifies the sign framing (Ziggy's conjecture); the latent channel (iter 11) is its mechanism. Sign of the *discriminant*, not the coupling (that axis was set aside in D1). Integrated into `../Framework/` | locked |
+| D16 | **Damage recovery is measured against the stored PATTERN** (gauge-invariant phase differences), with coherence only secondary; recovery requires a **protected memory** | iter 13: frozen K restores the pattern from any scramble (K=0 recovers nothing); plastic K self-heals small hits but past a threshold erodes/rewrites the memory (identity lost while coherence partly persists — ship of Theseus). Resilience = pattern recovery. First step toward the active-layer *memory* concept + graceful degradation | locked |
+| D17 | The genuine ship-of-Theseus (recover *full* coherence into a *different stored* identity) requires **multistability**; modeled as an **oscillatory Hopfield** net | iter 14: with M stored memories, damage recovery lands on a different stored pattern an increasing fraction of the time (→65% at σ=3) while retrieval coherence stays ~0.85; M=1 cannot. Identity resilience = basin size (capacity). Substrate for the *memory* concept | locked |
 
 ## Findings that drove decisions
 
@@ -58,3 +60,14 @@ legible. Newest decisions at the bottom. Statuses: **locked** (settled),
   deviation). Latent: `ψ*` complex (unrealized, a channel). Threshold = zero of
   the discriminant. Grounds the interaction refinement now integrated into the
   main framework (`nullstate.md`, `interaction.md`, `ComputationalProofs.md`).
+- **iter 13 — damage recovery is pattern recovery.** A locked module's identity
+  is its stored pattern; protected memory (frozen K) restores it from any
+  scramble (K=0 recovers nothing), coherence returning before the pattern.
+  Unprotected memory (plastic) self-heals small hits but past σ≈1 erodes and
+  rewrites → identity lost while r partly persists (ship of Theseus). Opens the
+  active-layer *memory* / graceful-degradation thread.
+- **iter 14 — associative recovery / wrong memory.** An oscillatory Hopfield net
+  (M stored patterns) recovers *full* coherence into a *different stored* memory
+  as damage grows (→different: 0→65%), while a single-pattern net cannot. The
+  genuine ship of Theseus; identity resilience = basin/capacity. Follow-ups:
+  capacity study; structural K-lesions; combine 13+14 into textbook Ch 13.

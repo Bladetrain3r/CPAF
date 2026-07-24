@@ -178,7 +178,9 @@ macro closure:  TE(θᵢ → Θ | Θ) ≈ 0   (members add nothing beyond Θ; fa
 | Interaction (TE) ≠ deviation (MI): the latent channel | ✅ band `0<K<Kc` has TE>0 (edge) but MI≈0 (no lock); interaction graded, deviation an onset; null is poised not empty | 11 |
 | Latent vs active interaction = sign of discriminant `Disc=1−(Δω/2K)²` | ✅ active: `ψ*` real (realized); latent: `ψ*=π/2−i·arccosh(Δω/2K)` complex (unrealized); `Kc`=zero, `ψ*=π/2`, R=1/√2. Sign of *discriminant*, not coupling | 12 |
 | Blind boundary *search*; entities from unseeded structure; fragmentation envelope | ❔ not yet tested | — |
-| Damage recovery / self-healing | ❔ not yet tested | — |
+| Damage recovery = recovery of the **pattern** (not coherence); needs a protected memory | ✅ frozen K restores the stored pattern from any scramble (K=0 recovers nothing); plastic K has a resilience threshold (σ≈1) then rewrites → identity lost while r partly persists | 13 |
+| Graceful degradation / resilience as a metric | ✅ iter13 (monostable) + iter14 (multistable): resilience of identity has a threshold; past it, recovery lands elsewhere | 13,14 |
+| Associative recovery: full coherence into the *wrong stored* memory | ✅ oscillatory Hopfield (M stored); →original 100%→20%, →different memory 0→65% with damage, coherence stays ~0.85; M=1 can't do it | 14 |
 
 ## Default parameters
 

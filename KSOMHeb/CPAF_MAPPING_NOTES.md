@@ -81,10 +81,27 @@ may be a concrete substrate for CPAF's basic layer.
   cluster with *asymmetric* internal coupling coarse-grain to (the
   reduction's cancellation needs symmetry)?
 
+## Toward the active layer (memory, graceful degradation)
+
+- **Memory — operational test + resilience (iter 13, first probe).** The coupling
+  `K` is the memory (iters 2–5); iter 13 gives it an *operational* test: disrupt a
+  locked module and see whether the stored **pattern** (the identity, gauge-invariant
+  phase differences) recovers. It does — *if the memory is protected*. This grounds
+  the framework's **memory** ("repository… retain and access past events") and
+  **graceful degradation** (`system.md` adaptability): resilience = recovery of the
+  pattern, with a threshold past which an unprotected memory is rewritten (identity
+  lost). **Resilience-to-information-loss is itself a candidate cognitive metric.**
+  iter 14 adds the multistable case (oscillatory Hopfield, M stored patterns):
+  damage recovery can restore *full* coherence into a genuinely *different
+  stored* memory (→65% at severe damage) — the true ship of Theseus; identity
+  resilience is a basin/capacity question. *Follow-ups:* capacity study;
+  structural lesions of `K` vs phase kicks; the collapse edge vs the iter-3
+  separatrix; combine 13+14 into textbook Ch 13.
+
 ## Where this is heading
 
 Longer term: use the verified dynamics to give CPAF's basic layer — *null state,
 deviation, interaction, information, entity, system* — concrete, computable
-definitions, each earned by an iteration the way the metric claims were. The
-discipline stays the same: conjecture here, prove under `verification/`, then
-promote to the doc/textbook.
+definitions, each earned by an iteration the way the metric claims were, then the
+*active* layer (memory, awareness, reflection). The discipline stays the same:
+conjecture here, prove under `verification/`, then promote to the doc/textbook.
