@@ -4,6 +4,8 @@
 
 **Natural Language Explanation:** For every system (s) within the set of all systems (S), there exists a null state (ns) such that no deviation (d) or interaction (int) occurs when the system is in its null state.
 
+> **Refinement (poised, not empty):** the `¬∃int` clause should be read as *no **active** interaction* — i.e. no interaction that produces a deviation. A null state may still contain **latent** interactions: transmitting channels that have not (yet) produced a deviation (see `interaction.md`, Latent vs Active; the *sign of an interaction*). The refined construct is therefore `(¬∃d ∈ D) ∧ (¬∃int_act ∈ Int_act)` — a null state is defined by the absence of *deviations*, not the absence of interaction *capacity*. This unifies with **embedded information** (`information.md`) and with **meta-null** states below: a null state is a field of latent potential poised below threshold, not structurelessness. Verified: `../KSOMHeb/verification/iter11_interaction_vs_deviation.py`, `iter12_interaction_sign.py`; see `ComputationalProofs.md` §7.1.
+
 ## Proofs
 ### **Proof 1: Universality Across Systems**
 

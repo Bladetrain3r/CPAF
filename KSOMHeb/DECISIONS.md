@@ -20,6 +20,8 @@ legible. Newest decisions at the bottom. Statuses: **locked** (settled),
 | D11 | The recommended modular variant is **per-pair synchrony-gated reward** `R_ij = S_ij − thr`, optionally with **synaptic normalization** | iter 5: per-pair reward recovers modules (competition alone is inert; together they are best). This is the constructive fix for the iter-4 refutation | locked |
 | D12 | The per-pair coherence threshold has a **derived** value `1/√2 ≈ 0.707` (two-oscillator locking onset), not a hand-picked one | iter 6: `Kc(pair)=\|Δω\|/2`, `R_onset=1/√2`. Grounds the `θ_S` gate and partially the `r≥0.7` line (per-pair only; global-`r` transition is continuous) | locked |
 | D13 | **Mutual information** `I(θᵢ;θⱼ)` is the "information" measure; it is distinct from coherence `r` | iter 7: MI appears at the deviation point (`Kc`) and diverges from `r` (moderate `r`, ~0 MI in deep drift). Resolves seam #1. Follow-up: transfer entropy for directed interaction vs common drive | locked |
+| D14 | **Interaction and deviation are distinct primitives**, detected by distinct measures: TE (interaction/edge) vs MI (deviation/locking). The **null state** = absence of *deviations* (latent sub-threshold interactions permitted), not absence of interactions | iter 11: they dissociate in the band `0<K<Kc` — TE>0 (channel) while MI≈0 (no lock) — a latent channel. Completes Ch 8's bridge; null is poised, not empty. (iters 8–10 are recorded in `verification/README.md` + `CPAF_MAPPING_NOTES.md` rather than as decision rows) | locked |
+| D15 | **Latent vs active interaction is the sign of the locking discriminant** `Disc=1−(Δω/2K)²` (active=real `ψ*`, latent=complex `ψ*`); the base CPAF `int→d` construct describes *active* interactions. Framework refinements 7.1/7.2 (`nullstate.md`, `interaction.md`) **applied** with author direction | iter 12 verifies the sign framing (Ziggy's conjecture); the latent channel (iter 11) is its mechanism. Sign of the *discriminant*, not the coupling (that axis was set aside in D1). Integrated into `../Framework/` | locked |
 
 ## Findings that drove decisions
 
@@ -45,3 +47,14 @@ legible. Newest decisions at the bottom. Statuses: **locked** (settled),
   noisy phases climbs ~0 → ~2.7 bits across `Kc`: a deviation *creates* shared
   information. And `r` overreads (66% of max in deep drift while MI is 2%), so
   coherence ≠ information — seam #1 resolved. MI is the "information" primitive.
+- *(iters 8–10 recorded in `verification/README.md` and `CPAF_MAPPING_NOTES.md`:
+  the related<directed<connected TE ladder; entity-as-cluster; the splice.)*
+- **iter 11 — the latent channel.** TE (interaction) is nonzero for any `K>0`
+  while MI (deviation) waits for `Kc`; the band `0<K<Kc` is a real-but-silent
+  edge. Interaction is graded, deviation is an onset; null is poised, not empty.
+  Completes the foundational bridge (Ch 7–12).
+- **iter 12 — the sign of an interaction.** Latent vs active = sign of the
+  locking discriminant `Disc=1−(Δω/2K)²`. Active: `ψ*` real (realized, a
+  deviation). Latent: `ψ*` complex (unrealized, a channel). Threshold = zero of
+  the discriminant. Grounds the interaction refinement now integrated into the
+  main framework (`nullstate.md`, `interaction.md`, `ComputationalProofs.md`).

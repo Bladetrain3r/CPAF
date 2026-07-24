@@ -8,16 +8,31 @@ new collaborator, or you after a break. For the deep re-entry, pair this with
 
 - **Merged to `master`** at commit `c929c10` (the verification arc through
   iter 5 + textbook Ch 0–6). Everything after is follow-up work on branches.
-- The model is **verified through iteration 10**; the textbook runs **Ch 0–11
+- The model is **verified through iteration 11**; the textbook runs **Ch 0–12
   + Intermission + Appendix A**; the interactive visualiser is parity-checked
   and working. The Intermission (`textbook/I_intermission.md`) is the
   mid-course synthesis — read it for the fastest conceptual re-entry into the
   bridge arc.
-- The **CPAF basic-layer bridge** (Ch 8–11) now grounds: deviation,
-  information (graded: related < directed < connected), entity-as-cluster,
-  and — via the splice (iter 10) — *grown* entities, with closure doubling as
-  a boundary detector. The bridge's remaining conjecture is
-  interaction-vs-deviation (noun/verb) — the committed next poke.
+- The **CPAF foundational bridge (Ch 7–12) is now COMPLETE.** It grounds every
+  foundational concept: null (poised, not empty), deviation, interaction,
+  information (graded: related < directed < connected), entity-as-cluster, and
+  — via the splice (iter 10) — *grown* entities with closure as a boundary
+  detector. iter 11 built the last span: interaction vs deviation (noun/verb)
+  is a *measured dissociation* (TE detects the channel for any `K>0`; MI waits
+  for `Kc`; a latent-channel band between).
+- **Integration into the main framework has begun.**
+  `../Framework/ComputationalProofs.md` is the new spine document: for each of
+  CPAF's six foundational concepts it maps the abstract construct → the concrete
+  single-case proof (the iteration) → verdict, and proposes **four refinements**
+  to the framework (§7): (7.1) the null state permits *latent* interactions —
+  relax `nullstate.md`'s `(¬∃d)∧(¬∃int)` to `(¬∃d)`; (7.2) split interaction
+  *capacity* (latent channel) from interaction *event* in `interaction.md`;
+  (7.3) tag informational claims with a certificate level (related<directed<
+  connected) in `information.md`; (7.4) `system.md` emergence is conditional on
+  the right learning ingredients (iters 4–5), not automatic. Pointers added from
+  `Framework/Overview.md` and the root `README.md`. **These §7 refinements edit
+  the core formal concept docs' logical constructs — proposed, pending author
+  sign-off (cf. D9).**
 
 ## What exists (the map)
 
@@ -29,10 +44,15 @@ KSOMHeb/
 ├── CPAF_MAPPING_NOTES.md     CPAF ↔ oscillator correspondence, tensions, next probes
 ├── HANDOVER.md               this file
 ├── ksomheb.py                canonical reference implementation
-├── verification/             iter1–iter10, each a runnable script + plot + README
+├── requirements.txt          numpy + matplotlib (the container is ephemeral — see below)
+├── verification/             iter1–iter11, each a runnable script + plot + README
 ├── visualiser/               browser demo (ksomheb.js parity-checked vs the .py)
-└── textbook/                 00–11 + Intermission + Appendix A, OUTLINE.md
+└── textbook/                 00–12 + Intermission + Appendix A, OUTLINE.md
 ```
+
+**Environment note (ephemeral container):** a fresh session starts with no
+Python packages. Before running any iteration: `pip3 install -r
+KSOMHeb/requirements.txt` (or `pip3 install numpy matplotlib`).
 
 **Fastest orientation:** `CHEATSHEET.md` (math) + `verification/README.md`
 (what's proven) + this file (what's open).
@@ -59,6 +79,11 @@ KSOMHeb/
     (true 0.005 vs arbitrary 0.284 bits, same trajectory); first entity-to-entity
     macro TE observed. Learning sculpts the boundaries; locking brings them to
     life; the result obeys the same laws as its parts. ✅
+11. **The latent channel** — interaction (TE) and deviation (MI) are separate
+    observables: TE detects a coupling channel for any `K>0`, MI waits for `Kc`,
+    and the band `0<K<Kc` is a latent channel (TE>0, MI≈0 — a real but silent
+    edge). Interaction graded, deviation an onset; TE peaks near Kc then declines
+    (redundancy). Null state = poised, not empty. Completes the Ch 7–12 bridge. ✅
 
 ## Open work queue
 
@@ -89,23 +114,52 @@ modules pass all entity criteria unadjusted, and closure doubles as a
 boundary *detector* (true vs arbitrary boundary on the same trajectory:
 0.005 vs 0.284 bits).
 
-**Remaining spans / follow-ups:** interaction-vs-deviation (noun/verb — the
-last unbuilt Ch 8 span; committed next); blind boundary search (closure as
-an optimization objective — Ch 11's exercise); entity-hood along the growth
-trajectory; entities from unseeded structure; the entity operating envelope
-(absorption vs fragmentation — Ch 10's exercise); dissect the
-entity-to-entity channel; partial observability of the confounder (noisy
-`Z̃`); a learning rule that *produces* asymmetric `K`; the global-`r`
-threshold.
+**interaction-vs-deviation is now GROUNDED (iter 11)** — the last Ch 8 span is
+built; the foundational bridge is complete. **Remaining follow-ups (none
+committed):** blind boundary search (closure as an optimization objective —
+Ch 11's exercise); entity-hood along the growth trajectory; entities from
+unseeded structure; the entity operating envelope (absorption vs fragmentation
+— Ch 10's exercise); dissect the entity-to-entity channel; partial
+observability of the confounder (noisy `Z̃`); a learning rule that *produces*
+asymmetric `K`; the global-`r` threshold; latent-channel *composition* (do
+sub-threshold channels compose like locked ones? — Ch 12's exercise narrows
+the band via detuning).
+
+### C2. Framework integration (in progress — the current thread)
+- **APPLIED (7.1, 7.2):** `nullstate.md` `¬∃int`→`¬∃int_act`; `interaction.md`
+  Latent-vs-Active section, grounded by **iter 12** (latent/active = sign of the
+  locking discriminant `Disc=1−(Δω/2K)²`; complex vs real `ψ*`). Ziggy's "sign
+  problem" conjecture, verified.
+- **Still to apply (proposed):** 7.3 certificate levels to `information.md`;
+  7.4 conditional emergence to `system.md`. *Sign-off pending — formal constructs.*
+- **Add per-concept "Computational proof" footers** to the remaining
+  `Framework/*.md` docs (nullstate & interaction already link their proofs).
+- **Then** the active layer becomes the next grounding target (see below).
+
+### D. The bigger forks (choose by appetite)
+- **Climb a layer.** The foundational bridge is done; CPAF's *basic/active*
+  layer (experience, memory, awareness, reflection) is next. Memory is partly
+  in hand (K, iters 2–5); the rest are open, higher-risk, and would need fresh
+  entity criteria. The natural but ambitious continuation.
+- **Book-wide revision pass.** 12 chapters + Intermission across many sessions
+  — a consistency sweep (numbers, cross-references between chapters, notation,
+  and how iter 7's MI result is split across Ch 8 rather than given its own
+  chapter) would consolidate before pushing further. Lower-risk, high-legibility.
+- **Untested doc claim: damage recovery / graceful degradation** — never
+  simulated; a self-contained iteration.
 
 ## How to pick up
 
-1. `python3 verification/iter10_grown_entities.py` — confirm the env runs
-   (needs numpy + matplotlib; ~1.5 min, should print ALL PASS).
-2. Skim this file + `CHEATSHEET.md` + `CPAF_MAPPING_NOTES.md` + `DECISIONS.md`.
-3. Choose from the work queue. Committed next: **poke Chapter 8's seams** —
-   foremost interaction-vs-deviation (give the noun/verb split its own
-   falsifiable experiment).
+1. `pip3 install -r KSOMHeb/requirements.txt` (ephemeral container — packages
+   are gone on a fresh session), then `python3
+   verification/iter11_interaction_vs_deviation.py` to confirm the env runs
+   (~1.5 min, should print ALL PASS).
+2. Skim this file + `CHEATSHEET.md` + `CPAF_MAPPING_NOTES.md` + `DECISIONS.md`;
+   `textbook/I_intermission.md` for the fastest conceptual re-entry.
+3. Choose from the work queue. The foundational bridge is complete, so this is a
+   genuine fork — the two cleanest options are **climb a layer** (CPAF's active
+   layer: experience/memory/awareness/reflection) or a **book-wide revision
+   pass** to consolidate 12 chapters before pushing on. See "Open work queue → D".
 
 ## Conversation context (how we got here)
 

@@ -26,6 +26,20 @@ The foundational concepts collectively give rise to **Awareness** and **Memory**
 
 The foundational concepts in CPAF—Deviation, Entity, Interaction, Information, and the Null State—form a cohesive framework that underpins the emergence of Awareness and Memory. Together, they establish a recognizable base system characterized by its dynamic interplay of components, capacity for information processing, and ability to adapt and evolve in response to internal and external stimuli. This unified framework lays the groundwork for understanding the complexity of cognitive systems, setting the stage for the development of more advanced cognitive functions.
 
+## Computational Single-Case Proofs
+
+Each foundational concept below now has a **computational single-case proof** — a
+concrete realization in a running, verified simulation (coupled learning
+oscillators, K-SOM-Heb). Deviation is a locking bifurcation with a *derived*
+onset; information is the mutual information born at that bifurcation (and is
+provably distinct from mere coherence); an interaction is a coupling channel,
+separable from the deviation it may produce; an entity is a locked cluster that
+coarse-grains to one oscillator; a system's emergence is the appearance of that
+entity. The exercise also **refines** the framework in four places (e.g. the null
+state permits *latent* interactions — it is poised, not empty). See
+[`ComputationalProofs.md`](ComputationalProofs.md) for the concept-by-concept
+map, verdicts, and reproduction steps.
+
 ## Math Constructs
 
 ### Refined Mathematical Constructs

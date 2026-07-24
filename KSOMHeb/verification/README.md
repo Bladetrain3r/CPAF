@@ -18,9 +18,38 @@ the architecture's own stated properties. Run any of them directly with
 | `iter8_transfer_entropy.py` | **Interaction vs common cause.** Three causal graphs (coupled 1↔2, common-driven Z→1,Z→2 with zero coupling, one-way 1→2) carry the same MI (1.89/1.51/1.90 bits) — MI is graph-blind. Transfer entropy `TE(X→Y)=I(Y_{t+τ};X_t\|Y_t)` resolves direction (one-way: TE(1→2)=0.16, TE(2→1)=−0.001 — a true null) but is *also* fooled by the hidden common drive (0.036 vs coupled 0.047 — genuine predictive transfer over a nonexistent edge; prediction ≠ causation). Conditional TE\|Z gives a double dissociation: kills the spurious transfer (−0.004), leaves the real edge untouched (0.049). Ladder: related (MI) < directed (TE) < connected (TE\|confounders) | passing |
 | `iter10_grown_entities.py` | **The splice: grown modules are entities.** Grow modules with iter-5's machinery verbatim (per-pair reward + competition; reproduces contrast 3.32, Q +0.262), freeze K, and run iter-9's entity criteria unadjusted, predicting from the grown module's *measured* ω̄ and ρ: one clock per module (velocity spread 0.0002 vs natural 0.12); entrainment thresholds within 2.5% of `κc=\|Δω\|/(2ρ)`; the 1/√2 branch to 0.004. **Closure is a boundary detector:** on the same noisy trajectory, the grown boundary reads 0.005 bits of member→Θ leakage while an arbitrary boundary (15+15 across modules) leaks 0.284 bits — 50–60×. Bonus: first entity-to-entity macro channel, TE(Θ_B→Θ_A\|Θ_A)=0.013 bits through grown cross-links. (Expected in-situ leak from module B: below estimator floor — reported, not confirmed) | passing |
 | `iter9_entity_as_cluster.py` | **Entity-as-cluster (the CPAF recursion).** Coarse-grain a 5-member cluster to its mean phasor (Θ, ρ). A *locked* cluster passes every entity criterion: one shared frequency (member velocity spread 0.0% of natural); entrains to an external probe exactly per iter 6 with effective coupling **K_eff = κρ** — empirical thresholds within 2.5% of `κc=\|Δω\|/(2ρ)`, and a mid-coherence cluster (ρ=0.92) sides with the ρ-corrected prediction over naive `\|Δω\|/2`; the measured locked branch matches `R=cos(½ arcsin(Δω/2ρκ))` (floor 1/√2) to 0.016; and **macro closure** holds — TE(member→Θ\|Θ)=0.002 bits vs 0.027 for an unlocked collection and 0.106 for a genuine external influence (control). An unlocked collection fails all criteria: entity-hood is *created* by the locking transition | passing |
+| `iter11_interaction_vs_deviation.py` | **The latent channel (interaction vs deviation).** Sweep one pair's coupling through Kc. MI (deviation detector, iter 7) stays ~0 until locking; TE (interaction detector, iter 8) is nonzero for *any* K>0. They dissociate: at K/Kc=0.34, TE=0.015 bits (interaction present) while MI=0.04 (no deviation) — a **latent channel**, a real but silent edge. TE turns on (K/Kc≈0.34) before MI (≈0.53): interaction is graded, deviation is an onset. K=0 is a true null (both at floor). Bonus: TE peaks near Kc then declines (redundancy — a locked pair is its own best predictor). Grounds Ch 8's last span; hardens null=poised-not-empty | passing |
+| `iter12_interaction_sign.py` | **The sign of an interaction (latent vs active).** Latent vs active interaction is a *sign problem*: the sign of the locking discriminant `Disc=1−(Δω/2K)²`. Active (Disc>0): locked offset `ψ*` is **real** — realized, a deviation, and the simulated pair settles to `Re ψ*`. Latent (Disc<0): `ψ*=π/2−i·arccosh(Δω/2K)` is **complex** — unrealized, a channel only, and the pair never settles (drifts). Threshold `Kc`=discriminant zero: `ψ*=π/2`, `R=1/√2` (ties to iter 6). `\|Im ψ*\|` quantifies latency. Sign of the *discriminant*, not the coupling. All 4 checks pass | passing |
 
 ## Findings log
 
+- **Latent vs active interaction is a sign problem (iter12):** the sign of the
+  locking discriminant `Disc = 1 − (Δω/2K)²`. An *active* interaction has a real
+  locked phase-offset `ψ*` (realized on the circle — a deviation; the pair
+  settles to `Re ψ*`); a *latent* interaction has a **complex** offset
+  `ψ* = π/2 − i·arccosh(Δω/2K)` (unrealized — a channel only; the pair drifts).
+  The threshold `Kc` is the discriminant's zero, where the offset becomes real
+  at exactly `ψ*=π/2` (coherence `1/√2`, tying to iter 6), and `|Im ψ*|`
+  measures how latent. Crucially this is the sign of the *discriminant* (K vs
+  Kc), NOT the sign of the coupling itself (the attractive/repulsive axis set
+  aside in D1) — non-negative coupling, signed discriminant. This is the exact
+  form of Ziggy's "latent/active as a sign problem" conjecture, and it is the
+  mechanism behind iter 11's latent channel. Purely analytic backbone (extends
+  iter 6) confirmed against simulated realization.
+- **Interaction and deviation are separate observables — the latent channel
+  (iter11):** transfer entropy (the *interaction*/edge detector) is nonzero for
+  any coupling K>0, because a coupling transmits directed influence whether or
+  not it has locked; mutual information (the *deviation*/locking detector) stays
+  at floor until ~Kc. In the band 0<K<Kc they dissociate — TE>0 while MI≈0 — a
+  real but silent edge (at K/Kc=0.34: TE=0.015 bits, MI=0.04). So interaction is
+  graded (a matter of degree) and deviation is an onset (an event); the channel
+  becomes visible at *lower* coupling than the event. Bonus, honest: TE peaks
+  near Kc and then *declines* as locking tightens — redundancy, since a
+  well-locked pair already predicts its own future, so the partner adds little
+  new information. CPAF consequence: a null state (no deviations) can be dense
+  with *latent* interactions — null is poised, not empty. Ch 8's last bridge
+  span, grounded. Caveats: N=2; noise softens the deviation so both onsets sit
+  below the noiseless Kc; "TE≈0" = surrogate floor (K=0 column calibrates it).
 - **Grown modules are entities, and closure finds the boundary (iter10):**
   iter-5's learned modules pass all four iter-9 entity criteria with nothing
   adjusted — the reduction's cancellation needs only *symmetry* of K, so the

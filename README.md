@@ -14,6 +14,18 @@ Acknowledging the evolving nature of cognitive science, CPAF 0.1 is designed for
 ## Framework Application
 CPAF MVP 0.1 can be utilized within research, development, and educational contexts to assess and compare cognitive capabilities across diverse systems. It serves as a foundational tool for interdisciplinary collaboration and exploration of cognitive processes.
 
+## Computational Grounding
+Each of CPAF's foundational concepts (null state, deviation, interaction,
+information, entity, system) now has a **computational single-case proof** — a
+concrete realization in a running, verified simulation. The substrate is
+`KSOMHeb/` (K-SOM-Heb: coupled learning oscillators), with one runnable
+verification script per claim and a full mini-textbook. The concept-by-concept
+map — abstract construct → concrete proof → verdict, plus four refinements the
+proofs suggest to the framework — is in
+[`Framework/ComputationalProofs.md`](Framework/ComputationalProofs.md). This is
+first empirical evidence for the foundational stage; the active/higher stages are
+not yet grounded.
+
 ## Work still to do
 - Muchly
 - Initial definitions and constructs for intermediate, advanced, peak cognitive functions.
@@ -38,7 +50,8 @@ The CPAF at this point is prototypical and incomplete. Application in practice m
 ## Key Contributors
 Ziggy Fuchs
 ChatGPT-4
-Claude3-Opus
+Claude Opus 3
+Claude Opus 4.8
 Gemini 1.0 Advanced
 
 ## Contributing

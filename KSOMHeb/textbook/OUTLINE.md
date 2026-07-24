@@ -37,20 +37,24 @@ verified, so the textbook never runs ahead of the evidence.
 | 10 | Entity as cluster | The recursion, cashed: coarse-grain a locked cluster to (Θ, ρ); macro dynamics reduce to iter 6's pair equation with ω_eff=ω̄ and **K_eff=κρ** (coupling discounted by internal coherence, confirmed to 2.5%); the 1/√2 locked branch recurs one level up; **macro closure** TE(member→Θ\|Θ)≈0 for locked vs leaky for unlocked. Entity-hood is *created* by the locking transition | `iter9` | ✅ `10_entity_as_cluster.md` |
 | I | Intermission — the view from mid-bridge | Mid-course synthesis (no new results): the ingredient ledger (each concept = previous system + one thing); the CPAF dictionary as it stands, graded; the recurring motifs (one bifurcation three gifts; certificates cost context / entities make observability cheap; derive thresholds, and read checks against the math); the honest ledger of what's still owed. Base camp before the book-wide revision pass | synthesis of iter 1–9 | ✅ `I_intermission.md` |
 | 11 | The splice: grown modules are entities | Grow modules with iter-5 machinery verbatim, run iter-9's criteria unadjusted (predictions from measured ω̄, ρ only): thresholds to 2.5%, the 1/√2 branch to 0.004, closure ~0.005 bits. **Closure is a boundary detector**: an arbitrary boundary through the same trajectory leaks 0.284 bits (50–60×). First entity-to-entity macro TE observed (0.013 bits). The fusion: learning sculpts the boundaries, locking brings them to life, the result obeys the same laws as its parts | `iter10` | ✅ `11_the_splice.md` |
+| 12 | The latent channel: interaction without deviation | The last Ch-8 span, built: TE detects the *interaction* (channel), MI detects the *deviation* (locking event); they dissociate in a sub-threshold *latent band* `0<K<Kc` (TE>0, MI≈0). Interaction is graded, deviation is an onset; TE turns on before MI. Bonus: TE peaks near Kc then declines (redundancy). §12.7: latent vs active is the **sign** of the locking discriminant (complex vs real `ψ*`). Hardens the null-state reframe: null is *poised* (dense latent interactions), not empty. **Foundational bridge (Ch 7–12) complete** | `iter11`, `iter12` | ✅ `12_the_latent_channel.md` |
 | A | Appendix: bugs we caught | The v1.0 errors (S≡1, per-step blend, invalid entropy, STDP gaps) as cautionary tales in reading math against code | `verify_bugs.py`, doc v1.1 changelog | ✅ `A_bugs_we_caught.md` |
 
-**Draft through Ch 11 complete.** Committed next step: **poke at Chapter 8's
-remaining seams** — foremost interaction-vs-deviation (the noun/verb split,
-the last unbuilt Ch 8 span: give "an interaction is a channel that *may*
-produce a deviation" its own falsifiable test). Other live threads: blind
-boundary search (Ch 11's exercise — make the closure detector an
-entity-discovery algorithm); entity-hood along the growth trajectory (when
-does it switch on?); entity operating envelope (absorption vs fragmentation —
-Ch 10's exercise); entities from *unseeded* structure; a learning rule that
-*produces* asymmetric `Kᵢⱼ`; dissect the entity-to-entity channel; the Ch 6
-§6.3 seams (one-bit memory, plasticity's double edge, substrate-neutrality);
-the book-wide revision pass once each chapter has a sound draft (the
-Intermission is its staging note).
+**Draft through Ch 12 complete; the foundational-layer bridge (Ch 7–12) is
+closed** — every CPAF foundational concept (null, deviation, interaction,
+information, entity, system) now has a grounded oscillator definition.
+**Candidate next steps** (no single one committed — pick by appetite):
+*(a) climb a layer* — CPAF's *basic/active* concepts (experience, memory,
+awareness, reflection); memory is partly done (K, iters 2–5), the rest are
+open and higher-risk. *(b) the book-wide revision pass* — 12 chapters +
+Intermission now exist across many sessions; a consistency/coherence sweep
+(numbers, cross-references, notation, and whether iter 7's MI result deserves
+its own chapter rather than living inside Ch 8) would consolidate. *(c) remaining foundational follow-ups* — blind
+boundary search (Ch 11 exercise); entity-hood along the growth trajectory;
+absorption-vs-fragmentation envelope (Ch 10 exercise); entities from unseeded
+structure; a rule that *learns* asymmetric `Kᵢⱼ`; global-`r` threshold. *(d)
+untested doc claim* — damage recovery / graceful degradation. *(e) Ch 6 §6.3
+seams* — one-bit memory, plasticity's double edge, substrate-neutrality.
 
 ## Cross-cutting threads to keep visible
 
