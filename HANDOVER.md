@@ -26,10 +26,12 @@ CPAF/
 ├── HANDOVER.md               this file (repo-wide pickup)
 ├── Claude_Code.md            per-agent focus & team coordination conventions
 ├── Working_List.md           pickup-able task board (with difficulty hints)
+├── GPTSol.md                 formal-spine audit handover (GPT)
 ├── Framework/                the foundational concepts, formalized
-│   ├── nullstate / deviation / interaction / information / entity / system .md
+│   ├── CanonicalDefinitions/ ← GOLD-STANDARD layer (GPT): metalanguage, progression, typed concept defs (authority order in its README)
+│   ├── nullstate / deviation / interaction / information / entity / system .md  (legacy/historical)
 │   ├── Overview.md           the concepts + math constructs, unified
-│   └── ComputationalProofs.md  ← THE BRIDGE: each concept → its verified proof
+│   └── ComputationalProofs.md  ← THE BRIDGE (evidence layer, authority #3): each concept → its verified witness
 ├── Foundations/              LogicalConstructs, UnifiedFunction, Definitions, Case analyses, Tests
 ├── General/                  framework(0.2), StrictDefinitions, LogicalPropositions, Plan, Tree, summary
 ├── BigBookofCPAF/            LaTeX styling (Introduction.sty) — presentation layer
@@ -37,17 +39,32 @@ CPAF/
     ├── HANDOVER.md           deep pickup for the K-SOM-Heb work (READ FOR DETAIL)
     ├── CHEATSHEET.md · DECISIONS.md · CPAF_MAPPING_NOTES.md
     ├── ksomheb.py · requirements.txt
-    ├── verification/         iter1–iter12, one runnable script + plot + README each
+    ├── verification/         iter1–iter14, one runnable script + plot + README each
     ├── visualiser/           browser demo (parity-checked vs the .py)
-    └── textbook/             00–12 + Intermission + Appendix A (the mini-textbook)
+    └── textbook/             00–13 + Intermission + Appendix A (the mini-textbook)
 ```
 
 ## Status at this checkpoint
 
+- **Two workstreams, now interlocked.** GPT ran a **formal-spine audit** and
+  produced `Framework/CanonicalDefinitions/` — a gold-standard, *typed* definition
+  layer with a **metalanguage** (claim classes `[AN]`/`[CW]`/`[CONJ]`…, the
+  analysis context, capacity/event/measurement/scale separations). Claude Code's
+  verification + textbook side supplies the **computational witnesses**. The
+  canonical `README.md` sets the authority order; `ComputationalProofs.md` is the
+  evidence layer (#3). The canonical docs cite our iterations as witnesses (e.g.
+  `deviation.md` → iter 6 and the identity-deviation of iters 13–14).
+- **Textbook Volume I is a complete draft.** Ch 0–13 + Intermission + Appendix A.
+  **Ch 13 is the capstone** — it re-reads Volume I in the canonical metalanguage
+  (a witness table), and surfaced **4 revisions** to apply (null≠max-entropy;
+  keep `Kc`/`1/√2` typed; global-`r` stays `[CONJ]`; iter 4 is a classification
+  result). **Volume II** (the active layer — memory, recovery fidelity, awareness,
+  reflection) opens with damage recovery (iters 13–14).
 - **The foundational-layer bridge is COMPLETE and integrated.** All six
-  foundational concepts now have computational single-case proofs (K-SOM-Heb
-  iters 1–12), mapped in `Framework/ComputationalProofs.md`, with discoverability
-  pointers from `Framework/Overview.md` and the root `README.md`.
+  foundational concepts have computational single-case proofs (iters 1–12),
+  mapped in `Framework/ComputationalProofs.md`; the canonical layer has absorbed
+  the §7 refinements (7.1 latent interactions, 7.3 certificate ladder, 7.4
+  conditional emergence).
 - **Framework refinements underway.** Four refinements the proofs suggest are
   logged in `ComputationalProofs.md` §7. **7.1 and 7.2 are applied** (with author
   direction): the null state permits *latent* interactions (`nullstate.md`), and
