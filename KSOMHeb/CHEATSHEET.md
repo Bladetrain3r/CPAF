@@ -181,6 +181,7 @@ macro closure:  TE(θᵢ → Θ | Θ) ≈ 0   (members add nothing beyond Θ; fa
 | Damage recovery = recovery of the **pattern** (not coherence); needs a protected memory | ✅ frozen K restores the stored pattern from any scramble (K=0 recovers nothing); plastic K has a resilience threshold (σ≈1) then rewrites → identity lost while r partly persists | 13 |
 | Graceful degradation / resilience as a metric | ✅ iter13 (monostable) + iter14 (multistable): resilience of identity has a threshold; past it, recovery lands elsewhere | 13,14 |
 | Associative recovery: full coherence into the *wrong stored* memory | ✅ oscillatory Hopfield (M stored); →original 100%→20%, →different memory 0→65% with damage, coherence stays ~0.85; M=1 can't do it | 14 |
+| Stigmergy: coordination via a shared medium; the *mediator* fingerprint | ✅ agents sync through a persistent medium (no direct edge); `TE(a→b\|m)`→14% (mediator, mirror of iter-8 confounder); null is medium-relative (no trail→search). Direct-vs-mediated margin modest (minimal substrate) | 15 |
 
 ## Default parameters
 

@@ -1,10 +1,22 @@
 # Computational Single-Case Proofs of CPAF's Foundational Concepts
 
-*The bridge between the abstract concept docs in this folder (`nullstate.md`,
-`deviation.md`, `interaction.md`, `information.md`, `entity.md`, `system.md`) and
-the verified simulations under `../KSOMHeb/`. For each foundational concept, CPAF
-gives a definition and a logical/mathematical construct; here each construct is
-**realized concretely and checked by running code**.*
+*The bridge between the abstract concept docs and the verified simulations under
+`../KSOMHeb/`. For each foundational concept, CPAF gives a definition and a
+logical/mathematical construct; here each construct is **realized concretely and
+checked by running code**.*
+
+> **Canonical-layer note.** The formal-spine audit has since introduced a
+> gold-standard definition layer, `CanonicalDefinitions/` (its `README.md` sets
+> the authority order — this document is **level 3, the evidence/refinement
+> layer**). In that layer's **metalanguage** (`CanonicalDefinitions/
+> METALANGUAGE.md`), each "single-case proof" below is a **computational witness
+> `[CW]`** (an existence demonstration in one substrate), and the analytic parts
+> (e.g. `Kc=|Δω|/2`, `1/√2`) are **analytic results `[AN]`** — never universal
+> definitions. The canonical concept docs cite these as their witnesses (e.g.
+> `deviation.md` → iter 6 and the identity-deviation of iters 13–14). The four
+> refinements in §7 have largely been absorbed into that layer; where they touch
+> a formal construct, the canonical docs are authoritative. Pedagogical
+> walkthrough: `../KSOMHeb/textbook/13_capstone_metalanguage.md`.
 
 ---
 

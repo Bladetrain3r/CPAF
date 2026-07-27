@@ -98,6 +98,18 @@ may be a concrete substrate for CPAF's basic layer.
   structural lesions of `K` vs phase kicks; the collapse edge vs the iter-3
   separatrix; combine 13+14 into textbook Ch 13.
 
+- **Stigmergy — less-closed systems + a medium-relative null (iter 15).** A
+  *mediator* motif: agents coordinate through a persistent, agent-written medium
+  `m` (`a→m→b`), the mirror of iter-8's *confounder* (`a←Z→b`); fingerprint
+  `Connected(a→b|m)≈0` (TE screens to 14%). Stigmergy = **externalized** memory,
+  the complement of `K`'s internal memory; **closure↔stigmergy is one axis**
+  (coordination/memory held inside vs outside). **For the canonical `null_state`
+  (GPT):** stigmergy gives a concrete *medium-relative* null — the reference
+  regime is *what the agent does when the medium is silent* (a default/search
+  regime), and a trail is a deviation away from it. A dynamic null, not "no
+  couplings." *Follow-ups:* spatial-field substrate (crisp mediator/direct double
+  dissociation); the extended-entity closure test (is `agents+medium` one entity?).
+
 ## Where this is heading
 
 Longer term: use the verified dynamics to give CPAF's basic layer — *null state,

@@ -31,10 +31,11 @@ the same task, the branch-per-agent + check-first convention applies.
 
 | # | Task | Area / files | Difficulty | Effort | Deps / notes | Claimed by |
 |---|------|--------------|:---:|:---:|--------------|-----------|
-| 1 | **Textbook Ch 13** — write up damage recovery, combining iter 13 (pattern recovery, protected memory) + iter 14 (associative, wrong-memory). House style: intuition→math→code→result→carry-forward→exercise | `KSOMHeb/textbook/13_*.md`, `OUTLINE.md` | 🟡 | M | iter 13–14 done; follow the Ch 7–12 style | — |
-| 2 | **Book-wide revision pass** — consistency sweep across Ch 0–12 + Intermission: cross-refs, notation, numbers; decide if iter 7's MI result needs its own chapter | `KSOMHeb/textbook/**` | 🟡 | L | Breadth, not depth; collision risk on many files — coordinate | — |
-| 3 | **Framework refinement 7.3** — add certificate levels (related<directed<connected) to the information concept | `Framework/information.md`, `ComputationalProofs.md` §7.3 | 🟡 | S | **Needs author sign-off** (formal construct) | — |
-| 4 | **Framework refinement 7.4** — make emergence conditional on the right learning ingredients (iters 4–5) | `Framework/system.md`, `ComputationalProofs.md` §7.4 | 🟡 | S | **Needs author sign-off** (formal construct) | — |
+| 1 | **Volume II Ch 1 — damage recovery** — write up iters 13 (pattern recovery, protected memory) + 14 (associative, wrong-memory) as the *identity-deviation / recovery-fidelity* chapter, in the canonical metalanguage. House style: intuition→math→code→result→carry-forward→exercise | `KSOMHeb/textbook/` (Vol II), `OUTLINE.md` | 🟡 | M | iter 13–14 done; Ch 13 is now the Vol I capstone (metalanguage), not this | — |
+| 1b | **Apply Ch 13's four Volume I revisions** — (i) null≠max-entropy in Ch 0/8 prose; (ii) keep `Kc`/`1/√2` typed as `[AN]` for the pair scale; (iii) global-`r` stays `[CONJ]`; (iv) label iter 4 a classification result | `KSOMHeb/textbook/00,04,08`, coordinate w/ canonical `null_state` | 🟢 | S | (i) touches the null-state framing — coordinate with the formal spine | — |
+| 2 | **Book-wide revision pass** — consistency sweep across Ch 0–13 + Intermission: cross-refs, notation, numbers; decide if iter 7's MI result needs its own chapter | `KSOMHeb/textbook/**` | 🟡 | L | Breadth, not depth; collision risk on many files — coordinate | — |
+| 3 | **Framework refinement 7.3** — add certificate levels (related<directed<connected) to the information concept | `Framework/information.md`, `ComputationalProofs.md` §7.3 | 🟡 | S | **Needs author sign-off** (formal construct); folds into the formal-spine audit | GPT (formal-spine audit) |
+| 4 | **Framework refinement 7.4** — make emergence conditional on the right learning ingredients (iters 4–5) | `Framework/system.md`, `ComputationalProofs.md` §7.4 | 🟡 | S | **Needs author sign-off** (formal construct); folds into the formal-spine audit | GPT (formal-spine audit) |
 | 5 | **"Computational proof →" footers** — add a one-line proof pointer to each remaining `Framework/` concept doc (nullstate & interaction already have theirs) | `Framework/deviation/information/entity/system.md` | 🟢 | S | Additive, low-risk; mirror the existing footers | — |
 | 6 | **iter 15 — structural lesion recovery** — damage the *coupling* `K` directly (not the phases) and test recovery/collapse; predict the collapse edge = the iter-3 separatrix | `KSOMHeb/verification/iter15_*.py` | 🟡 | M | Extends iter 13; ties to iter 3/6 thresholds | — |
 | 7 | **iter 16 — associative capacity study** — how do M (patterns), N, and pattern distance set identity resilience (basin size)? Map the capacity cliff | `KSOMHeb/verification/iter16_*.py` | 🟡 | M | Extends iter 14; classic Hopfield capacity ~0.14·N | — |
@@ -46,6 +47,20 @@ the same task, the branch-per-agent + check-first convention applies.
 | 13 | **Visualiser: damage-recovery demo** — add a panel that scrambles a locked module's phases and shows pattern fidelity recovering (or not) | `KSOMHeb/visualiser/` | 🟡 | M | JS port must stay parity-checked vs the `.py` (D7) | — |
 | 14 | **Ch 6 §6.3 seams** — one-bit memory vs "connectivity is memory"; plasticity `P`'s double edge (low P = dead or settled?) | `KSOMHeb/verification/`, Ch 6 | 🟡 | M | Two of the remaining quant/qual seams | — |
 | 15 | **Entity operating envelope** — absorption vs fragmentation: when does a cluster absorb a newcomer vs split? (Ch 10 exercise) | `KSOMHeb/verification/` | 🟡 | M | Extends iter 9 | — |
+
+## Team status
+
+- **In progress:** a **formal-spine audit** of the framework (GPT, own branch) —
+  tightening definitions, logical constructs, and proofs across `Framework/`,
+  `Foundations/`, `General/`. **Coordinate before touching the `Framework/`
+  concept docs** — that's the audit's active surface. My side (Claude Code) stays
+  on `KSOMHeb/` verification + textbook; workflow is semi-interleaved (GPT works,
+  then hands back), not fully concurrent.
+- **Heads-up for the audit:** refinements 7.1/7.2 are already **applied** to
+  `nullstate.md` and `interaction.md` (latent/active interaction = the sign of the
+  locking discriminant); audit against the *current* refined state, and the
+  rationale + the still-open 7.3/7.4 proposals are all in `ComputationalProofs.md`
+  §7 (tasks 3–4 above fold into the audit).
 
 ## Notes
 
