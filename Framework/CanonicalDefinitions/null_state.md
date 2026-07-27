@@ -1,6 +1,6 @@
 # Null State
 
-**Status:** Draft 0.1  
+**Status:** Draft 0.2
 **Dependencies:** canonical metalanguage, analysis context, state, time, scale  
 **Primary adjacent concept:** deviation
 
@@ -120,33 +120,84 @@ measured.
 
 ## Interaction inside a null regime
 
-[CONJ / decision point] A macro-level null may be maintained by active
-micro-level interactions. Therefore:
+[DEF] Nullness at one scale constrains relevant deviation at that scale; it
+does not constrain every interaction or deviation at finer scales. For
+`λ_micro ≺_scale λ_macro`, where `≺_scale` means “is a finer descriptive scale
+than” rather than numerical inequality:
 
 ```text
-null at scale λ_macro
+Null_s(x_t; C, λ_macro)
+⇸ ¬∃a,b Int_act(a → b,t; C, λ_micro)
 ```
 
-does not automatically imply:
+where `⇸` means “does not imply.” A macro-null is therefore compatible with
+latent channels, active micro-interactions, and micro-deviations, provided the
+declared macro membership or tolerance criterion remains satisfied.
+
+[DEF] An **actively maintained null** is a null regime for which one or more
+active interactions contribute to keeping the macrostate inside the reference
+criterion:
 
 ```text
-no active interaction at every λ_micro.
+MaintNull_s(t; C, λ_macro) ≔
+    Null_s(x_t; C, λ_macro)
+    ∧ ∃a,b,λ_micro with λ_micro ≺_scale λ_macro:
+        Int_act(a → b,t; C, λ_micro)
+        ∧ Maintains(a → b, N_s; C, λ_macro)
 ```
 
-The existing “poised, not empty” refinement safely permits latent channels.
-The canonical version may need to go further and permit active internal
-maintenance while no relevant macro-deviation occurs.
+`Maintains` is a certificate, not a synonym for temporal coexistence. An
+operational claim must show that removing, blocking, or suitably varying the
+interaction makes departure from `N_s` more likely, faster, or larger under
+otherwise comparable conditions. When intervention is unavailable, a weaker
+model-based or observational certificate must be labelled as such.
 
-This requires author sign-off because it changes the strongest reading of the
-current `¬∃int_act` null-state construct.
+Active maintenance is optional: a null may instead persist passively, through
+latent capacities, or through a mixture of mechanisms. Unmeasured
+micro-interference must remain a possible limitation of a null-state claim; it
+must not be asserted merely because the analysis cannot exclude it.
 
-## Metastability and frequency
+## Metastability, recurrence, and revisit frequency
 
-The phrase “high-frequency metastable phase” is provisionally read as a regime
-that is **frequently occupied or revisited**, despite finite residence or
-occasional departure.
+The phrase “high-frequency metastable phase” means a metastable regime that is
+**frequently occupied or revisited within a declared time horizon**. It does
+not, unless explicitly stated, mean a high physical oscillation frequency.
 
-A future operational criterion might use:
+[DEF] A revisit occurs when a trajectory that has left the reference regime
+later returns to the same regime or to a declared similarity neighbourhood:
+
+```text
+Revisit_N(t_0,h; C) ≔
+    ∃t_exit,t_return with t_0 ≤ t_exit < t_return ≤ t_0+h:
+        Δ_N(x_t_exit) > ε_exit
+        ∧ Δ_N(x_t_return) ≤ ε_return
+```
+
+For non-metric or distributional regimes, the final clause is replaced by the
+declared membership, classifier, or divergence criterion. “Similar
+configuration” therefore means equivalent under `O_s`, `δ_s`, scale, and
+return tolerance—not necessarily an identical microstate.
+
+[DEF] Recurrence over horizon `h` may be reported as a conditional return
+probability:
+
+```text
+R_N(h; C) ≔ P(Revisit_N(t_0,h; C) | departure from N_s)
+```
+
+or as an empirical revisit rate over `W`. A regime is **frequently recurrent**
+only relative to declared thresholds `h` and `ρ_R`:
+
+```text
+FrequentRec_N(h,ρ_R; C) ≔ R_N(h; C) ≥ ρ_R
+```
+
+Thus “high,” “short,” and “similar” are context parameters rather than
+universal constants. Recurrence frequency is also distinct from occupancy and
+residence time: a regime can be occupied for a long time but rarely revisited,
+or revisited often with short visits.
+
+An operational criterion may use:
 
 - occupancy fraction;
 - return frequency;
@@ -155,7 +206,7 @@ A future operational criterion might use:
 - transition probability;
 - recurrence rate.
 
-No universal threshold is proposed yet.
+No universal horizon, return tolerance, or recurrence threshold is proposed.
 
 ## Relationship to deviation
 
@@ -226,8 +277,17 @@ appropriate class of representations.
 
 ## Open decisions
 
-1. Confirm “high-frequency” means frequently occupied/revisited.
-2. Decide whether active micro-interactions may maintain a macro-null.
+1. Decide which recurrence estimator and thresholds are suitable for each
+   operational domain; no universal values are assumed.
+2. Decide which maintenance-certificate levels are sufficient when controlled
+   intervention is unavailable.
 3. Decide whether a system must possess a natural null or may use only
    assessor-selected references.
 4. Revisit observer relativity later.
+
+## Change log
+
+- **Draft 0.2:** permits active micro-level maintenance of a macro-null;
+  distinguishes certified maintenance from mere coexistence; and formalizes
+  revisit, finite-horizon recurrence, and context-relative frequency.
+- **Draft 0.1:** introduced the general, non-maximum-entropy null regime.

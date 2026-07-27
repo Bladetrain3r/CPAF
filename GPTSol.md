@@ -16,7 +16,7 @@ enough for an explicit archive or trimming pass.
 
 ## Current focus
 
-### Reference dynamics: null state → deviation
+### Observer relativity after null state → deviation
 
 Null state and deviation are the first paired concepts because later constructs
 depend on a stable account of reference, change, threshold, recurrence, and
@@ -35,6 +35,20 @@ Working direction:
   may also be permitted when they maintain a macro-level null;
 - observer and representation relativity are acknowledged but deferred as an
   ontology decision.
+
+The null-state draft is now at 0.2. The next seam is separating changes in the
+system from changes in the observer's representation or clock. A proposed
+computational witness is a set of coupled oscillators represented on different
+clocks or time bases. Before promotion, it must distinguish:
+
+- coordinate or sampling differences from physical deviations;
+- clock-relative phase/frequency from invariant relational structure;
+- synchronization in one time parameter from synchronization preserved under
+  an admissible clock transformation;
+- observer-relative operational certificates from ontic claims.
+
+This is an open research direction, not evidence that K-SOM-Heb has already
+resolved clock relativity.
 
 ## Author decisions recorded
 
@@ -56,12 +70,25 @@ Working direction:
    `related < directed < connected`, with room for later refinement.
 8. **Emergence:** emergence is conditional. Local organizational and dynamical
    criteria must be satisfied; chaos or interaction alone does not guarantee it.
+9. **Active null maintenance:** a macro-level null may be maintained by active
+   micro-level interactions. Nullness at one scale does not entail inactivity at
+   finer scales; a maintenance claim must still be certified rather than inferred
+   from coexistence.
+10. **Frequent recurrence:** “high-frequency” metastability means a high return
+    probability or revisit rate within a declared time horizon, unless physical
+    oscillation frequency is explicitly intended. A revisit returns to the same
+    regime or a declared similarity neighbourhood, not necessarily an identical
+    microstate.
+11. **Observer/clock witness direction:** explore coupled oscillators represented
+    on different clocks as the next test of observer relativity. Coordinate
+    disagreement is not a physical deviation without an invariant or explicitly
+    context-relative criterion.
 
 ## Open clarification
 
-When “high-frequency metastable phase” is used for a null state, this handover
-currently interprets **high-frequency** as **frequently occupied or revisited**,
-not high physical oscillation frequency.
+Operational domains still need to choose appropriate recurrence estimators,
+time horizons, similarity tolerances, and thresholds; the canonical definition
+does not impose universal values.
 
 ## Canonical structure
 
@@ -98,11 +125,14 @@ stable.
 
 ## Immediate deliverables
 
-1. Canonical authority and document contract.
-2. Metalanguage and quick-reference cheatsheet.
-3. Draft canonical null-state definition.
-4. Draft canonical deviation definition.
-5. Legacy and computational-witness crosswalks.
+1. Draft the observer/representation-relativity decision space without silently
+   choosing an ontology.
+2. Type clock/time-base transformations and candidate invariants in the
+   canonical metalanguage.
+3. Specify what a different-clock oscillator witness would prove and falsify
+   before implementing it in K-SOM-Heb.
+4. Test null and deviation classifications against changes of observation map,
+   sampling rate, and time parameter.
 
 ## Main risks
 
