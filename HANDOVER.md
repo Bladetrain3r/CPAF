@@ -72,6 +72,17 @@ CPAF/
   the locking discriminant `Disc=1−(Δω/2K)²` (`interaction.md`, grounded by
   iter 12). **7.3** (information certificate levels) and **7.4** (conditional
   emergence) are proposed, pending sign-off.
+- **Canonical null state is now Draft 0.2.** A macro-null may be actively
+  maintained by micro-level interactions: nullness constrains relevant
+  deviation at the declared scale, not all finer-scale activity. Maintenance
+  requires a certificate rather than mere coexistence. A revisit is a return to
+  the same reference regime or a declared similarity neighbourhood, and
+  “high-frequency” metastability means high finite-horizon return probability
+  or revisit rate—not physical oscillation frequency unless stated.
+- **Next seam: observer relativity.** The proposed canonical/textbook witness is
+  coupled oscillators represented on different clocks or time bases, testing
+  which null, deviation, interaction, and synchronization claims survive a
+  clock change. This is a research direction, not yet a verified result.
 - **Damage recovery has a first result (iter 13).** Recovery is recovery of the
   stored *pattern* (not mere coherence), and it requires a *protected* memory —
   the first step into the active layer (memory + graceful degradation).
@@ -86,21 +97,25 @@ CPAF/
 1. **Finish the interaction-cluster refinement** — 7.3 (`information.md`:
    related<directed<connected certificate levels) and 7.4 (`system.md`:
    emergence conditional on the right learning ingredients). *Sign-off needed.*
-2. **Per-concept "Computational proof →" footers** on the remaining `Framework/`
+2. **Observer/clock relativity** — distinguish physical dynamics, observation
+   map, sampling, and time parameter; then specify a different-clock oscillator
+   witness. Do not classify coordinate disagreement as physical deviation.
+   *Open; no witness yet.*
+3. **Per-concept "Computational proof →" footers** on the remaining `Framework/`
    concept docs (nullstate & interaction already link theirs).
-3. **Damage recovery / graceful degradation** — **results (iters 13–14):**
+4. **Damage recovery / graceful degradation** — **results (iters 13–14):**
    recovery is recovery of the stored *pattern* and needs a protected memory
    (iter 13; unprotected memory loses the identity past a threshold); with
    multiple stored memories (oscillatory Hopfield, iter 14) recovery can restore
    *full coherence into a different stored identity* — the genuine ship of
    Theseus. *Open:* combine 13+14 into **textbook Ch 13**; a capacity study;
    structural lesions of `K`; the collapse edge vs the iter-3 separatrix.
-4. **Climb a layer** — the *active* concepts. *Memory* now has both a substrate
+5. **Climb a layer** — the *active* concepts. *Memory* now has both a substrate
    (`K`) and an operational test (iter 13 recovery); *awareness/reflection/
    experience* are the frontier. Deliberately deferred until foundations are firm.
-5. **Book-wide revision pass** — 12 chapters + Intermission across many sessions;
+6. **Book-wide revision pass** — 12 chapters + Intermission across many sessions;
    a consistency sweep would consolidate.
-6. **Standing K-SOM-Heb follow-ups** — see `KSOMHeb/HANDOVER.md` §C (blind
+7. **Standing K-SOM-Heb follow-ups** — see `KSOMHeb/HANDOVER.md` §C (blind
    boundary search, asymmetric-`K` learning rule, global-`r` threshold, …).
 
 ## How to pick up

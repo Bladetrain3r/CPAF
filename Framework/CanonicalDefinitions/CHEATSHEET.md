@@ -54,6 +54,10 @@ result · `CW` computational witness · `EMP` empirical result · `EX` example
 A null state is a **reference regime**, often recurrent or metastable, within
 which the system remains for the chosen criterion and scale.
 
+A macro-null may be actively maintained by micro-interactions. Nullness at one
+scale does not imply inactivity at every finer scale, and coexistence alone
+does not prove that an interaction maintains the null.
+
 It is **not necessarily**:
 
 - static;
@@ -64,6 +68,12 @@ It is **not necessarily**:
 
 Possible subtypes: reference, equilibrium, attractor, metastable, recurrent,
 statistical, informational, maximum-entropy, meta-null.
+
+For a recurrent null, declare the return tolerance, time horizon, and required
+return probability or empirical revisit rate. A revisit returns to the same
+reference regime or similarity neighbourhood, not necessarily the identical
+microstate. “High-frequency” means frequent return within that context unless
+physical oscillation frequency is explicitly intended.
 
 ## Deviation in one line
 
