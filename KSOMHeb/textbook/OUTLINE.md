@@ -50,6 +50,11 @@ verified, so the textbook never runs ahead of the evidence.
   above foundations: memory, **recovery fidelity / identity** (damage recovery,
   iters 13–14 — the *first Volume II chapter to write*), then awareness,
   reflection, and beyond. Written in the canonical metalanguage from the start.
+  - **Volume II Intermission — Stigmergy** (`II_stigmergy_intermission.md`, ✅):
+    *less-closed systems* — coordination and memory held *outside* the agents in a
+    shared medium. Defines stigmergy in the metalanguage (a *mediator* motif; the
+    `Connected(a→b|m)≈0` fingerprint, mirror of iter 8); witnesses it (iter 15);
+    contributes a **medium-relative null state**. Closure↔stigmergy = one axis.
 
 **Immediate next candidates:**
 *(a)* **Volume II Ch 1 — damage recovery** (write up iters 13–14 as the

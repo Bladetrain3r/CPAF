@@ -20,11 +20,28 @@ the architecture's own stated properties. Run any of them directly with
 | `iter9_entity_as_cluster.py` | **Entity-as-cluster (the CPAF recursion).** Coarse-grain a 5-member cluster to its mean phasor (Θ, ρ). A *locked* cluster passes every entity criterion: one shared frequency (member velocity spread 0.0% of natural); entrains to an external probe exactly per iter 6 with effective coupling **K_eff = κρ** — empirical thresholds within 2.5% of `κc=\|Δω\|/(2ρ)`, and a mid-coherence cluster (ρ=0.92) sides with the ρ-corrected prediction over naive `\|Δω\|/2`; the measured locked branch matches `R=cos(½ arcsin(Δω/2ρκ))` (floor 1/√2) to 0.016; and **macro closure** holds — TE(member→Θ\|Θ)=0.002 bits vs 0.027 for an unlocked collection and 0.106 for a genuine external influence (control). An unlocked collection fails all criteria: entity-hood is *created* by the locking transition | passing |
 | `iter11_interaction_vs_deviation.py` | **The latent channel (interaction vs deviation).** Sweep one pair's coupling through Kc. MI (deviation detector, iter 7) stays ~0 until locking; TE (interaction detector, iter 8) is nonzero for *any* K>0. They dissociate: at K/Kc=0.34, TE=0.015 bits (interaction present) while MI=0.04 (no deviation) — a **latent channel**, a real but silent edge. TE turns on (K/Kc≈0.34) before MI (≈0.53): interaction is graded, deviation is an onset. K=0 is a true null (both at floor). Bonus: TE peaks near Kc then declines (redundancy — a locked pair is its own best predictor). Grounds Ch 8's last span; hardens null=poised-not-empty | passing |
 | `iter12_interaction_sign.py` | **The sign of an interaction (latent vs active).** Latent vs active interaction is a *sign problem*: the sign of the locking discriminant `Disc=1−(Δω/2K)²`. Active (Disc>0): locked offset `ψ*` is **real** — realized, a deviation, and the simulated pair settles to `Re ψ*`. Latent (Disc<0): `ψ*=π/2−i·arccosh(Δω/2K)` is **complex** — unrealized, a channel only, and the pair never settles (drifts). Threshold `Kc`=discriminant zero: `ψ*=π/2`, `R=1/√2` (ties to iter 6). `\|Im ψ*\|` quantifies latency. Sign of the *discriminant*, not the coupling. All 4 checks pass | passing |
+| `iter15_stigmergy.py` | **Stigmergy: coordination through a shared, persistent medium.** Agents couple only to a deposit-evaporation medium `M` (no direct coupling). Low evaporation → they synchronize through the trail; high evaporation → fall back to a *search/drift* null (r≈uncoupled baseline) — the null is **medium-relative**. Fingerprint (reusing iter-8 conditional TE): `M` is a *mediator*, so `TE(1→2)` collapses to ~14% conditioned on `M` (mirror of iter-8's *confounder*). Partial: a direct edge leaves more residual (22%), margin modest (minimal medium tracks the phase). Closure↔stigmergy = one axis (memory/coordination inside vs outside) | passing |
 | `iter14_associative_recovery.py` | **Associative recovery: full coherence into the WRONG memory.** An oscillatory Hopfield net stores M=3 patterns (`K_ij=(1/N)Σ_μ sᵘᵢsᵘⱼ`); each is a stable attractor. Damage pattern A and recover: small damage → 100% back to A; but past σ≈1.5 the *retrieval coherence* stays high (~0.85 — the system still locks onto **a** stored memory) while the fraction recovering the **original** collapses (→A: 100%→20%) and the fraction landing on a **different stored pattern** grows to 65% at σ=3.0. The true ship of Theseus — same coherence, a different stored self. Requires multistability: M=1 control always returns the same pattern. All 4 checks pass | passing |
 | `iter13_damage_recovery.py` | **Damage recovery = recovery of the PATTERN.** Scramble a locked module's phases; measure recovery against the *stored pattern* (gauge-invariant phase differences), not coherence. Protected memory (frozen K): pattern recovers to ~1.0 from any scramble (K=0 control recovers nothing → the coupling IS what restores identity); coherence returns before the pattern (stricter, later). Unprotected memory (plastic): resilience **threshold** at σ≈1 — small hits self-heal, big hits erode the coupling and rewrite the memory (partial coherence r≈0.5 into a *shifted* pattern, F≈0.4). Ship of Theseus. All 5 checks pass | passing |
 
 ## Findings log
 
+- **Stigmergy = coordination through a shared medium, and the null is
+  medium-relative (iter15):** agents coupled ONLY to a persistent, agent-written
+  medium `M` (deposit + evaporation, no direct coupling) synchronize through it
+  when the trail persists (low evaporation) and fall back to a **search/drift
+  null** when it can't (high evaporation → r ≈ the uncoupled baseline) — a real
+  bifurcation, and a *medium-relative* reference regime (the ant-without-pheromone
+  reverts to search). Fingerprint, reusing iter-8's conditional TE: the medium is
+  a *mediator* (`a→m→b`), the mirror of iter-8's *confounder* (`a←Z→b`) — so
+  `TE(a→b)` collapses to ~14% once you condition on `M` (the medium is the
+  pathway). Honest partial: a genuine direct edge leaves *more* residual (22% vs
+  14%) but the margin is modest — this minimal medium tracks the phase, so a
+  crisp mediator/direct double dissociation needs a spatial-field substrate
+  (follow-up). Ties modularity (iter 4–5 = stigmergic self-org), memory (external
+  vs internal), and closure (the extended-entity boundary question). Concept:
+  closure and stigmergy are two ends of one axis (coordination/memory held
+  inside vs outside).
 - **Associative recovery lands on the wrong stored memory (iter14):** with
   multiple memories stored in one coupling (oscillatory Hopfield), damage
   recovery can restore *full* coherence into a *different* stored identity — the

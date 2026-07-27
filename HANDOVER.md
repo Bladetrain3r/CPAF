@@ -39,9 +39,9 @@ CPAF/
     ├── HANDOVER.md           deep pickup for the K-SOM-Heb work (READ FOR DETAIL)
     ├── CHEATSHEET.md · DECISIONS.md · CPAF_MAPPING_NOTES.md
     ├── ksomheb.py · requirements.txt
-    ├── verification/         iter1–iter14, one runnable script + plot + README each
+    ├── verification/         iter1–iter15, one runnable script + plot + README each
     ├── visualiser/           browser demo (parity-checked vs the .py)
-    └── textbook/             00–13 + Intermission + Appendix A (the mini-textbook)
+    └── textbook/             00–13 + Intermission + Vol II Stigmergy Intermission + Appendix A
 ```
 
 ## Status at this checkpoint
