@@ -38,23 +38,30 @@ verified, so the textbook never runs ahead of the evidence.
 | I | Intermission — the view from mid-bridge | Mid-course synthesis (no new results): the ingredient ledger (each concept = previous system + one thing); the CPAF dictionary as it stands, graded; the recurring motifs (one bifurcation three gifts; certificates cost context / entities make observability cheap; derive thresholds, and read checks against the math); the honest ledger of what's still owed. Base camp before the book-wide revision pass | synthesis of iter 1–9 | ✅ `I_intermission.md` |
 | 11 | The splice: grown modules are entities | Grow modules with iter-5 machinery verbatim, run iter-9's criteria unadjusted (predictions from measured ω̄, ρ only): thresholds to 2.5%, the 1/√2 branch to 0.004, closure ~0.005 bits. **Closure is a boundary detector**: an arbitrary boundary through the same trajectory leaks 0.284 bits (50–60×). First entity-to-entity macro TE observed (0.013 bits). The fusion: learning sculpts the boundaries, locking brings them to life, the result obeys the same laws as its parts | `iter10` | ✅ `11_the_splice.md` |
 | 12 | The latent channel: interaction without deviation | The last Ch-8 span, built: TE detects the *interaction* (channel), MI detects the *deviation* (locking event); they dissociate in a sub-threshold *latent band* `0<K<Kc` (TE>0, MI≈0). Interaction is graded, deviation is an onset; TE turns on before MI. Bonus: TE peaks near Kc then declines (redundancy). §12.7: latent vs active is the **sign** of the locking discriminant (complex vs real `ψ*`). Hardens the null-state reframe: null is *poised* (dense latent interactions), not empty. **Foundational bridge (Ch 7–12) complete** | `iter11`, `iter12` | ✅ `12_the_latent_channel.md` |
+| 13 | Capstone: the metalanguage (Volume I in one frame) | Re-reads all of Volume I through the formal-spine audit's canonical metalanguage: claim classes (`[AN]`/`[CW]`/`[CONJ]`…), the analysis context `C`, the capacity/event/measurement/scale separations; recasts the 14 experiments as a **witness table** (the computational-witness crosswalk); surfaces 4 revisions (null≠max-entropy, keep `Kc`/`1/√2` typed, global-`r` stays `[CONJ]`, iter 4 is a classification result); hinges to Volume II. Revision + bridge + on-ramp | canonical layer + iter 1–14 | ✅ `13_capstone_metalanguage.md` |
 | A | Appendix: bugs we caught | The v1.0 errors (S≡1, per-step blend, invalid entropy, STDP gaps) as cautionary tales in reading math against code | `verify_bugs.py`, doc v1.1 changelog | ✅ `A_bugs_we_caught.md` |
 
-**Draft through Ch 12 complete; the foundational-layer bridge (Ch 7–12) is
-closed** — every CPAF foundational concept (null, deviation, interaction,
-information, entity, system) now has a grounded oscillator definition.
-**Candidate next steps** (no single one committed — pick by appetite):
-*(a) climb a layer* — CPAF's *basic/active* concepts (experience, memory,
-awareness, reflection); memory is partly done (K, iters 2–5), the rest are
-open and higher-risk. *(b) the book-wide revision pass* — 12 chapters +
-Intermission now exist across many sessions; a consistency/coherence sweep
-(numbers, cross-references, notation, and whether iter 7's MI result deserves
-its own chapter rather than living inside Ch 8) would consolidate. *(c) remaining foundational follow-ups* — blind
-boundary search (Ch 11 exercise); entity-hood along the growth trajectory;
-absorption-vs-fragmentation envelope (Ch 10 exercise); entities from unseeded
-structure; a rule that *learns* asymmetric `Kᵢⱼ`; global-`r` threshold. *(d)
-untested doc claim* — damage recovery / graceful degradation. *(e) Ch 6 §6.3
-seams* — one-bit memory, plasticity's double edge, substrate-neutrality.
+## Volume structure
+
+- **Volume I — Foundations (draft complete).** Ch 0–12 + Intermission + **Ch 13
+  Capstone** + Appendix A. Grounds the six foundational CPAF concepts and closes
+  in the shared canonical metalanguage. This is the "first volume" draft.
+- **Volume II — The active layer (opening).** The prerequisite-closed region
+  above foundations: memory, **recovery fidelity / identity** (damage recovery,
+  iters 13–14 — the *first Volume II chapter to write*), then awareness,
+  reflection, and beyond. Written in the canonical metalanguage from the start.
+  - **Volume II Intermission — Stigmergy** (`II_stigmergy_intermission.md`, ✅):
+    *less-closed systems* — coordination and memory held *outside* the agents in a
+    shared medium. Defines stigmergy in the metalanguage (a *mediator* motif; the
+    `Connected(a→b|m)≈0` fingerprint, mirror of iter 8); witnesses it (iter 15);
+    contributes a **medium-relative null state**. Closure↔stigmergy = one axis.
+
+**Immediate next candidates:**
+*(a)* **Volume II Ch 1 — damage recovery** (write up iters 13–14 as the
+identity-deviation / recovery-fidelity chapter). *(b)* **Apply Ch 13's four
+revisions** to Volume I prose (coordinate the null≠max-entropy fix with the
+canonical `null_state`). *(c)* the standing foundational follow-ups (blind
+boundary search, asymmetric-`K` learning, global-`r`) and the Ch 6 §6.3 seams.
 
 ## Cross-cutting threads to keep visible
 
