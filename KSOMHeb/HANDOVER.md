@@ -103,6 +103,21 @@ KSOMHeb/requirements.txt` (or `pip3 install numpy matplotlib`).
     of iter-8's confounder); the null is *medium-relative* (no trail → search).
     Less-closed systems: coordination/memory held *outside*. Closure↔stigmergy =
     one axis. (Volume II intermission `textbook/II_stigmergy_intermission.md`) ✅
+16. **Clock relativity** — the observer/clock seam (D21), split into two witnessed
+    questions (D22). *Participant clocks (physical):* agents that are **never
+    co-present** coordinate through the medium (r=0.99 at zero overlap); the
+    tolerated desync scales with persistence, `W50 ∝ 1/γ` (`γ·W50` ≈ 5–7.5 —
+    amplitude evaporates, stored phase persists), while a co-presence-gated
+    direct edge needs overlap — external memory is a **clock buffer**, and
+    "internal system" = coordination requiring closely aligned wall clocks.
+    Mediation has a **memory signature**: persistent TE-lag tail (81% vs 0% at
+    matched r). *Observer clock (representational):* decimation + monotone
+    time-warp of the same trajectory preserve verdicts (screened, regime) and
+    relations (Δθ distribution) while magnitudes/rates covary with the clock —
+    coordinate disagreement ≠ physical deviation. Textbook write-up:
+    `textbook/III_clocks_intermission.md`. *Open:* admissibility boundary
+    (where re-clocking DOES break verdicts); typed clock transformations in the
+    canonical metalanguage (GPT). ✅
 
 ## Open work queue
 

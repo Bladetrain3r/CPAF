@@ -182,6 +182,9 @@ macro closure:  TE(θᵢ → Θ | Θ) ≈ 0   (members add nothing beyond Θ; fa
 | Graceful degradation / resilience as a metric | ✅ iter13 (monostable) + iter14 (multistable): resilience of identity has a threshold; past it, recovery lands elsewhere | 13,14 |
 | Associative recovery: full coherence into the *wrong stored* memory | ✅ oscillatory Hopfield (M stored); →original 100%→20%, →different memory 0→65% with damage, coherence stays ~0.85; M=1 can't do it | 14 |
 | Stigmergy: coordination via a shared medium; the *mediator* fingerprint | ✅ agents sync through a persistent medium (no direct edge); `TE(a→b\|m)`→14% (mediator, mirror of iter-8 confounder); null is medium-relative (no trail→search). Direct-vs-mediated margin modest (minimal substrate) | 15 |
+| A direct edge needs co-presence; a medium buffers participant desync | ✅ never-co-present agents lock via the medium (r=0.99 at overlap f=0; direct edge stuck at drift baseline); slack budget `W50 ∝ 1/γ`, `γ·W50`≈5–7.5 (amplitude evaporates, stored *phase* persists) — external memory = clock buffer | 16 |
+| Mediated vs direct edge: a *memory signature* in the lag structure | ✅ at matched r, direct TE-lag profile decays to floor by ~2u (forgets at relaxation time); mediated tail retains 81% of peak at 2.5–4u (the medium holds the writer's past) | 16 |
+| Observer re-clocking (decimate, monotone warp) changes what the system *is doing* | ❌ (and that's the point): verdicts (screened, regime) + relations (Δθ distribution, L1 0.029) invariant; only magnitudes (TE ×1.4) and rates (×warp factor) move. Coordinate disagreement ≠ physical deviation | 16 |
 
 ## Default parameters
 
