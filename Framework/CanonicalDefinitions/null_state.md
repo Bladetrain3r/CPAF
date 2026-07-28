@@ -1,6 +1,10 @@
 # Null State
 
+<<<<<<< ours
 **Status:** Draft 0.2
+=======
+**Status:** Draft 0.3
+>>>>>>> theirs
 **Dependencies:** canonical metalanguage, analysis context, state, time, scale  
 **Primary adjacent concept:** deviation
 
@@ -158,6 +162,7 @@ micro-interference must remain a possible limitation of a null-state claim; it
 must not be asserted merely because the analysis cannot exclude it.
 
 ## Metastability, recurrence, and revisit frequency
+<<<<<<< ours
 
 The phrase “high-frequency metastable phase” means a metastable regime that is
 **frequently occupied or revisited within a declared time horizon**. It does
@@ -185,6 +190,35 @@ probability:
 R_N(h; C) ≔ P(Revisit_N(t_0,h; C) | departure from N_s)
 ```
 
+=======
+
+The phrase “high-frequency metastable phase” means a metastable regime that is
+**frequently occupied or revisited within a declared time horizon**. It does
+not, unless explicitly stated, mean a high physical oscillation frequency.
+
+[DEF] A revisit occurs when a trajectory that has left the reference regime
+later returns to the same regime or to a declared similarity neighbourhood:
+
+```text
+Revisit_N(t_0,h; C) ≔
+    ∃t_exit,t_return with t_0 ≤ t_exit < t_return ≤ t_0+h:
+        Δ_N(x_t_exit) > ε_exit
+        ∧ Δ_N(x_t_return) ≤ ε_return
+```
+
+For non-metric or distributional regimes, the final clause is replaced by the
+declared membership, classifier, or divergence criterion. “Similar
+configuration” therefore means equivalent under `O_s`, `δ_s`, scale, and
+return tolerance—not necessarily an identical microstate.
+
+[DEF] Recurrence over horizon `h` may be reported as a conditional return
+probability:
+
+```text
+R_N(h; C) ≔ P(Revisit_N(t_0,h; C) | departure from N_s)
+```
+
+>>>>>>> theirs
 or as an empirical revisit rate over `W`. A regime is **frequently recurrent**
 only relative to declared thresholds `h` and `ρ_R`:
 
@@ -235,6 +269,10 @@ A substrate-specific null-state claim must state:
 6. which internal dynamics are permitted;
 7. what would falsify the classification.
 
+For a clock-sensitive or time-series claim, it must also state the physical
+time assumption, observer clock, sampling schedule, and transformation class
+over which the null classification is claimed to be invariant or covariant.
+
 ## K-SOM-Heb witness
 
 The incoherent oscillator regime provides one witness:
@@ -246,6 +284,13 @@ The incoherent oscillator regime provides one witness:
 
 This is a computational witness for a loaded/informational null, not a universal
 definition of null states.
+
+Iteration 16 provides a separate observer-clock witness. For the same physical
+trajectory, tested decimations and a smooth monotone re-clocking preserved the
+regime classification while measured rates and TE magnitudes changed. This
+supports typing a null **classification** separately from clock-dependent
+measurements used to certify it. It does not prove that nullness is invariant
+under arbitrary observation maps, sampling schedules, or time warps.
 
 ## Non-claims
 
@@ -260,10 +305,19 @@ This definition does not claim:
 
 ## Observer-relativity marker
 
-**Deferred.** The operational criterion necessarily uses a state
-representation. CPAF has not yet decided whether nullness is fundamentally
-observer-relative, merely measurement-relative, or invariant under an
-appropriate class of representations.
+The ontology remains **Deferred**, but the operational claim is now typed.
+Given observations `D_o` and an admissibly re-clocked or resampled
+representation `D_o'` of the same physical trajectory:
+
+```text
+Invariant(Null_s; g, C) ≔ Null_s(D_o; C) ↔ Null_s(D_o'; C')
+```
+
+This predicate must be established for a declared transformation class; it is
+not assumed globally. A changed rate, recurrence count per sample, or estimator
+magnitude is not by itself a physical departure from `N_s`. Conversely, a
+representation may become too coarse to certify nullness without the physical
+regime changing. That is loss of certificate, not automatically a deviation.
 
 ## Legacy crosswalk
 
@@ -283,10 +337,20 @@ appropriate class of representations.
    intervention is unavailable.
 3. Decide whether a system must possess a natural null or may use only
    assessor-selected references.
+<<<<<<< ours
 4. Revisit observer relativity later.
 
 ## Change log
 
+=======
+4. Map which clock and sampling transformations preserve each null certificate,
+   especially the aliasing/bandwidth boundary.
+
+## Change log
+
+- **Draft 0.3:** types clock-relative null certificates and incorporates the
+  bounded iteration-16 observer re-clocking witness without settling ontology.
+>>>>>>> theirs
 - **Draft 0.2:** permits active micro-level maintenance of a macro-null;
   distinguishes certified maintenance from mere coexistence; and formalizes
   revisit, finite-horizon recurrence, and context-relative frequency.

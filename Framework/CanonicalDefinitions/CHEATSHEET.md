@@ -149,6 +149,32 @@ but:
 - greater description length is not automatically greater cognition;
 - CPAF also cares about organization, dependency, and function.
 
+## Observer and participant clocks
+
+Never collapse these layers:
+
+```text
+physical trajectory x(t)
+participant clock κ_p(t) + availability A_p(t)
+observer clock κ_o(t)
+sampling schedule q_o(k)
+feature map O_o(x)
+```
+
+A participant schedule, delay, or persistent medium can change physical
+interaction. Re-timestamping or resampling the same trajectory changes its
+representation. Decimation is resampling, not a bijective clock transform.
+
+Under a declared admissible transformation class, tag a claim as:
+
+- **invariant** — its predicate/verdict is preserved;
+- **covariant** — its value changes by a stated transformation law;
+- **representation-sensitive** — neither has been established.
+
+Rates are ordinarily covariant. Simultaneous relations are candidate invariants
+only when physical-event correspondence is retained. Monotone re-clocking can
+still become inadmissible when sampling loses relevant bandwidth.
+
 ## Fast sanity checks
 
 Before accepting a formula, ask:
