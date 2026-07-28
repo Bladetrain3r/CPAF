@@ -67,10 +67,12 @@ verified, so the textbook never runs ahead of the evidence.
 
 **Immediate next candidates:**
 *(a)* **Volume II Ch 1 — damage recovery** (write up iters 13–14 as the
-identity-deviation / recovery-fidelity chapter). *(b)* **Apply Ch 13's four
-revisions** to Volume I prose (coordinate the null≠max-entropy fix with the
-canonical `null_state`). *(c)* the standing foundational follow-ups (blind
-boundary search, asymmetric-`K` learning, global-`r`) and the Ch 6 §6.3 seams.
+identity-deviation / recovery-fidelity chapter). *(b)* ~~Apply Ch 13's four
+revisions~~ **done** — Ch 0/4/6/8 revised (revision pass part 1–2, which also
+brought Ch 0 current through iter 16 and annotated Ch 8's spans with their
+resolutions). *(c)* the standing foundational follow-ups (blind boundary
+search, asymmetric-`K` learning, global-`r`) and the remaining Ch 6 §6.3 seams
+(one-bit-vs-rich memory, `P`'s double edge, substrate-neutrality).
 
 ## Cross-cutting threads to keep visible
 

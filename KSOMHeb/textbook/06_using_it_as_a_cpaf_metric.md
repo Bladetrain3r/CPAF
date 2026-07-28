@@ -18,12 +18,15 @@ trust is worth more than one that flatters the framework.
 | Coupling `K` as memory | stored experience | ⚠️ only ~1 bit under global reward (Ch 3); real memory needs the Ch 5 variant | **Qualified** |
 | Modularity `Q` | differentiated functional structure | ❌ refuted for baseline (Ch 4); ✅ for per-pair+competition variant (Ch 5) | **Only for the Ch 5 model** |
 | Connectivity entropy `H(K)` | structural flexibility | ⚠️ formula corrected (Ch A); behaviour not yet independently validated | **Provisionally** |
-| `r ≥ 0.7 = conscious` | the consciousness threshold | ❔ free parameter, not derived (6.2) | **Not as an absolute** |
-| Damage recovery | self-healing / graceful degradation | ❔ never tested | **Not yet** |
+| `r ≥ 0.7 = conscious` | the consciousness threshold | ⚠️ *since split (Ch 7):* the **per-pair** locking onset is *derived* — exactly `1/√2 ≈ 0.707`, an `[AN]` result at the pair scale; the **global**-`r` threshold remains a hand-drawn `[CONJ]` | **Per-pair: yes. Globally: not as an absolute** |
+| Damage recovery | self-healing / graceful degradation | ✅ *since tested (Vol II, iters 13–14):* recovery is recovery of the stored **pattern**, requires a *protected* memory, and has a resilience threshold; multistable systems can recover into the *wrong* stored identity | **Yes — as pattern fidelity, with the threshold caveat** |
 
 Two of these are genuinely load-bearing and earned (`r`, `P`); two are usable
-only with stated caveats (`K`-as-memory, `Q`); three are not yet safe to lean on
-(`H`, the 0.7 line, damage recovery). CPAF should inherit exactly this gradation.
+only with stated caveats (`K`-as-memory, `Q`); and the last three have moved
+since this chapter was drafted — `H` is still only provisional, the 0.7 line
+split into a derived per-pair floor and a still-conjectural global one, and
+damage recovery graduated from "never tested" to a two-iteration result. CPAF
+should inherit exactly this gradation, at its current state.
 
 ## 6.2 The operating envelope
 
@@ -54,6 +57,10 @@ the next round of work.
    while carrying no information at all (all saying the same thing forever). High
    `r` may be *necessary* for integration but it is plainly not *sufficient*, and
    the architecture's "r ≥ 0.7 = conscious" elides that gap.
+   *Since addressed (Ch 8, iter 7):* mutual information is the discriminating
+   quantity — `r` reads 66% of max deep in drift while MI sits near zero.
+   Coherence ≠ information, measured. (Full "integration" is still richer than
+   pairwise MI; the seam narrowed, it didn't close.)
 
 2. **The threshold is borrowed, not derived.** Nothing in the dynamics singles
    out 0.7. It's a reasonable-looking line drawn by hand. Until it's grounded —
@@ -61,6 +68,12 @@ the next round of work.
    should treat consciousness as a *reading of `r`*, not a *verdict at 0.7*.
    (And recall from Ch 3 that `r_baseline` and this threshold interact: the same
    number shapes both what the system optimizes and how we grade it.)
+   *Since half-grounded (Ch 7, iter 6):* the **per-pair** onset is now derived —
+   a pair locks at coherence exactly `1/√2 ≈ 0.707`, an `[AN]` result at the
+   pair scale (`λ = pair`). The **global**-`r` threshold remains exactly as this
+   paragraph describes it: hand-drawn, `[CONJ]`, and the finite-`N` transition
+   is continuous with no special value. Chapter 13 keeps the two typed apart —
+   don't let the per-pair derivation launder the global line.
 
 3. **Memory as one bit vs memory as experience.** CPAF means something rich by
    "memory." The baseline model delivers one bit; the Ch 5 model delivers
@@ -88,8 +101,10 @@ stand on.
 
 ## 6.4 What to carry forward
 
-- Two metrics are earned (`r`, `P`), two are qualified (`K`-memory, `Q`), three
-  are not yet safe (`H`, the 0.7 threshold, damage recovery).
+- Two metrics are earned (`r`, `P`), two are qualified (`K`-memory, `Q`); of
+  the rest, `H` stays provisional, the 0.7 threshold split (per-pair `1/√2`
+  derived `[AN]`; global still `[CONJ]`), and damage recovery is now tested
+  (Vol II: pattern fidelity, protected memory).
 - Every metric has an **operating envelope** (below `R_sat`, mind bistability,
   `Q` only for the Ch 5 model) that CPAF must respect.
 - The real open work is at the **quant/qual seams** (6.3): synchrony ≠

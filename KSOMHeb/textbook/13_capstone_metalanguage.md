@@ -108,7 +108,8 @@ from the witness side.
 | 14 | identity deviation: recovery into a *different* stored memory | `[CW]`+`[EMP]` |
 
 Putting it in one frame surfaced four **revisions to make** (the point of a
-revision pass):
+revision pass) — *all four since applied* (Ch 0 §0.3/0.5, Ch 8 §8.2–8.3, Ch 6
+§6.1/6.3, Ch 4 §4.5):
 
 1. **Null state ≠ maximum entropy.** Chapters 0 and 8 lean on "null = maximal
    entropy." The canonical direction (`null_state.md`, GPTSol §2) is that maximum

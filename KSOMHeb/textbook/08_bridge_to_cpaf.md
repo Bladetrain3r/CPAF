@@ -15,6 +15,14 @@ load-bearing (verified by an iteration); others are rope and hope (plausible,
 untested). We label which is which, because pretending a conjecture is a result
 is exactly the failure mode this book was written to avoid.
 
+> **Status note (revision pass).** This chapter was written mid-arc, and we've
+> kept it that way on purpose — the suspense is real, and Chapters 9–12 exist
+> to resolve it. But a reader keeping current should know the ending: **every
+> "rope and hope" span in this chapter was subsequently built** (iters 8–12),
+> and the bridge was declared complete in Chapter 12. Inline *since built*
+> markers below say where each span landed; Chapter 13 recasts the whole
+> bridge in the canonical metalanguage.
+
 ## 8.1 The reframing: the model is already a graph
 
 The key that opens the door is small and structural. A coupling connects exactly
@@ -28,14 +36,14 @@ whole model re-reads as a graph, and CPAF's vocabulary is itself graph-shaped:
 CPAF's foundational concepts drop onto that structure with surprisingly little
 forcing. Here is the correspondence, each row graded by how well it's supported:
 
-| CPAF concept | Oscillator primitive | Status |
+| CPAF concept | Oscillator primitive | Status (as written → since built) |
 |--------------|----------------------|--------|
-| **Entity** | an oscillator (vertex); recursively, a locked cluster acting as one | edge: clean · cluster: **conjecture** |
-| **Interaction** | the coupling `Kᵢⱼ` — the channel between two entities | clean fit |
+| **Entity** | an oscillator (vertex); recursively, a locked cluster acting as one | cluster was **conjecture** → *grounded, incl. grown* (iters 9–10, Ch 10–11) |
+| **Interaction** | the coupling `Kᵢⱼ` — the channel between two entities | clean fit → *distinguished from deviation; latent/active = sign of the discriminant* (iters 11–12, Ch 12) |
 | **Deviation** | an edge crossing its locking threshold `Kc = \|Δω\|/2` | **grounded (iter 6)** |
-| **Information** | the mutual information `I(θᵢ; θⱼ)` that appears at that crossing | **grounded (iter 7)** |
-| **Null state** | incoherent population — couplings may exist but none has locked | reframed (see 8.3) |
-| **System** | the whole graph: collective `r`, modularity `Q` | plausible |
+| **Information** | the mutual information `I(θᵢ; θⱼ)` that appears at that crossing | **grounded (iter 7)** → *graded into a certificate ladder* (iter 8, Ch 9) |
+| **Null state** | incoherent population — couplings may exist but none has locked | reframed (see 8.3) → *adopted canonically* (`null_state.md`) |
+| **System** | the whole graph: collective `r`, modularity `Q` | plausible → *emergence shown, conditional on the right ingredients* (iters 4–5, 9–10) |
 
 ## 8.2 The two grounded spans
 
@@ -48,7 +56,9 @@ derived location: two oscillators drift (undifferentiated) below `Kc = |Δω|/2`
 and lock (differentiated, structured) above it — a saddle-node bifurcation, with
 the coherence at onset pinned to exactly `1/√2`. A deviation, in oscillator
 terms, is an edge crossing that threshold. It is not a vague "something changed";
-it is a specific, measurable bifurcation.
+it is a specific, measurable bifurcation. (Typing note, per Chapter 13: `Kc` and
+`1/√2` are **analytic results at the pair scale** — `[AN]`, `λ = pair` — never
+universal constants; the global-`r` analogue remains a conjecture.)
 
 **Information = what appears at the deviation.** Iteration 7 then showed that the
 crossing is precisely where *information* is born: mutual information between the
@@ -65,11 +75,12 @@ sentence is now anchored to two experiments, not to hope.
 
 ## 8.3 The subtle reframe: what "null" really means
 
-The bridge also sharpens a CPAF concept. Naively, the null state — maximal
-entropy, no structure — sounds like "no connections." But the dynamics say
-otherwise. A population can be dense with couplings and still sit in the null
-state, provided every edge is *below* its locking threshold: lots of latent
-channels, no actual locking, no deviations, `r ≈ 0`. So:
+The bridge also sharpens a CPAF concept. Naively, the null state sounds like "no
+structure, no connections" — the early framework prose even said "maximum
+entropy." But the dynamics say otherwise. A population can be dense with
+couplings and still sit in the null state, provided every edge is *below* its
+locking threshold: lots of latent channels, no actual locking, no deviations,
+`r ≈ 0`. So:
 
 > The null state is the absence of **deviations**, not the absence of
 > **interactions**.
@@ -78,6 +89,14 @@ That's a meaningful distinction CPAF can use. A "quiet" system full of
 sub-threshold couplings is poised — a small increase in coupling (or decrease in
 noise, or in frequency spread) tips edges over `Kc` and deviations bloom. Null is
 not emptiness; it's latency below threshold.
+
+*Since built:* this reframe was later **measured** (the latent channel, iter 11,
+Ch 12) and **adopted canonically**: the gold-standard `null_state.md` defines a
+null as a *reference regime* (fixed point, attractor, metastable basin, or
+recurrent phase — maximum entropy is one optional subtype, not the definition),
+permits latent interactions (`¬∃int_act`, refinement 7.1), and by Draft 0.3 is
+medium-relative (iter 15) and typed against observer clocks (iter 16). The
+paragraph above is where that thread started.
 
 ## 8.4 The unbuilt spans (marked, not hidden)
 
@@ -89,6 +108,11 @@ saying so plainly:
    the event on it. This is a clean conceptual split, but "an interaction is a
    channel that *may* produce a deviation" hasn't been given its own test; it's a
    definition we've adopted, not a result.
+   *Since built (iter 11, Ch 12):* the split became a **measured dissociation** —
+   transfer entropy detects the channel for any `K > 0` while MI waits for `Kc`,
+   with a real-but-silent *latent band* between; iter 12 then made latent-vs-
+   active analytic (the sign of the locking discriminant). The definition earned
+   its keep as a finding.
 
 2. **Entity-as-cluster — the recursion.** CPAF leans hard on recursion: simple
    parts compose into higher-order units that themselves interact. The natural
@@ -97,6 +121,10 @@ saying so plainly:
    and central to the whole framework — but **untested**. Until we coarse-grain a
    module and show it acts like one oscillator, entity-as-cluster is a promissory
    note.
+   *Since built (iters 9–10, Ch 10–11):* the note was paid in full — a locked
+   cluster obeys the pair law with `K_eff = κρ`, passes macro closure, and
+   *grown* modules pass every criterion unadjusted, with closure doubling as a
+   boundary detector.
 
 3. **Information's blind spot.** Mutual information sees correlation, not
    causation: two oscillators driven by a *common* external signal would share
@@ -105,6 +133,11 @@ saying so plainly:
    needs a *directed* measure — transfer entropy — which is exactly the next
    iteration (Chapter 9). Until then, our "information on an edge" can't fully
    certify that the edge is what carries it.
+   *Since built (iter 8, Ch 9):* the answer turned out to be a **ladder**, not a
+   single fix — *related* (MI) < *directed* (TE, itself fooled by a hidden common
+   cause) < *connected* (conditional TE, confounder observed). Certifying an edge
+   is a graded, context-priced claim — a lesson the canonical layer now carries
+   as certificate levels.
 
 ## 8.5 What we can and can't claim
 
@@ -119,6 +152,13 @@ rather than a finding, and information can't yet be pinned to a specific edge.
 Those are the next spans to build — and each is a falsifiable experiment, which
 is the only kind of bridge this project trusts.
 
+*Since built:* all three of those "cannot say" items flipped, each by exactly
+the falsifiable experiment promised — Ch 9 (the ladder), Ch 10–11 (the
+recursion, including grown entities), Ch 12 (the dissociation). What still
+holds of the humility: every span is a **computational witness in one
+substrate** (`[CW]`), never a universal definition — the caveat Chapter 13
+makes precise.
+
 ## 8.6 What to carry forward
 
 - The model is a **graph**: oscillators = entities, couplings = interactions.
@@ -127,9 +167,10 @@ is the only kind of bridge this project trusts.
   of information on an interaction.
 - **Reframed:** the *null state* is the absence of deviations, not of
   interactions — latency below threshold.
-- **Still conjecture:** interaction-vs-deviation as noun/verb; entity-as-cluster
-  (recursion); and separating true interaction from common drive (needs transfer
-  entropy — Chapter 9).
+- **Still conjecture** *(as of this chapter — all three since grounded, Ch
+  9–12)*: interaction-vs-deviation as noun/verb; entity-as-cluster (recursion);
+  and separating true interaction from common drive (needs transfer entropy —
+  Chapter 9).
 
 ---
 
@@ -142,10 +183,15 @@ for entity-as-cluster: drive a synchronized cluster with an external oscillator
 and measure whether the *cluster's* mean phase entrains as if it were a single
 oscillator with an effective frequency; if it fragments instead of entraining,
 the "cluster = entity" span fails.) This is how a conjecture row becomes a
-grounded one — and how the bridge gets built, span by span.
+grounded one — and how the bridge gets built, span by span. (That worked example
+was later run for real — iteration 9, Chapter 10 — and the cluster entrained as
+one oscillator with effective coupling `K_eff = κρ`. The exercise stands: pick a
+row that's *still* ungrounded.)
 
 ---
 
 *Grounded by: `verification/iter6_locking_threshold.py`,
-`iter7_information_transition.py` · Working notes: `../CPAF_MAPPING_NOTES.md` ·
+`iter7_information_transition.py` · The spans built after this chapter:
+Ch 9–12 · The whole bridge in the canonical frame:
+`13_capstone_metalanguage.md` · Working notes: `../CPAF_MAPPING_NOTES.md` ·
 Symbols: `../CHEATSHEET.md`.*
