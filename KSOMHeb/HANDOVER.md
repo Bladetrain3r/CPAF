@@ -114,9 +114,10 @@ KSOMHeb/requirements.txt` (or `pip3 install numpy matplotlib`).
     matched r). *Observer clock (representational):* decimation + monotone
     time-warp of the same trajectory preserve verdicts (screened, regime) and
     relations (Δθ distribution) while magnitudes/rates covary with the clock —
-    coordinate disagreement ≠ physical deviation. *Open:* admissibility boundary
+    coordinate disagreement ≠ physical deviation. Textbook write-up:
+    `textbook/III_clocks_intermission.md`. *Open:* admissibility boundary
     (where re-clocking DOES break verdicts); typed clock transformations in the
-    canonical metalanguage (GPT); textbook write-up. ✅
+    canonical metalanguage (GPT). ✅
 
 ## Open work queue
 

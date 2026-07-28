@@ -109,10 +109,11 @@ CPAF/
 2. **Observer/clock relativity** — witness DONE (iter 16, D22): participant
    desync (physical, medium-buffered) separated from observer re-clocking
    (representational; verdicts and relations invariant, magnitudes and rates
-   covariant). *Remaining:* absorb into the canonical metalanguage as typed
-   clock transformations + invariants (GPT, sign-off needed); map the
-   admissibility boundary (where re-clocking DOES break verdicts); textbook
-   write-up (Vol II).
+   covariant). Textbook write-up DONE: `KSOMHeb/textbook/
+   III_clocks_intermission.md` (Vol II Intermission III). *Remaining:* absorb
+   into the canonical metalanguage as typed clock transformations + invariants
+   (GPT, sign-off needed); map the admissibility boundary (where re-clocking
+   DOES break verdicts).
 3. **Per-concept "Computational proof →" footers** on the remaining `Framework/`
    concept docs (nullstate & interaction already link theirs).
 4. **Damage recovery / graceful degradation** — **results (iters 13–14):**

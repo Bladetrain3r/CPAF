@@ -55,6 +55,15 @@ verified, so the textbook never runs ahead of the evidence.
     shared medium. Defines stigmergy in the metalanguage (a *mediator* motif; the
     `Connected(a→b|m)≈0` fingerprint, mirror of iter 8); witnesses it (iter 15);
     contributes a **medium-relative null state**. Closure↔stigmergy = one axis.
+  - **Volume II Intermission III — Clocks** (`III_clocks_intermission.md`, ✅):
+    the observer/clock seam (D21→D22), split into two witnessed questions
+    (iter 16). *Participant clocks:* a direct edge requires **co-presence**; a
+    stigmergic medium buffers desync in proportion to its persistence
+    (`W₅₀ ∝ 1/γ` — external memory doubles as a **clock buffer**), and mediation
+    has a **memory signature** (persistent TE-lag tail). *Observer clock:*
+    re-clocking moves rates and magnitudes, never verdicts or relations —
+    coordinate disagreement ≠ physical deviation. Hands the canonical layer an
+    invariance criterion for the deferred observer-relativity ontology.
 
 **Immediate next candidates:**
 *(a)* **Volume II Ch 1 — damage recovery** (write up iters 13–14 as the
