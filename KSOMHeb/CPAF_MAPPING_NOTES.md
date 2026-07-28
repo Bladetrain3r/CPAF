@@ -128,8 +128,15 @@ may be a concrete substrate for CPAF's basic layer.
   typed clock transformations in the canonical metalanguage (GPT's deliverable);
   a fast-common-rotation case (iter 15's rotating-frame caveat).
 
-- **Detector / embedded observer (Ziggy's motif — proposed iter 17, NOT yet
-  run).** A node with **no natural frequency** (`ω_d = 0` in the rotating
+- **Detector / embedded observer (Ziggy's motif — RUN, iter 17 ✅; textbook
+  Vol II Ch 1 `V2_01_isolation_and_scale.md`; D24).** All four conjectured
+  properties verified (pair invariance exact/bit-identical; one-way
+  certificate clean; bandwidth law derived with the one-way no-factor-2
+  Adler onset; deviation registration at `Kc`, bandwidth-robust) and the ε
+  reader→participant sweep run (continuous dial; static sources read free).
+  One honest revision: *following* a drifting pair is priced by the **peak**
+  slip rate `Δω+2K`, not the mean (saddle-node slipping is nonuniform).
+  Original conjecture text kept below for the record: A node with **no natural frequency** (`ω_d = 0` in the rotating
   frame) that couples **one-way** to a source and never feeds back:
   `dθ_d/dt = K_d·sin(θ_src − θ_d) + noise`. It *reads* without *writing* — a
   pure follower. Conjectured properties to verify:

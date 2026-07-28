@@ -300,10 +300,13 @@ formalism.)*
   iters 2–5) and now has an **operational test** — iter 13 shows a locked
   module recovers its stored *pattern* after a disruption *if the memory is
   protected* (resilience = pattern recovery, with a threshold past which an
-  unprotected memory is rewritten and the identity is lost). But *awareness*,
-  *reflection*, *experience*, *knowledge*, *vision*, *understanding* (Overview
-  §Math Constructs) still have **no single-case proof**. The active layer is the
-  next frontier.
+  unprotected memory is rewritten and the identity is lost). *Awareness* now
+  has a first **ingredient** witness — iter 17's detector registers another
+  subsystem's deviation without disturbing it (registration only: no
+  self-model, no access, no use — the concept itself remains ungrounded).
+  *Reflection*, *experience*, *knowledge*, *vision*, *understanding* (Overview
+  §Math Constructs) still have **no single-case proof**. The active layer is
+  the frontier.
 - **Damage recovery / graceful degradation** — **first result (iter 13):** a
   protected memory restores the pattern from even a total phase scramble; an
   unprotected one has a resilience threshold then loses the identity.

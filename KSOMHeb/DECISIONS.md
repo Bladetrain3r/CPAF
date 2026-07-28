@@ -30,6 +30,7 @@ legible. Newest decisions at the bottom. Statuses: **locked** (settled),
 | D21 | Explore **observer/clock relativity** using coupled oscillators represented on different clocks or time bases | Natural next seam after stigmergy's medium-relative null: test which synchronization, null, deviation, and interaction claims survive clock transformation. Separate coordinate or sampling disagreement from physical deviation and specify invariants before constructing a witness | locked (executed: iter 16 → D22) |
 | D22 | **Two clock questions, kept separate.** *Participant* desynchronization is physical: a direct edge requires co-presence (a shared wall clock within the interaction timescale), while a persistent medium buffers desync in proportion to its persistence time — the clock-slack budget `W50 ∝ 1/γ`, so iter-15's external memory doubles as a **clock buffer** (each agent shares a clock only with the medium). Mediation carries a **memory signature**: a persistent TE-lag tail where a matched direct edge forgets. *Observer* re-clocking or resampling is representational: certificate verdicts (screened-off, regime class) and relational statistics (the Δθ distribution) are invariant under the tested transformations, while magnitudes (TE bits) and rate observables covary with the clock. Coordinate disagreement is **not** a physical deviation; the discriminator is relations-invariant vs rates-covariant | iter 16: zero-co-presence coordination (r=0.99 at overlap f=0 vs direct at drift baseline); `γ·W50` constant (5.0–7.5) over 8× γ — a few e-foldings (amplitude evaporates, stored phase persists); TE tail 81% vs 0% of peak at matched r; decimation ×2/×4 + monotone time-warp preserve verdicts while TE swings 1.4× and slip rate scales ×1.30 = warp factor; Δθ distribution L1 0.029 (warp) vs 0.739 (decoupling). Honest: N=2, one substrate; admissibility boundary unmapped (dec×4 conditional TE at estimator floor). Typed clock-transformation definitions → canonical layer (GPT) | locked |
 | D23 | Canonical clock formalism separates `𝕋_phys`, participant clock/availability, observer clock, sampling, and feature maps; distinguishes bijective re-clocking from resampling; and types claims as transformation-indexed **invariant**, **covariant**, or **representation-sensitive** | Draft 0.2 `METALANGUAGE.md`, Null State Draft 0.3, and Deviation Draft 0.2 formalize the D22 handoff. Iter 16 is a bounded witness, not a universal definition; admissibility/aliasing and observer ontology remain open | open (author review) |
+| D24 | **The detector (embedded observer) is the scaling motif for Volume II**: a node with no natural frequency, coupled one-way (read-only). Composition principle: feed-forward (DAG) attachments preserve upstream `[AN]` results **exactly** — verified pairs are foundation blocks. Detector bandwidth is a derived law (`K_d ≥ \|Ω\|`, no factor 2 — only one side yields; lag `arcsin(Ω/K_d)`) = iter 16's admissibility made physical. A relation-detector's *own state* registers the pair's deviation at `Kc` (bandwidth-robust) — the first awareness-shaped witness, scoped as *registration only*. Completes the 3-node motif set: confounder / mediator / detector | iter 17 (Ziggy's motif): pair trajectory bit-identical with detector attached (max dev 0.0); `ψ*` = arcsin to 4 decimals; MI 2.1 bits, TE fwd 0.118, TE back +0.003 (true null); lock onset brackets `K_d=Ω`, lag matches `[AN]` to 3 decimals; settle at K*=0.50–0.52 vs Kc=0.5 for both bandwidths. Honest revision: *following* a drifting pair is priced by the **peak** slip rate `Δω+2K` (saddle-node ghost), not the mean — original mean-slip bound refuted on the run. ε back-coupling: reader→participant is a continuous dial (TE 0.002→0.019; ψ* error 0.001→0.141 rad), and a static source reads free even at ε>0 (lag is the lever arm). Textbook: Vol II Ch 1 "Isolation and scale" | locked |
 
 ## Findings that drove decisions
 
@@ -72,6 +73,19 @@ legible. Newest decisions at the bottom. Statuses: **locked** (settled),
   Unprotected memory (plastic) self-heals small hits but past σ≈1 erodes and
   rewrites → identity lost while r partly persists (ship of Theseus). Opens the
   active-layer *memory* / graceful-degradation thread.
+- **iter 17 — reading is free; touching costs; noticing is a state.** A
+  read-only, no-natural-frequency node leaves its source *bit-identical* —
+  one-way composition preserves verified math exactly, which is Volume II's
+  license to scale without re-derivation. The detector's own physics is
+  derived: lock iff `K_d ≥ |Ω|` (one-way: no factor 2), lag `arcsin(Ω/K_d)`
+  — bandwidth as physical admissibility. Following a drifting pair needs
+  bandwidth above the **peak** slip rate (nonuniform saddle-node slipping;
+  the mean-slip conjecture was refuted on the run), but *settling* — a
+  detector-local statistic — registers the pair's deviation at `Kc` for any
+  bandwidth: measurement of a deviation is a deviation in the measurer. With
+  back-coupling ε, reading becomes participation continuously; against a
+  static source even ε>0 is inert (`sin(0)=0`) — a moving world is what makes
+  observation costly.
 - **iter 16 — external memory is a clock buffer; observers move magnitudes,
   not verdicts.** Agents that are never simultaneously present coordinate
   fully through the medium; the tolerated window scales as `W50 ∝ 1/γ` with a

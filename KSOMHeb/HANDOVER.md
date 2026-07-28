@@ -114,9 +114,25 @@ KSOMHeb/requirements.txt` (or `pip3 install numpy matplotlib`).
     matched r). *Observer clock (representational):* decimation + monotone
     time-warp of the same trajectory preserve verdicts (screened, regime) and
     relations (Δθ distribution) while magnitudes/rates covary with the clock —
-    coordinate disagreement ≠ physical deviation. *Open:* admissibility boundary
-    (where re-clocking DOES break verdicts); typed clock transformations in the
-    canonical metalanguage (GPT); textbook write-up. ✅
+    coordinate disagreement ≠ physical deviation. Textbook:
+    `textbook/III_clocks_intermission.md`. *Open:* admissibility boundary
+    (where re-clocking DOES break verdicts); typed clock transformations —
+    landed in canonical Draft 0.2 (D23), author review pending. ✅
+17. **The detector (embedded observer)** — Ziggy's motif, run. A read-only,
+    no-natural-frequency node: pair trajectory **bit-identical** with it
+    attached (one-way/DAG composition preserves `[AN]` results exactly — Vol
+    II's scaling license); bandwidth law derived (`K_d ≥ |Ω|`, no factor 2;
+    lag `arcsin(Ω/K_d)`) = admissibility made physical; purest one-way
+    certificate (MI 2.1 bits, TE fwd 0.118, back +0.003 true null) —
+    completes the confounder/mediator/detector motif set; a relation-detector
+    *settles* at the pair's `Kc` (bandwidth-robust, detector-local) — first
+    awareness-shaped witness (registration only); ε back-coupling =
+    reader→participant as a continuous dial (static sources read free even at
+    ε>0). Honest revision: following a drifting pair is priced by the *peak*
+    slip rate (mean-slip bound refuted). Textbook: **Vol II Ch 1, "Isolation
+    and scale"** (`textbook/V2_01_isolation_and_scale.md`, D24). *Open:*
+    detector on an entity (Θ vs member — the closure exercise); detector
+    chains (→ reflection); noise-limited detection (ROC). ✅
 
 ## Open work queue
 
