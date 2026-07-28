@@ -27,7 +27,8 @@ legible. Newest decisions at the bottom. Statuses: **locked** (settled),
 | D18 | Adopt GPT's **canonical metalanguage** as the shared language; the iterations are **computational witnesses `[CW]`** (analytic parts `[AN]`), never universal definitions. Split the textbook into **Volume I (foundations, Ch 0–13)** and **Volume II (active layer)** | Formal-spine audit produced `Framework/CanonicalDefinitions/` (authority order in its README; `ComputationalProofs.md` = evidence layer #3). Ch 13 capstone recasts Vol I as a witness table and surfaced 4 revisions. Vol II opens with damage recovery (iters 13–14 = the canonical *identity-deviation* subtype) | locked |
 | D19 | **Stigmergy** is modeled as a *mediator motif* (`a→m→b` through a persistent shared medium), the mirror of iter-8's *confounder*; its fingerprint is `Connected(a→b\|m)≈0`. The **null state is medium-relative** (no medium signal → default/search regime) | iter 15: agents coordinate through a deposit-evaporation medium; `TE` screens to 14% under `M`. Closure↔stigmergy = one axis (coordination/memory inside vs outside). Medium-relative null is a contribution to the canonical `null_state`. Direct-vs-mediated margin modest → spatial-field follow-up | locked |
 | D20 | A macro-level null may be **actively maintained by micro-level interactions**. “High-frequency” metastability means high finite-horizon return probability or revisit rate; a revisit returns to the same regime or declared similarity neighbourhood, not necessarily the identical microstate | Author direction integrated into canonical `null_state.md` Draft 0.2. Maintenance requires a certificate, not mere coexistence. Horizons, similarity tolerances, and recurrence thresholds remain context-specific | locked |
-| D21 | Explore **observer/clock relativity** using coupled oscillators represented on different clocks or time bases | Natural next seam after stigmergy's medium-relative null: test which synchronization, null, deviation, and interaction claims survive clock transformation. Separate coordinate or sampling disagreement from physical deviation and specify invariants before constructing a witness | open |
+| D21 | Explore **observer/clock relativity** using coupled oscillators represented on different clocks or time bases | Natural next seam after stigmergy's medium-relative null: test which synchronization, null, deviation, and interaction claims survive clock transformation. Separate coordinate or sampling disagreement from physical deviation and specify invariants before constructing a witness | locked (executed: iter 16 → D22) |
+| D22 | **Two clock questions, kept separate.** *Participant* desynchronization is physical: a direct edge requires co-presence (a shared wall clock within the interaction timescale), while a persistent medium buffers desync in proportion to its persistence time — the clock-slack budget `W50 ∝ 1/γ`, so iter-15's external memory doubles as a **clock buffer** (each agent shares a clock only with the medium). Mediation carries a **memory signature**: a persistent TE-lag tail where a matched direct edge forgets. *Observer* re-clocking is representational: certificate verdicts (screened-off, regime class) and relational statistics (the Δθ distribution) are invariant under admissible re-clockings, while magnitudes (TE bits) and rate observables covary with the clock. Coordinate disagreement is **not** a physical deviation; the discriminator is relations-invariant vs rates-covariant | iter 16: zero-co-presence coordination (r=0.99 at overlap f=0 vs direct at drift baseline); `γ·W50` constant (5.0–7.5) over 8× γ — a few e-foldings (amplitude evaporates, stored phase persists); TE tail 81% vs 0% of peak at matched r; decimation ×2/×4 + monotone time-warp preserve verdicts while TE swings 1.4× and slip rate scales ×1.30 = warp factor; Δθ distribution L1 0.029 (warp) vs 0.739 (decoupling). Honest: N=2, one substrate; admissibility boundary unmapped (dec×4 conditional TE at estimator floor). Typed clock-transformation definitions → canonical layer (GPT) | locked |
 
 ## Findings that drove decisions
 
@@ -70,6 +71,19 @@ legible. Newest decisions at the bottom. Statuses: **locked** (settled),
   Unprotected memory (plastic) self-heals small hits but past σ≈1 erodes and
   rewrites → identity lost while r partly persists (ship of Theseus). Opens the
   active-layer *memory* / graceful-degradation thread.
+- **iter 16 — external memory is a clock buffer; observers move magnitudes,
+  not verdicts.** Agents that are never simultaneously present coordinate
+  fully through the medium; the tolerated window scales as `W50 ∝ 1/γ` with a
+  log-margin prefactor (`γ·W50` ≈ 5–7.5: the trail's amplitude decays but its
+  stored phase persists). A co-presence-gated direct edge needs overlap; the
+  medium doesn't — "internal system" operationally = coordination that
+  requires closely aligned participant clocks. Mediated edges also wear a
+  memory signature: TE-lag transfer persists far beyond a matched direct
+  edge's forgetting time. Meanwhile re-representing the *same* trajectory
+  (decimation, smooth time-warp) moves TE magnitudes (1.4×) and rates (×warp
+  factor) but leaves screening verdicts, regime class, and the Δθ
+  distribution invariant — certificates and relations are the portable
+  content; rates and bit-counts are clock-relative measurements.
 - **iter 14 — associative recovery / wrong memory.** An oscillatory Hopfield net
   (M stored patterns) recovers *full* coherence into a *different stored* memory
   as damage grows (→different: 0→65%), while a single-pattern net cannot. The

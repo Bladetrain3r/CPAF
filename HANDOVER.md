@@ -79,10 +79,19 @@ CPAF/
   the same reference regime or a declared similarity neighbourhood, and
   “high-frequency” metastability means high finite-horizon return probability
   or revisit rate—not physical oscillation frequency unless stated.
-- **Next seam: observer relativity.** The proposed canonical/textbook witness is
-  coupled oscillators represented on different clocks or time bases, testing
-  which null, deviation, interaction, and synchronization claims survive a
-  clock change. This is a research direction, not yet a verified result.
+- **Observer/clock relativity has a first witness (iter 16, D22).** The seam
+  splits in two, kept separate per the canonical guardrails. *Participant*
+  clocks are physical: a direct edge needs co-presence, while a stigmergic
+  medium buffers desynchronization in proportion to its persistence time
+  (`W50 ∝ 1/γ` — external memory doubles as a clock buffer), and mediated
+  edges carry a memory signature (persistent TE-lag tail). *Observer*
+  re-clocking is representational: decimation and monotone time-warps of the
+  same trajectory move magnitudes (TE bits, rates) but not certificate
+  verdicts (screened-off, regime) or relational structure (the Δθ
+  distribution) — coordinate disagreement is not a physical deviation.
+  **Hand-off to the canonical layer:** typing the clock transformations and
+  invariants in the metalanguage (GPTSol deliverables) can now cite a
+  verified witness.
 - **Damage recovery has a first result (iter 13).** Recovery is recovery of the
   stored *pattern* (not mere coherence), and it requires a *protected* memory —
   the first step into the active layer (memory + graceful degradation).
@@ -97,10 +106,13 @@ CPAF/
 1. **Finish the interaction-cluster refinement** — 7.3 (`information.md`:
    related<directed<connected certificate levels) and 7.4 (`system.md`:
    emergence conditional on the right learning ingredients). *Sign-off needed.*
-2. **Observer/clock relativity** — distinguish physical dynamics, observation
-   map, sampling, and time parameter; then specify a different-clock oscillator
-   witness. Do not classify coordinate disagreement as physical deviation.
-   *Open; no witness yet.*
+2. **Observer/clock relativity** — witness DONE (iter 16, D22): participant
+   desync (physical, medium-buffered) separated from observer re-clocking
+   (representational; verdicts and relations invariant, magnitudes and rates
+   covariant). *Remaining:* absorb into the canonical metalanguage as typed
+   clock transformations + invariants (GPT, sign-off needed); map the
+   admissibility boundary (where re-clocking DOES break verdicts); textbook
+   write-up (Vol II).
 3. **Per-concept "Computational proof →" footers** on the remaining `Framework/`
    concept docs (nullstate & interaction already link theirs).
 4. **Damage recovery / graceful degradation** — **results (iters 13–14):**

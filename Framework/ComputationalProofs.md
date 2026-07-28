@@ -271,6 +271,26 @@ specified* (naive Hebbian coupling homogenizes) but *rescuable* with per-pair
 credit + competition. `system.md`'s emergence should inherit this: emergence is
 real (iters 9–10) but conditional on the right learning ingredients, not a given.
 
+**7.5 Clock relativity: certificates and relations are the portable content.
+[PROPOSED — the canonical observer-relativity seam, D21/D22]** The canonical
+layer explicitly defers the observer-relativity ontology; iter 16 supplies its
+first witness and a working discriminator. Under admissible re-clockings of the
+*same* trajectory (decimation, smooth monotone time-warp), classification
+certificates (screened-off, regime class) and relational statistics (the
+distribution of simultaneous phase differences) are **invariant**, while
+magnitudes (TE in bits) and rate observables **covary** with the clock — so
+coordinate disagreement is measurably *not* a physical deviation, and a
+measurement claim should be typed by whether it survives re-clocking.
+Participant-clock desynchronization is meanwhile a *physical* axis, distinct
+from representation: a direct edge transmits only under co-presence, whereas a
+persistent medium (iter 15) buffers desync in proportion to its persistence
+time (`W50 ∝ 1/γ`) and wears its mediation as a persistent TE-lag tail —
+external memory visible in the information plane. Suggested refinement: tag
+rate/magnitude claims as observer-relative measurements and reserve ontic
+status for re-clocking-invariant certificates. *(The typed clock-transformation
+definitions belong to the canonical metalanguage — GPT's deliverable; this
+entry is the evidence, not the formalism.)*
+
 ---
 
 ## 8. What is NOT yet proven (the honest ledger)
@@ -289,6 +309,12 @@ real (iters 9–10) but conditional on the right learning ingredients, not a giv
   *Open:* multistable (associative-memory) recovery into a genuinely different
   *stored* pattern; structural lesions of `K`; the collapse edge vs the iter-3
   separatrix.
+- **Clock relativity: scope.** iter 16's invariance results hold for
+  re-clockings that still resolve the medium's bandwidth; the **admissibility
+  boundary** — how coarse or distorted an observation clock can get before the
+  verdicts themselves fail (aliasing) — is unmapped, and the participant-clock
+  results are N=2 in one substrate. The typed clock-transformation formalism is
+  not built (canonical layer, pending).
 - **Universality.** Every proof here is in *one* substrate (coupled oscillators).
   CPAF's cross-substrate universality is argued, not computationally proven; a
   second substrate would raise confidence.
