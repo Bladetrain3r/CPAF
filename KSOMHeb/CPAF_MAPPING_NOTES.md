@@ -110,6 +110,24 @@ may be a concrete substrate for CPAF's basic layer.
   couplings." *Follow-ups:* spatial-field substrate (crisp mediator/direct double
   dissociation); the extended-entity closure test (is `agents+medium` one entity?).
 
+- **Observer/clock relativity — the seam has a witness (iter 16).** Two clock
+  questions, kept separate per the canonical guardrail. *Participant clocks are
+  physical:* a direct interaction needs co-presence (a shared wall clock within
+  the interaction timescale); a stigmergic medium buffers desynchronization in
+  proportion to its persistence (`W50 ∝ 1/γ`) — so **externalizing memory also
+  externalizes the simultaneity requirement**, and "internal system" gets an
+  operational reading: coordination that requires closely aligned participant
+  clocks. Mediated edges are distinguishable by a **memory signature** (TE-lag
+  transfer persists far beyond a matched direct edge's forgetting time) — a
+  second fingerprint alongside iter 15's screening. *Observer clocks are
+  representational:* re-clocking the same trajectory moves magnitudes (TE bits,
+  rates) but not certificates (screened, regime) or relational structure (Δθ
+  distribution) — **for MI/TE on a stigmergic edge, the bit-values are
+  clock-relative measurements; only the certificate verdicts travel.**
+  *Follow-ups:* the admissibility boundary (aliasing limit where verdicts fail);
+  typed clock transformations in the canonical metalanguage (GPT's deliverable);
+  a fast-common-rotation case (iter 15's rotating-frame caveat).
+
 ## Where this is heading
 
 Longer term: use the verified dynamics to give CPAF's basic layer — *null state,

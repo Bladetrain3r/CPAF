@@ -21,11 +21,36 @@ the architecture's own stated properties. Run any of them directly with
 | `iter11_interaction_vs_deviation.py` | **The latent channel (interaction vs deviation).** Sweep one pair's coupling through Kc. MI (deviation detector, iter 7) stays ~0 until locking; TE (interaction detector, iter 8) is nonzero for *any* K>0. They dissociate: at K/Kc=0.34, TE=0.015 bits (interaction present) while MI=0.04 (no deviation) — a **latent channel**, a real but silent edge. TE turns on (K/Kc≈0.34) before MI (≈0.53): interaction is graded, deviation is an onset. K=0 is a true null (both at floor). Bonus: TE peaks near Kc then declines (redundancy — a locked pair is its own best predictor). Grounds Ch 8's last span; hardens null=poised-not-empty | passing |
 | `iter12_interaction_sign.py` | **The sign of an interaction (latent vs active).** Latent vs active interaction is a *sign problem*: the sign of the locking discriminant `Disc=1−(Δω/2K)²`. Active (Disc>0): locked offset `ψ*` is **real** — realized, a deviation, and the simulated pair settles to `Re ψ*`. Latent (Disc<0): `ψ*=π/2−i·arccosh(Δω/2K)` is **complex** — unrealized, a channel only, and the pair never settles (drifts). Threshold `Kc`=discriminant zero: `ψ*=π/2`, `R=1/√2` (ties to iter 6). `\|Im ψ*\|` quantifies latency. Sign of the *discriminant*, not the coupling. All 4 checks pass | passing |
 | `iter15_stigmergy.py` | **Stigmergy: coordination through a shared, persistent medium.** Agents couple only to a deposit-evaporation medium `M` (no direct coupling). Low evaporation → they synchronize through the trail; high evaporation → fall back to a *search/drift* null (r≈uncoupled baseline) — the null is **medium-relative**. Fingerprint (reusing iter-8 conditional TE): `M` is a *mediator*, so `TE(1→2)` collapses to ~14% conditioned on `M` (mirror of iter-8's *confounder*). Partial: a direct edge leaves more residual (22%), margin modest (minimal medium tracks the phase). Closure↔stigmergy = one axis (memory/coordination inside vs outside) | passing |
+| `iter16_clock_relativity.py` | **Clocks: participant desync vs observer re-clocking (two different questions).** *Part A (physical — participant clocks):* two agents on alternating duty windows — **never co-present** — still lock through the medium (r=0.99 at zero overlap); the tolerated window scales with the trail's persistence, `W50 ∝ 1/γ` with `γ·W50` constant (5.0–7.5 over an 8× range of γ) ≈ a few e-foldings — evaporation decays the medium's *amplitude* while its stored *phase* persists, so slack ≈ `(1/γ)·ln(pull/drift margin)`. A direct edge gated by co-presence needs overlap (r 0.65→1.00 as f 0→1) while the mediated pair is flat at 0.99 — internal systems must share a wall clock; stigmergic agents each share one only with the medium. At matched coordination (r≈0.97 both), the mediated edge's TE-vs-lag **tail persists** (81% of peak at 2.5–4 time units) where the direct edge decays to the estimator floor (~0% by 2u) — external memory visible in the information plane. *Part B (representational — observer clock):* decimation ×2/×4 and a smooth monotone time-warp of the SAME trajectory leave the screening verdict and regime class unchanged while raw TE swings 1.4×; the warp rescales rate observables (slip rate ×1.30 = the mean warp factor) but leaves the Δθ distribution invariant (L1 0.029) whereas physical decoupling reshapes it (0.739). Coordinate change moves rates and magnitudes; physical change moves relations — the discriminator GPT's guardrail (D21) asked for | passing |
 | `iter14_associative_recovery.py` | **Associative recovery: full coherence into the WRONG memory.** An oscillatory Hopfield net stores M=3 patterns (`K_ij=(1/N)Σ_μ sᵘᵢsᵘⱼ`); each is a stable attractor. Damage pattern A and recover: small damage → 100% back to A; but past σ≈1.5 the *retrieval coherence* stays high (~0.85 — the system still locks onto **a** stored memory) while the fraction recovering the **original** collapses (→A: 100%→20%) and the fraction landing on a **different stored pattern** grows to 65% at σ=3.0. The true ship of Theseus — same coherence, a different stored self. Requires multistability: M=1 control always returns the same pattern. All 4 checks pass | passing |
 | `iter13_damage_recovery.py` | **Damage recovery = recovery of the PATTERN.** Scramble a locked module's phases; measure recovery against the *stored pattern* (gauge-invariant phase differences), not coherence. Protected memory (frozen K): pattern recovers to ~1.0 from any scramble (K=0 control recovers nothing → the coupling IS what restores identity); coherence returns before the pattern (stricter, later). Unprotected memory (plastic): resilience **threshold** at σ≈1 — small hits self-heal, big hits erode the coupling and rewrite the memory (partial coherence r≈0.5 into a *shifted* pattern, F≈0.4). Ship of Theseus. All 5 checks pass | passing |
 
 ## Findings log
 
+- **Clock relativity separates into two questions, and external memory answers
+  the first (iter16):** *participant* clocks are physical — a direct edge only
+  transmits while both parties are co-present (r rises with overlap f and sits
+  at the drift baseline at f=0), whereas agents that are **never co-present**
+  coordinate fully through a persistent medium; the desynchronization it
+  tolerates is the clock-slack budget `W50 ∝ 1/γ` (`γ·W50` ≈ 5–7.5 constant
+  over an 8× persistence range — a few e-foldings, because evaporation decays
+  the trail's amplitude while its stored phase persists). So iter 15's
+  external memory doubles as a **clock buffer**: each agent needs only to
+  share a clock with the medium, never with each other. Mediation also has a
+  **memory signature** in the information plane: at matched coordination, the
+  direct edge's TE-lag profile decays to the estimator floor within ~2 time
+  units (a channel forgets at its relaxation time) while the mediated edge
+  retains 81% of peak transfer out to 4 units — the medium holds the writer's
+  past. *Observer* clocks are representational — decimation and a smooth
+  monotone time-warp of the same trajectory move measured magnitudes (TE
+  swings 1.4×; rates scale by the warp factor) but not the certificates
+  (screened-off verdict, regime class) or the relational structure (Δθ
+  distribution, L1 0.029 vs 0.739 for genuine decoupling). Coordinate
+  disagreement is not a physical deviation; the discriminator is invariance
+  of relations vs covariance of rates. Honest scope: N=2, one substrate;
+  invariance shown for re-clockings that still resolve the medium's bandwidth
+  (dec×4's conditional TE already sits at the estimator floor); the
+  admissibility boundary (where verdicts DO fail, e.g. aliasing) is unmapped.
 - **Stigmergy = coordination through a shared medium, and the null is
   medium-relative (iter15):** agents coupled ONLY to a persistent, agent-written
   medium `M` (deposit + evaporation, no direct coupling) synchronize through it
