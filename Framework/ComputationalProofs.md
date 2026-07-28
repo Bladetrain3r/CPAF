@@ -274,10 +274,11 @@ real (iters 9–10) but conditional on the right learning ingredients, not a giv
 **7.5 Clock relativity: certificates and relations are the portable content.
 [PROPOSED — the canonical observer-relativity seam, D21/D22]** The canonical
 layer explicitly defers the observer-relativity ontology; iter 16 supplies its
-first witness and a working discriminator. Under admissible re-clockings of the
-*same* trajectory (decimation, smooth monotone time-warp), classification
-certificates (screened-off, regime class) and relational statistics (the
-distribution of simultaneous phase differences) are **invariant**, while
+first witness and a working discriminator. Under tested representations of the
+*same* trajectory (decimation/resampling and a smooth monotone re-clocking),
+classification certificates (screened-off, regime class) and relational
+statistics (the distribution of simultaneous phase differences) are
+**invariant**, while
 magnitudes (TE in bits) and rate observables **covary** with the clock — so
 coordinate disagreement is measurably *not* a physical deviation, and a
 measurement claim should be typed by whether it survives re-clocking.
@@ -287,9 +288,9 @@ persistent medium (iter 15) buffers desync in proportion to its persistence
 time (`W50 ∝ 1/γ`) and wears its mediation as a persistent TE-lag tail —
 external memory visible in the information plane. Suggested refinement: tag
 rate/magnitude claims as observer-relative measurements and reserve ontic
-status for re-clocking-invariant certificates. *(The typed clock-transformation
-definitions belong to the canonical metalanguage — GPT's deliverable; this
-entry is the evidence, not the formalism.)*
+status for transformation-invariant certificates. *(Typed transformations now
+live in the canonical metalanguage; this entry remains evidence, not the
+formalism.)*
 
 ---
 
@@ -313,8 +314,8 @@ entry is the evidence, not the formalism.)*
   re-clockings that still resolve the medium's bandwidth; the **admissibility
   boundary** — how coarse or distorted an observation clock can get before the
   verdicts themselves fail (aliasing) — is unmapped, and the participant-clock
-  results are N=2 in one substrate. The typed clock-transformation formalism is
-  not built (canonical layer, pending).
+  results are N=2 in one substrate. Canonical Draft 0.2 now types clock
+  transformations and resampling, but the formalism awaits author review.
 - **Universality.** Every proof here is in *one* substrate (coupled oscillators).
   CPAF's cross-substrate universality is argued, not computationally proven; a
   second substrate would raise confidence.

@@ -72,7 +72,7 @@ CPAF/
   the locking discriminant `Disc=1−(Δω/2K)²` (`interaction.md`, grounded by
   iter 12). **7.3** (information certificate levels) and **7.4** (conditional
   emergence) are proposed, pending sign-off.
-- **Canonical null state is now Draft 0.2.** A macro-null may be actively
+- **Canonical null state is now Draft 0.3.** A macro-null may be actively
   maintained by micro-level interactions: nullness constrains relevant
   deviation at the declared scale, not all finer-scale activity. Maintenance
   requires a certificate rather than mere coexistence. A revisit is a return to
@@ -90,8 +90,11 @@ CPAF/
   verdicts (screened-off, regime) or relational structure (the Δθ
   distribution) — coordinate disagreement is not a physical deviation.
   **Hand-off to the canonical layer:** typing the clock transformations and
-  invariants in the metalanguage (GPTSol deliverables) can now cite a
-  verified witness.
+  invariants in the metalanguage now cites this verified witness. Drafts type
+  physical time, participant availability, observer time, sampling, and feature
+  maps separately; distinguish re-clocking from resampling; and classify claims
+  as invariant, covariant, or representation-sensitive. Ontology and the
+  admissibility/aliasing boundary remain open.
 - **Damage recovery has a first result (iter 13).** Recovery is recovery of the
   stored *pattern* (not mere coherence), and it requires a *protected* memory —
   the first step into the active layer (memory + graceful degradation).
@@ -109,11 +112,9 @@ CPAF/
 2. **Observer/clock relativity** — witness DONE (iter 16, D22): participant
    desync (physical, medium-buffered) separated from observer re-clocking
    (representational; verdicts and relations invariant, magnitudes and rates
-   covariant). Textbook write-up DONE: `KSOMHeb/textbook/
-   III_clocks_intermission.md` (Vol II Intermission III). *Remaining:* absorb
-   into the canonical metalanguage as typed clock transformations + invariants
-   (GPT, sign-off needed); map the admissibility boundary (where re-clocking
-   DOES break verdicts).
+   covariant). Canonical Draft 0.2 formalism is written. *Remaining:* author
+   review; map the admissibility boundary (where re-clocking or resampling DOES
+   break verdicts); textbook write-up (Vol II).
 3. **Per-concept "Computational proof →" footers** on the remaining `Framework/`
    concept docs (nullstate & interaction already link theirs).
 4. **Damage recovery / graceful degradation** — **results (iters 13–14):**

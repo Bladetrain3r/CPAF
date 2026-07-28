@@ -1,6 +1,6 @@
 # Deviation
 
-**Status:** Draft 0.1  
+**Status:** Draft 0.2
 **Dependencies:** null state/reference regime, analysis context, difference criterion  
 **Primary adjacent concepts:** information, interaction, meta-null
 
@@ -168,6 +168,13 @@ A substrate-specific deviation criterion must provide:
 - expected counterexamples;
 - falsification checks.
 
+For clock-sensitive data, it must additionally distinguish:
+
+- a second physical trajectory from a re-expression of the same trajectory;
+- participant availability/delay from observer timestamping and sampling;
+- invariant verdicts from covariant rates or estimator magnitudes;
+- physical deviation from loss of observational resolution.
+
 ## K-SOM-Heb witnesses
 
 ### Locking transition
@@ -194,6 +201,14 @@ of gross coherence.
 
 These witnesses do not imply that every deviation is a bifurcation, locking
 event, or MI transition.
+
+### Observer re-clocking control
+
+Iteration 16 applies decimation and a smooth monotone time-warp to the same
+physical oscillator trajectory. Within the tested range, regime and screening
+verdicts and the simultaneous phase-difference distribution remain stable while
+TE magnitudes and rate observables change. This is a computational witness that
+coordinate disagreement and measurement change need not be physical deviation.
 
 ## Relationship to null state
 
@@ -254,9 +269,22 @@ This definition does not claim:
 
 ## Observer-relativity marker
 
-**Deferred.** Deviation is currently indexed by an analysis context so that
-measurements are checkable. Whether the underlying property is ontically
-observer-relative remains undecided.
+The ontology remains **Deferred**. Operationally, compare representations only
+after establishing that they refer to the same physical events. For a declared
+admissible representation operation `g`:
+
+```text
+Invariant(Dev_s; g, C) ≔ Dev_s(D_o; C) ↔ Dev_s(D_o'; C')
+```
+
+When this holds, a covariant change such as
+`dθ/dτ' = (dθ/dτ)/(dh/dτ)` is a coordinate effect, not a physical deviation.
+If a classifier changes after coarse resampling, the first conclusion is that
+the certificate is representation-sensitive or unresolved; a physical
+deviation requires evidence from the underlying trajectory or an invariant
+relation. Independent participant-clock changes are different: altered
+co-presence, delay, or medium persistence changes the physical interaction
+conditions and may produce a genuine deviation.
 
 ## Legacy crosswalk
 
@@ -275,4 +303,13 @@ observer-relative remains undecided.
    nonzero magnitude.
 2. How to mark cognitively relevant versus merely physical deviations.
 3. Whether to normalize all reported magnitudes for cross-system comparison.
-4. How observer/representation invariance should later be handled.
+4. Which deviation predicates remain invariant under which admissible clock and
+   sampling transformations, including the aliasing boundary.
+
+## Change log
+
+- **Draft 0.2:** separates participant-clock physics from observer re-clocking;
+  types invariant deviation verdicts and covariant rates; and adds iteration 16
+  as a bounded computational control.
+- **Draft 0.1:** introduced typed magnitude, event, detectability, and
+  observation distinctions.
