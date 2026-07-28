@@ -132,6 +132,34 @@ this book's economy, is worth just as much.
 Either way, the next chapter starts with a coupling matrix that earned its
 blocks, and asks whether they've earned their names.
 
+## I.6 Postscript (added in the revision pass)
+
+This chapter stays as written — a time capsule from mid-bridge — but a current
+reader deserves the reveal. Everything §I.5 anticipated happened, mostly on
+its stated terms:
+
+- **The splice succeeded verbatim** (Ch 11, iter 10): grown modules passed all
+  four entity criteria unadjusted, and closure turned out to *locate*
+  boundaries, not just grade them (50–60× separation). The two halves of the
+  book did become one story, in exactly the sentence §I.5 rehearsed.
+- **The bridge completed** (Ch 12, iters 11–12): interaction and deviation
+  dissociate measurably (the latent channel), and latent-vs-active is the
+  *sign of a discriminant* — the last owed span, paid.
+- **The final synthesis this chapter expected arrived as Ch 13** — but in a
+  language nobody at base camp had yet: the canonical **metalanguage** from
+  the formal-spine audit. Volume I is now a *witness table* for a typed
+  definition layer, and the four self-corrections that recast surfaced have
+  been applied across the book.
+- **Volume II opened** beyond the ledger of §I.4: memory got its operational
+  test and its ship-of-Theseus (iters 13–14), and two intermissions extended
+  the axis this chapter didn't know existed — coordination and memory held
+  *outside* an entity (stigmergy, iter 15) and the clock consequences of that
+  (co-presence, buffering, observer invariance — iter 16).
+
+What §I.4 still correctly owes: the global-`r` threshold, richer memory vs
+the one-bit result, `P`'s double edge, and — loudest — a second substrate.
+The debts that mattered got paid; the honest ledger stayed honest.
+
 ---
 
 *No runnable for this chapter — it synthesizes iter 1–9. The dictionary's

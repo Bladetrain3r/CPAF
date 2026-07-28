@@ -107,6 +107,9 @@ reads modularity off a K-SOM-Heb system, it must be *this* system. The doc
   enforces.
 - The rescue requires mechanisms **beyond the original spec**, with new
   parameters — an honest cost, now documented.
+- *Since built on (Ch 11, iter 10):* the modules this machinery grows later
+  pass **every entity criterion unadjusted** — this chapter's recipe became
+  the suite's standard way of growing structure that earns its boundaries.
 
 We've reached the end of the model-building arc: from a single spinning arrow
 (Ch 1) to a self-organizing, modular, adaptive memory (Ch 5), verifying or

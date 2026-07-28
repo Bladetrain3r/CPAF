@@ -119,6 +119,10 @@ something in the framework it was built to serve.
   continuous with no special 0.7.
 - With noise the transition smears — the candidate operational picture of CPAF's
   **null → deviation** step.
+- *Since recurred and typed:* the same law returns one level up — a locked
+  cluster obeys this exact equation with `K_eff = κρ`, `1/√2` floor included
+  (Ch 10) — and the canonical layer types the pair (`Kc`, `1/√2`) as `[AN]`
+  **at the pair scale**, never universal constants (Ch 13).
 
 ---
 

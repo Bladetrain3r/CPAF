@@ -47,6 +47,7 @@ the same task, the branch-per-agent + check-first convention applies.
 | 13 | **Visualiser: damage-recovery demo** — add a panel that scrambles a locked module's phases and shows pattern fidelity recovering (or not) | `KSOMHeb/visualiser/` | 🟡 | M | JS port must stay parity-checked vs the `.py` (D7) | — |
 | 14 | **Ch 6 §6.3 seams** — one-bit memory vs "connectivity is memory"; plasticity `P`'s double edge (low P = dead or settled?) | `KSOMHeb/verification/`, Ch 6 | 🟡 | M | Two of the remaining quant/qual seams | — |
 | 15 | **Entity operating envelope** — absorption vs fragmentation: when does a cluster absorb a newcomer vs split? (Ch 10 exercise) | `KSOMHeb/verification/` | 🟡 | M | Extends iter 9 | — |
+| 16 | **Detector / embedded observer (proposed iter 17)** — a no-natural-frequency, read-only node: pair invariance (zero back-action → composable foundation blocks), the clean one-way TE certificate, bandwidth-as-admissibility, detecting a *deviation* (first awareness-shaped witness), then the ε back-coupling reader→participant threshold | `KSOMHeb/verification/`, spec in `CPAF_MAPPING_NOTES.md` | 🟡 | M | Completes the 3-node motif set (confounder/mediator/detector); bridges iter 16's observer typing to physical dynamics; opens the active layer | — |
 
 ## Team status
 
