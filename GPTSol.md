@@ -36,17 +36,10 @@ Working direction:
 - observer and representation relativity are acknowledged but deferred as an
   ontology decision.
 
-<<<<<<< ours
-The null-state draft is now at 0.2. The next seam is separating changes in the
-system from changes in the observer's representation or clock. A proposed
-computational witness is a set of coupled oscillators represented on different
-clocks or time bases. Before promotion, it must distinguish:
-=======
 The null-state draft is now at 0.3 and the metalanguage at 0.2. Iteration 16 is
 the first computational witness for separating changes in the system from
 changes in the observer's representation or clock. The canonical pass now
 distinguishes:
->>>>>>> theirs
 
 - coordinate or sampling differences from physical deviations;
 - clock-relative phase/frequency from invariant relational structure;
@@ -54,14 +47,9 @@ distinguishes:
   an admissible clock transformation;
 - observer-relative operational certificates from ontic claims.
 
-<<<<<<< ours
-This is an open research direction, not evidence that K-SOM-Heb has already
-resolved clock relativity.
-=======
 Iteration 16 supports these distinctions for one oscillator substrate and a
 bounded set of re-clockings. The admissibility/aliasing boundary and the ontic
 status of observer-relative properties remain open.
->>>>>>> theirs
 
 ## Author decisions recorded
 
@@ -96,14 +84,11 @@ status of observer-relative properties remain open.
     on different clocks as the next test of observer relativity. Coordinate
     disagreement is not a physical deviation without an invariant or explicitly
     context-relative criterion.
-<<<<<<< ours
-=======
 12. **Clock typing:** distinguish physical time, participant clock and
     availability, observer clock, sampling schedule, and feature map. Treat
     re-clocking and resampling as different operations; type portable predicates
     as invariant, rate-like measurements as covariant under a declared law, and
     unresolved quantities as representation-sensitive.
->>>>>>> theirs
 
 ## Open clarification
 
@@ -146,16 +131,6 @@ stable.
 
 ## Immediate deliverables
 
-<<<<<<< ours
-1. Draft the observer/representation-relativity decision space without silently
-   choosing an ontology.
-2. Type clock/time-base transformations and candidate invariants in the
-   canonical metalanguage.
-3. Specify what a different-clock oscillator witness would prove and falsify
-   before implementing it in K-SOM-Heb.
-4. Test null and deviation classifications against changes of observation map,
-   sampling rate, and time parameter.
-=======
 1. Seek author review of the Draft 0.2 clock metalanguage without silently
    choosing an ontology.
 2. Map the admissibility boundary where sampling or time warping loses the
@@ -164,7 +139,6 @@ stable.
    maps that preserve or destroy relational structure.
 4. Decide whether ontic, epistemic, and operational variants belong in each
    concept document or in one shared observer-relativity document.
->>>>>>> theirs
 
 ## Main risks
 

@@ -1,10 +1,6 @@
 # Null State
 
-<<<<<<< ours
-**Status:** Draft 0.2
-=======
 **Status:** Draft 0.3
->>>>>>> theirs
 **Dependencies:** canonical metalanguage, analysis context, state, time, scale  
 **Primary adjacent concept:** deviation
 
@@ -161,8 +157,6 @@ latent capacities, or through a mixture of mechanisms. Unmeasured
 micro-interference must remain a possible limitation of a null-state claim; it
 must not be asserted merely because the analysis cannot exclude it.
 
-## Metastability, recurrence, and revisit frequency
-<<<<<<< ours
 
 The phrase “high-frequency metastable phase” means a metastable regime that is
 **frequently occupied or revisited within a declared time horizon**. It does
@@ -190,35 +184,6 @@ probability:
 R_N(h; C) ≔ P(Revisit_N(t_0,h; C) | departure from N_s)
 ```
 
-=======
-
-The phrase “high-frequency metastable phase” means a metastable regime that is
-**frequently occupied or revisited within a declared time horizon**. It does
-not, unless explicitly stated, mean a high physical oscillation frequency.
-
-[DEF] A revisit occurs when a trajectory that has left the reference regime
-later returns to the same regime or to a declared similarity neighbourhood:
-
-```text
-Revisit_N(t_0,h; C) ≔
-    ∃t_exit,t_return with t_0 ≤ t_exit < t_return ≤ t_0+h:
-        Δ_N(x_t_exit) > ε_exit
-        ∧ Δ_N(x_t_return) ≤ ε_return
-```
-
-For non-metric or distributional regimes, the final clause is replaced by the
-declared membership, classifier, or divergence criterion. “Similar
-configuration” therefore means equivalent under `O_s`, `δ_s`, scale, and
-return tolerance—not necessarily an identical microstate.
-
-[DEF] Recurrence over horizon `h` may be reported as a conditional return
-probability:
-
-```text
-R_N(h; C) ≔ P(Revisit_N(t_0,h; C) | departure from N_s)
-```
-
->>>>>>> theirs
 or as an empirical revisit rate over `W`. A regime is **frequently recurrent**
 only relative to declared thresholds `h` and `ρ_R`:
 
@@ -337,12 +302,6 @@ regime changing. That is loss of certificate, not automatically a deviation.
    intervention is unavailable.
 3. Decide whether a system must possess a natural null or may use only
    assessor-selected references.
-<<<<<<< ours
-4. Revisit observer relativity later.
-
-## Change log
-
-=======
 4. Map which clock and sampling transformations preserve each null certificate,
    especially the aliasing/bandwidth boundary.
 
@@ -350,7 +309,6 @@ regime changing. That is loss of certificate, not automatically a deviation.
 
 - **Draft 0.3:** types clock-relative null certificates and incorporates the
   bounded iteration-16 observer re-clocking witness without settling ontology.
->>>>>>> theirs
 - **Draft 0.2:** permits active micro-level maintenance of a macro-null;
   distinguishes certified maintenance from mere coexistence; and formalizes
   revisit, finite-horizon recurrence, and context-relative frequency.
