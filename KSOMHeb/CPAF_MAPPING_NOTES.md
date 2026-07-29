@@ -128,6 +128,48 @@ may be a concrete substrate for CPAF's basic layer.
   typed clock transformations in the canonical metalanguage (GPT's deliverable);
   a fast-common-rotation case (iter 15's rotating-frame caveat).
 
+- **Detector / embedded observer (Ziggy's motif — RUN, iter 17 ✅; textbook
+  Vol II Ch 1 `V2_01_isolation_and_scale.md`; D24).** All four conjectured
+  properties verified (pair invariance exact/bit-identical; one-way
+  certificate clean; bandwidth law derived with the one-way no-factor-2
+  Adler onset; deviation registration at `Kc`, bandwidth-robust) and the ε
+  reader→participant sweep run (continuous dial; static sources read free).
+  One honest revision: *following* a drifting pair is priced by the **peak**
+  slip rate `Δω+2K`, not the mean (saddle-node slipping is nonuniform).
+  Original conjecture text kept below for the record: A node with **no natural frequency** (`ω_d = 0` in the rotating
+  frame) that couples **one-way** to a source and never feeds back:
+  `dθ_d/dt = K_d·sin(θ_src − θ_d) + noise`. It *reads* without *writing* — a
+  pure follower. Conjectured properties to verify:
+  1. **Pair invariance (the foundation claim).** Attach the detector to an
+     iter-6 pair: because the edge is strictly unidirectional, the pair's
+     dynamics are *exactly* unchanged — `Kc`, `ψ*`, the `1/√2` onset hold
+     with zero back-action, by construction rather than approximation. This
+     is what lets verified pairs act as **composable foundation blocks**:
+     feed-forward (DAG) attachments never invalidate upstream `[AN]` results.
+  2. **The clean one-way certificate.** MI(src; det) > 0 (symmetric, as MI
+     must be), TE(src→det) ≫ 0, TE(det→src) ≈ 0 (true statistical null) — a
+     purer version of iter 8's one-way case: not an asymmetric peer but a
+     node *defined* as sink.
+  3. **Detector bandwidth = physical admissibility.** The detector tracks
+     only when `K_d` beats the source's drift/noise scale, with lag `~1/K_d`
+     — iter 16's admissibility/aliasing boundary realized as *dynamics*
+     (an embedded observer with insufficient bandwidth loses the verdict)
+     rather than as a sampling schedule. Bridges the canonical `κ_o`/`q_o`
+     typing to a physical device inside `X_s`.
+  4. **Detecting a deviation.** A relation-detector driven by the pair's
+     phase *difference* (or mean field) registers the locking event itself:
+     its state distinguishes locked from drifting. Measurement of a deviation
+     = a deviation *in the detector* — CPAF's "distinguishable through
+     effects or measurement" clause made physical, and the first
+     awareness-shaped witness (a subsystem carrying information about
+     another subsystem without disturbing it).
+  This completes the three-node causal motif set: **confounder** (iter 8,
+  common cause `a←Z→b`), **mediator** (iter 15, pathway `a→m→b`), **detector**
+  (sink `a→d`). *Follow-up with teeth:* an ε back-coupling sweep — at what ε
+  does a *reader* become a *participant* (TE(det→src) clears the floor; the
+  pair's `[AN]` math measurably distorts)? The observer effect as a threshold
+  question. Status: conjecture; grounding = the proposed iter 17.
+
 ## Where this is heading
 
 Longer term: use the verified dynamics to give CPAF's basic layer — *null state,

@@ -171,8 +171,11 @@ nailed down cold before adding anything.
 
 - An oscillator is a spinning arrow: phase `θ`, natural speed `ω`.
 - The **order parameter** `r ∈ [0, 1]` is the length of the average arrow —
-  the single number for "how synchronized is this system." It *is* the
-  consciousness metric.
+  the single number for "how synchronized is this system." It is the coherence
+  metric the whole book builds on. (*Graded later:* `r` turns out to be
+  necessary but over-eager — it reads high where information is absent (Ch 8),
+  so by Ch 6 it's one earned metric among several, not a consciousness
+  verdict. Worth knowing where the story lands.)
 - **Coupling** `K` fights the frequency spread. Below the critical coupling
   `Kc` the system is incoherent; above it, synchrony switches on abruptly.
 - We verified the base model reproduces Kuramoto's transition (`Kc ≈ 1.60` vs

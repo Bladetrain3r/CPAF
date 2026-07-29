@@ -185,6 +185,9 @@ macro closure:  TE(θᵢ → Θ | Θ) ≈ 0   (members add nothing beyond Θ; fa
 | A direct edge needs co-presence; a medium buffers participant desync | ✅ never-co-present agents lock via the medium (r=0.99 at overlap f=0; direct edge stuck at drift baseline); slack budget `W50 ∝ 1/γ`, `γ·W50`≈5–7.5 (amplitude evaporates, stored *phase* persists) — external memory = clock buffer | 16 |
 | Mediated vs direct edge: a *memory signature* in the lag structure | ✅ at matched r, direct TE-lag profile decays to floor by ~2u (forgets at relaxation time); mediated tail retains 81% of peak at 2.5–4u (the medium holds the writer's past) | 16 |
 | Observer re-clocking (decimate, monotone warp) changes what the system *is doing* | ❌ (and that's the point): verdicts (screened, regime) + relations (Δθ distribution, L1 0.029) invariant; only magnitudes (TE ×1.4) and rates (×warp factor) move. Coordinate disagreement ≠ physical deviation | 16 |
+| One-way (read-only) attachment disturbs the source | ❌ exactly zero at ε=0: pair trajectory **bit-identical**, `ψ*`=arcsin to 4 dp — DAG composition preserves `[AN]` results (Vol II's scaling license). With ε>0, disturbance grows continuously — and only if the source *moves* (lag is the lever arm) | 17 |
+| Detector bandwidth law (one-way Adler) | ✅ locks onto rotating source iff `K_d ≥ \|Ω\|` (no factor 2 — only one side yields; cf. pair `\|Δω\|/2`, cluster `\|Δω\|/(2ρ)`), lag `arcsin(Ω/K_d)` to 3 dp. Bandwidth = admissibility (iter 16) made physical | 17 |
+| A detector's own state registers another system's *deviation* | ✅ relation-detector settles (detector-local `R_settle`) at the pair's `Kc` for both bandwidths (K*=0.50, 0.52 vs 0.5); *following* the drifting pair is separately priced by the **peak** slip rate `Δω+2K` (mean-slip conjecture refuted). First awareness-shaped witness — registration only | 17 |
 
 ## Default parameters
 

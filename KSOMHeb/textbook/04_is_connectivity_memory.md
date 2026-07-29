@@ -102,6 +102,15 @@ individual connections, and its own dynamics wash out the little structure
 synchrony provides. Chapter 5 asks what minimal ingredient fixes that — and finds
 that the answer was hiding in §4.2 all along.
 
+**Typing note (per Chapter 13's revision pass).** In the canonical metalanguage
+this iteration is a **classification result**, not a universal "❌": a
+computational witness `[CW]` that the baseline model *as specified* — per-node
+reward, all-to-all Hebbian coupling, no competition — falls in the
+non-modularizing class. It says nothing about Hebbian systems in general, and
+Chapter 5 immediately exhibits members of the *modularizing* class (per-pair
+credit, competition). Refutation-as-classification is the precise reading; the
+verdict tables elsewhere keep the shorthand ❌ with this footnote understood.
+
 ---
 
 ### Try it yourself

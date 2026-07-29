@@ -166,6 +166,11 @@ What iteration 8 does **not** establish:
 - For CPAF: information claims are graded by observability — *related <
   directed < connected* — and the top rung is a system-level certificate, not a
   pairwise property.
+- *Since adopted and mirrored:* the ladder is now canonical — context-indexed
+  certificate levels in the gold-standard `information.md` — and iter 15 found
+  the confounder's mirror image: conditioning that kills a **genuine** edge,
+  because the third variable is the *pathway* (a stigmergic mediator), not a
+  common cause. Same tool, opposite causal role (Intermission II).
 
 ---
 
