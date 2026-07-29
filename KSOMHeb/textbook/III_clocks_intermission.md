@@ -100,7 +100,14 @@ edge; the tail is where its nature shows.
 Now hold the physics fixed. Take *one* mediated trajectory and re-represent it
 three ways: decimate ×2, decimate ×4, and resample it along a smooth, monotone
 time-warp (an observer whose clock runs unevenly and, on average, 1.3× slow).
-Nothing physical differs between these four descriptions. What survives?
+Nothing physical differs between these four descriptions. One typing note,
+courtesy of the canonical layer (`METALANGUAGE.md` §4.1, Draft 0.2): these are
+two different *operations* — decimation is **resampling** (a coarser sampling
+schedule over the same events), the warp is a **re-clocking** (a relabeling of
+when those events happened) realized here by resampling along the warped
+schedule. Both sit inside the tested class; the distinction matters because
+the failure modes differ (resampling can alias; a bijective re-clocking
+cannot). What survives?
 
 - **[CW] Verdicts survive; magnitudes don't.** The screening certificate
   ("conditioning on `M` collapses the edge") and the regime classification
@@ -136,9 +143,10 @@ Both halves hand something to the canonical layer:
    reference regime *and* the clock it must align with.
 2. **An invariance criterion for the deferred observer-relativity ontology.**
    The canonical layer can now say something operational without committing
-   metaphysically: under admissible re-clockings, **certificates and
-   relational statistics are the observer-portable content; rates and
-   magnitudes are observer-relative measurements**. Measurement claims should
+   metaphysically: under admissible re-representations (re-clocking and
+   resampling alike), **certificates and relational statistics are the
+   observer-portable content; rates and magnitudes are observer-relative
+   measurements**. Measurement claims should
    carry their clock the way canonical claims already carry their scale `λ`.
    The typed clock-transformation formalism itself belongs to the canonical
    layer — iter 16 is the evidence, not the formalism.
@@ -160,14 +168,17 @@ measurable facts (the slack budget; the invariance split). What's genuinely
 open, in order of bite:
 
 1. **The admissibility boundary.** The invariance results hold for
-   re-clockings that still resolve the medium's bandwidth; decimating ×4
+   re-representations that still resolve the medium's bandwidth; decimating ×4
    already pushes the conditional-TE estimator to its floor. Somewhere past
-   that, verdicts *do* fail (aliasing) — mapping where, and stating
-   admissibility as a theorem about sampling versus system bandwidth, is the
-   natural next witness.
-2. **The typed formalism.** Clock transformations, observation maps, and the
-   invariant/covariant split, stated in the canonical metalanguage — GPT's
-   deliverable, now with a witness to check it against.
+   that, verdicts *do* fail (aliasing, on the resampling side of the typing) —
+   mapping where, and stating admissibility as a claim about sampling versus
+   system bandwidth, is the natural next witness — jointly specified with the
+   formal spine, whose open deliverable it also is.
+2. ~~**The typed formalism.**~~ **Landed** (canonical Draft 0.2): participant
+   and observer clocks, availability/co-presence, sampling schedules, and the
+   invariant / covariant / representation-sensitive tagging now live in
+   `METALANGUAGE.md` §§3–4, 12, with iter 16 cited as the bounded witness.
+   Author review pending.
 3. **The rotating-frame caveat.** Iter 15/16 work in a frame with slow common
    rotation (a fast-spinning deposit averages to zero in the medium). A fast
    common clock plus a slow medium is exactly the regime where participant

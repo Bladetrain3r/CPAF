@@ -54,12 +54,16 @@ CPAF/
   canonical `README.md` sets the authority order; `ComputationalProofs.md` is the
   evidence layer (#3). The canonical docs cite our iterations as witnesses (e.g.
   `deviation.md` → iter 6 and the identity-deviation of iters 13–14).
-- **Textbook Volume I is a complete draft.** Ch 0–13 + Intermission + Appendix A.
-  **Ch 13 is the capstone** — it re-reads Volume I in the canonical metalanguage
-  (a witness table), and surfaced **4 revisions** to apply (null≠max-entropy;
-  keep `Kc`/`1/√2` typed; global-`r` stays `[CONJ]`; iter 4 is a classification
-  result). **Volume II** (the active layer — memory, recovery fidelity, awareness,
-  reflection) opens with damage recovery (iters 13–14).
+- **Textbook Volume I is a complete draft, revision pass underway.** Ch 0–13 +
+  Intermission + Appendix A. **Ch 13 is the capstone** — it re-reads Volume I in
+  the canonical metalanguage (a witness table); its **4 revisions are now
+  APPLIED** (null≠max-entropy → Ch 0/8; `Kc`/`1/√2` typed `[AN]`@pair → Ch 8;
+  global-`r` kept `[CONJ]` → Ch 6; iter 4 labeled a classification result →
+  Ch 4). Ch 0 is current through iter 16 (sixteen-experiment story, two-volume
+  map, canonical layer introduced up front); Ch 8's conjecture spans carry
+  *since built* resolutions. **Volume II** (the active layer — memory, recovery
+  fidelity, awareness, reflection) opens with damage recovery (iters 13–14) and
+  holds two intermissions (stigmergy, clocks).
 - **The foundational-layer bridge is COMPLETE and integrated.** All six
   foundational concepts have computational single-case proofs (iters 1–12),
   mapped in `Framework/ComputationalProofs.md`; the canonical layer has absorbed

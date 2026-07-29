@@ -58,10 +58,22 @@ numbers.
 **Be honest about the seams.** These mappings are *proposals*, and this textbook
 grades them rather than assuming them. Some hold up cleanly (the coherence
 metric), one was outright refuted as originally specified and then rescued with a
-mechanism the original spec lacked (modularity, Chapters 4–5), and some remain
-untested (damage recovery). CPAF should inherit the graded verdicts, not the
+mechanism the original spec lacked (modularity, Chapters 4–5), and the ones that
+began as promissory notes have since been paid or priced (damage recovery is now
+*tested* — experiments 13–14). CPAF should inherit the graded verdicts, not the
 original optimism. That honesty *is* the contribution — a metric you can trust is
 worth more than a metric that flatters the framework.
+
+**The shared language.** Since the first draft of this book, the framework side
+has grown a gold-standard definition layer —
+`../../Framework/CanonicalDefinitions/` (its `README.md` sets the authority
+order) — with a typed **metalanguage**: claims are labeled by class (`[AN]`
+analytic, `[CW]` computational witness, `[CONJ]` conjecture, …), and every
+result carries its analysis context (observables, scale, and now clock). In
+that vocabulary, everything this book proves is a **computational witness**:
+an existence demonstration in one substrate, never a universal definition.
+Chapter 13 (the capstone) teaches the metalanguage and re-reads the whole of
+Volume I inside it; Volume II is written in it from the start.
 
 ## 0.4 Where everything lives
 
@@ -69,20 +81,23 @@ worth more than a metric that flatters the framework.
 KSOMHeb/
 ├── KSOMHeb_Architecture.md   the original design doc (v1.2, corrected + annotated)
 ├── CHEATSHEET.md             every symbol, equation, and key relationship on one page
-├── DECISIONS.md              the decision log — what we chose and why
+├── DECISIONS.md              the decision log D1–D22 — what we chose and why
 ├── CPAF_MAPPING_NOTES.md     the CPAF ↔ oscillator correspondence and its tensions
+├── HANDOVER.md               deep pickup reference (status + open queue)
 ├── ksomheb.py                the reference implementation (the canonical math)
 ├── requirements.txt          numpy + matplotlib (install on a fresh container)
-├── verification/             one runnable script + plot per claim (iter1…iter11)
+├── verification/             one runnable script + plot per claim (iter1…iter16)
 │   └── README.md             the suite index and findings log
 ├── visualiser/               interactive browser demo (drag the sliders)
-└── textbook/                 you are here
+└── textbook/                 you are here — Vol I: Ch 0–13 + Intermission +
+                              Appendix A · Vol II: Intermissions II (stigmergy)
+                              and III (clocks) · OUTLINE.md is the chapter map
 ```
 
 If you read nothing else, read `CHEATSHEET.md` (for the math) and
 `verification/README.md` (for what's been proven).
 
-## 0.5 The story so far, in eleven experiments
+## 0.5 The story so far, in sixteen experiments
 
 The model was built and stress-tested bottom-up. Each iteration is a script you
 can re-run; here's the arc and the verdict:
@@ -128,15 +143,41 @@ can re-run; here's the arc and the verdict:
     separate observables. Below the locking threshold sits a band where the edge
     is real but silent — TE > 0, MI ≈ 0. ✅ *interaction is graded, deviation is
     an onset; a null state is poised, not empty.*
+12. **The sign of an interaction** — latent vs active is the *sign* of the
+    locking discriminant `Disc = 1 − (Δω/2K)²`: active means the locked offset
+    `ψ*` is real (realized — a deviation); latent means it's complex
+    (unrealized — a channel only). ✅ *the latent band, explained analytically.*
+13. **Damage recovery** — recovery is recovery of the stored **pattern** (the
+    identity), not of coherence, and it needs a *protected* memory: frozen `K`
+    restores the pattern from any scramble; plastic `K` past a threshold
+    rewrites it — coherence partly persists while the identity is lost. ✅
+    *memory gets an operational test.*
+14. **Associative recovery** — with several memories stored in one coupling,
+    damage recovery can restore *full* coherence into a **different stored**
+    identity (the genuine ship of Theseus); a single-memory system cannot. ✅
+    *identity resilience = basin size (capacity).*
+15. **Stigmergy** — agents coordinate through a persistent, agent-written
+    medium with *no direct coupling*; conditioning on the medium screens off
+    the apparent edge (a *mediator*, the mirror of experiment 8's confounder);
+    and the null state is *medium-relative* — no trail means search, not
+    freeze. ✅ *coordination and memory held outside the agents.*
+16. **Clocks** — a direct edge needs **co-presence**; a medium buffers
+    participant desynchronization in proportion to its persistence time
+    (external memory doubles as a *clock buffer*), and mediation shows up as a
+    persistent transfer tail (the medium holds the writer's past). Meanwhile
+    re-representing the same trajectory on a different observer clock moves
+    magnitudes and rates but never verdicts or relations. ✅ *participant
+    clocks and observer clocks, separated.*
 
 That refute-then-rescue in 4→5 is the heart of the project: it's what verifying
-math against code actually buys you. Experiments 6–11 are the second arc — the
-**bridge to CPAF** (Chapters 7–12), now *complete*: every foundational concept
+math against code actually buys you. Experiments 6–12 are the second arc — the
+**bridge to CPAF** (Chapters 7–12), *complete*: every foundational concept
 (null, deviation, interaction, information, entity, system) has a grounded
-oscillator definition. Deviation, information, and entity are all born at the
-same locking transition; the entities the system grows itself obey the same laws
-as the ones we built by hand; and even the "empty" null state turns out to be a
-field of latent interactions waiting below threshold.
+oscillator definition, and Chapter 13 closes Volume I by recasting the lot in
+the canonical metalanguage. Experiments 13–16 open **Volume II** — the active
+layer: memory and identity (13–14), then the *closure↔stigmergy axis* (15–16):
+where a system keeps its coordination and memory (inside vs outside), and
+consequently whose clock it has to share.
 
 ## 0.6 If you've been away — start here
 
@@ -144,19 +185,25 @@ Welcome back. Fastest path to being useful again:
 
 1. Skim this chapter and `CHEATSHEET.md` (5 min) to reload the vocabulary.
 2. Open `DECISIONS.md` — it's the "why did past-me do that?" answer key.
-3. Run one verification script (`python3 verification/iter5_competition_rescue.py`)
-   to confirm the environment still works and to see a result land live.
-4. Check `verification/README.md`'s findings log and the architecture doc's
-   revision history for anything marked open or untested — that's the work queue.
+3. Run one verification script (`python3 verification/iter12_interaction_sign.py`
+   is fast) to confirm the environment still works and to see a result land live.
+4. For the fastest *conceptual* re-entry: `I_intermission.md` (the mid-bridge
+   synthesis), then `13_capstone_metalanguage.md` (Volume I in the canonical
+   frame). The work queue lives in `../HANDOVER.md` and the repo-level
+   `../../Working_List.md`.
 
-Current frontier (as of the last session): the CPAF bridge (Ch 8–11) has five
-grounded spans — deviation (iter 6), information (iter 7), the
-related/directed/connected information ladder (iter 8), entity-as-cluster
-(iter 9), and grown entities + closure-as-boundary-detector (iter 10). Open:
-interaction-vs-deviation (the last Ch 8 span — committed next), blind
-boundary search, the entity operating envelope (fragmentation under strong
-drive), **damage recovery / graceful degradation**, and the **global-`r`
-threshold**.
+Current frontier (as of the last revision): **Volume I is a complete draft**
+(Ch 0–13 + Intermission + Appendix A), closed by the Ch 13 capstone; **Volume
+II is open** — memory/identity (iters 13–14, chapter still to write) and the
+two intermissions (stigmergy, clocks). The canonical definitions layer
+(`../../Framework/CanonicalDefinitions/`) is now the shared language, and the
+traffic runs both ways: our witnesses ground its drafts (the medium-relative
+null, the clock typing), its typing sharpens our claims. Headline open items:
+the Volume II damage-recovery chapter; applying Ch 13's revision notes across
+Volume I; the admissibility/aliasing boundary for re-clocked certificates
+(joint with the formal spine); the associative capacity study; a spatial-field
+stigmergy substrate; blind boundary search; the global-`r` threshold; and the
+biggest honesty gap of all — a second substrate.
 
 ## 0.7 A note on origins
 

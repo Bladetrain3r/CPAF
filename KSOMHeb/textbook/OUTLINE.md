@@ -47,9 +47,20 @@ verified, so the textbook never runs ahead of the evidence.
   Capstone** + Appendix A. Grounds the six foundational CPAF concepts and closes
   in the shared canonical metalanguage. This is the "first volume" draft.
 - **Volume II — The active layer (opening).** The prerequisite-closed region
-  above foundations: memory, **recovery fidelity / identity** (damage recovery,
-  iters 13–14 — the *first Volume II chapter to write*), then awareness,
-  reflection, and beyond. Written in the canonical metalanguage from the start.
+  above foundations: isolation/composition, memory, **recovery fidelity /
+  identity**, then awareness, reflection, and beyond. Written in the canonical
+  metalanguage from the start.
+  - **Volume II Ch 1 — Isolation and scale** (`V2_01_isolation_and_scale.md`,
+    ✅, iter 17): the **detector** — a read-only, no-natural-frequency node.
+    One-way composition preserves upstream `[AN]` results *exactly* (the
+    scaling license); bandwidth law `K_d ≥ |Ω|` (one-way Adler, no factor 2)
+    = admissibility made physical; the confounder/mediator/detector motif set
+    completed; a relation-detector registers the pair's deviation at `Kc`
+    (first awareness-shaped witness, registration only); ε back-coupling =
+    the observer effect as a continuous dial.
+  - **Volume II Ch 2 — damage recovery / identity** (iters 13–14, *still to
+    write*): pattern vs coherence, protected memory, the multistable ship of
+    Theseus.
   - **Volume II Intermission — Stigmergy** (`II_stigmergy_intermission.md`, ✅):
     *less-closed systems* — coordination and memory held *outside* the agents in a
     shared medium. Defines stigmergy in the metalanguage (a *mediator* motif; the
@@ -67,10 +78,12 @@ verified, so the textbook never runs ahead of the evidence.
 
 **Immediate next candidates:**
 *(a)* **Volume II Ch 1 — damage recovery** (write up iters 13–14 as the
-identity-deviation / recovery-fidelity chapter). *(b)* **Apply Ch 13's four
-revisions** to Volume I prose (coordinate the null≠max-entropy fix with the
-canonical `null_state`). *(c)* the standing foundational follow-ups (blind
-boundary search, asymmetric-`K` learning, global-`r`) and the Ch 6 §6.3 seams.
+identity-deviation / recovery-fidelity chapter). *(b)* ~~Apply Ch 13's four
+revisions~~ **done** — Ch 0/4/6/8 revised (revision pass part 1–2, which also
+brought Ch 0 current through iter 16 and annotated Ch 8's spans with their
+resolutions). *(c)* the standing foundational follow-ups (blind boundary
+search, asymmetric-`K` learning, global-`r`) and the remaining Ch 6 §6.3 seams
+(one-bit-vs-rich memory, `P`'s double edge, substrate-neutrality).
 
 ## Cross-cutting threads to keep visible
 

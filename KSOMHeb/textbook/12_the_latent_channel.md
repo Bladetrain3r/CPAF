@@ -149,7 +149,11 @@ we set aside long ago (Appendix A / the Hebbian choice). `iter12_interaction_sig
 confirms all of it: the simulated pair settles onto `Re ψ*` above threshold and
 never settles below it, and the discriminant's zero lands exactly at `Kc` with
 `ψ* = π/2`, `R = 1/√2`. This is the form your framework's *latent interaction*
-takes once it's grounded in dynamics.
+takes once it's grounded in dynamics. (*Since applied:* this chapter's results
+became framework refinements 7.1/7.2 — the null state permits latent
+interactions, and latent-vs-active is the sign of the discriminant — applied
+to the concept docs with author sign-off and carried into the canonical
+layer. See `ComputationalProofs.md` §7.)
 
 ---
 
