@@ -39,8 +39,8 @@ override an accepted legacy construct.
 | Computational substrate | `KSOMHeb/ksomheb.py` | Reference K-SOM-Heb implementation | **Active** |
 | Verification ledger | `KSOMHeb/verification/` | Runnable iterations, checks, plots, and recorded findings | **Active evidence** |
 | Textbook | `KSOMHeb/textbook/` | Pedagogical account of the verified substrate and its CPAF mapping | **Active supporting documentation** |
-| Substrate coordination | `KSOMHeb/CHEATSHEET.md`, `DECISIONS.md`, `CPAF_MAPPING_NOTES.md`, `HANDOVER.md` | Symbols, decisions, mappings, and detailed pickup context | **Active project metadata** |
-| Project coordination | `HANDOVER.md`, `GPTSol.md`, `Claude_Code.md`, `Working_List.md` | Repository map, formal-spine handover, agent conventions, and task queue | **Active project metadata** |
+| Substrate coordination | `KSOMHeb/CHEATSHEET.md`, `KSOMHeb/DECISIONS.md`, `KSOMHeb/CPAF_MAPPING_NOTES.md`, `KSOMHeb/HANDOVER.md` | Symbols, decisions, mappings, and detailed pickup context | **Active project metadata** |
+| Project coordination | `./HANDOVER.md`, `./GPTSol.md`, `./Claude_Code.md`, `./Working_List.md` | Repository map, formal-spine handover, agent conventions, and task queue | **Active project metadata** |
 
 ### Current canonical contents
 
