@@ -9,8 +9,9 @@ new collaborator, or you after a break. For the deep re-entry, pair this with
 - **Merged to `master`** at commit `c929c10` (the verification arc through
   iter 5 + textbook Ch 0–6). Everything after is follow-up work on branches.
 - The model is **verified through iteration 15**; the textbook runs **Ch 0–13
-  + Intermission + Appendix A**; the interactive visualiser is parity-checked
-  and working. The Intermission (`textbook/I_intermission.md`) is the
+  + Intermission + Appendix A**; the interactive companion (`visualiser/`)
+  serves per-chapter labs from the verified Python itself (D25 — the old
+  parity-checked JS demo is archived under `visualiser/legacy/`). The Intermission (`textbook/I_intermission.md`) is the
   mid-course synthesis — read it for the fastest conceptual re-entry into the
   bridge arc.
 - The **CPAF foundational bridge (Ch 7–12) is now COMPLETE.** It grounds every
@@ -46,7 +47,8 @@ KSOMHeb/
 ├── ksomheb.py                canonical reference implementation
 ├── requirements.txt          numpy + matplotlib (the container is ephemeral — see below)
 ├── verification/             iter1–iter15, each a runnable script + plot + README
-├── visualiser/               browser demo (ksomheb.js parity-checked vs the .py)
+├── visualiser/               interactive companion: per-chapter lab tabs, Python-served
+│                             (labs import ksomheb.py; selfcheck.py; legacy/ = old JS demo)
 └── textbook/                 00–13 + Intermission + Vol II Stigmergy Intermission + Appendix A, OUTLINE.md
 ```
 

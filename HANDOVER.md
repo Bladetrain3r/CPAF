@@ -40,7 +40,7 @@ CPAF/
     ├── CHEATSHEET.md · DECISIONS.md · CPAF_MAPPING_NOTES.md
     ├── ksomheb.py · requirements.txt
     ├── verification/         iter1–iter15, one runnable script + plot + README each
-    ├── visualiser/           browser demo (parity-checked vs the .py)
+    ├── visualiser/           interactive companion: tabbed labs served by Python (runs ksomheb.py directly)
     └── textbook/             00–13 + Intermission + Vol II Stigmergy Intermission + Appendix A
 ```
 

@@ -88,7 +88,8 @@ KSOMHeb/
 ├── requirements.txt          numpy + matplotlib (install on a fresh container)
 ├── verification/             one runnable script + plot per claim (iter1…iter16)
 │   └── README.md             the suite index and findings log
-├── visualiser/               interactive browser demo (drag the sliders)
+├── visualiser/               interactive companion — one lab tab per chapter
+│                             (python3 visualiser/serve.py, then localhost:8000)
 └── textbook/                 you are here — Vol I: Ch 0–13 + Intermission +
                               Appendix A · Vol II: Intermissions II (stigmergy)
                               and III (clocks) · OUTLINE.md is the chapter map

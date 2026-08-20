@@ -1,42 +1,71 @@
-# K-SOM-Heb closed-loop visualiser
+# CPAF interactive companion — the textbook's lab bench
 
-Interactive view of the global-reward closed loop verified in iterations 1–3.
-Drag the sliders and watch the system either run away to full synchrony or
-collapse — the bistability from iteration 3, made tactile.
+A tabbed suite of interactive labs, one per textbook chapter, each an
+interactive version of a **verified experiment** from `../verification/`.
+Sliders re-run the experiment; a scrub-able player animates the returned
+trajectory (you can rewind through a tipping point); every tab carries a
+"what to notice" panel written against its chapter and a provenance footer
+naming the witness script and the claim.
 
 ## Run it
 
-Open `ksomheb_visualiser.html` in any browser (double-click, or
-`file://…/ksomheb_visualiser.html`). It loads `ksomheb.js` from the same
-folder — keep the two files together. No build, no server, no install.
+```
+pip3 install -r ../requirements.txt     # numpy (matplotlib not needed here)
+python3 serve.py                        # stdlib http server, port 8000
+```
 
-## What you see
+Open <http://localhost:8000>. No build step, no JS dependencies, no packages
+beyond numpy.
 
-- **Phasors** — each oscillator as a dot on the unit circle; the gold arrow is
-  the order parameter (its length *is* `r`).
-- **Coupling matrix K** — heatmap, dark = 0, bright = K_max.
-- **r(t) and mean K(t)** — time series, with the `r_baseline` line marked.
-- **Stats + regime label** — live `r`, reward `R`, mean `K`, % of pairs pinned
-  at K_max, and whether the run is heading for runaway / collapse / transition.
+## Current labs
 
-Sliders cover everything that decides the outcome: η, λ, K_max, r_baseline, N,
-σ (frequency spread), initial K₀, dt, and steps-per-frame. The **Supercritical**
-/ **Subcritical** buttons jump K₀ across the tipping point so you can flip the
-fate directly. Kc(theory) and the R_sat saturation bound are shown live.
+| tab | textbook chapter | verified witness |
+|---|---|---|
+| Ch 1 · Transition | `textbook/01_phase_oscillators.md` | `verification/iter1_kuramoto_transition.py` |
+| Ch 3 · Closed loop | `textbook/03_closing_the_loop.md` | `verification/iter3_closed_loop.py` |
+| Ch 7 · Locking | `textbook/07_grounding_the_threshold.md` | `verification/iter6_locking_threshold.py` |
 
 ## Trust / provenance
 
-The dynamics live in `ksomheb.js`, a direct port of the verified `ksomheb.py`.
-`parity_check.js` confirms the JS reproduces the Python reference numbers to
-floating-point tolerance:
+The browser **never integrates the model** — it only renders. All dynamics
+run server-side in Python and either call the verified `../ksomheb.py`
+directly (ch03) or use a form a verification iteration proved equivalent
+(ch01's O(N) mean-field identity for uniform coupling; ch07's exact
+two-oscillator reduction from iter 6). `selfcheck.py` re-verifies every such
+step plus each lab's headline behaviour:
 
 ```
-node parity_check.js     # -> PARITY OK
+python3 selfcheck.py     # -> ALL PASS
 ```
 
-This is the single source for the JS math — the HTML does not inline a second
-copy. If you change the model in Python, re-port here and re-run the parity
-check.
+This replaces the old architecture (a JS port of `ksomheb.py` guarded by
+`parity_check.js`, now archived under `legacy/` — see DECISIONS.md D25):
+with the labs importing the reference implementation there is no second copy
+of the math to keep in parity, and the suite scales with the evidence ledger
+instead of trailing it.
 
-Scope: this visualiser shows the **global-reward** model only (the one verified
-so far). Local/hybrid and target-band reward modes are a later iteration.
+## Layout
+
+```
+visualiser/
+├── serve.py            stdlib HTTP server + JSON API (manifest, run)
+├── selfcheck.py        stepper-equivalence + lab regression checks
+├── labs/               one Python module per lab: metadata + run(params)
+│   ├── __init__.py     the registry (add new labs here)
+│   └── common.py       control specs, payload packing
+├── static/             the tabbed shell (index.html, app.js, style.css)
+│   └── labs/           one small canvas renderer per lab
+└── legacy/             the retired JS visualiser (iter 1–3 demo)
+```
+
+## Adding a lab
+
+1. Write `labs/chNN_topic.py`: a `LAB` dict (id, chapter, witness, claim,
+   notice bullets, control specs, presets) and a `run(params) -> dict`.
+   Ground it in an existing verification iteration; if it needs a stepper
+   that is not a direct `ksomheb` call, add a check to `selfcheck.py`.
+2. Write `static/labs/chNN.js`: register `window.Renderers.chNN`, build the
+   panels from the returned data with the shared `UI` helpers (plot,
+   phasors, heatmap, player).
+3. Register the module in `labs/__init__.py`. The shell picks up tabs,
+   sliders, presets, notice text, and provenance from the manifest.

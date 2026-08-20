@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CPAF — K-SOM-Heb interactive companion</title>
+<link rel="stylesheet" href="/static/style.css" />
+<link rel="icon" href="data:," />
+</head>
+<body>
+<header>
+  <h1>K-SOM-Heb interactive companion <span>— the textbook's lab bench</span></h1>
+  <p>Every tab is an interactive version of a verified experiment: the browser
+     renders, the server integrates with the same <code>ksomheb.py</code> the
+     evidence ledger runs.</p>
+  <nav class="tabs"></nav>
+</header>
+
+<main>
+<section id="panel-about" class="about">
+  <p>This suite is the interactive companion to the K-SOM-Heb textbook
+  (<code>KSOMHeb/textbook/</code>). Each tab pairs one chapter with the
+  verification iteration that grounds it, and turns the experiment's fixed
+  parameters into sliders so the math can be <em>felt</em>: find the
+  transition yourself, flip the fate of the closed loop, break a lock by
+  widening the detuning.</p>
+
+  <h2>Trust &amp; provenance</h2>
+  <p>The project's discipline is <em>verify, don't assert</em> — nothing in the
+  textbook is claimed without a runnable script behind it. This suite keeps
+  that bar: <strong>the browser never integrates the model</strong>. All
+  dynamics run server-side in Python and either call the verified
+  <code>ksomheb.py</code> directly or use a reduction that a verification
+  iteration proved equivalent; <code>selfcheck.py</code> re-checks every such
+  step (run it any time: <code>python3 selfcheck.py</code>). There is no
+  second implementation of the model to drift out of parity — that was the
+  weakness of the previous JS visualiser, now archived under
+  <code>legacy/</code>.</p>
+
+  <h2>Labs</h2>
+  <table id="about-labmap"></table>
+
+  <h2>Reading a lab</h2>
+  <p>Each lab has three layers: the <strong>interactive</strong> (sliders
+  re-run the experiment server-side; the player lets you scrub back through
+  the trajectory — you can rewind through a tipping point), the
+  <strong>what-to-notice panel</strong> (the chapter's punchlines, stated
+  against what's on screen), and the <strong>provenance footer</strong>
+  (which chapter it teaches, which verification script witnesses the claim,
+  and the claim itself with its canonical typing where it has one).</p>
+
+  <h2>Running</h2>
+  <p><code>pip3 install -r KSOMHeb/requirements.txt</code> (numpy is the only
+  dependency), then <code>python3 KSOMHeb/visualiser/serve.py</code> and open
+  <a href="http://localhost:8000">localhost:8000</a>. The server is stdlib-only.</p>
+
+  <p class="mut">Adding a lab = one Python module under <code>labs/</code>
+  (metadata + <code>run()</code>), one renderer under
+  <code>static/labs/</code>, one line in the registry. See
+  <code>labs/__init__.py</code>.</p>
+</section>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
