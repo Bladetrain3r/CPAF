@@ -35,7 +35,10 @@ not yet grounded.
 - Standardise document format and maybe convert from Markdown to Latex.
 
 ## Getting Started
-Read the sub-README in the Framework folder, which describes the framework and it's application in more detail
+Use the [core bill of parts](BILL_OF_PARTS.md) to distinguish the active
+canonical and evidence layers from legacy/reference material. Then read the
+sub-README in the Framework folder, which describes the framework and its
+application in more detail.
 
 ## What you can contribute
 - I'm not an expert and LLMs also make mistakes, so verifying the existing formal logic and math would be a good start.
