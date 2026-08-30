@@ -40,6 +40,10 @@ canonical and evidence layers from legacy/reference material. Then read the
 sub-README in the Framework folder, which describes the framework and its
 application in more detail.
 
+For a compact view of definition authority, computational evidence, dependency
+relationships, and unresolved gaps, see
+[`Framework/CanonicalDefinitions/STATUS.md`](Framework/CanonicalDefinitions/STATUS.md).
+
 ## What you can contribute
 - I'm not an expert and LLMs also make mistakes, so verifying the existing formal logic and math would be a good start.
 - Coming up with test cases - systems which can be analysed and quantized in terms of CPAF
