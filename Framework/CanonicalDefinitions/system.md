@@ -1,9 +1,9 @@
 # System
 
-**Status:** Draft 0.1  
-**Dependencies:** supplied analysis boundary, state space, transition rule,
-  scale, entities, channels, and interfaces  
-**Primary adjacent concepts:** entity, interaction, information, deviation,
+- **Status:** Draft 0.1
+- **Dependencies:** supplied analysis boundary, state space, transition rule,
+  scale, entities, channels, and interfaces
+- **Primary adjacent concepts:** entity, interaction, information, deviation,
   progression
 
 ## Intent

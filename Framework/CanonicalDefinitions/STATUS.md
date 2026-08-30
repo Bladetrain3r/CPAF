@@ -1,8 +1,8 @@
 # CPAF component status map
 
-**Status:** Working registry, updated with the canonical Draft 0.1 layer  
-**Purpose:** one navigable view of definition authority, computational evidence,
-and unresolved concept gaps. This registry does not promote a Draft to Accepted.
+- **Status:** Working registry, updated with the canonical Draft 0.1 layer
+- **Purpose:** one navigable view of definition authority, computational evidence,
+  and unresolved concept gaps. This registry does not promote a Draft to Accepted.
 
 ## Authority and evidence legend
 

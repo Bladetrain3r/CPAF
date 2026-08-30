@@ -1,9 +1,9 @@
 # Interaction
 
-**Status:** Draft 0.1  
-**Dependencies:** analysis context, entities or subsystem candidates, channels,
-information candidates, deviation criteria  
-**Primary adjacent concepts:** information, deviation, system, entity
+- **Status:** Draft 0.1
+- **Dependencies:** analysis context, entities or subsystem candidates, channels,
+  information candidates, deviation criteria
+- **Primary adjacent concepts:** information, deviation, system, entity
 
 ## Intent
 

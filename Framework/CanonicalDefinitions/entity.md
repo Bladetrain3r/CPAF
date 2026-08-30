@@ -1,9 +1,9 @@
 # Entity
 
-**Status:** Draft 0.1  
-**Dependencies:** system candidate, state space, scale, persistence or identity
-criterion, boundary and interface criteria  
-**Primary adjacent concepts:** system, interaction, information, memory
+- **Status:** Draft 0.1
+- **Dependencies:** system candidate, state space, scale, persistence or identity
+  criterion, boundary and interface criteria
+- **Primary adjacent concepts:** system, interaction, information, memory
 
 ## Intent
 

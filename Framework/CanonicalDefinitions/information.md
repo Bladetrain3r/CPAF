@@ -1,9 +1,9 @@
 # Information
 
-**Status:** Draft 0.1  
-**Dependencies:** analysis context, processability, state or trajectory
-variation, deviation criterion  
-**Primary adjacent concepts:** interaction, deviation, entity, memory
+- **Status:** Draft 0.1
+- **Dependencies:** analysis context, processability, state or trajectory
+  variation, deviation criterion
+- **Primary adjacent concepts:** interaction, deviation, entity, memory
 
 ## Intent
 
