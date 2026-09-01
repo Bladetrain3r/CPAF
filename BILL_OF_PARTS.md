@@ -52,10 +52,11 @@ The canonical folder currently contains:
 - `PROGRESSION.md` — progression as a partial dependency/complexity relation;
 - `CHEATSHEET.md` — compact notation and sanity checks;
 - `null_state.md` — Draft 0.3 null-regime definition;
-- `deviation.md` — Draft 0.2 deviation definition.
-
-The canonical interaction, information, entity, and system documents described
-as future structure in the handover are not yet present in this checkout.
+- `deviation.md` — Draft 0.2 deviation definition;
+- `information.md`, `interaction.md`, `entity.md`, `system.md` — foundational
+  migration-target Drafts 0.1;
+- `STATUS.md` — component status registry, dependency diagram, and concept-gap
+  ledger.
 
 ## Reference and legacy parts
 

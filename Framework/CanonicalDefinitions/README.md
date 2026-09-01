@@ -13,6 +13,24 @@ The older files under `Framework/`, `Foundations/`, and `General/` remain useful
 historical and explanatory material. During migration they may disagree with
 this folder. Such disagreement must be recorded rather than silently resolved.
 
+## Current contents
+
+| Document | Role | Status |
+|---|---|---|
+| `METALANGUAGE.md` | typed analysis context and claim vocabulary | Draft 0.2 |
+| `PROGRESSION.md` | dependency/complexity progression scaffold | Draft 0.1 |
+| `null_state.md` | reference-regime definition | Draft 0.3 |
+| `deviation.md` | typed deviation definition | Draft 0.2 |
+| `information.md` | processable-difference definition and certificates | Draft 0.1 |
+| `interaction.md` | channel, latent, and active-event definitions | Draft 0.1 |
+| `entity.md` | scale-indexed entity certification proposal | Draft 0.1 |
+| `system.md` | candidate/organized system and emergence proposal | Draft 0.1 |
+| `STATUS.md` | component registry, dependency diagram, and gap ledger | Working registry |
+
+The four newly added foundational documents are Drafts. They make the migration
+targets explicit but do not override accepted legacy material until author
+acceptance.
+
 ## Authority order
 
 Once a concept document in this folder is marked **Accepted**, use this order:
