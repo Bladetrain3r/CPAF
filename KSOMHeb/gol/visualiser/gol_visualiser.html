@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game of Life — CPAF substrate #2 explorer</title>
+<style>
+  :root {
+    --bg: #0e1116; --panel: #161b22; --ink: #e6edf3; --dim: #8b949e;
+    --grid: #21262d; --cell: #39d3c3; --accent: #58a6ff;
+    --still: #58a6ff; --osc: #3fb950; --ship: #f0883e; --chaos: #8b949e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 18px;
+  }
+  h1 { font-size: 17px; margin: 0 0 2px; font-weight: 650; }
+  .sub { color: var(--dim); font-size: 12.5px; margin-bottom: 14px; max-width: 820px; }
+  .wrap { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; }
+  canvas { background: #0a0d12; border: 1px solid var(--grid); border-radius: 6px; cursor: crosshair; touch-action: none; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--grid); border-radius: 8px;
+    padding: 14px; width: 230px; display: flex; flex-direction: column; gap: 12px;
+  }
+  .row { display: flex; gap: 6px; flex-wrap: wrap; }
+  button {
+    background: #21262d; color: var(--ink); border: 1px solid #30363d;
+    border-radius: 6px; padding: 6px 10px; font-size: 12.5px; cursor: pointer;
+    transition: background .12s;
+  }
+  button:hover { background: #2d333b; }
+  button.on { background: var(--accent); color: #0a0d12; border-color: var(--accent); font-weight: 600; }
+  button.pat.sel { background: var(--cell); color: #0a0d12; border-color: var(--cell); font-weight: 600; }
+  label.field { display: flex; flex-direction: column; gap: 3px; font-size: 11.5px; color: var(--dim); }
+  input[type=range] { width: 100%; accent-color: var(--accent); }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; font-size: 12.5px; }
+  .stats b { color: var(--accent); font-variant-numeric: tabular-nums; }
+  .hd { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--dim); margin-bottom: -4px; }
+  .legend { font-size: 11.5px; color: var(--dim); display: flex; flex-direction: column; gap: 3px; }
+  .legend span { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+  .hint { font-size: 11px; color: var(--dim); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+  <h1>Game of Life — CPAF substrate&nbsp;#2 explorer</h1>
+  <div class="sub">
+    A cellular automaton as a testbed for CPAF's basic-layer vocabulary. Draw cells, stamp patterns,
+    run the rule (B3/S23), then hit <b>Detect entities</b>: the tool finds connected components and
+    classifies each by evolving it <i>in isolation</i> — its <b>period</b> and <b>velocity</b>. That
+    isolation test <i>is</i> the operational meaning of an <b>entity</b> (a self-determined, recurring
+    pattern) and of <b>closure</b> (its future needs only its own cells). See <code>../CONCEPT_MAPPING.md</code>.
+  </div>
+
+  <div class="wrap">
+    <canvas id="cv"></canvas>
+
+    <div class="panel">
+      <div class="row">
+        <button id="play" class="on">▶ Play</button>
+        <button id="step">Step</button>
+        <button id="clear">Clear</button>
+        <button id="rand">Soup</button>
+      </div>
+
+      <label class="field">Speed (gens/sec): <span id="spdlab">12</span>
+        <input type="range" id="speed" min="1" max="60" value="12">
+      </label>
+
+      <div>
+        <div class="hd">Stamp a pattern</div>
+        <div class="row" id="palette"></div>
+        <div class="hint">Pick one, then click the grid. “Draw” = freehand (click/drag).</div>
+      </div>
+
+      <div>
+        <button id="detect">◎ Detect entities</button>
+        <div class="legend" style="margin-top:8px">
+          <div><span style="background:var(--still)"></span>still life (period 1, static)</div>
+          <div><span style="background:var(--osc)"></span>oscillator (period&gt;1, static)</div>
+          <div><span style="background:var(--ship)"></span>spaceship (moving boundary)</div>
+          <div><span style="background:var(--chaos)"></span>chaotic / not yet settled</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="hd">Readout</div>
+        <div class="stats">
+          <div>generation</div><div><b id="gen">0</b></div>
+          <div>population</div><div><b id="pop">0</b></div>
+          <div>entities</div><div><b id="ent">—</b></div>
+          <div>moving</div><div><b id="mov">—</b></div>
+        </div>
+      </div>
+
+      <div class="hint">
+        Try: stamp a <b>glider</b> and a <b>block</b>, aim the glider to collide — watch an
+        <i>asymmetric, destructive interaction</i>. Or drop an <b>R-pentomino</b> and detect
+        entities as the chaos <i>settles</i> into ash (a <i>deviation in time</i>).
+      </div>
+    </div>
+  </div>
+
+<script>
+// ---------------------------------------------------------------------------
+// engine (mirrors ../gol.py: B3/S23, bounded; entity detection by isolation)
+// ---------------------------------------------------------------------------
+const COLS = 110, ROWS = 68, CELL = 8;
+const cv = document.getElementById('cv');
+cv.width = COLS * CELL; cv.height = ROWS * CELL;
+const ctx = cv.getContext('2d');
+
+let grid = makeGrid(ROWS, COLS);
+let generation = 0;
+let playing = true;
+let detecting = false;
+let cachedEntities = null;
+
+function makeGrid(h, w) { return Array.from({length: h}, () => new Uint8Array(w)); }
+
+function stepGrid(g) {
+  const H = g.length, W = g[0].length;
+  const out = Array.from({length: H}, () => new Uint8Array(W));
+  for (let r = 0; r < H; r++) for (let c = 0; c < W; c++) {
+    let n = 0;
+    for (let dr = -1; dr <= 1; dr++) for (let dc = -1; dc <= 1; dc++) {
+      if (dr === 0 && dc === 0) continue;
+      const rr = r + dr, cc = c + dc;
+      if (rr >= 0 && rr < H && cc >= 0 && cc < W) n += g[rr][cc];
+    }
+    out[r][c] = (n === 3 || (g[r][c] && n === 2)) ? 1 : 0;
+  }
+  return out;
+}
+
+function population(g) { let s = 0; for (const row of g) for (const v of row) s += v; return s; }
+
+function liveCells(g) {
+  const out = [];
+  for (let r = 0; r < g.length; r++) for (let c = 0; c < g[0].length; c++) if (g[r][c]) out.push([r, c]);
+  return out;
+}
+
+// connected components (Moore) = candidate entities
+function components(g) {
+  const H = g.length, W = g[0].length;
+  const seen = Array.from({length: H}, () => new Uint8Array(W));
+  const comps = [];
+  for (let r = 0; r < H; r++) for (let c = 0; c < W; c++) {
+    if (g[r][c] && !seen[r][c]) {
+      const stack = [[r, c]]; seen[r][c] = 1; const comp = [];
+      while (stack.length) {
+        const [cr, cc] = stack.pop(); comp.push([cr, cc]);
+        for (let dr = -1; dr <= 1; dr++) for (let dc = -1; dc <= 1; dc++) {
+          if (dr === 0 && dc === 0) continue;
+          const rr = cr + dr, ccc = cc + dc;
+          if (rr >= 0 && rr < H && ccc >= 0 && ccc < W && g[rr][ccc] && !seen[rr][ccc]) {
+            seen[rr][ccc] = 1; stack.push([rr, ccc]);
+          }
+        }
+      }
+      comps.push(comp);
+    }
+  }
+  return comps;
+}
+
+function normSig(cells) {
+  let rmin = Infinity, cmin = Infinity;
+  for (const [r, c] of cells) { if (r < rmin) rmin = r; if (c < cmin) cmin = c; }
+  return cells.map(([r, c]) => (r - rmin) + ',' + (c - cmin)).sort().join(';');
+}
+
+// classify a component by evolving it IN ISOLATION -> (kind, period, disp).
+// Isolation is the operational test of closure: the pattern's own cells
+// determine its future.
+function classify(cells, maxPeriod = 30) {
+  if (!cells.length) return {kind: 'empty', period: null, disp: [0, 0]};
+  let rmin = Infinity, cmin = Infinity, rmax = -Infinity, cmax = -Infinity;
+  for (const [r, c] of cells) {
+    rmin = Math.min(rmin, r); cmin = Math.min(cmin, c);
+    rmax = Math.max(rmax, r); cmax = Math.max(cmax, c);
+  }
+  const h = rmax - rmin + 1, w = cmax - cmin + 1, pad = maxPeriod + 4;
+  if (cells.length > 240) return {kind: 'chaotic', period: null, disp: [0, 0]};
+  let g = makeGrid(h + 2 * pad, w + 2 * pad);
+  for (const [r, c] of cells) g[r - rmin + pad][c - cmin + pad] = 1;
+  const sig0 = normSig(liveCells(g));
+  let cur = g;
+  for (let p = 1; p <= maxPeriod; p++) {
+    cur = stepGrid(cur);
+    const pts = liveCells(cur);
+    if (!pts.length) return {kind: 'died', period: null, disp: [0, 0]};
+    if (normSig(pts) === sig0) {
+      let r0 = Infinity, c0 = Infinity;
+      for (const [r, c] of pts) { if (r < r0) r0 = r; if (c < c0) c0 = c; }
+      const disp = [r0 - pad, c0 - pad];
+      const moving = disp[0] !== 0 || disp[1] !== 0;
+      const kind = (p === 1 && !moving) ? 'still life' : moving ? 'spaceship' : 'oscillator';
+      return {kind, period: p, disp};
+    }
+  }
+  return {kind: 'chaotic', period: null, disp: [0, 0]};
+}
+
+function detectEntities() {
+  const comps = components(grid);
+  return comps.map(comp => {
+    const info = classify(comp);
+    let rmin = Infinity, cmin = Infinity, rmax = -Infinity, cmax = -Infinity;
+    for (const [r, c] of comp) {
+      rmin = Math.min(rmin, r); cmin = Math.min(cmin, c);
+      rmax = Math.max(rmax, r); cmax = Math.max(cmax, c);
+    }
+    info.bbox = [rmin, cmin, rmax, cmax];
+    return info;
+  });
+}
+
+const KIND_COLOR = {
+  'still life': getCSS('--still'), 'oscillator': getCSS('--osc'),
+  'spaceship': getCSS('--ship'), 'chaotic': getCSS('--chaos'),
+  'died': getCSS('--chaos'), 'empty': getCSS('--chaos')
+};
+function getCSS(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+
+// ---------------------------------------------------------------------------
+// rendering
+// ---------------------------------------------------------------------------
+function draw() {
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  // grid lines
+  ctx.strokeStyle = getCSS('--grid'); ctx.lineWidth = 1;
+  ctx.globalAlpha = 0.5;
+  for (let c = 0; c <= COLS; c++) { ctx.beginPath(); ctx.moveTo(c * CELL + .5, 0); ctx.lineTo(c * CELL + .5, cv.height); ctx.stroke(); }
+  for (let r = 0; r <= ROWS; r++) { ctx.beginPath(); ctx.moveTo(0, r * CELL + .5); ctx.lineTo(cv.width, r * CELL + .5); ctx.stroke(); }
+  ctx.globalAlpha = 1;
+  // live cells
+  ctx.fillStyle = getCSS('--cell');
+  for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++)
+    if (grid[r][c]) ctx.fillRect(c * CELL + 1, r * CELL + 1, CELL - 1, CELL - 1);
+  // entity overlays
+  if (detecting && cachedEntities) {
+    ctx.font = '10px monospace'; ctx.lineWidth = 1.5;
+    let ec = 0, mv = 0;
+    for (const e of cachedEntities) {
+      const col = KIND_COLOR[e.kind] || getCSS('--chaos');
+      const [rmin, cmin, rmax, cmax] = e.bbox;
+      const x = cmin * CELL - 1, y = rmin * CELL - 1;
+      const w = (cmax - cmin + 1) * CELL + 2, h = (rmax - rmin + 1) * CELL + 2;
+      ctx.strokeStyle = col; ctx.globalAlpha = 0.9; ctx.strokeRect(x, y, w, h);
+      ctx.globalAlpha = 1;
+      let lab = e.period ? `${labelKind(e)} p${e.period}` : e.kind;
+      if (e.kind === 'spaceship') lab += ' ' + arrow(e.disp);
+      ctx.fillStyle = col;
+      const ly = y - 2 < 8 ? y + h + 10 : y - 2;
+      ctx.fillText(lab, x, ly);
+      ec++; if (e.kind === 'spaceship') mv++;
+    }
+    document.getElementById('ent').textContent = ec;
+    document.getElementById('mov').textContent = mv;
+  } else {
+    document.getElementById('ent').textContent = '—';
+    document.getElementById('mov').textContent = '—';
+  }
+  document.getElementById('gen').textContent = generation;
+  document.getElementById('pop').textContent = population(grid);
+}
+
+function labelKind(e) {
+  return e.kind === 'still life' ? 'still' : e.kind === 'oscillator' ? 'osc' : e.kind === 'spaceship' ? 'ship' : e.kind;
+}
+function arrow(d) {
+  const [dr, dc] = d;
+  if (dr === 0) return dc > 0 ? '→' : '←';
+  if (dc === 0) return dr > 0 ? '↓' : '↑';
+  if (dr > 0) return dc > 0 ? '↘' : '↙';
+  return dc > 0 ? '↗' : '↖';
+}
+
+// ---------------------------------------------------------------------------
+// simulation loop (fixed-rate via accumulator)
+// ---------------------------------------------------------------------------
+let spd = 12, last = 0, acc = 0;
+function loop(t) {
+  const dt = (t - last) / 1000; last = t; acc += dt;
+  const interval = 1 / spd;
+  while (playing && acc >= interval) { advance(); acc -= interval; }
+  draw();
+  requestAnimationFrame(loop);
+}
+function advance() {
+  grid = stepGrid(grid); generation++;
+  if (detecting) cachedEntities = detectEntities();
+}
+
+// ---------------------------------------------------------------------------
+// patterns (subset of ../gol.py PATTERNS)
+// ---------------------------------------------------------------------------
+const PATTERNS = {
+  block: [[0,0],[0,1],[1,0],[1,1]],
+  loaf: [[0,1],[0,2],[1,0],[1,3],[2,1],[2,3],[3,2]],
+  blinker: [[0,0],[0,1],[0,2]],
+  toad: [[0,1],[0,2],[0,3],[1,0],[1,1],[1,2]],
+  pulsar: [[0,2],[0,3],[0,4],[0,8],[0,9],[0,10],[2,0],[2,5],[2,7],[2,12],[3,0],[3,5],[3,7],[3,12],[4,0],[4,5],[4,7],[4,12],[5,2],[5,3],[5,4],[5,8],[5,9],[5,10],[7,2],[7,3],[7,4],[7,8],[7,9],[7,10],[8,0],[8,5],[8,7],[8,12],[9,0],[9,5],[9,7],[9,12],[10,0],[10,5],[10,7],[10,12],[12,2],[12,3],[12,4],[12,8],[12,9],[12,10]],
+  pentadecathlon: [[0,2],[0,7],[1,0],[1,1],[1,3],[1,4],[1,5],[1,6],[1,8],[1,9],[2,2],[2,7]],
+  glider: [[0,1],[1,2],[2,0],[2,1],[2,2]],
+  lwss: [[0,0],[0,3],[1,4],[2,0],[2,4],[3,1],[3,2],[3,3],[3,4]],
+  'r-pentomino': [[0,1],[0,2],[1,0],[1,1],[2,1]],
+  acorn: [[0,1],[1,3],[2,0],[2,1],[2,4],[2,5],[2,6]],
+};
+let stampPattern = null;   // null = draw mode
+
+const palette = document.getElementById('palette');
+const drawBtn = document.createElement('button');
+drawBtn.textContent = 'Draw'; drawBtn.className = 'pat sel';
+drawBtn.onclick = () => selectPattern(null, drawBtn);
+palette.appendChild(drawBtn);
+for (const name of Object.keys(PATTERNS)) {
+  const b = document.createElement('button');
+  b.textContent = name; b.className = 'pat';
+  b.onclick = () => selectPattern(name, b);
+  palette.appendChild(b);
+}
+function selectPattern(name, btn) {
+  stampPattern = name;
+  document.querySelectorAll('.pat').forEach(x => x.classList.remove('sel'));
+  btn.classList.add('sel');
+}
+
+function stamp(name, r0, c0) {
+  const cells = PATTERNS[name];
+  let rmax = 0, cmax = 0;
+  for (const [r, c] of cells) { rmax = Math.max(rmax, r); cmax = Math.max(cmax, c); }
+  const ro = r0 - (rmax >> 1), co = c0 - (cmax >> 1);   // center on click
+  for (const [r, c] of cells) {
+    const rr = ro + r, cc = co + c;
+    if (rr >= 0 && rr < ROWS && cc >= 0 && cc < COLS) grid[rr][cc] = 1;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// interaction
+// ---------------------------------------------------------------------------
+let painting = false, paintVal = 1;
+function cellAt(ev) {
+  const rect = cv.getBoundingClientRect();
+  const x = (ev.clientX - rect.left) * (cv.width / rect.width);
+  const y = (ev.clientY - rect.top) * (cv.height / rect.height);
+  return [Math.floor(y / CELL), Math.floor(x / CELL)];
+}
+cv.addEventListener('pointerdown', ev => {
+  ev.preventDefault();
+  const [r, c] = cellAt(ev);
+  if (r < 0 || r >= ROWS || c < 0 || c >= COLS) return;
+  if (stampPattern) { stamp(stampPattern, r, c); refreshDetect(); return; }
+  painting = true; paintVal = grid[r][c] ? 0 : 1; grid[r][c] = paintVal; refreshDetect();
+});
+cv.addEventListener('pointermove', ev => {
+  if (!painting) return;
+  const [r, c] = cellAt(ev);
+  if (r >= 0 && r < ROWS && c >= 0 && c < COLS) { grid[r][c] = paintVal; refreshDetect(); }
+});
+window.addEventListener('pointerup', () => { painting = false; });
+
+function refreshDetect() { if (detecting) cachedEntities = detectEntities(); }
+
+// ---------------------------------------------------------------------------
+// controls
+// ---------------------------------------------------------------------------
+const playBtn = document.getElementById('play');
+playBtn.onclick = () => {
+  playing = !playing;
+  playBtn.textContent = playing ? '▶ Play' : '❚❚ Pause';
+  playBtn.classList.toggle('on', playing);
+};
+document.getElementById('step').onclick = () => { advance(); };
+document.getElementById('clear').onclick = () => { grid = makeGrid(ROWS, COLS); generation = 0; cachedEntities = null; };
+document.getElementById('rand').onclick = () => {
+  for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) grid[r][c] = Math.random() < 0.32 ? 1 : 0;
+  generation = 0; refreshDetect();
+};
+const speed = document.getElementById('speed'), spdlab = document.getElementById('spdlab');
+speed.oninput = () => { spd = +speed.value; spdlab.textContent = speed.value; };
+const detectBtn = document.getElementById('detect');
+detectBtn.onclick = () => {
+  detecting = !detecting;
+  detectBtn.classList.toggle('on', detecting);
+  cachedEntities = detecting ? detectEntities() : null;
+};
+
+// seed with a small showcase: a glider heading toward a block, plus a blinker
+stamp('block', 34, 78);
+stamp('glider', 12, 12);
+stamp('blinker', 50, 30);
+stamp('pulsar', 20, 55);
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>
