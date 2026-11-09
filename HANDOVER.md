@@ -39,10 +39,29 @@ CPAF/
     ├── HANDOVER.md           deep pickup for the K-SOM-Heb work (READ FOR DETAIL)
     ├── CHEATSHEET.md · DECISIONS.md · CPAF_MAPPING_NOTES.md
     ├── ksomheb.py · requirements.txt
-    ├── verification/         iter1–iter15, one runnable script + plot + README each
+    ├── verification/         iter1–iter17, one runnable script + plot + README each
     ├── visualiser/           browser demo (parity-checked vs the .py)
-    └── textbook/             00–13 + Intermission + Vol II Stigmergy Intermission + Appendix A
+    ├── textbook/             Vol I: 00–13 + Intermission + Appendices A, S · Vol II: Ch 1 + Stigmergy & Clocks intermissions
+    └── gol/                  substrate #2 attempt (Game of Life): engine, concept mapping, visualiser — experiments unwritten
 ```
+
+**Outside this repo:** `cpaf-ranch` (own fossil) — the textbook re-run on the
+norn ranch, a separate project on a separate host. Summarized, with its two
+proposals, in `Framework/ComputationalProofs.md` §8a. The delegated-verification
+process addendum (Draft) also still lives outside the repo.
+
+## Checkpoint 2026-11-09 (consolidation)
+
+- Re-entry after a ~2-month pause. The July transfer-entropy branch's
+  remaining content (GoL substrate, Appendix S) is rescued; that branch can be
+  retired once this lands on `master`.
+- **Second substrate: decision (Ziggy, 2026-11-09).** The ranch stays its own
+  thing; CPAF will **reiterate with a fresh second substrate** rather than
+  adopt the ranch as one. Lesson carried over: it must be tunable and
+  repeatable so nulls can be powered (§8a). Whether that is `gol/` continued
+  or something new is undecided.
+- **Next up after consolidation:** author review of the canonical Drafts —
+  nothing in `Framework/CanonicalDefinitions/` is `Accepted` yet.
 
 ## Status at this checkpoint
 
@@ -133,7 +152,12 @@ CPAF/
    experience* are the frontier. Deliberately deferred until foundations are firm.
 6. **Book-wide revision pass** — 12 chapters + Intermission across many sessions;
    a consistency sweep would consolidate.
-7. **Standing K-SOM-Heb follow-ups** — see `KSOMHeb/HANDOVER.md` §C (blind
+7. **Author acceptance pass** — walk the canonical Drafts (metalanguage,
+   progression, six concept docs) and decide what becomes `Accepted`; includes
+   7.3, 7.4 and the *routed* certificate proposal (§8a).
+8. **A fresh second substrate** — tunable and repeatable; see the 2026-11-09
+   checkpoint above and `Working_List.md` task 9.
+9. **Standing K-SOM-Heb follow-ups** — see `KSOMHeb/HANDOVER.md` §C (blind
    boundary search, asymmetric-`K` learning rule, global-`r` threshold, …).
 
 ## How to pick up
