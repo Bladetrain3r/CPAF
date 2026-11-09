@@ -101,11 +101,17 @@ and certificate level.
 
 1. **Authority:** no canonical concept document is currently `Accepted`.
 2. **Universality:** all foundational witnesses use K-SOM-Heb; a second
-   substrate is still needed.
+   substrate is still needed. `KSOMHeb/gol/` (Game of Life) has an engine and
+   a concept mapping but no graded experiments; the external norn-ranch field
+   study (`ComputationalProofs.md` §8a) witnessed mechanics but could not
+   power the information-theoretic certificates. Neither counts as a second
+   substrate; the next one must be tunable and repeatable.
 3. **Scale:** entity and system certification need explicit multi-scale and
    boundary-selection tests.
 4. **Certificates:** information and interaction need a standard treatment of
-   hidden confounders, interventions, and partial observability.
+   hidden confounders, interventions, and partial observability. A **routed**
+   level above *connected* is proposed from the ranch field study
+   (`ComputationalProofs.md` §8a); not applied, pending author decision.
 5. **Identity:** memory recovery, capacity, structural lesions, and
    wrong-memory recovery need one canonical operational contract.
 6. **Active layer:** awareness, reflection, experience, knowledge, preference,

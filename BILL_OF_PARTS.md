@@ -83,6 +83,8 @@ canonical document is accepted.
 | `Framework/Axioms/`, `Framework/Applications/` | Proposed axioms and applications; not automatically established results |
 | `Framework/Templates/`, `Framework/Docs/` | Templates, glossary, assessments, and supporting documentation |
 | `BigBookofCPAF/` | LaTeX presentation assets |
+| `KSOMHeb/gol/` | Second-substrate attempt (Game of Life): engine, concept mapping, visualiser; no graded experiments yet |
+| *external:* `cpaf-ranch` (own fossil, not in this repo) | Field study re-running the textbook on the norn ranch; all Draft; summarized in `Framework/ComputationalProofs.md` §8a |
 
 These parts can inform examples or future work, but they do not outrank the
 canonical definitions or a runnable verification.

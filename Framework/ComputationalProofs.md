@@ -321,10 +321,53 @@ formalism.)*
   transformations and resampling, but the formalism awaits author review.
 - **Universality.** Every proof here is in *one* substrate (coupled oscillators).
   CPAF's cross-substrate universality is argued, not computationally proven; a
-  second substrate would raise confidence.
+  second substrate would raise confidence. Two attempts exist, neither a
+  completed second substrate: `KSOMHeb/gol/` (Game of Life — engine, entity
+  detector and concept mapping only; the graded experiments G3–G7 are
+  unwritten) and the external norn-ranch field study (§8a — mechanics
+  witnessed, the information-theoretic detectors underpowered). **A fresh,
+  tunable second substrate is still owed.**
 - **A global (system-level) threshold.** The `1/√2` onset is exact per *pair*;
   the many-oscillator transition is continuous with no special value. A
   system-level deviation threshold remains open.
+
+---
+
+## 8a. External field study: the norn ranch (not part of this evidence layer)
+
+*Recorded 2026-11-09 as a pointer. The work lives outside this repository
+(`cpaf-ranch`, its own fossil; the ranch itself runs on a separate host and is
+its own project). Everything there is `Draft`; nothing below is a witness for
+this document's concept table.*
+
+In October 2026 the K-SOM-Heb textbook was re-run, chapter for chapter, on a
+live population of text automata (the norn ranch): 18 pre-registered
+`verify_*.py` scripts on the ranch's event trail, a 31-row witness table, two
+adversary reviews from a different seat, and two responses. What it showed, in
+this document's terms:
+
+- **Mechanics transfer.** Claims hard-anchored in the ranch's code held: the
+  learning rule replays exactly from the record, channel use matches the coded
+  rates, provenance is routed, the loop is bounded.
+- **The detectors did not transfer at that scale.** Closure and transfer
+  entropy as a boundary detector, and "interaction without deviation" (the
+  latent channel), were each **dropped as not testable at that n** — not
+  refuted, not confirmed. Homophily's mechanism stayed undetermined. The cause
+  is statistical power on a substrate that cannot be tuned or re-run, not a
+  counterexample to the concepts.
+- **Lesson for the next substrate.** Substrate #2 must be *tunable and
+  repeatable* (sweepable parameters, as many seeds as the test needs), so a
+  null result can be told apart from an underpowered one.
+
+Two proposals came back from it. Both are **proposed, not applied**:
+
+1. **To the canonical layer:** a **routed** certificate level above
+   *connected* (related < directed < connected < routed), issued only where
+   inputs carry provenance and the system's own emissions are modelled.
+   Proposed as `[DEF]`, Draft; needs author sign-off like 7.3.
+2. **To the verification process:** register a **positive control** with every
+   null test — a null verdict from an instrument never shown to detect the
+   effect is not a verdict.
 
 ---
 

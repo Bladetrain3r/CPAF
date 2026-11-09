@@ -8,8 +8,9 @@ new collaborator, or you after a break. For the deep re-entry, pair this with
 
 - **Merged to `master`** at commit `c929c10` (the verification arc through
   iter 5 + textbook Ch 0–6). Everything after is follow-up work on branches.
-- The model is **verified through iteration 15**; the textbook runs **Ch 0–13
-  + Intermission + Appendix A**; the interactive visualiser is parity-checked
+- The model is **verified through iteration 17**; the textbook runs **Vol I
+  Ch 0–13 + Intermission + Appendices A and S, Vol II Ch 1 + two
+  intermissions**; the interactive visualiser is parity-checked
   and working. The Intermission (`textbook/I_intermission.md`) is the
   mid-course synthesis — read it for the fastest conceptual re-entry into the
   bridge arc.
@@ -40,14 +41,15 @@ new collaborator, or you after a break. For the deep re-entry, pair this with
 KSOMHeb/
 ├── KSOMHeb_Architecture.md   original design doc, corrected + annotated (v1.2)
 ├── CHEATSHEET.md             all symbols, equations, key relationships, verdicts
-├── DECISIONS.md              decision log D1–D11 (the "why did we do that" answer key)
+├── DECISIONS.md              decision log D1–D24 (the "why did we do that" answer key)
 ├── CPAF_MAPPING_NOTES.md     CPAF ↔ oscillator correspondence, tensions, next probes
 ├── HANDOVER.md               this file
 ├── ksomheb.py                canonical reference implementation
 ├── requirements.txt          numpy + matplotlib (the container is ephemeral — see below)
-├── verification/             iter1–iter15, each a runnable script + plot + README
+├── verification/             iter1–iter17, each a runnable script + plot + README
 ├── visualiser/               browser demo (ksomheb.js parity-checked vs the .py)
-└── textbook/                 00–13 + Intermission + Vol II Stigmergy Intermission + Appendix A, OUTLINE.md
+├── textbook/                 Vol I 00–13 + Intermission + Appendices A, S; Vol II Ch 1 + Stigmergy & Clocks intermissions; OUTLINE.md
+└── gol/                      substrate #2 attempt (Game of Life): gol.py, CONCEPT_MAPPING.md, visualiser; experiments G3–G7 unwritten
 ```
 
 **Environment note (ephemeral container):** a fresh session starts with no
@@ -57,7 +59,7 @@ KSOMHeb/requirements.txt` (or `pip3 install numpy matplotlib`).
 **Fastest orientation:** `CHEATSHEET.md` (math) + `verification/README.md`
 (what's proven) + this file (what's open).
 
-## The story in fifteen experiments (verdicts)
+## The story in seventeen experiments (verdicts)
 
 1. **Base synchronization** — reproduces Kuramoto transition (Kc 1.60 vs 1.596). ✅
 2. **Hebbian rule** — matches closed form; found saturation bound `R_sat=K_max·λ/η`. ✅
